@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- FAB -->
+    <dimen name="faves_fab_height_no_padding">40dp</dimen>
+    <dimen name="faves_fab_height">56dp</dimen>
+
+</resources>

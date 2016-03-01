@@ -1,12 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AndroidBoilerPlate</string>
+
+    <string name="app_name">YunaTube</string>
+    <string name="lo">1</string>
+    <string name="lang">en</string>
 
     <string name="action_settings">Settings</string>
+    <string name="action_instagram">Go to Instagram</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_share">Share</string>
+    <string name="action_add_faves">Favorite</string>
+    <string name="action_remove_faves">Unfavorite</string>
+    <string name="action_youtube">View on YouTube App</string>
+    <string name="action_search_video">Search for videos</string>
+    <string name="action_download">Download</string>
+    <string name="action_write_message">Write a message</string>
 
-    <string name="dialog_action_ok">OK</string>
-    <string name="dialog_action_cancel">Cancel</string>
-    <string name="dialog_error_title">Sorry</string>
+    <!-- Default Messages -->
+    <string name="server_unavailable">Oops, something went wrong. Please try again later!</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>ㅡ
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="close">Close</string>
+    <string name="send">Send</string>
+    <string name="download_video">Download Video</string>
+    <string name="report_video">Report Blocked Video</string>
+    <string name="is_video_blocked">Is this video really blocked?</string>
+    <string name="enter_content">Please leave a message</string>
+    <string name="set_username">You have to set your username to leave a comment. Will you go to Settings page?</string>
+    <string name="offline_title">You Are Offline</string>
+    <string name="offline_desc">This page can be loaded once you conneced to a network</string>
 
-    <string name="empty_ribots">There aren\'t any ribots</string>
-    <string name="error_loading_ribots">There was a problem loading the ribots</string>
+    <!-- Main -->
+    <string name="search_hint">Search YunaTube</string>
+    <string name="one_comment">1 comment</string>
+    <string name="n_comments">%1$d comments</string>
+    <string name="yuna_fact">Today\'s Yuna Fact</string>
+    <string name="instagram">Instagram</string>
+    <string name="more">More</string>
+    <string name="new_videos">New Videos</string>
+    <string name="share_via">Share this video via</string>
+
+    <!-- FAB -->
+    <string name="fab_menu_web_search">Web Search</string>
+    <string name="fab_menu_faves">My Favorites</string>
+    <string name="fab_menu_jukebox">Jukebox</string>
+    <string name="fab_menu_links">Family Sites</string>
+
+    <string name="fab_menu_youtube">YouTube App</string>
+    <string name="fab_menu_report">Report</string>
+    <string name="fab_menu_share">Share</string>
+    <string name="fab_menu_download">Download</string>
+    <string name="fab_menu_fave">Add to Faves</string>
+    <string name="fab_menu_comment">Comment</string>
+    <string name="fab_menu_settings">Settings</string>
+
+    <!-- Utils -->
+    <string name="created_second">s</string>
+    <string name="created_minute">m</string>
+    <string name="created_hour">h</string>
+    <string name="created_day">d</string>
+    <string name="created_month">mo</string>
+    <string name="created_year">y</string>
+
+    <!-- InstaFeed -->
+    <string name="insta_feed">Yuna on Instagram</string>
+
+    <!-- Search -->
+    <string name="search">Search</string>
+    <string name="no_search_data">No Results</string>
+
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="settings_user">User</string>
+    <string name="settings_set_username">Set Username</string>
+    <string name="settings_app">App Settings</string>
+    <string name="settings_receive_push">Receive Push Notifications</string>
+    <string name="settings_thoughts">Your Thoughts</string>
+    <string name="settings_feedback">Feedback</string>
+    <string name="settings_googleplay">Rate YunaTube App!</string>
+    <string name="settings_message">YunaTube is dedicated to the one and only champion, Queen Yuna! \nWe ♥ Yuna from the bottom of our hearts!</string>
+    <string name="settings_by">Developer: Toronto Dhole\nIllustrator: Leoniie Waffle, 2RioN\nCalligrapher: Nanalogue J</string>
+
+    <string name="feedback_email">paul@paulshin.ca</string>
+    <string name="feedback_subject">Feedback on YunaTube!</string>
+    <string name="feedback_text"></string>
+    <string name="feedback_chooser">Send Feedback</string>
+
+    <string name="username_set">Set a username</string>
+    <string name="username_desc">Your username will be used when you post a comment or send a message to Yuna</string>
+    <string name="username_length">You can use up to 10 characters</string>
+    <string name="username_successful">Your new username is successfully set</string>
+    <string name="username_noname">Dhole</string>
+    <string name="username_must">Please set your own username in order to continue</string>
+
+    <string name="notification_canceled">Push notification is disabled</string>
+    <string name="notification_set">Push notification is enabled</string>
+    <string name="version_description">%1$s (%2$s)</string>
+
+    <!-- Section -->
+    <string name="video_section">Video Section</string>
+
+    <!-- YouTube -->
+    <string name="error_thumbnail_view">There was an error initializing the YouTubeThumbnailView (%1$s)</string>
+    <string name="error_player">There was an error initializing the YouTubePlayer (%1$s)</string>
+    <string name="youtube_add_to_my_faves">Favorite</string>
+    <string name="youtube_remove_from_my_faves">Unfavorite</string>
+    <string name="youtube_share_title">Share This Clip</string>
+    <string name="youtube_share_subject">Have you seen this clip?</string>
+    <string name="youtube_share_text">Watch this clip of Yuna! %1$s: http://youtu.be/%2$s via #YunaTube</string>
+    <string name="youtube_share_via">via #YunaTube</string>
+    <string name="youtube_cannot_be_added">Sorry, this clip cannot be added to My Faves.</string>
+    <string name="youtube_comment">Comment</string>
+    <string name="youtube_no_comments">Leave a comment.</string>
+    <string name="youtube_wait">Try again after comments are loaded.</string>
+    <string name="report_title">Report Unavailable Clip</string>
+    <string name="report_message">Is this video blocked?</string>
+    <string name="report_successful">Thanks for your report. This video will be replaced by available one shortly!</string>
+    <string name="rotation">Rotation</string>
+    <string name="rotation_guide">You can disable the auto-rotation by unchecking the checkbox!</string>
+
+    <!-- Family Pages -->
+    <string name="family_sites">Family Sites</string>
+    <string-array name="family_sites">
+        <item>Official</item>
+        <item>Fan Pages</item>
+        <item>F.S. Pages</item>
+    </string-array>
+
+    <!-- Family Sites -->
+    <string name="submenu_links_official">Official Pages</string>
+    <string name="submenu_links_official_desc">Websites run by AllThatSports</string>
+    <string name="submenu_links_fan">Fan Pages</string>
+    <string name="submenu_links_fan_desc">Websites run by Yuna\'s fans</string>
+    <string name="submenu_links_figureskating">Figure Skating Sites</string>
+    <string name="submenu_links_figureskating_desc">Figure Skating sites, forums</string>
+
+    <string name="links_official_yunakim">Official Yuna Kim Website</string>
+    <string name="links_official_yunakim_url">www.yunakim.com</string>
+    <string name="links_official_yunakim_desc">Yuna\'s official website managed by her agency.</string>
+    <string name="links_official_yunaaaa">Yuna\'s Twitter</string>
+    <string name="links_official_yunaaaa_url">www.twitter.com/yunaaaa</string>
+    <string name="links_official_yunaaaa_desc">Yuna\'s personal twitter account.</string>
+    <string name="links_official_facebook">Facebook Fan Page</string>
+    <string name="links_official_facebook_url">www.facebook.com/pages/Yuna-Kim/53417067377</string>
+    <string name="links_official_facebook_desc">Facebook Fan Page of Yuna.</string>
+    <string name="links_official_youtube">Official YouTube Channel</string>
+    <string name="links_official_youtube_url">www.youtube.com/yunakim</string>
+    <string name="links_official_youtube_desc">Yuna\'s official youTube channel.</string>
+    <string name="links_official_allthatskate">All That Skate</string>
+    <string name="links_official_allthatskate_url">www.allthatskate.com</string>
+    <string name="links_official_allthatskate_desc">Yuna\'s ice show website.</string>
+    <string name="links_official_allthatskate_youtube">All That Skate Youtube Channel</string>
+    <string name="links_official_allthatskate_youtube_url">www.youtube.com/allthatskate</string>
+    <string name="links_official_allthatskate_youtube_desc">YouTube channel of All That Skate Ice show.</string>
+    <string name="links_official_allthatskate_twitter">All That Skate Twitter</string>
+    <string name="links_official_allthatskate_twitter_url">www.twitter.com/allthatskate</string>
+    <string name="links_official_allthatskate_twitter_desc">Yuna\'s ice show information is updated live.</string>
+    <string name="links_official_allthatsports">All That Sports</string>
+    <string name="links_official_allthatsports_url">www.atsports.co.kr</string>
+    <string name="links_official_allthatsports_desc">Yuna\'s agency, All That Sports website.</string>
+
+    <string name="links_fan_fevers">Fever Skating</string>
+    <string name="links_fan_fevers_url">www.feverskating.com</string>
+    <string name="links_fan_fevers_desc"></string>
+    <string name="links_fan_yunacafe">Yuna Cafe</string>
+    <string name="links_fan_yunacafe_url">cafe.daum.net/figureyeona</string>
+    <string name="links_fan_yunacafe_desc"></string>
+    <string name="links_fan_yunagall">DC Inside Yuna Gallery</string>
+    <string name="links_fan_yunagall_url">m.dcinside.com/mylist.php?mygall=yeona</string>
+    <string name="links_fan_yunagall_desc"></string>
+    <string name="links_fan_fsgall">DC Inside Figure Skating Gallery</string>
+    <string name="links_fan_fsgall_url">m.dcinside.com/mylist.php?mygall=figureskating_new</string>
+    <string name="links_fan_fsgall_desc"></string>
+    <string name="links_fan_fsgallbestposts">DC FS Gallery Best Posts</string>
+    <string name="links_fan_fsgallbestposts_url">m.dcinside.com/mylist.php?mygall=figureskating_new&amp;recommend=1</string>
+    <string name="links_fan_fsgallbestposts_desc"></string>
+    <string name="links_fan_allthatyuna">All That Yuna</string>
+    <string name="links_fan_allthatyuna_url">www.allthatyuna.com</string>
+    <string name="links_fan_allthatyuna_desc"></string>
+    <string name="links_fan_yunaforum">Yuna Forum</string>
+    <string name="links_fan_yunaforum_url">www.yunaforum.com</string>
+    <string name="links_fan_yunaforum_desc"></string>
+    <string name="links_fan_russia">Russian Yuna Forum</string>
+    <string name="links_fan_russia_url">www.yuna-kim.com</string>
+    <string name="links_fan_russia_desc"></string>
+    <string name="links_fan_china">Chinese Tudou Channel</string>
+    <string name="links_fan_china_url">www.tudou.com/home/kimyuna</string>
+    <string name="links_fan_china_desc"></string>
+
+    <string name="links_figureskating_isu">International Skating Union</string>
+    <string name="links_figureskating_isu_url">www.isu.org</string>
+    <string name="links_figureskating_isu_desc">Website of the international governing body for competitive ice skating disciplines.</string>
+    <string name="links_figureskating_icenetwork">Ice Network</string>
+    <string name="links_figureskating_icenetwork_url">www.icenetwork.com</string>
+    <string name="links_figureskating_icenetwork_desc">Figure Skating news and info site.</string>
+    <string name="links_figureskating_fsu">Figure Skating Universe</string>
+    <string name="links_figureskating_fsu_url">www.fsuniverse.net</string>
+    <string name="links_figureskating_fsu_desc">Figure Skating Fan Forum</string>
+    <string name="links_figureskating_golden">Golden Skate</string>
+    <string name="links_figureskating_golden_url">www.goldenskate.com</string>
+    <string name="links_figureskating_golden_desc">Figure Skating Fan Forum</string>
+
+    <!-- My Faves -->
+    <string name="my_faves">My Favorites</string>
+    <string name="faves_add_success">Successfully added to My Faves</string>
+    <string name="faves_add_failure">Oops, something went wrong</string>
+    <string name="faves_remove_success">Successfully removed from My Faves</string>
+    <string name="no_faved_data">No Videos</string>
+
+    <!-- Jukebox -->
+    <string name="song_title">[ %1$d / %2$d ] %3$s</string>
+
+    <!-- Video Section -->
+    <string name="video_section_1">Greetings</string>
+    <string name="video_section_2">Competitions</string>
+    <string name="video_section_3">Ice Shows</string>
+    <string name="video_section_4">Off the Ice</string>
+    <string name="video_section_5">Kiss &amp; Cry</string>
+    <string name="video_section_6">Jukebox</string>
+    <string name="video_section_7">Infinity Challenge</string>
+    <string name="video_section_8">Guru Show</string>
+    <string name="video_section_9">Random</string>
+    <string name="random_watch_this">Do you want to watch this video?</string>
+    <string name="random_something_else">Something Else</string>
+    <string name="country_restricted">Country Restricted</string>
+    <string name="country_restricted_desc">Due to YouTube\'s country restrictions, this channel is not viewable in Korea.\nSorry for the inconvenience.</string>
+
+    <!-- Videos -->
+    <string name="videos">Videos</string>
+    <string name="no_comments">Leave the very first comment for this video!</string>
+
+    <!-- Photos -->
+    <string name="animated_gifs_title">Animated GIFs</string>
+    <string name="photo_saved_success">Saved successfully</string>
+    <string name="photo_saved_failure">Failed to save the photo</string>
+    <string name="photo_exists">This photo already exists in the Photo Album</string>
+    <string name="cannot_save_device">This device does not support image storage feature</string>
+    <string name="download">Download Yuna Photo</string>
+    <string name="download_in_progress">Download in Progress</string>
+    <string name="download_complete">Download Complete</string>
+    <string name="data_warning_title">Data Warning</string>
+    <string name="data_warning_content">It is STRONGLY recommended to turn on WIFI to save mobile data usage and quickly view GIF images</string>
+
+    <!-- Survey -->
+    <string name="surveys">Surveys</string>
+
+    <!-- Yuna -->
+    <string name="story_of_yuna">Story of Queen Yuna</string>
+    <string name="story_of_yuna_desc">Hi, my name is Yuna Kim.\nDo you want to listen to my story?</string>
+    <string name="message_to_yuna">Yuna, I ♥ You!</string>
+    <string name="message_to_yuna_desc">Leave your love message for Yuna.\nLet\'s make Yuna smile now! :)</string>
+
+    <string name="q20a20">20Q/20A</string>
+    <string name="wiki">Wikipedia</string>
+    <string name="programs">Programs</string>
+    <string name="competitions">Competitions</string>
+    <string name="awards">Awards</string>
+    <string name="praises">Praises</string>
+    <string name="coming_soon">Coming Soon</string>
+
+    <string name="wiki_url">http://en.m.wikipedia.org/wiki/Kim_Yuna</string>
+    <string name="secret">Yuna Is Mine ;-)</string>
+    <string name="merong">Ho Ho Ho</string>
+
+    <!-- Story -->
+    <string name="story_alert">Pictures may show up VERY slowly under slow network conditions.</string>
+    <string name="story_intro">\nStory of\nthe One and Only\nYuna Kim</string>
+    <string name="story_1">Yuna was born in Bucheon City on September 5th, 1990.</string>
+    <string name="story_2">Yuna began skating at 5.\nHer coach at the time, Jong-Hyeon Ryu, strongly suggested to her mother that Yuna should continue to skate, predicting that she would become a world-class figure skater in the future.</string>
+    <string name="story_3">At age 10, Yuna finished five major triple jumps. From 2002, she won several novice titles at international competitions while continuing her reign as the Korean champion in 2004.</string>
+    <string name="story_4">Yuna won 2005-06 Junior Grand Prix Final, where she landed seven triple jumps, including a triple flip – triple toe loop combination and a double axel – triple toe loop combination during her free skate.</string>
+    <string name="story_5">After securing her fourth senior national title, she won the gold medal scoring 177.54 points overall at the 2006 World Junior Championships.</string>
+    <string name="story_6">Yuna entered the senior level in 2006-07 season.</string>
+    <string name="story_7">Yuna made her senior debut at Skate Canada by winning a bronze medal. After winning a gold medal at Trophée Eric Bompard, she amazed the world again by winning the Grand Prix Final with 184.20 points.</string>
+    <string name="story_8">And... Yuna headed to Tokyo for the Worlds.</string>
+    <string name="story_9">The world witnessed Yuna\'s excellent skating skills and artistic expressions through her record breaking short program, El Tango de Roxanne. It was a signal of Queen Yuna\'s era in the figure skating world.</string>
+    <string name="story_10">She was the first female figure skater to receive a GOE of 2.00+ on every jump component. Also, she was the only skater to successfully perform all triple combination jumps in on season.</string>
+    <string name="story_11">Yuna started the 2007-08 season winning the 2007 Cup of China</string>
+    <string name="story_12">At the Cup of Russia, Yuna won both the short program scoring 63.50 points and the free skate with 133.70 points, to finish first overall with 197.20 points, which set a world record for the free skate score under the ISU Judging System.</string>
+    <string name="story_13">Yuna qualified for the Grand Prix Final in Turin, Italy. She won the short program and was placed second in the free skate. With a total score of 196.83 points, she won her second Grand Prix Final to become the third female skater to win two GPFs in a row, and to win all Grand Prix competitions in the same season.</string>
+    <string name="story_14">With persistent hip injury and back pain, she competed at the Worlds where she won her consecutive bronze medal by rebounding in the free skate to win the program with gorgeous Miss Saigon.</string>
+    <string name="story_15">2008-09 season began.</string>
+    <string name="story_16">Yuna was placed first at Skate America and Cup of China with her spectacular programs, Danse Macabre and Scheherazade.</string>
+    <string name="story_17">After winning a silver medal at Grand Prix Final in Korea, she won another gold medal in Four Continents in Vancouver with a new world record in the short program.</string>
+    <string name="story_18">During the 2009 Worlds in LA, Yuna set another new world record in the short program. She also won the free program showing great presentation skills with her artistry and musicality.</string>
+    <string name="story_19">As a result, she set a new world record total of 207.71 as well as winning her first World Championship title and she became the first female skater to surpass 200 points.</string>
+    <string name="story_20">2009-10, the season of the Olympic Games has come.</string>
+    <string name="story_21">Yuna surprised everyone by choosing 007 James Bond Medley as her short program and Concerto in F by George Gershwin for her free program.</string>
+    <string name="story_22">Yuna won a gold medal at the Trophée Eric Bompard by setting a new world record for the free skate and the overall score. Then, she won again at the Skate America by setting a new world record for the short program.</string>
+    <string name="story_23">In February 2010, Yuna\'s long awaited day finally came...</string>
+    <string name="story_24">On February 23, Yuna amazed the world by her magnificent clean short program with a record breaking 78.50.</string>
+    <string name="story_25">Two days later, Yuna executed another perfect skating in her free program with a new record of 150.06.</string>
+    <string name="story_26">Overall, Yuna totaled 228.56 points, shattering her personal best and own old world record by a margin of 18 points. She won the gold medal, becoming the first South Korean skater to medal in any discipline of figure skating at the Olympic Games.</string>
+    <string name="story_27">2010 Vancouver Olympics was not just a dream come true for Yuna, but great inspiration for all. Her Olympic performance was praised by legendary skaters and media.</string>
+    <string name="story_28">After winning a silver medal at Worlds, Yuna attended various off-ice events and continued her study.</string>
+    <string name="story_29">Also, she hosted a couple of huge ice shows in Korea and LA participated by Olympic medalists.</string>
+    <string name="story_30">The season 2010-11 began.</string>
+    <string name="story_31">After making a tough decision to come back to ice, Yuna chose not to compete in the Grand Prix series to focus on the 2011 World Championships. At that time, she was training in LA with her new coach, Peter Oppegard.</string>
+    <string name="story_32">At the 2011 Worlds, Yuna won the first place in the short program with her artistically expressed Giselle.</string>
+    <string name="story_33">Yuna beautifully skated to another masterpiece free program, Homage to Korea, which included Korean folk music, Arirang.</string>
+    <string name="story_34">After the season 2010-11, Yuna actively fulfilled her role as Korean delegation by promoting PyeongChang as an athlete ambassador and an Olympic champion.</string>
+    <string name="story_35">She was one of the eight Korean delegates who appeared before the July 6 IOC conference and delivered a presentation for Pyeongchang, which won the hosting rights over other rival cities.</string>
+    <string name="story_36">In May 2011, Yuna began to host a TV program called Kim Yuna\'s Kiss and Cry. The program portrayed the challenging process of ten popular entertainers as they learned how to figure skate from professional skaters.</string>
+    <string name="story_37">On July 2012, Yuna made an announcement</string>
+    <string name="story_38">that she would skate competitively in the 2012-13 season, with the ultimate goal of skating in the 2014 Winter Olympics. Yuna started training with her childhood coaches Shin Hye-sook and Ryu Jong-hyeon.</string>
+    <string name="story_39">To earn the minimum score required for Championship events, Yuna skated in the NRW Trophy in Germany, where she won the first place with new beautifully choreographed programs, the Kiss of the Vampire and Les Misérables.</string>
+    <string name="story_40">In January 2013, Yuna competed in the Korean Championships to pick herself a spot for the Worlds, and she placed the first by showing masterpieces to her home fans.</string>
+    <string name="story_41">With two victories, Yuna headed to London, Canada for the Worlds.</string>
+    <string name="story_42">As usual, Yuna\'s short program was spectacular enough to place her in the first place. Her jumps were huge and solid and her artistic presentation skills were fantastic.</string>
+    <string name="story_43">She also won the free skate after executing a clean long program and earning 148.34 points. Her technical score of 74.73 and her presentation of 73.61 were both the highest of the night, and she was also the only skater of the competition to get tens in her program components.</string>
+    <string name="story_44">Totaling 218.31 points overall Yuna claimed her second world title, surpassing the rest of the competitors by 20.42 points, which was the largest difference between gold and silver in the nine years the ISU Judging System had been used in the World Championships.</string>
+    <string name="story_45">2013-14, the last competitive season for Yuna began.</string>
+    <string name="story_46">For the Olympic season, Yuna chose Send in the Clowns as her short program and Adiós Nonino for her free program.</string>
+    <string name="story_47">After skipping the Grand Prix events due to an injury, Yuna competed in Golden Spin of Zagreb in Croatia where she placed first. Then she won another gold medal in the Korean Championships.</string>
+    <string name="story_48">Feburary 19, 2014. Sochi, Russia.</string>
+    <string name="story_49">Yuna placed first after flawlessly performing her beautiful short program. Having to skate early in the competition was not a problem at all for Yuna.</string>
+    <string name="story_50">The next day, Yuna performed another gorgeous free program which deserves a gold medal. Regardless of the color of the medal, Yuna\'s free program performance was the best of all that night.</string>
+    <string name="story_51">Although Sochi Olympics marked the end of her competitive skating career, she left a great legacy no one ever can do.</string>
+    <string name="story_52">Yuna is the first South Korean figure skater to win a medal at an ISU Junior or Senior Grand Prix event, ISU Championship, and the Olympic Games. She is the first female skater to win the Olympic Games, the World Championships, the Four Continents Championships and the Grand Prix Final.</string>
+    <string name="story_53">She is the current record holder for ladies in the free skating and the combined total under the ISU Judging System. She has broken world record scores 11 times under the ISU Judging System since 2007, eight of which being records she herself set.</string>
+    <string name="story_54">She is also the first female skater to surpass the 140-point and 150-point free skating mark and the 200-point total mark under the ISU Judging System. Throughout her entire career, Yuna had never finished a competition off the podium.</string>
+    <string name="story_55">A lot of junior skaters in Korea are now following the footsteps of Yuna who opened the door of opportunity for her juniors.</string>
+    <string name="story_56">Off the ice, Yuna has been participating in a lot of humanitarian activities as UNICEF Goodwill Ambassador.</string>
+    <string name="story_57">Happy skater, Queen Yuna</string>
+    <string name="story_58">Thank you</string>
+
+    <!-- Web Search -->
+    <string name="web_search_title">Search Yuna on the Web</string>
+    <string name="search_step_one">Select a keyword</string>
+    <string name="search_step_two">Choose a keyword</string>
+    <string name="search_step_three">Tap a search engine</string>
+    <string name="search_type_article">News Articles</string>
+    <string name="search_type_web">Web Search</string>
+    <string name="search_news_unavailable">News search is not supported on %1$s.</string>
+
+    <string name="search_youtube">YouTube</string>
+    <string name="search_google">Google</string>
+    <string name="search_daum">Daum</string>
+    <string name="search_naver">Naver</string>
+    <string name="search_bing">Bing</string>
+    <string name="search_nate">Nate</string>
+
+    <string-array name="search_keyword">
+        <item>Yuna Kim</item>
+        <item>김연아</item>
+    </string-array>
+
+    <string-array name="search_keyword_value">
+        <item>김연아</item>
+        <item>Yuna%20Kim</item>
+    </string-array>
+
+    <string name="rate_title">Rate YunaTube!</string>
+    <string name="rate_content">If you like YunaTube, can you quickly rate this app on Play Store?</string>
+    <string name="rate_later">I will rate later</string>
 </resources>

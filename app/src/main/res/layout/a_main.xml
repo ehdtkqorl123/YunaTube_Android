@@ -1,0 +1,118 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/theme_primary_light"
+                tools:context=".ui.main.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/main_menu"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:onClick="onClick"
+            android:tag="0">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/menu_image_padding"
+                android:src="@drawable/menu_home"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="1"
+                android:padding="@dimen/menu_image_padding"
+                android:src="@drawable/menu_home_on"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:onClick="onClick"
+            android:tag="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/menu_image_padding"
+                android:src="@drawable/menu_yuna"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0"
+                android:padding="@dimen/menu_image_padding"
+                android:src="@drawable/menu_yuna_on"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:onClick="onClick"
+            android:tag="2">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/menu_image_padding"
+                android:src="@drawable/menu_video"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0"
+                android:padding="@dimen/menu_image_padding"
+                android:src="@drawable/menu_video_on"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:onClick="onClick"
+            android:tag="3">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/menu_image_padding"
+                android:src="@drawable/menu_photo"/>
+
+            <ImageView
+                android:id="@+id/main_home"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0"
+                android:padding="@dimen/menu_image_padding"
+                android:src="@drawable/menu_photo_on"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/veil"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:alpha="0.85"
+        android:background="@color/white"
+        android:visibility="gone"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/main_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/main_menu"/>
+
+</RelativeLayout>

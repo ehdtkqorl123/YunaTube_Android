@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?selectableItemBackground"
+    android:onClick="onInstaClicked">
+
+    <ca.paulshin.yunatube.widgets.SquareImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:transitionName="insta"/>
+
+    <ImageView
+        android:id="@+id/insta_video_play"
+        android:layout_width="@dimen/main_instagram_video_icon_dimen"
+        android:layout_height="@dimen/main_instagram_video_icon_dimen"
+        android:layout_gravity="top|right"
+        android:src="@drawable/instagram_play"/>
+</FrameLayout>

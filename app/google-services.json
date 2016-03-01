@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_id": "api-project-848643795806",
+    "project_number": "848643795806",
+    "name": "YunaTube"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:848643795806:android:99d0acfa6ff00321",
+        "client_id": "android:ca.paulshin.yunatube",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "ca.paulshin.yunatube"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "848643795806-tsj44l98egdro2ukbte6bbanlsm718i2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ca.paulshin.yunatube",
+            "certificate_hash": "641016DF373638DA44F797571E2AC88BAD5A6155"
+          }
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-39447963-1"
+          }
+        },
+        "cloud_messaging_service": {
+          "status": 2,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 1
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}

@@ -9,14 +9,11 @@ import android.os.IBinder;
 
 import javax.inject.Inject;
 
-import rx.Observer;
-import rx.Subscription;
-import rx.schedulers.Schedulers;
-import timber.log.Timber;
-import ca.paulshin.yunatube.BoilerplateApplication;
-import ca.paulshin.yunatube.data.model.Ribot;
+import ca.paulshin.yunatube.YTApplication;
 import ca.paulshin.yunatube.util.AndroidComponentUtil;
 import ca.paulshin.yunatube.util.NetworkUtil;
+import rx.Subscription;
+import timber.log.Timber;
 
 public class SyncService extends Service {
 
@@ -35,7 +32,7 @@ public class SyncService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        BoilerplateApplication.get(this).getComponent().inject(this);
+        YTApplication.get(this).getComponent().inject(this);
     }
 
     @Override
@@ -50,26 +47,26 @@ public class SyncService extends Service {
         }
 
         if (mSubscription != null && !mSubscription.isUnsubscribed()) mSubscription.unsubscribe();
-        mSubscription = mDataManager.syncRibots()
-                .subscribeOn(Schedulers.io())
-                .subscribe(new Observer<Ribot>() {
-                    @Override
-                    public void onCompleted() {
-                        Timber.i("Synced successfully!");
-                        stopSelf(startId);
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        Timber.w(e, "Error syncing.");
-                        stopSelf(startId);
-
-                    }
-
-                    @Override
-                    public void onNext(Ribot ribot) {
-                    }
-                });
+//        mSubscription = mDataManager.syncRibots()
+//                .subscribeOn(Schedulers.io())
+//                .subscribe(new Observer<Ribot>() {
+//                    @Override
+//                    public void onCompleted() {
+//                        Timber.i("Synced successfully!");
+//                        stopSelf(startId);
+//                    }
+//
+//                    @Override
+//                    public void onError(Throwable e) {
+//                        Timber.w(e, "Error syncing.");
+//                        stopSelf(startId);
+//
+//                    }
+//
+//                    @Override
+//                    public void onNext(Ribot ribot) {
+//                    }
+//                });
 
         return START_STICKY;
     }

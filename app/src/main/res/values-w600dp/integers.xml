@@ -1,0 +1,5 @@
+<resources>
+    <integer name="photo_sections_columns">4</integer>
+    <integer name="photos_columns">4</integer>
+    <integer name="insta_load_count">8</integer>
+</resources>

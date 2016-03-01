@@ -1,0 +1,75 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:layout_width="match_parent"
+             android:layout_height="92dp"
+             android:layout_marginBottom="@dimen/main_layout_inner_padding"
+             android:layout_marginTop="@dimen/main_layout_inner_padding"
+             android:background="@null"
+             android:clickable="true"
+             android:foreground="?selectableItemBackground"
+             android:orientation="horizontal">
+
+    <ca.paulshin.yunatube.widgets.BezelImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="165dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:scaleType="centerCrop"
+        app:maskDrawable="@drawable/bezel_left_round_background_mask"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="164dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <ca.paulshin.yunatube.widgets.BezelImageView
+            android:id="@+id/bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:scaleType="centerCrop"
+            android:src="@color/data_item_background_light"
+            app:maskDrawable="@drawable/bezel_right_round_background_mask"/>
+
+        <ImageView
+            android:id="@+id/overflow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right|top"
+            android:padding="@dimen/main_layout_inner_padding"
+            android:src="@drawable/ic_action_overflow"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/main_layout_padding"
+            android:layout_marginRight="@dimen/main_layout_inner_padding"
+            android:layout_toStartOf="@id/overflow"
+            android:layout_toLeftOf="@id/overflow"
+            android:fontFamily="@string/font_fontFamily_medium"
+            android:paddingTop="@dimen/main_layout_inner_padding"
+            android:text="Thank you, Yuna!d"
+            android:textColor="@color/body_text_1"
+            android:textSize="@dimen/text_size_medium"/>
+
+        <TextView
+            android:id="@+id/stitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/title"
+            android:layout_alignLeft="@id/title"
+            android:layout_below="@+id/title"
+            android:layout_toStartOf="@id/overflow"
+            android:layout_toLeftOf="@id/overflow"
+            android:text="2014 All That Skate"
+            android:textColor="@color/body_text_2"
+            android:textSize="@dimen/text_size_small"/>
+    </RelativeLayout>
+</FrameLayout>

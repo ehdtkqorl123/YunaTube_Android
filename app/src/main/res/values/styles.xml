@@ -1,9 +1,261 @@
 <resources>
+    <style name="BaseAppTheme" parent="android:Theme.Material.Light">
+        <!-- enable window content transitions -->
+        <item name="android:windowContentTransitions">true</item>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primary_dark</item>
-        <item name="colorAccent">@color/accent</item>
+        <!-- specify enter and exit transitions -->
+        <item name="android:windowEnterTransition">@android:transition/explode</item>
+        <item name="android:windowExitTransition">@android:transition/explode</item>
+
+        <!-- specify shared element transitions -->
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/change_image_transform</item>
+        <item name="android:windowSharedElementExitTransition">
+            @transition/change_image_transform</item>
     </style>
 
+    <!-- Root styles that vary by API level -->
+    <!-- Disable RTL support on older devices -->
+    <!-- Prevents crash on certain devices to namespace conflict -->
+    <style name="FrameworkRoot.Theme" parent="Theme.AppCompat.Light"/>
+
+    <style name="FrameworkRoot.Widget" parent="Theme.AppCompat"/>
+
+    <style name="Theme" parent="FrameworkRoot.Theme" /> <!-- doesn't contain the pre-L code from the values/styles.xml -->
+
+    <style name="Theme.YunaTube.Base" parent="Theme">
+        <item name="actionBarIconColor">#fff</item>
+        <item name="actionBarInsetStart">@dimen/keyline_2</item>
+        <item name="homeAsUpIndicator">@drawable/ic_up</item>
+        <item name="spinnerBarInsetStart">@dimen/keyline_2_minus_16dp</item>
+        <item name="popupItemBackground">?android:selectableItemBackground</item>
+        <item name="photoItemForeground">?android:attr/selectableItemBackground</item>
+        <item name="photoItemForegroundBorderless">
+            ?android:attr/selectableItemBackgroundBorderless
+        </item>
+
+        <item name="colorPrimary">@color/theme_primary</item>
+        <item name="colorAccent">@color/theme_accent_1</item>
+
+        <item name="android:textColorLink">@color/theme_accent_2</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_up</item>
+
+        <item name="android:popupMenuStyle">@style/Widget.YunaTube.PopupMenu</item>
+        <item name="android:listPopupWindowStyle">@style/Widget.YunaTube.PopupMenu</item>
+        <item name="android:dropDownListViewStyle">@style/Widget.YunaTube.ListView.DropDown</item>
+        <item name="android:textAppearanceLargePopupMenu">@style/TextAppearance.LargePopupMenu
+        </item>
+
+        <item name="searchViewStyle">@style/Widget.YunaTube.SearchView</item>
+    </style>
+
+    <style name="Theme.YunaTube.Fullscreen" parent="Theme.YunaTube.Base">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="Widget.YunaTube.SearchView" parent="Widget.AppCompat.SearchView"/>
+
+    <style name="Theme.YunaTube" parent="Theme.YunaTube.Base">
+        <item name="popupItemBackground">@drawable/popup_item_background</item>
+        <item name="photoItemForeground">@drawable/photo_item_foreground</item>
+        <item name="photoItemForegroundBorderless">@drawable/photo_item_foreground_borderless</item>
+
+        <item name="android:navigationBarColor">#000</item>
+        <item name="android:statusBarColor">?colorPrimaryDark</item>
+
+        <item name="android:alertDialogTheme">@style/Theme.YunaTube.AlertDialog</item>
+    </style>
+
+    <style name="Theme.YunaTube.WithNavDrawer" parent="Theme.YunaTube"/>
+
+    <style name="Theme.YunaTube.Widget" parent="FrameworkRoot.Widget">
+        <item name="android:popupMenuStyle">@style/Widget.YunaTube.PopupMenu</item>
+        <item name="android:listPopupWindowStyle">@style/Widget.YunaTube.PopupMenu</item>
+        <item name="android:dropDownListViewStyle">@style/Widget.YunaTube.ListView.DropDown</item>
+        <item name="android:textAppearanceLargePopupMenu">@style/TextAppearance.LargePopupMenu
+        </item>
+    </style>
+
+    <style name="ActionBarThemeOverlay" parent="">
+        <item name="android:textColorPrimary">#fff</item>
+        <item name="colorControlNormal">?actionBarIconColor</item>
+        <item name="colorControlHighlight">#3fff</item>
+    </style>
+
+    <style name="ActionBarPopupThemeOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="ActionBar.TitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Theme.YunaTube.Welcome" parent="Theme.YunaTube"/>
+
+    <style name="Widget.YunaTube.PopupMenu" parent="Widget.AppCompat.Light.PopupMenu">
+        <item name="android:dropDownSelector">?popupItemBackground</item>
+    </style>
+
+    <style name="Widget.YunaTube.ListView.DropDown" parent="Widget.AppCompat.Light.ListView.DropDown">
+        <item name="android:listSelector">?popupItemBackground</item>
+        <item name="android:divider">@null</item>
+        <item name="android:dividerHeight">0dp</item>
+    </style>
+
+    <style name="TextAppearance.LargePopupMenu" parent="TextAppearance.AppCompat.Widget.PopupMenu.Large">
+        <item name="android:textColor">@color/body_text_1</item>
+    </style>
+
+    <!-- Misc -->
+    <style name="TabIndicator"/>
+
+    <!-- Transparent Action Bar -->
+    <style name="TransparentActionBar" parent="">
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="TranslucentActionBar" parent="">
+        <item name="android:background">@color/translucent_actionbar_background</item>
+    </style>
+
+    <!-- Empty views -->
+    <style name="EmptyText">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">@color/body_text_disabled</item>
+    </style>
+
+    <!-- Body content -->
+    <style name="TextHeader">
+        <item name="android:textSize">@dimen/text_size_large</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@string/font_fontFamily_medium</item>
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textIsSelectable">true</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+
+    <style name="TextHeaderSub">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/body_text_2</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+
+    <style name="TextBody">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="Widget.YunaTube.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edit_text</item>
+        <item name="colorAccent">@color/body_text_1</item>
+    </style>
+
+    <style name="HeaderBar">
+        <item name="android:background">@color/indigo</item>
+        <item name="android:elevation">@dimen/headerbar_elevation</item>
+    </style>
+
+    <!-- Linear Progress Bar -->
+    <style name="LinearProgressBar" parent="SmoothProgressBar">
+        <item name="spb_stroke_separator_length">0dp</item>
+        <item name="spb_sections_count">4</item>
+        <item name="spb_speed">2</item>
+        <item name="spb_interpolator">spb_interpolator_linear</item>
+        <item name="spb_colors">@array/custom_progress_bar</item>
+    </style>
+
+    <!-- Main -->
+    <style name="MoreButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">26dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:background">@drawable/main_more_button_bg</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:text">@string/more</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/body_text_1_inverse</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="TwoWayViewBase">
+        <item name="android:background">#999999</item>
+    </style>
+
+    <style name="FABDialogCardView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">6dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+    </style>
+
+    <style name="FABDialogTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SettingsSectionTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">#dddddd</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:textSize">@dimen/text_size_large</item>
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SettingsItemTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">46dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="ProfileTextView">
+        <item name="android:textSize">@dimen/text_size_large</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:alpha">0</item>
+        <item name="android:fontFamily">serif</item>
+    </style>
+
+    <style name="yuna_bigmenu_title">
+        <item name="android:shadowColor">@color/theme_primary_light</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/main_layout_inner_padding</item>
+        <item name="android:textSize">@dimen/text_size_xlarge</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/theme_primary_dark</item>
+    </style>
+
+    <style name="yuna_bigmenu_desc">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textSize">@dimen/yuna_bigmenu_desc_text_size</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 </resources>

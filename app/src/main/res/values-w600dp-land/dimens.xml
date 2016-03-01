@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="yuna_bigmenu_desc_text_size">@dimen/text_size_xsmall</dimen>
+
+</resources>

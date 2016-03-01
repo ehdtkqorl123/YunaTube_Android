@@ -1,0 +1,342 @@
+<resources>
+    <string name="app_name">연아튜브</string>
+    <string name="lo">2</string>
+    <string name="lang">ko</string>
+
+    <string name="action_settings">환경 설정</string>
+    <string name="action_instagram">인스타그램에서 보기</string>
+    <string name="action_refresh">새로고침</string>
+    <string name="action_share">공유</string>
+    <string name="action_add_faves">즐겨찾기에 추가</string>
+    <string name="action_remove_faves">즐겨찾기에서 제거</string>
+    <string name="action_youtube">유튜브 앱으로 보기</string>
+    <string name="action_download">비디오 다운받기</string>
+    <string name="action_write_message">메시지 남기기</string>
+
+    <!-- Default Messages -->
+    <string name="server_unavailable">앗, 전송 중 이상이 생겼습니다. 나중에 다시 시도해 주세요!</string>
+    <string name="yes">예</string>
+    <string name="no">아니오</string>
+    <string name="ok">확인</string>
+    <string name="cancel">취소</string>
+    <string name="close">닫기</string>
+    <string name="send">보내기</string>
+    <string name="download_video">비디오 다운받기</string>
+    <string name="report_video">차단 영상 신고</string>
+    <string name="is_video_blocked">이 영상이 정말로 차단되었나요?</string>
+    <string name="enter_content">내용을 입력해 주세요</string>
+    <string name="set_username">닉네임을 설정하셔야 글을 남기실 수 있습니다. 환경설정에서 닉네임을 정하시겠습니까?</string>
+    <string name="offline_title">오프라인 상태입니다</string>
+    <string name="offline_desc">네트워크에 연결하면 페이지를 불러올 수 있습니다</string>
+
+    <!-- Main -->
+    <string name="search_hint">연아튜브 검색</string>
+    <string name="one_comment">1개의 댓글</string>
+    <string name="n_comments">%1$d개의 댓글</string>
+    <string name="yuna_fact">오늘의 연아 팩트</string>
+    <string name="instagram">연스타그램</string>
+    <string name="more">더 보기</string>
+    <string name="new_videos">따끈따끈한 영상들</string>
+    <string name="share_via">이 영상을 공유하기</string>
+
+    <!-- FAB -->
+    <string name="fab_menu_web_search">웹에서 연아 검색</string>
+    <string name="fab_menu_faves">즐겨찾기 영상 보기</string>
+    <string name="fab_menu_jukebox">음악 상자</string>
+    <string name="fab_menu_links">패밀리 사이트</string>
+
+    <string name="fab_menu_youtube">유튜브 앱</string>
+    <string name="fab_menu_report">차단영상 신고</string>
+    <string name="fab_menu_share">공유하기</string>
+    <string name="fab_menu_download">다운받기</string>
+    <string name="fab_menu_fave">즐겨찾기 추가</string>
+    <string name="fab_menu_comment">댓글달기</string>
+    <string name="fab_menu_settings">환경 설정</string>
+
+    <!-- Utils -->
+    <string name="created_second">초 전</string>
+    <string name="created_minute">분 전</string>
+    <string name="created_hour">시간 전</string>
+    <string name="created_day">일 전</string>
+    <string name="created_month">달 전</string>
+    <string name="created_year">년 전</string>
+
+    <!-- InstaFeed -->
+    <string name="insta_feed">연스타그램</string>
+
+    <!-- Settings -->
+    <string name="settings">환경 설정</string>
+    <string name="settings_user">사용자</string>
+    <string name="settings_set_username">아이디 설정</string>
+    <string name="settings_app">앱 설정</string>
+    <string name="settings_receive_push">푸쉬 알림 받기</string>
+    <string name="settings_thoughts">평가</string>
+    <string name="settings_feedback">피드백</string>
+    <string name="settings_googleplay">연아튜브 앱을 평가해 주세요!</string>
+    <string name="settings_message">연아튜브는 올림픽 챔피언이자 이쁘고 사랑스러운 피겨 여왕 김연아 선수를 위해 만들어진 앱입니다.\n여왕님 사랑해요! 핡♥ ㅇㅇㄴㄲ!</string>
+    <string name="settings_by">개발: 토론토 승냥이\n일러스트: 아나킨, 2Rion\n손글씨: Nanalogue J</string>
+
+    <string name="feedback_email">paul@paulshin.ca</string>
+    <string name="feedback_subject">연아튜브에 대한 피드백</string>
+    <string name="feedback_text"></string>
+    <string name="feedback_chooser">피드백 보내기</string>
+    <string name="username_set">아이디 설정</string>
+    <string name="username_desc">이 아이디는 유튜브 영상에 댓글을 달거나 연아선수에게 메시지를 남길때 사용됩니다</string>
+    <string name="username_length">최대 10글자까지 사용하실 수 있습니다</string>
+    <string name="username_successful">아이디가 정상적으로 설정되었습니다</string>
+    <string name="username_noname">승냥이</string>
+    <string name="username_must">본인 고유의 아이디를 설정해 주세요</string>
+
+    <string name="notification_canceled">푸쉬 알림 받기가 해제되었습니다</string>
+    <string name="notification_set">푸쉬 알림 받기가 설정되었습니다</string>
+    <string name="version_description">%1$s (%2$s)</string>
+
+    <!-- Search -->
+    <string name="search">동영상 검색</string>
+    <string name="no_search_data">동영상이 없습니다</string>
+
+    <!-- Section -->
+    <string name="video_section">Video Section</string>
+
+    <!-- YouTube -->
+    <string name="error_thumbnail_view">초기화 중 오류 발생: YouTubeThumbnailView (%1$s)</string>
+    <string name="error_player">유튜브 플레이어 초기화 중 오류 발생: (%1$s)</string>
+    <string name="youtube_add_to_my_faves">즐겨찾기+</string>
+    <string name="youtube_remove_from_my_faves">즐겨찾기-</string>
+    <string name="youtube_share_title">이 영상을 공유하기</string>
+    <string name="youtube_share_subject">이 영상을 보신적이 있나요?</string>
+    <string name="youtube_share_text">김연아 선수의 영상을 감상해 보세요! %1$s: http://youtu.be/%2$s #연아튜브 에서</string>
+    <string name="youtube_share_via">#YunaTube #연아튜브 에서</string>
+    <string name="youtube_comment">댓글 남기기</string>
+    <string name="youtube_no_comments">댓글을 남겨주세요.</string>
+    <string name="youtube_wait">댓글들이 로딩된 후 다시 시도해 주세요.</string>
+    <string name="report_title">재생되지 않는 영상 신고하기</string>
+    <string name="report_message">이 영상이 차단되었나요?</string>
+    <string name="report_successful">신고해 주셔서 감사합니다. 이 영상은 다른 영상으로 최대한 신속히 대체하겠습니다.</string>
+    <string name="rotation">회전</string>
+    <string name="rotation_guide">폰이 가로로 회전될때 풀스크린 자동회전 기능을 끄시려면 체크박스를 해제해 주세요. 그러면 누워서도 편하게 감상하실 수 있습니다. 이제 잠은 다잤네~ 웅컁컁</string>
+
+    <!-- Family Pages -->
+    <string name="family_sites">패밀리 사이트</string>
+    <string-array name="family_sites">
+        <item>공식 홈페이지</item>
+        <item>팬 페이지</item>
+        <item>피겨 사이트</item>
+    </string-array>
+
+    <string name="links_official_yunakim">공식 웹사이트</string>
+    <string name="links_official_yunakim_url">www.yunakim.com</string>
+    <string name="links_official_yunakim_desc">올댓 스포츠에 의해 운영되는 연아의 공식 홈페이지입니다.</string>
+    <string name="links_official_yunaaaa">공식 트위터</string>
+    <string name="links_official_yunaaaa_url">www.twitter.com/yunaaaa</string>
+    <string name="links_official_yunaaaa_desc">연아가 직접 글을 쓰고 트윗하는 트위터입니다.</string>
+    <string name="links_official_facebook">페이스북 팬 페이지</string>
+    <string name="links_official_facebook_url">www.facebook.com/pages/Yuna-Kim/53417067377</string>
+    <string name="links_official_facebook_desc">올댓 스포츠에 의해 승인받은, 승냥이들에 의해 운영되는 김연아 공식 페이스북 페이지입니다.</string>
+    <string name="links_official_youtube">공식 유튜브 채널</string>
+    <string name="links_official_youtube_url">www.youtube.com/yunakim</string>
+    <string name="links_official_youtube_desc">연아의 공식 유튜브 채널입니다.</string>
+    <string name="links_official_allthatskate">All That Skate</string>
+    <string name="links_official_allthatskate_url">www.allthatskate.com</string>
+    <string name="links_official_allthatskate_desc">올댓 스케이트 아이스 쇼 홈페이지입니다. 올댓 스포츠에 의해 운영되고 있습니다.</string>
+    <string name="links_official_allthatskate_youtube">All That Skate 유튜브 채널</string>
+    <string name="links_official_allthatskate_youtube_url">www.youtube.com/allthatskate</string>
+    <string name="links_official_allthatskate_youtube_desc">아이스 쇼 영상들이 올라오는 아이스쇼 관련 공식 유튜브 채널입니다.</string>
+    <string name="links_official_allthatskate_twitter">All That Skate Twitter</string>
+    <string name="links_official_allthatskate_twitter_url">www.twitter.com/allthatskate</string>
+    <string name="links_official_allthatskate_twitter_desc">연아의 아이스 쇼에 관한 정보들이 실시간으로 올라오는 공식 트위터입니다.</string>
+    <string name="links_official_allthatsports">All That Sports</string>
+    <string name="links_official_allthatsports_url">www.atsports.co.kr</string>
+    <string name="links_official_allthatsports_desc">연아의 소속사 All That Sports의 공식 홈페이지입니다.</string>
+
+    <string name="links_fan_fevers">피버 스케이팅</string>
+    <string name="links_fan_fevers_url">www.feverskating.com</string>
+    <string name="links_fan_fevers_desc"></string>
+    <string name="links_fan_yunacafe">연아 카페(다음)</string>
+    <string name="links_fan_yunacafe_url">cafe.daum.net/figureyeona</string>
+    <string name="links_fan_yunacafe_desc"></string>
+    <string name="links_fan_yunagall">디씨 연아 갤러리</string>
+    <string name="links_fan_yunagall_url">m.dcinside.com/mylist.php?mygall=yeona</string>
+    <string name="links_fan_yunagall_desc"></string>
+    <string name="links_fan_fsgall">디씨 피겨 스케이팅 갤러리</string>
+    <string name="links_fan_fsgall_url">m.dcinside.com/mylist.php?mygall=figureskating_new</string>
+    <string name="links_fan_fsgall_desc"></string>
+    <string name="links_fan_fsgallbestposts">디씨 피겨갤 개념글 모음</string>
+    <string name="links_fan_fsgallbestposts_url">m.dcinside.com/mylist.php?mygall=figureskating_new&amp;recommend=1</string>
+    <string name="links_fan_fsgallbestposts_desc"></string>
+    <string name="links_fan_allthatyuna">All That Yuna</string>
+    <string name="links_fan_allthatyuna_url">www.allthatyuna.com</string>
+    <string name="links_fan_allthatyuna_desc"></string>
+    <string name="links_fan_yunaforum">연아 포럼</string>
+    <string name="links_fan_yunaforum_url">www.yunaforum.com</string>
+    <string name="links_fan_yunaforum_desc"></string>
+    <string name="links_fan_russia">러시아 연아 포럼</string>
+    <string name="links_fan_russia_url">www.yuna-kim.com</string>
+    <string name="links_fan_russia_desc"></string>
+    <string name="links_fan_china">중국 Tudou 채널</string>
+    <string name="links_fan_china_url">www.tudou.com/home/kimyuna</string>
+    <string name="links_fan_china_desc"></string>
+
+    <string name="links_figureskating_isu">국제 빙상 연맹(ISU)</string>
+    <string name="links_figureskating_isu_url">www.isu.org</string>
+    <string name="links_figureskating_isu_desc">스케이팅에 관한 모든 경기들을 관장하는 국제 기구 ISU의 웹사이트 입니다.</string>
+    <string name="links_figureskating_icenetwork">Ice Network</string>
+    <string name="links_figureskating_icenetwork_url">www.icenetwork.com</string>
+    <string name="links_figureskating_icenetwork_desc">피겨 스케이팅에 관한 뉴스와 정보들이 올라오는 미국 사이트입니다.</string>
+    <string name="links_figureskating_fsu">Figure Skating Universe</string>
+    <string name="links_figureskating_fsu_url">www.fsuniverse.net</string>
+    <string name="links_figureskating_fsu_desc">미국의 피겨스케이팅 포럼입니다.</string>
+    <string name="links_figureskating_golden">Golden Skate</string>
+    <string name="links_figureskating_golden_url">www.goldenskate.com</string>
+    <string name="links_figureskating_golden_desc">미국의 피겨스케이팅 포럼입니다.</string>
+
+    <!-- My Faves -->
+    <string name="my_faves">즐겨찾기</string>
+    <string name="faves_add_success">즐겨찾기에 추가 되었습니다</string>
+    <string name="faves_add_failure">즐겨찾기 추가 중 문제가 발생하였습니다</string>
+    <string name="faves_remove_success">즐겨찾기에서 제거되었습니다</string>
+    <string name="no_faved_data">즐겨찾기에 저장된 동영상이 없습니다</string>
+
+    <!-- Video Section -->
+    <string name="video_section_1">연아의 인사</string>
+    <string name="video_section_2">경기 영상들</string>
+    <string name="video_section_3">아이스 쇼</string>
+    <string name="video_section_4">링크 밖에서</string>
+    <string name="video_section_5">키스 앤 크라이</string>
+    <string name="video_section_6">연아의 노래상자</string>
+    <string name="video_section_7">무한도전</string>
+    <string name="video_section_8">무릎팍 도사</string>
+    <string name="video_section_9">랜덤 영상</string>
+    <string name="random_watch_this">이 동영상을 보시겠습니까?</string>
+    <string name="random_something_else">다른 영상 보기</string>
+    <string name="country_restricted">유튜브 시청 제한</string>
+    <string name="country_restricted_desc">최근 한국 방송사들의 유튜브 영상 정책 변경으로 인해 이 섹션의 영상들은 한국 \'내\'에서 시청이 불가능합니다.\n양해 부탁드립니다.</string>
+
+    <!-- Videos -->
+    <string name="videos">Videos</string>
+    <string name="no_comments">지금 바로 첫 댓글을 남겨보세요!</string>
+
+    <!-- Photos -->
+    <string name="animated_gifs_title">움짤 앨범</string>
+    <string name="photo_saved_success">사진이 연아튜브 앨범에 저장되었습니다</string>
+    <string name="photo_saved_failure">다운로드에 실패했습니다</string>
+    <string name="photo_exists">파일이 이미 앨범에 있습니다</string>
+    <string name="cannot_save_device">이 기기가 이미지 저장을 지원하지 않습니다</string>
+    <string name="download">연아 사진 다운로드</string>
+    <string name="download_in_progress">사진을 다운받고 있습니다</string>
+    <string name="download_complete">다운로드가 완료되었습니다</string>
+    <string name="data_warning_title">데이터 사용 경고</string>
+    <string name="data_warning_content">움짤 파일들의 용량이 크기 때문에 모바일 데이터의 과다 사용 방지를 예방하고 움짤들을 빠르게 보시려면 와이파이 환경에서 사용하세요</string>
+
+    <!-- Survey -->
+    <string name="surveys">승냥승냥 설문코너</string>
+
+    <!-- Yuna -->
+    <string name="story_of_yuna">연아의 이야기</string>
+    <string name="story_of_yuna_desc">안녕, 내 이름은 김연아.\n내 이야기를 들어볼래?</string>
+    <string name="message_to_yuna">연아야 사랑해!</string>
+    <string name="message_to_yuna_desc">연아에게 하고픈 승냥이들의 고백들..\n이곳에서 남겨보세요!</string>
+
+    <string name="q20a20">20문 20답</string>
+    <string name="wiki">위키피디아</string>
+    <string name="programs">프로그램</string>
+    <string name="competitions">대회 기록</string>
+    <string name="awards">수상 및 공로</string>
+    <string name="praises">해외의 평가</string>
+
+    <string name="wiki_url">http://ko.m.wikipedia.org/wiki/김연아</string>
+    <string name="secret">ㅇㅇㄴㄲ ;-)</string>
+    <string name="merong">올~ 이걸 찾으시다니 예리한데요~</string>
+
+    <!-- Story -->
+    <string name="story_alert">느린 인터넷 환경에서는 사진들이 "매우" 천천히 로딩될 수 있습니다.</string>
+    <string name="story_intro">\n여왕 김연아의\n피겨 스케이팅\n인생 스토리</string>
+    <string name="story_1">연아는 1990년 9월 5일 부천에서 태어났다.</string>
+    <string name="story_2">7살인 1996년에 과천시의 실내 빙상장을 찾았다가 스케이트를 타기 시작했고, 연아의 잠재적 능력과 장래성을 알아본 류종현 코치의 권유로 본격적인 피겨 스케이팅 선수 생활을 시작하였다.</string>
+    <string name="story_3">국내외의 노비스 대회에서 여러번 우승을 하면서 일찍부터 재능을 인정받은 연아는 12살에 트리플 점프 5종을 완성하고 2004년에 주니어로 데뷔하면서 주니어 그랑프리를 비롯한 여러 대회에서 우승과 준우승을 하며 더욱 더 두각을 나타내게 되었다. 이는 대한민국 피겨 사상 최고의 성적들이었다.</string>
+    <string name="story_4">2005-06 그랑프리 파이널 프리에서 트리플 플립+트리플 토룹과 더블 악셀+트리플 토룹의 콤비네이션 점프를 포함한 7개의 트리플 점프를 랜딩하며 우승하며 본격적으로 국제무대에서 이름을 각인시켰다.</string>
+    <string name="story_5">네 번째 종합선수권에서 우승을 차지한 후 연아는 2006년 세계선수권에서 177.54점으로 24.19의 큰 점수 차이로 2위를 따돌리고 금메달을 목에 걸었다.</string>
+    <string name="story_6">그리고 연아는 2006-07시즌 시니어 무대에 데뷔한다.</string>
+    <string name="story_7">시니어 데뷔 첫 무대인 스케이트 캐나다에서 3위에 입상했고 프랑스에서 열린 트로피 에릭 봉파르에서는 대한민국 최초로 시니어 대회 우승을 차지했다. 이어 그랑프리 파이널에서는 184.20의 큰 점수로 우승하며 세계를 놀라게 했다.</string>
+    <string name="story_8">그리고... 일본에서 열린 세계선수권 대회.</string>
+    <string name="story_9">연아는 쇼트프로그램에서 록산느의 탱고에 맞춰 연기를 펼쳐, 71.95라는 놀라운 점수로 세계신기록을 수립하면서 쇼트프로그램 1위를 차지했다. 당시 허리부상이었음에도 불구하고 완벽한 연기를 펼쳐 시니어 첫 세계선수권대회에서 신기록을 수립해 전 세계를 놀라게한것이다. 퀸 연아의 시대의 본격적인 시작이었다.</string>
+    <string name="story_10">그때 연아는 점프 요소에서 2점대의 가산점을 받은 세계 최초의 여자 선수였으며 시즌동안 참가한 모든 경기의 쇼트와 프리에서 3회전+3회전 연속 점프를 모두 성공한 유일한 선수였다.</string>
+    <string name="story_11">연아의 2007-08 시즌은 컵 오브 차이나에서 우승하면서 시작되었다.</string>
+    <string name="story_12">컵 오브 러시아에서 연아는 쇼트와 프리 모두를 63.50과 133.70의 점수로 모두 1위를 하며 총합 197.20이라는 큰 점수로 다시 한번 우승을 차지하게 된다. 이때 수립한 프리 스케이팅 점수는 신체점제 도입 이후의 세계 신기록을 경신하게 되었다.</string>
+    <string name="story_13">연아는 이탈리아에서 열린 그랑프리 파이널에서 쇼트에서 1위 프리에서 2위하며 총합 196.83이라는 높은 점수로 대회 2연패를 달성하였다. 이는 미국의 타라 리핀스키와 러시아의 이리나 슬루츠카야에 이어 여자 싱글 사상 세 번째 기록이다. 또한 또한 한 시즌에 그랑프리 시리즈와 파이널에서 모두 우승을 차지한 것도 1995년의 미셸 콴, 2000년의 이리나 슬루츠카야에 이은 역대 세 번째이다.</string>
+    <string name="story_14">그리고 2008년, 아직 고관절 부상이 완치가 안된 상태에서 세계선수권에 참가한 연아는 쇼트 프로그램 연기에서 5위를 하였고, 프리 스케이팅에서는 경기 당일 심해진 부상 통증으로 인하여 진통제 주사를 맞고 경기에 임하면서도 트리플 러츠를 제외한 모든 점프를 성공하는 등의 안정적인 연기를 펼쳐 1위를 하며 동메달을 획득했다.</string>
+    <string name="story_15">그리고 2008-09년 시즌.</string>
+    <string name="story_16">연아는 그랑프리 대회인 스케이트 아메리카와 컵 오브 차이나에서 죽음의 무도와 세헤레자데를 환상적으로 연기하며 모두 금메달을 차지하였다.</string>
+    <string name="story_17">대한민국 고양시에서 개최된 그랑프리 파이널에서 2위를 기록한 연아는 캐나다 밴쿠버에서 열린 사대륙 대회에서 자신이 2007년에 세웠던 쇼트 프로그램 점수의 세계 기록을 경신하며 우승을 차지하게 된다.</string>
+    <string name="story_18">미국 로스앤젤레스에서 개최된 2009년 세계선수권 대회 쇼트 프로그램에서는 모든 점프의 성공, 스핀과 스파이럴에서 레벨 4, 스텝 레벨 3과 가산점 1점을 받는 등 76.12점이라는 사상 유례없는 높은 점수를 받았고, 이로써 4대륙 선수권 대회에서 자신이 세운 세계기록을 다시 경신하게 된다.</string>
+    <string name="story_19">다음날 열린 프리에서는 131.59점을 받아 총점 207.71을 기록하며 자신의 첫 월드 챔피언 타이틀을 획득하게 된다. 4대륙 선수권 대회와 마찬가지로 쇼트 프로그램과 프리스케이팅에서 3회전+3회전 연속 점프를 시도해 쇼트, 프리 모두 성공한 김연아는 이로써 피겨 스케이팅 여자 싱글 선수 사상 최초로 총합 200점의 벽을 넘었다.</string>
+    <string name="story_20">2009년, 올림픽 시즌이 왔다.</string>
+    <string name="story_21">연아는 새 프로그램으로 007 제임스 본드 메들리와 조지 거쉰의 피아노 협주곡 바장조를 선곡하여 모든 이들을 놀라게 하였다.</string>
+    <string name="story_22">첫 대회인 트로피 에릭 봉파르에서 연아는 프리스케이팅과 총점에서 다시 한번 자신의 세계 최고 기록을 경신하며 우승하였다. 뒤이어 참가한 스케이트 아메리카에서는 쇼트프로그램에서 76.28점으로 다시 한번 세계 신기록을 경신하고 종합 우승을 하면서 김연아는 그랑프리 시리즈 7개 대회 연속 우승을 기록하게 된다.</string>
+    <string name="story_23">2010년 2월, 연아가 올림픽 무대에 서게 되는 그날이 드디어 왔다.</string>
+    <string name="story_24">2월 23일, 해외 언론들의 주목과 대한민국 국민들의 기대를 한몸에 받았던 연아는 무결점의 클린 연기를 선보이면서 기술점수 44.70점, 구성점수 33.80점, 합계 78.50점으로 다시 한번 세계기록을 경신하며 쇼트 1위를 기록한다.</string>
+    <string name="story_25">이틀 후, 연아는 프리 스케이팅에서 실수없이 완벽한 연기를 펼쳐 무려 기술점수 78.30점, 구성점수 71.76점, 합계 150.06점을 기록하며 경이로운 총점 228.56점으로 세계 최고 기록을 수립하며 압도적인 점수차로 우승했다.</string>
+    <string name="story_26">이 올림픽 경기로 김연아는 본인이 기존에 보유한 세계 최고기록(쇼트, 프리, 총점)을 3개 모두 경신하였을 뿐만 아니라, 쇼트 기술점수와 프리 기술점수와 구성점수까지 세계 최고기록으로 남게 되었다. 역사상 세계 최고기록으로 2010 밴쿠버 올림픽 피겨 스케이팅 부문 금메달을 획득한 김연아는 대한민국 피겨 스케이팅 사상 최초의 올림픽 메달리스트이자 아시아인으로는 두 번째 금메달리스트가 되었다.</string>
+    <string name="story_27">2010년 밴쿠버 올림픽은 연아에게 있어서 단지 꿈을 이루는 것 외에도 수많은 이들에게 크나큰 영감과 감동이 되었다. 유럽, 미국 언론과 크리스티 야마구치, 카타리나 비트, 미셸 콴을 비롯한 저명한 피겨 인사들도 연아의 우승에 열광했다.</string>
+    <string name="story_28">한달 후 개최된 세계선수권에서 2위로 올림픽 시즌을 마감한 연아는 잠시 휴식을 취하며 학업을 이어갔다.</string>
+    <string name="story_29">또한 한국과 미국 로스앤젤레스에서 여러 올림픽 메달리스트들이 참가하는 All That Skate 아이스쇼를 열기도 했다.</string>
+    <string name="story_30">2010-11년 시즌.</string>
+    <string name="story_31">은퇴를 고민하다 다시 빙상으로 돌아오기로 결정한 연아는 그랑프리 대회에 참가하는 대신 세계선수권에만 집중하게 된다. 새로운 코치인 피터 오피가드와 함께 LA에서 훈련하던 연아는 일본 대지진 참사로 세계선수권이 연기되면서 한국으로 돌아와 태릉선수촌 스케이트장에서 훈련을 해나갔다.</string>
+    <string name="story_32">2011년 모스크바 세계선수권에서 연아는 지젤을 연기하며 쇼트프로그램에서 1위를 한다.</string>
+    <string name="story_33">아리랑 곡조가 들어간 오마쥬 투 코리아에 맞춰 아름답게 연기한 프리 스케이팅에서는 128.59점을 받으며 총합 194.50점을 얻으며 2위를 했다.</string>
+    <string name="story_34">2010-11 시즌 후, 연아는 동계 유스 올림픽 홍보대사에 임명되어 활동하였고 2018년 동계올림픽의 평창 유치 홍보 대사로 활동하며 평창 홍보와 관련한 여러 홍보 활동들을 해 나갔다.</string>
+    <string name="story_35">특히 2011년 7월 7일 남아공 더반에서 열린 국제 올림픽 위원회 총회에서 평창 프레젠테이션을 성공적으로 진행하면서 2018년 동계올림픽의 평창 유치에 큰 기여를 하기도 하였다.</string>
+    <string name="story_36">2011년 5월에는 자신의 이름을 걸고 방영된 김연아의 키스 앤 크라이라는 프로그램을 진행했는데, 이를 통해 연예인들이 피겨 스케이팅을 배우고 이해하고 연기하는 도전 과정을 재미있고 감동적으로 나타내었다.</string>
+    <string name="story_37">2012년 7월, 연아는 기자회견을 열었다.</string>
+    <string name="story_38">2012년 7월 김연아는 소치올림픽까지 현역 연장을 선언하고 세계선수권에 출전하기 위한 최소 기술점수를 얻기 위한 B급대회와 세계선수권 출전권을 얻기위한 국내대회의 출전을 선언했다. 또한, 2012년 10월에는 새로운 코치로 어렸을 때부터 함께했던 신혜숙, 류종현 코치와 함께 할 것을 발표했다.</string>
+    <string name="story_39">그 후 최소 기술점수를 얻기 위해 출전할 B급 대회로 독일의 NRW 트로피에 출전했으며 여기서 새로운 프로그램 뱀파이어의 키스와 레미제라블을 처음 선보였다. 쇼트에서 자신의 밴쿠버 올림픽 구성점을 경신하여 시즌 최고기록을 세운 연아는 프리에서도 고난이도 트리플 점프와 아름다운 스핀 포지션, 레벨 4의 스텝을 선보이며 우승하였다.</string>
+    <string name="story_40">2013년 1월에는 세계선수권 출전권을 위해 종합선수권에 출전하여 한국의 팬들에게 감동적인 연기를 선보였고, 특히 프리 스케이팅에서는 환상적인 무결점 클린연기로 우승을 차지하였다.</string>
+    <string name="story_41">두 번의 우승을 뒤로하고 연아는 캐나다 런던에서 열리는 세계선수권으로 향했다.</string>
+    <string name="story_42">연습 내내 100%의 성공률을 보여주었던 연아는 깔끔한 점프들과 스텝으로 69.97점을 받으며 쇼트 프로그램에서 1위를 하며 굳건한 위치를 재확인했다.</string>
+    <string name="story_43">프리에서는 제일 마지막으로 출전했으면서도 트리플 컴비네이션 점프를 포함한 모든 요소들을 빈틈없이 소화한 연아는 무결점 클린 연기로 9천여명의 관중들로부터 연기가 끝나기 전부터 기립박수를 받았다. 프리 스케이팅 점수 148.34점은 김연아가 가지고 있는 세계신기록 150.06점에 불과 1.72점 부족한 점수이고 합계 점수 218.31점 역시 두 번째로 높은 세계기록이며 세계선수권 역사상 가장 높은 우승 점수이다. 기술 점수에서 모든 요소 요소마다 가산점을 획득했으며, 또한 예술점수 73.61점은 역대 최고 점수를 받았고 여자 선수로는 최초로 4개 부분 9점대를 받았으며 퍼포먼스/수행, 안무/구성 그리고 해석부분에서 만점인 10.0을 9명의 심판 중 3명으로부터(차례로 2회, 1회, 3회) 받았다. 이로서 김연아는 두 번째 세계선수권 우승을 차지하였다.</string>
+    <string name="story_44">연아가 우승함으로써 대한민국은 2014년 동계 올림픽 피겨 스케이팅 여자 싱글 부분과 2014 피겨스케이팅 세계선수권 여자 싱글에서도 티켓 3장을 획득하였다.</string>
+    <string name="story_45">2013년, 연아의 현역 마지막 시즌이 시작되었다.</string>
+    <string name="story_46">올림픽 시즌을 위해 연아가 발표한 프로그램은 어릿광대를 보내주오(Send in the Clowns)와 아디오스 노니노였다.</string>
+    <string name="story_47">연아는 중족골 부상으로 인해 그랑프리 시리즈에 불참하는 대신 회복 이후 대회 감각을 유지하기 위해 크로아티아 골든 스핀 오브 자그레브 대회에 출전했고 여기서 우승했다. 뒤이어 다시 한번 종합선수권에 참가한 연아는 홈팬들 앞에서 다시 한번 감동의 연기를 선보이고 우승하며 올림픽을 위한 최종 리허설을 성공적으로 마쳤다.</string>
+    <string name="story_48">2014년 2월 19일, 러시아 소치.</string>
+    <string name="story_49">연아는 쇼트 프로그램에서 이른 조에 배정되었지만 빈틈없는 완벽하고 환상적인 연기를 선보이며 1위를 하고 마지막 조의 마지막 순번을 배정받게 된다.</string>
+    <string name="story_50">그리고 다음날, 다시 한번 러시아의 심한 압박속에서도 환상적인 연기를 선보이며 클린 프로그램을 수행하게 된다. 메달 색에 상관없이 사상 최악의 판정으로 논란속에 끝난 프리 프로그램 경기 당일 기술적 그리고 예술적으로 완벽했던 최고의 프리 스케이팅을 보여준 선수는 연아가 유일했다.</string>
+    <string name="story_51">소치 올림픽을 끝으로 현역 생활에 마침표를 찍은 연아는 선수생활을 떠나면서 전무후무한 유산을 남겼다.</string>
+    <string name="story_52">연아는 국제빙상연맹가 주최한 주니어와 시니어 그랑프리 이벤트, 세계선수권과 올림픽 대회에서 메달을 따낸 첫 한국인이다. 또한 연아는 올림픽, 세계선수권, 사대륙선수권과 그랑프리 파이널에서 우승한 첫 여성 스케이터이다.</string>
+    <string name="story_53">현재 연아는 신채점제 도입 이후 프리 스케이팅과 종합 점수에서 세계기록을 보유하고 있으며 2007년 신채점 도입 이후로 세계 기록을 11번이나 경신하였다. 이중 8번은 자기 자신의 기록이었다.</string>
+    <string name="story_54">또한 연아는 프리 스케이팅 점수에서 140점대와 150점대를, 종합 점수애서 200점대를 돌파한 첫 여성 스케이터이며 또한, 2014년 동계 올림픽까지 출전한 모든 대회에서 3위 내에 입상하여 피겨 스케이팅 여자 싱글 부문에서 최초로 올포디움(All Podium)이란 대기록을 최초로 달성했다.</string>
+    <string name="story_55">연아 이후 수많은 어린 스케이터들은 오늘도 열심히 연아의 발자취를 따라 가고 있다. 연아도 링크에서 후배들에게 끊임없는 조언과 관심으로 이끌어주고 있다.</string>
+    <string name="story_56">링크 밖에서는 유니세프 국제 친선대사로 활동하며 여러 인도주의적인 활동과 기여를 하며 많은 사람들에게 감동과 영감을 주고 있다.</string>
+    <string name="story_57">행복한 스케이터 김연아</string>
+    <string name="story_58">감사합니다</string>
+
+    <!-- Yuna on Web -->
+    <string name="web_search_title">웹에서 연아 검색</string>
+    <string name="search_step_one">무엇을 검색하시고 싶으신가요?</string>
+    <string name="search_step_two">검색어를 선택하세요</string>
+    <string name="search_step_three">검색 엔진을 살짝 누르세요</string>
+    <string name="search_type_article">기사 검색</string>
+    <string name="search_type_web">웹 검색</string>
+    <string name="search_news_unavailable">%1$s는 뉴스 검색을 지원하지 않습니다.</string>
+
+    <string name="search_youtube">YouTube</string>
+    <string name="search_google">Google</string>
+    <string name="search_daum">다음</string>
+    <string name="search_naver">네이버</string>
+    <string name="search_bing">Bing</string>
+    <string name="search_nate">네이트</string>
+
+    <string-array name="search_keyword">
+        <item>김연아</item>
+        <item>Yuna Kim</item>
+    </string-array>
+
+    <string-array name="search_keyword_value">
+        <item>김연아</item>
+        <item>Yuna%20Kim</item>
+    </string-array>
+
+    <string name="rate_title">연아튜브 평점 남기기</string>
+    <string name="rate_content">연아튜브가 맘에 드셨다면 잠시만 플레이 스토어에서 평점을 남기시겠어요?</string>
+    <string name="rate_later">다음에 하기</string>
+</resources>

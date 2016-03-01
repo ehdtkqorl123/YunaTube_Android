@@ -1,0 +1,5 @@
+<resources>
+    <integer name="photo_sections_columns">6</integer>
+    <integer name="photos_columns">6</integer>
+    <integer name="hide_video_fab">1</integer>
+</resources>

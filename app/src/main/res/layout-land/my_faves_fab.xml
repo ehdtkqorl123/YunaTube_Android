@@ -1,0 +1,21 @@
+<ca.paulshin.yunatube.widgets.FABFrameLayout
+    android:id="@+id/favorite"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/faves_fab_height_no_padding"
+    android:layout_height="@dimen/faves_fab_height_no_padding"
+    android:layout_marginLeft="@dimen/keyline_1"
+    android:background="@drawable/faves_fab_ripple_background_off"
+    android:clickable="true"
+    android:elevation="@dimen/fab_elevation"
+    android:focusable="true">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:contentDescription="@null"
+        android:scaleType="center"
+        android:src="@drawable/ic_favorite_tiny"/>
+
+</ca.paulshin.yunatube.widgets.FABFrameLayout>
+

@@ -1,13 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="horizontal_margin">16dp</dimen>
-    <dimen name="vertical_margin">16dp</dimen>
 
-    <dimen name="text_headline">24sp</dimen>
-    <dimen name="text_large_title">22sp</dimen>
-    <dimen name="text_title">20sp</dimen>
-    <dimen name="text_large_body">18sp</dimen>
-    <dimen name="text_body">16sp</dimen>
-    <dimen name="text_small_body">14sp</dimen>
+    <dimen name="main_layout_padding">8dp</dimen>
+    <dimen name="main_layout_inner_padding">4dp</dimen>
+    <dimen name="main_layout_half_inner_padding">2dp</dimen>
+
+    <dimen name="menu_image_padding">10dp</dimen>
+
+    <!-- body content -->
+    <dimen name="element_spacing_normal">8dp</dimen>
+    <dimen name="content_padding_normal">16dp</dimen>
+    <dimen name="text_size_xsmall">10sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_medium">14sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_xlarge">20sp</dimen>
+    <dimen name="text_size_diff_large_small">6sp</dimen>
+    <dimen name="avatar_image_size">40dp</dimen>
+
+    <!-- Widget -->
+    <dimen name="widget_margin">0dp</dimen>
+
+    <!-- Action Bar auto-hide-on-scroll behavior parameters -->
+    <dimen name="action_bar_auto_hide_min_y">152dp</dimen>
+    <dimen name="action_bar_auto_hide_sensivity">48dp</dimen>
+    <dimen name="swipe_refresh_progress_bar_start_margin">-40dp</dimen>
+    <dimen name="swipe_refresh_progress_bar_end_margin">16dp</dimen>
+    <dimen name="browse_sessions_anim_amount">400dp</dimen>
+    <dimen name="butter_bar_height">64dp</dimen>
+    <dimen name="filterbar_height">48dp</dimen>
+    <dimen name="tag_color_dot_size">12dp</dimen>
+    <dimen name="keyline_1">16dp</dimen>
+    <dimen name="keyline_1_minus_8dp">8dp</dimen>
+    <dimen name="keyline_2">72dp</dimen>
+    <dimen name="keyline_2_minus_16dp">56dp</dimen>
+    <dimen name="keyline_2_session_detail">@dimen/keyline_2</dimen>
+    <dimen name="fab_elevation">8dp</dimen>
+    <dimen name="fab_press_translation_z">6dp</dimen>
+    <dimen name="headerbar_elevation">4dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="card_corner_radius">2dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Twoway -->
+    <dimen name="staggered_child_small">120dp</dimen>
+    <dimen name="staggered_child_medium">230dp</dimen>
+    <dimen name="staggered_child_large">310dp</dimen>
+    <dimen name="staggered_child_xlarge">400dp</dimen>
+
+    <!-- FAB -->
+    <dimen name="fab_size_normal">56dp</dimen>
+    <dimen name="fab_size_mini">40dp</dimen>
+    <dimen name="fab_icon_size">24dp</dimen>
+    <dimen name="fab_plus_icon_size">14dp</dimen>
+    <dimen name="fab_plus_icon_stroke">2dp</dimen>
+    <dimen name="fab_shadow_offset">3dp</dimen>
+    <dimen name="fab_shadow_radius">9dp</dimen>
+    <dimen name="fab_stroke_width">0.5dp</dimen>
+    <dimen name="fab_actions_spacing">16dp</dimen>
+    <dimen name="fab_scroll_threshold">4dp</dimen>
+
+    <dimen name="images_text_size">@dimen/text_size_medium</dimen>
+    <dimen name="videos_text_size">@dimen/text_size_medium</dimen>
+    <dimen name="faves_fab_height_no_padding">56dp</dimen>
+    <dimen name="faves_fab_height">72dp</dimen>
+
+    <dimen name="fab_padding_y">16px</dimen>
+
+    <dimen name="main_instagram_video_icon_dimen">30dp</dimen>
+
+    <!-- Story -->
+    <dimen name="story_margin">24dp</dimen>
+    <dimen name="story_margin_half">12dp</dimen>
+    <dimen name="story_title_text_size">36sp</dimen>
+    <dimen name="story_text_size">@dimen/text_size_xlarge</dimen>
+    <dimen name="yuna_bigmenu_desc_text_size">@dimen/text_size_medium</dimen>
+
+    <!-- Video -->
+    <dimen name="detail_backdrop_height">256dp</dimen>
 
 </resources>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff">
+
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/collections"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/player"
+        android:scrollbars="vertical"/>
+
+    <FrameLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/player">
+
+        <ProgressBar
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/none"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/player"
+        android:gravity="center"
+        android:text="@string/no_comments"
+        android:textSize="@dimen/text_size_medium"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/veil"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/player"
+        android:alpha="0.85"
+        android:background="@color/white"
+        android:visibility="gone"/>
+
+    <include layout="@layout/p_video_fab"/>
+
+    <RelativeLayout
+        android:id="@+id/comment_window"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/message_background"
+        android:gravity="left"
+        android:orientation="vertical"
+        android:padding="4dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/my_username"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="4dp"
+            android:text="UserName"
+            android:textColor="@color/body_text_1_inverse"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="4dp"
+            android:layout_marginRight="4dp"
+            android:gravity="center_vertical"
+            android:text="@string/close"
+            android:textAllCaps="true"
+            android:textColor="@color/body_text_1_inverse"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginRight="12dp"
+            android:layout_toLeftOf="@id/close"
+            android:gravity="center_vertical"
+            android:text="@string/send"
+            android:textAllCaps="true"
+            android:textColor="@color/body_text_1_inverse"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/my_username"
+            android:background="@drawable/input_box_bg"
+            android:gravity="top"
+            android:maxLength="140"
+            android:maxLines="4"
+            android:padding="4dp"
+            android:textSize="@dimen/text_size_medium"/>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,154 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              tools:context="ca.paulshin.yunatube.ui.main.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/notice_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/main_layout_inner_padding"
+        android:orientation="horizontal">
+
+        <ca.paulshin.yunatube.widgets.SquareImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/main_notice_image"/>
+
+        <TextView
+            android:id="@+id/notice_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="2dp"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/main_item_box_bg"
+            android:gravity="center_vertical"
+            android:padding="4dp"
+            android:textColor="@color/body_text_1"
+            android:textSize="@dimen/text_size_small"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/main_layout_inner_padding">
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/input_box_bg"
+            android:hint="@string/search_hint"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:maxLength="12"
+            android:paddingLeft="36dp"
+            android:paddingRight="@dimen/main_layout_padding"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="12dp"
+            android:src="@drawable/ic_search"/>
+
+        <ImageButton
+            android:id="@+id/search_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ic_search_clear"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/fact_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/main_layout_inner_padding"
+        android:layout_marginTop="@dimen/main_layout_padding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:gravity="center_vertical"
+            android:text="@string/yuna_fact"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/fact_more"
+            style="@style/MoreButton"
+            android:text="@string/more"/>
+
+        <ca.paulshin.yunatube.widgets.BezelImageView
+            android:id="@+id/fact_bg"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/fact_more"
+            android:layout_marginTop="@dimen/main_layout_inner_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/fact_bg"
+            app:maskDrawable="@drawable/bezel_background_mask"/>
+
+        <!-- Shadow: http://stackoverflow.com/questions/3297437/shadow-effect-for-a-text-in-android -->
+        <TextView
+            android:id="@+id/fact_text"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/fact_more"
+            android:gravity="center"
+            android:lines="4"
+            android:padding="4dp"
+            android:shadowColor="@color/text_shadow_white"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="Having been together as your choreographer is one of the best experience in my life\n- David Wilson"
+            android:textColor="@color/body_text_1"
+            android:textSize="@dimen/text_size_medium"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:layout_marginBottom="@dimen/main_layout_inner_padding"
+        android:layout_marginTop="@dimen/main_layout_inner_padding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/instagram"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/insta_more"
+            style="@style/MoreButton"
+            android:layout_alignParentEnd="true"
+            android:text="@string/more"/>
+    </RelativeLayout>
+
+    <include
+        layout="@layout/p_main_instagram"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:layout_marginTop="@dimen/main_layout_padding"
+        android:gravity="center_vertical"
+        android:text="@string/new_videos"
+        android:textAllCaps="true"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"/>
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Yuna -->
+    <string name="story_of_yuna">Story of Queen Yuna</string>
+    <string name="story_of_yuna_desc">Hi, my name is Yuna Kim.\nDo you want to listen to my story?</string>
+    <string name="message_to_yuna">Yuna, I ♥ You!</string>
+    <string name="message_to_yuna_desc">Leave your love message for Yuna.\nLet\'s make Yuna smile now! :)</string>
+
+</resources>

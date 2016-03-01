@@ -7,24 +7,24 @@ import com.squareup.otto.Bus;
 
 import javax.inject.Singleton;
 
-import dagger.Component;
 import ca.paulshin.yunatube.data.DataManager;
 import ca.paulshin.yunatube.data.SyncService;
 import ca.paulshin.yunatube.data.local.DatabaseHelper;
 import ca.paulshin.yunatube.data.local.PreferencesHelper;
-import ca.paulshin.yunatube.data.remote.RibotsService;
 import ca.paulshin.yunatube.injection.ApplicationContext;
 import ca.paulshin.yunatube.injection.module.ApplicationModule;
+import ca.paulshin.yunatube.receiver.ConnectivityChangeReceiver;
+import dagger.Component;
 
 @Singleton
 @Component(modules = ApplicationModule.class)
 public interface ApplicationComponent {
 
     void inject(SyncService syncService);
+    void inject(ConnectivityChangeReceiver connectivityChangeReceiver);
 
     @ApplicationContext Context context();
     Application application();
-    RibotsService ribotsService();
     PreferencesHelper preferencesHelper();
     DatabaseHelper databaseHelper();
     DataManager dataManager();

@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_share"
+        android:title="@string/action_share"/>
+
+    <item
+        android:id="@+id/action_download"
+        android:title="@string/action_download"/>
+
+    <item
+        android:id="@+id/action_youtube"
+        android:title="@string/action_youtube"/>
+
+    <item
+        android:id="@+id/action_add_faves"
+        android:title="@string/action_add_faves"/>
+
+    <item
+        android:id="@+id/action_remove_faves"
+        android:title="@string/action_remove_faves"/>
+</menu>

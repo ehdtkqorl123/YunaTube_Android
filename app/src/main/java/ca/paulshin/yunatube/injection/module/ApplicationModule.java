@@ -7,10 +7,12 @@ import com.squareup.otto.Bus;
 
 import javax.inject.Singleton;
 
+import ca.paulshin.yunatube.data.remote.FlickrService;
+import ca.paulshin.yunatube.data.remote.InstaService;
+import ca.paulshin.yunatube.data.remote.YunaTubeService;
+import ca.paulshin.yunatube.injection.ApplicationContext;
 import dagger.Module;
 import dagger.Provides;
-import ca.paulshin.yunatube.data.remote.RibotsService;
-import ca.paulshin.yunatube.injection.ApplicationContext;
 
 /**
  * Provide application-level dependencies.
@@ -42,8 +44,19 @@ public class ApplicationModule {
 
     @Provides
     @Singleton
-    RibotsService provideRibotsService() {
-        return RibotsService.Creator.newRibotsService();
+    YunaTubeService provideYunaTubeService() {
+        return YunaTubeService.Creator.newYunaTubeService();
     }
 
+    @Provides
+    @Singleton
+    InstaService provideInstaService() {
+        return InstaService.Creator.newInstaService();
+    }
+
+    @Provides
+    @Singleton
+    FlickrService provideFlickrService() {
+        return FlickrService.Creator.newFlickrService();
+    }
 }

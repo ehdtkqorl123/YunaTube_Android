@@ -1,0 +1,1684 @@
+<ca.paulshin.yunatube.widgets.discrollview.DiscrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:discrollve="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ca.paulshin.yunatube.widgets.discrollview.DiscrollViewContent
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightblue">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:background="#b3e5fc"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/story_0"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/vertical_gray_gradient_bg"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:paddingBottom="@dimen/story_margin"
+                android:shadowColor="@color/dark_gray"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="@string/story_intro"
+                android:textColor="@color/body_text_1_inverse"
+                android:textSize="@dimen/story_title_text_size"/>
+
+            <ImageView
+                android:id="@+id/guide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/guide_down"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="50dp"/>
+        </RelativeLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/story_margin"
+            android:paddingTop="@dimen/story_margin">
+
+            <ca.paulshin.yunatube.widgets.SquarePeekImageView
+                android:id="@+id/story_image_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin_half"
+                android:layout_weight="1"
+                android:alpha="0"
+                android:translationX="-20dp"/>
+
+            <TextView
+                android:id="@+id/view_2"
+                style="@style/ProfileTextView"
+                android:layout_width="0dp"
+                android:layout_marginBottom="@dimen/story_margin_half"
+                android:layout_marginRight="@dimen/story_margin_half"
+                android:layout_marginTop="@dimen/story_margin_half"
+                android:layout_weight="2"
+                android:gravity="center_horizontal"
+                android:text="@string/story_1"
+                android:textColor="#F9FBE7"
+                android:textSize="@dimen/story_text_size"
+                android:translationX="200dp"/>
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout>
+
+        <ca.paulshin.yunatube.widgets.LandscapeImageView
+            android:id="@+id/story_image_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/story_margin"
+            android:layout_marginRight="@dimen/story_margin"
+            android:layout_marginTop="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_scaleX="true"
+            discrollve:discrollve_scaleY="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/story_margin"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="@string/story_2"
+            android:textColor="@color/body_text_1_inverse"
+            android:textSize="@dimen/story_text_size"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromBottom"/>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/brown">
+
+            <ca.paulshin.yunatube.widgets.LandscapeImageView
+                android:id="@+id/story_image_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:alpha="0"
+                android:scaleType="centerCrop"
+                android:translationX="-200dp"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/indigo"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/pathView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/story_margin"
+                android:layout_marginRight="@dimen/story_margin"
+                android:layout_marginTop="80dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="@string/story_3"
+                android:textColor="#F1F8E9"
+                android:textSize="@dimen/story_text_size"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableTextAlphaImageAlphaZoomLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/deeporange"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:alpha="0"
+                android:fontFamily="serif"
+                android:gravity="center_horizontal"
+                android:text="@string/story_4"
+                android:textColor="@color/body_text_1_inverse"
+                android:textSize="@dimen/story_text_size"/>
+
+            <ca.paulshin.yunatube.widgets.PortraitImageView
+                android:id="@+id/story_image_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/story_margin"
+                android:layout_marginLeft="@dimen/story_margin"
+                android:layout_marginRight="@dimen/story_margin"
+                android:alpha="0.0"
+                android:scaleType="centerCrop"
+                android:scaleX="0.1"
+                android:scaleY="0.1"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableTextAlphaImageAlphaZoomLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bluegrey"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/story_margin"
+            android:paddingTop="@dimen/story_margin">
+
+            <ca.paulshin.yunatube.widgets.PortraitImageView
+                android:id="@+id/story_image_5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin_half"
+                android:layout_weight="1"
+                android:alpha="0"
+                android:scaleType="centerCrop"
+                android:translationX="-100dp"
+                tools:ignore="DuplicateIds"/>
+
+            <TextView
+                style="@style/ProfileTextView"
+                android:layout_width="0dp"
+                android:layout_marginBottom="@dimen/story_margin_half"
+                android:layout_marginRight="@dimen/story_margin_half"
+                android:layout_marginTop="@dimen/story_margin_half"
+                android:layout_weight="2"
+                android:gravity="center_horizontal"
+                android:text="@string/story_5"
+                android:textColor="@color/body_text_1_inverse"
+                android:textSize="@dimen/story_text_size"
+                android:translationX="200dp"
+                tools:ignore="DuplicateIds"/>
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableFlashLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/amber">
+
+            <TextView
+                android:id="@+id/greenView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="50dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/story_6"
+                android:textSize="@dimen/story_text_size"
+                android:textStyle="bold"
+                android:translationY="-200dp"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableFlashLayout>
+
+        <ca.paulshin.yunatube.widgets.LandscapeImageView
+            android:id="@+id/story_image_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_scaleX="true"
+            discrollve:discrollve_scaleY="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/story_margin"
+            android:layout_marginRight="@dimen/story_margin"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="@string/story_7"
+            android:textColor="#E8F5E9"
+            android:textSize="@dimen/story_text_size"
+            discrollve:discrollve_translation="fromRight|fromBottom"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginLeft="@dimen/story_margin"
+            android:layout_marginRight="@dimen/story_margin"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="@string/story_8"
+            android:textColor="#E0F7FA"
+            android:textSize="@dimen/story_text_size"
+            discrollve:discrollve_alpha="true"/>
+
+        <ca.paulshin.yunatube.widgets.LandscapeImageView
+            android:id="@+id/story_image_7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromLeft"/>
+
+        <ca.paulshin.yunatube.widgets.SquarePeekImageView
+            android:id="@+id/story_image_8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/story_margin"
+            android:layout_marginLeft="@dimen/story_margin"
+            android:layout_marginRight="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/story_margin"
+            android:layout_marginLeft="@dimen/story_margin"
+            android:layout_marginRight="@dimen/story_margin"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="@string/story_9"
+            android:textColor="#E0F2F1"
+            android:textSize="@dimen/story_text_size"
+            discrollve:discrollve_alpha="true"/>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/pink"
+            android:paddingTop="@dimen/story_margin">
+
+            <TextView
+                android:id="@+id/pathView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/story_margin"
+                android:layout_marginRight="@dimen/story_margin"
+                android:layout_marginTop="@dimen/story_margin"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="@string/story_10"
+                android:textColor="@color/body_text_1_inverse"
+                android:textSize="@dimen/story_text_size"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_fromBgColor="@color/yellow"
+            discrollve:discrollve_toBgColor="@color/deeppurple"
+            discrollve:discrollve_translation="fromRight">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/story_11"
+                android:textColor="#EDE7F6"
+                android:textSize="@dimen/story_text_size"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableTextAlphaImageAlphaZoomLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bluegrey"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:alpha="0"
+                android:fontFamily="serif"
+                android:gravity="center_horizontal"
+                android:text="@string/story_13"
+                android:textColor="#FFF3E0"
+                android:textSize="@dimen/story_text_size"
+                tools:ignore="DuplicateIds"/>
+
+            <ca.paulshin.yunatube.widgets.PortraitImageView
+                android:id="@+id/story_image_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/story_margin"
+                android:layout_marginLeft="@dimen/story_margin"
+                android:layout_marginRight="@dimen/story_margin"
+                android:alpha="0.0"
+                android:scaleType="centerCrop"
+                android:scaleX="0.1"
+                android:scaleY="0.1"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableTextAlphaImageAlphaZoomLayout>
+
+        <ca.paulshin.yunatube.widgets.SquarePeekImageView
+            android:id="@+id/story_image_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/story_margin"
+            android:layout_marginRight="@dimen/story_margin"
+            android:layout_marginTop="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/story_margin"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="@string/story_12"
+            android:textColor="#FFFDE7"
+            android:textSize="@dimen/story_text_size"
+            discrollve:discrollve_alpha="true"/>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/green">
+
+            <ca.paulshin.yunatube.widgets.LandscapeImageView
+                android:id="@+id/story_image_11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:alpha="0"
+                android:scaleType="centerCrop"
+                android:translationX="-200dp"
+                tools:ignore="DuplicateIds"/>
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/pathView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/story_margin"
+                android:layout_marginRight="@dimen/story_margin"
+                android:layout_marginTop="@dimen/story_margin"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="@string/story_14"
+                android:textColor="#F9FBE7"
+                android:textSize="@dimen/story_text_size"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableFlashLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F1F8E9">
+
+            <TextView
+                android:id="@+id/greenView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="50dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/story_15"
+                android:textSize="@dimen/story_text_size"
+                android:textStyle="bold"
+                android:translationY="-200dp"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableFlashLayout>
+
+        <ca.paulshin.yunatube.widgets.SquarePeekImageView
+            android:id="@+id/story_image_12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/story_margin"
+            android:layout_marginRight="@dimen/story_margin"
+            android:layout_marginTop="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_scaleX="true"
+            discrollve:discrollve_scaleY="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/story_margin"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="@string/story_16"
+            android:textColor="@color/body_text_1_inverse"
+            android:textSize="@dimen/story_text_size"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromBottom"/>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple">
+
+            <ca.paulshin.yunatube.widgets.LandscapeImageView
+                android:id="@+id/story_image_13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alpha="0"
+                android:scaleType="centerCrop"
+                android:translationX="-200dp"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/yellow"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/pathView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/story_margin"
+                android:layout_marginRight="@dimen/story_margin"
+                android:layout_marginTop="80dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="@string/story_17"
+                android:textColor="@color/black"
+                android:textSize="@dimen/story_text_size"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableTextAlphaImageAlphaZoomLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/teal"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:alpha="0"
+                android:fontFamily="serif"
+                android:gravity="center_horizontal"
+                android:text="@string/story_18"
+                android:textColor="@color/white"
+                android:textSize="@dimen/story_text_size"
+                tools:ignore="DuplicateIds"/>
+
+            <ca.paulshin.yunatube.widgets.LandscapeImageView
+                android:id="@+id/story_image_14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/story_margin"
+                android:layout_marginLeft="@dimen/story_margin"
+                android:layout_marginRight="@dimen/story_margin"
+                android:alpha="0.0"
+                android:scaleType="centerCrop"
+                android:scaleX="0.1"
+                android:scaleY="0.1"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableTextAlphaImageAlphaZoomLayout>
+
+        <ca.paulshin.yunatube.widgets.LandscapeImageView
+            android:id="@+id/story_image_15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromBottom|fromLeft"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/story_margin"
+            android:layout_marginLeft="@dimen/story_margin"
+            android:layout_marginRight="@dimen/story_margin"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="@string/story_19"
+            android:textColor="#E1F5FE"
+            android:textSize="@dimen/story_text_size"
+            discrollve:discrollve_translation="fromRight|fromBottom"/>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableFlashLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EFEBE9">
+
+            <TextView
+                android:id="@+id/greenView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="50dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/story_20"
+                android:textSize="@dimen/story_text_size"
+                android:textStyle="bold"
+                android:translationY="-200dp"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableFlashLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lime"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/story_margin"
+            android:paddingTop="@dimen/story_margin">
+
+            <ca.paulshin.yunatube.widgets.PortraitImageView
+                android:id="@+id/story_image_16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin_half"
+                android:layout_weight="1"
+                android:alpha="0"
+                android:scaleType="centerCrop"
+                android:translationX="-100dp"
+                tools:ignore="DuplicateIds"/>
+
+            <TextView
+                android:id="@+id/view_2"
+                style="@style/ProfileTextView"
+                android:layout_width="0dp"
+                android:layout_marginBottom="@dimen/story_margin_half"
+                android:layout_marginRight="@dimen/story_margin_half"
+                android:layout_marginTop="@dimen/story_margin_half"
+                android:layout_weight="2"
+                android:gravity="center_horizontal"
+                android:text="@string/story_21"
+                android:textColor="@color/indigo"
+                android:textSize="@dimen/story_text_size"
+                android:translationX="200dp"
+                tools:ignore="DuplicateIds"/>
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/story_margin"
+            android:layout_marginRight="@dimen/story_margin"
+            android:layout_marginTop="@dimen/story_margin"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="@string/story_22"
+            android:textColor="#ECEFF1"
+            android:textSize="@dimen/story_text_size"
+            discrollve:discrollve_translation="fromLeft|fromBottom"/>
+
+        <ca.paulshin.yunatube.widgets.SquarePeekImageView
+            android:id="@+id/story_image_17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"/>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableFlashLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/yellow">
+
+            <TextView
+                android:id="@+id/greenView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="50dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/story_23"
+                android:textSize="@dimen/story_text_size"
+                android:textStyle="bold"
+                android:translationY="-200dp"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableFlashLayout>
+
+        <ca.paulshin.yunatube.widgets.SquarePeekImageView
+            android:id="@+id/story_image_18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/story_margin"
+            android:layout_marginRight="@dimen/story_margin"
+            android:layout_marginTop="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromLeft"/>
+
+        <ca.paulshin.yunatube.widgets.SquarePeekImageView
+            android:id="@+id/story_image_19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_fromBgColor="@color/blue"
+            discrollve:discrollve_toBgColor="@color/grey">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/story_24"
+                android:textColor="@color/body_text_1_inverse"
+                android:textSize="@dimen/story_text_size"/>
+
+        </LinearLayout>
+
+        <ca.paulshin.yunatube.widgets.SquarePeekImageView
+            android:id="@+id/story_image_20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/story_margin"
+            android:layout_marginRight="@dimen/story_margin"
+            android:layout_marginTop="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromLeft"/>
+
+        <ca.paulshin.yunatube.widgets.SquarePeekImageView
+            android:id="@+id/story_image_21"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"/>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/amber"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/pathView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/story_margin"
+                android:layout_marginRight="@dimen/story_margin"
+                android:layout_marginTop="@dimen/story_margin"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="@string/story_25"
+                android:textColor="@color/deeppurple"
+                android:textSize="@dimen/story_text_size"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout>
+
+        <ca.paulshin.yunatube.widgets.LandscapeImageView
+            android:id="@+id/story_image_22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_scaleX="true"
+            discrollve:discrollve_scaleY="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/story_margin"
+            android:layout_marginLeft="@dimen/story_margin"
+            android:layout_marginRight="@dimen/story_margin"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="@string/story_26"
+            android:textColor="#FBE9E7"
+            android:textSize="@dimen/story_text_size"
+            discrollve:discrollve_alpha="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_fromBgColor="#88EE66"
+            discrollve:discrollve_toBgColor="#000000"
+            discrollve:discrollve_translation="fromBottom">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/story_27"
+                android:textColor="@color/body_text_1_inverse"
+                android:textSize="@dimen/story_text_size"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/pink"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/story_margin"
+            android:paddingTop="@dimen/story_margin">
+
+            <ca.paulshin.yunatube.widgets.PortraitImageView
+                android:id="@+id/story_image_23"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin_half"
+                android:layout_weight="1"
+                android:alpha="0"
+                android:scaleType="centerCrop"
+                android:translationX="-100dp"
+                tools:ignore="DuplicateIds"/>
+
+            <TextView
+                android:id="@+id/view_2"
+                style="@style/ProfileTextView"
+                android:layout_width="0dp"
+                android:layout_marginBottom="@dimen/story_margin_half"
+                android:layout_marginRight="@dimen/story_margin_half"
+                android:layout_marginTop="@dimen/story_margin_half"
+                android:layout_weight="2"
+                android:gravity="center_horizontal"
+                android:text="@string/story_28"
+                android:textColor="@color/body_text_1_inverse"
+                android:textSize="@dimen/story_text_size"
+                android:translationX="200dp"
+                tools:ignore="DuplicateIds"/>
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout>
+
+        <ca.paulshin.yunatube.widgets.LandscapeImageView
+            android:id="@+id/story_image_24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"/>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lightgreen"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/pathView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/story_margin"
+                android:layout_marginRight="@dimen/story_margin"
+                android:layout_marginTop="@dimen/story_margin"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="@string/story_29"
+                android:textColor="@color/deeppurple"
+                android:textSize="@dimen/story_text_size"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_fromBgColor="@color/lightgreen"
+            discrollve:discrollve_toBgColor="#000000"
+            discrollve:discrollve_translation="fromRight">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/story_30"
+                android:textColor="#FBE9E7"
+                android:textSize="@dimen/story_text_size"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableTextAlphaImageAlphaZoomLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/redView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:alpha="0"
+                android:fontFamily="serif"
+                android:gravity="center_horizontal"
+                android:text="@string/story_31"
+                android:textColor="#FFF8E1"
+                android:textSize="@dimen/story_text_size"
+                tools:ignore="DuplicateIds"/>
+
+            <ca.paulshin.yunatube.widgets.LandscapeImageView
+                android:id="@+id/story_image_25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/story_margin"
+                android:layout_marginLeft="@dimen/story_margin"
+                android:layout_marginRight="@dimen/story_margin"
+                android:alpha="0.0"
+                android:scaleType="centerCrop"
+                android:scaleX="0.1"
+                android:scaleY="0.1"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableTextAlphaImageAlphaZoomLayout>
+
+        <ca.paulshin.yunatube.widgets.LandscapeImageView
+            android:id="@+id/story_image_26"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/story_margin"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="@string/story_32"
+            android:textColor="@color/body_text_1_inverse"
+            android:textSize="@dimen/story_text_size"
+            discrollve:discrollve_alpha="true"/>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/pink">
+
+            <ca.paulshin.yunatube.widgets.LandscapeImageView
+                android:id="@+id/story_image_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:alpha="0"
+                android:scaleType="centerCrop"
+                android:translationX="-200dp"
+                tools:ignore="DuplicateIds"/>
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bluegrey"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/pathView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/story_margin"
+                android:layout_marginRight="@dimen/story_margin"
+                android:layout_marginTop="@dimen/story_margin"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="@string/story_33"
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/story_text_size"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_fromBgColor="@color/lime"
+            discrollve:discrollve_toBgColor="#000000"
+            discrollve:discrollve_translation="fromBottom">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/story_34"
+                android:textColor="@color/body_text_1_inverse"
+                android:textSize="@dimen/story_text_size"/>
+
+        </LinearLayout>
+
+        <ca.paulshin.yunatube.widgets.LandscapeImageView
+            android:id="@+id/story_image_28"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_scaleX="true"
+            discrollve:discrollve_scaleY="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/story_margin"
+            android:layout_marginLeft="@dimen/story_margin"
+            android:layout_marginRight="@dimen/story_margin"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="@string/story_35"
+            android:textColor="@color/black"
+            android:textSize="@dimen/story_text_size"
+            discrollve:discrollve_alpha="true"/>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/amber">
+
+            <ca.paulshin.yunatube.widgets.LandscapeImageView
+                android:id="@+id/story_image_29"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:alpha="0"
+                android:scaleType="centerCrop"
+                android:translationX="-200dp"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_fromBgColor="#cccccc"
+            discrollve:discrollve_toBgColor="@color/brown">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/story_36"
+                android:textColor="@color/body_text_1_inverse"
+                android:textSize="@dimen/story_text_size"/>
+
+        </LinearLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableFlashLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lightgreen">
+
+            <TextView
+                android:id="@+id/greenView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="50dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/story_37"
+                android:textSize="@dimen/story_text_size"
+                android:textStyle="bold"
+                android:translationY="-200dp"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableFlashLayout>
+
+        <ca.paulshin.yunatube.widgets.LandscapeImageView
+            android:id="@+id/story_image_30"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/story_margin"
+            android:layout_marginRight="@dimen/story_margin"
+            android:layout_marginTop="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_scaleX="true"
+            discrollve:discrollve_scaleY="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/story_margin"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="@string/story_38"
+            android:textColor="@color/body_text_1_inverse"
+            android:textSize="@dimen/story_text_size"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromBottom"/>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/deeppurple">
+
+            <ca.paulshin.yunatube.widgets.PortraitImageView
+                android:id="@+id/story_image_31"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:layout_weight="1"
+                android:alpha="0"
+                android:scaleType="centerCrop"
+                android:translationX="-200dp"
+                tools:ignore="DuplicateIds"/>
+
+            <ca.paulshin.yunatube.widgets.PortraitImageView
+                android:id="@+id/story_image_32"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/story_margin"
+                android:layout_marginRight="@dimen/story_margin"
+                android:layout_marginTop="@dimen/story_margin"
+                android:layout_weight="1"
+                android:alpha="0"
+                android:scaleType="centerCrop"
+                android:translationX="200dp"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/yellow"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/pathView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/story_margin"
+                android:layout_marginRight="@dimen/story_margin"
+                android:layout_marginTop="80dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="@string/story_39"
+                android:textColor="@color/black"
+                android:textSize="@dimen/story_text_size"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout>
+
+        <ca.paulshin.yunatube.widgets.LandscapeImageView
+            android:id="@+id/story_image_33"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/story_margin"
+            android:layout_marginRight="@dimen/story_margin"
+            android:layout_marginTop="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_scaleX="true"
+            discrollve:discrollve_scaleY="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/story_margin"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="@string/story_40"
+            android:textColor="#FFFDE7"
+            android:textSize="@dimen/story_text_size"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromBottom"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/story_margin"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="@string/story_41"
+            android:textColor="#F1F8E9"
+            android:textSize="@dimen/story_text_size"
+            discrollve:discrollve_alpha="true"/>
+
+        <ca.paulshin.yunatube.widgets.SquarePeekImageView
+            android:id="@+id/story_image_34"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/story_margin"
+            android:layout_marginRight="@dimen/story_margin"
+            android:layout_marginTop="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_scaleX="true"
+            discrollve:discrollve_scaleY="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/story_margin"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="@string/story_42"
+            android:textColor="#E8F5E9"
+            android:textSize="@dimen/story_text_size"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromBottom"/>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple">
+
+            <ca.paulshin.yunatube.widgets.LandscapeImageView
+                android:id="@+id/story_image_35"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alpha="0"
+                android:scaleType="centerCrop"
+                android:translationX="-200dp"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lime"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/pathView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/story_margin"
+                android:layout_marginRight="@dimen/story_margin"
+                android:layout_marginTop="80dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="@string/story_43"
+                android:textColor="@color/black"
+                android:textSize="@dimen/story_text_size"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableTextAlphaImageAlphaZoomLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/redView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:alpha="0"
+                android:fontFamily="serif"
+                android:gravity="center_horizontal"
+                android:text="@string/story_44"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/story_text_size"
+                tools:ignore="DuplicateIds"/>
+
+            <ca.paulshin.yunatube.widgets.LandscapeImageView
+                android:id="@+id/story_image_36"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/story_margin"
+                android:layout_marginLeft="@dimen/story_margin"
+                android:layout_marginRight="@dimen/story_margin"
+                android:alpha="0.0"
+                android:scaleType="centerCrop"
+                android:scaleX="0.1"
+                android:scaleY="0.1"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableTextAlphaImageAlphaZoomLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableFlashLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_green_light">
+
+            <TextView
+                android:id="@+id/greenView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="50dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/story_45"
+                android:textSize="@dimen/story_text_size"
+                android:textStyle="bold"
+                android:translationY="-200dp"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableFlashLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/story_margin"
+            android:paddingTop="@dimen/story_margin">
+
+            <ca.paulshin.yunatube.widgets.PortraitImageView
+                android:id="@+id/story_image_37"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin_half"
+                android:layout_weight="1"
+                android:alpha="0"
+                android:scaleType="centerCrop"
+                android:translationX="-100dp"
+                tools:ignore="DuplicateIds"/>
+
+            <TextView
+                android:id="@+id/view_2"
+                style="@style/ProfileTextView"
+                android:layout_width="0dp"
+                android:layout_marginBottom="@dimen/story_margin_half"
+                android:layout_marginRight="@dimen/story_margin_half"
+                android:layout_marginTop="@dimen/story_margin_half"
+                android:layout_weight="2"
+                android:gravity="center_horizontal"
+                android:text="@string/story_46"
+                android:textColor="@color/indigo"
+                android:textSize="@dimen/story_text_size"
+                android:translationX="200dp"
+                tools:ignore="DuplicateIds"/>
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/story_margin"
+            android:layout_marginRight="@dimen/story_margin"
+            android:layout_marginTop="@dimen/story_margin"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="@string/story_47"
+            android:textColor="@color/body_text_1_inverse"
+            android:textSize="@dimen/story_text_size"
+            discrollve:discrollve_translation="fromLeft|fromBottom"/>
+
+        <ca.paulshin.yunatube.widgets.LandscapeImageView
+            android:id="@+id/story_image_38"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"/>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableFlashLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_green_light">
+
+            <TextView
+                android:id="@+id/greenView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="50dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/story_48"
+                android:textSize="@dimen/story_text_size"
+                android:textStyle="bold"
+                android:translationY="-200dp"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableFlashLayout>
+
+        <ca.paulshin.yunatube.widgets.SquarePeekImageView
+            android:id="@+id/story_image_39"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromLeft"/>
+
+        <ca.paulshin.yunatube.widgets.SquarePeekImageView
+            android:id="@+id/story_image_40"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/story_margin"
+            android:layout_marginLeft="@dimen/story_margin"
+            android:layout_marginRight="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_fromBgColor="@color/amber"
+            discrollve:discrollve_toBgColor="@color/deeporange">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/story_49"
+                android:textColor="@color/black"
+                android:textSize="@dimen/story_text_size"/>
+
+        </LinearLayout>
+
+        <ca.paulshin.yunatube.widgets.SquarePeekImageView
+            android:id="@+id/story_image_41"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromLeft"/>
+
+        <ca.paulshin.yunatube.widgets.LandscapeImageView
+            android:id="@+id/story_image_42"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/story_margin"
+            android:layout_marginLeft="@dimen/story_margin"
+            android:layout_marginRight="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"/>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/pathView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/story_margin"
+                android:layout_marginRight="@dimen/story_margin"
+                android:layout_marginTop="@dimen/story_margin"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="@string/story_50"
+                android:textColor="@color/white"
+                android:textSize="@dimen/story_text_size"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout>
+
+        <ca.paulshin.yunatube.widgets.LandscapeImageView
+            android:id="@+id/story_image_43"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_scaleX="true"
+            discrollve:discrollve_scaleY="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/story_margin"
+            android:layout_marginLeft="@dimen/story_margin"
+            android:layout_marginRight="@dimen/story_margin"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="@string/story_51"
+            android:textColor="@color/body_text_1_inverse"
+            android:textSize="@dimen/story_text_size"
+            android:textStyle="bold"
+            discrollve:discrollve_alpha="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_fromBgColor="@color/grey"
+            discrollve:discrollve_toBgColor="@color/black"
+            discrollve:discrollve_translation="fromBottom">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/story_52"
+                android:textColor="#E0F7FA"
+                android:textSize="@dimen/story_text_size"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_fromBgColor="#cccccc"
+            discrollve:discrollve_toBgColor="@color/theme_primary"
+            discrollve:discrollve_translation="fromBottom">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/story_53"
+                android:textColor="@color/body_text_1_inverse"
+                android:textSize="@dimen/story_text_size"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_fromBgColor="#cccccc"
+            discrollve:discrollve_toBgColor="@color/red"
+            discrollve:discrollve_translation="fromBottom">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/story_54"
+                android:textColor="#EDE7F6"
+                android:textSize="@dimen/story_text_size"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bluegrey"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/story_margin"
+            android:paddingTop="@dimen/story_margin">
+
+            <ca.paulshin.yunatube.widgets.SquarePeekImageView
+                android:id="@+id/story_image_44"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin_half"
+                android:layout_weight="1"
+                android:alpha="0"
+                android:scaleType="centerCrop"
+                android:translationX="-100dp"
+                tools:ignore="DuplicateIds"/>
+
+            <TextView
+                android:id="@+id/view_2"
+                style="@style/ProfileTextView"
+                android:layout_width="0dp"
+                android:layout_marginBottom="@dimen/story_margin_half"
+                android:layout_marginRight="@dimen/story_margin_half"
+                android:layout_marginTop="@dimen/story_margin_half"
+                android:layout_weight="2"
+                android:gravity="center_horizontal"
+                android:shadowColor="@color/body_text_1_inverse"
+                android:text="@string/story_55"
+                android:textColor="@color/body_text_1"
+                android:textSize="@dimen/story_text_size"
+                android:translationX="200dp"
+                tools:ignore="DuplicateIds"/>
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableHorizontalLayout>
+
+        <ca.paulshin.yunatube.widgets.LandscapeImageView
+            android:id="@+id/story_image_45"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/story_margin"
+            android:scaleType="centerCrop"
+            discrollve:discrollve_alpha="true"/>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/pathView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/story_margin"
+                android:layout_marginRight="@dimen/story_margin"
+                android:layout_marginTop="@dimen/story_margin"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="@string/story_56"
+                android:textColor="@color/body_text_1_inverse"
+                android:textSize="@dimen/story_text_size"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvablePathLayout>
+
+        <ca.paulshin.yunatube.widgets.discrollview.DiscrollvableTextAlphaImageAlphaZoomLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/pink"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:fontFamily="serif"
+                android:gravity="center_horizontal"
+                android:text="@string/story_57"
+                android:textColor="@color/body_text_1_inverse"
+                android:textSize="@dimen/story_text_size"
+                android:textStyle="bold"/>
+
+            <ca.paulshin.yunatube.widgets.PortraitImageView
+                android:id="@+id/story_image_46"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/story_margin"
+                android:layout_marginLeft="@dimen/story_margin"
+                android:layout_marginRight="@dimen/story_margin"
+                android:alpha="0.0"
+                android:scaleType="centerCrop"
+                android:scaleX="0.1"
+                android:scaleY="0.1"/>
+
+        </ca.paulshin.yunatube.widgets.discrollview.DiscrollvableTextAlphaImageAlphaZoomLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_fromBgColor="@color/amber"
+            discrollve:discrollve_toBgColor="@color/black"
+            discrollve:discrollve_translation="fromBottom">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/story_margin"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/story_58"
+                android:textColor="@color/body_text_1_inverse"
+                android:textSize="@dimen/story_title_text_size"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </ca.paulshin.yunatube.widgets.discrollview.DiscrollViewContent>
+
+</ca.paulshin.yunatube.widgets.discrollview.DiscrollView>

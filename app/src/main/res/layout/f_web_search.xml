@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@android:color/white"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/main_layout_padding"
+        android:gravity="center_horizontal"
+        android:text="@string/web_search_title"
+        android:textColor="@color/body_text_1"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/main_layout_padding"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/what_to_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/search_step_one"
+                android:textColor="@color/body_text_1"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"/>
+
+            <RadioGroup
+                android:id="@+id/search_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/main_layout_inner_padding"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/search_news"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/search_type_article"
+                    android:textColor="@color/body_text_1"/>
+
+                <RadioButton
+                    android:id="@+id/search_web"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/main_layout_padding"
+                    android:text="@string/search_type_web"
+                    android:textColor="@color/body_text_1"/>
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/what_to_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/main_layout_padding"
+                android:text="@string/search_step_two"
+                android:textColor="@color/body_text_1"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"/>
+
+            <RadioGroup
+                android:id="@+id/search_keyword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/main_layout_inner_padding"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/keyword_ko"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="김연아"
+                    android:textColor="#000000"/>
+
+                <RadioButton
+                    android:id="@+id/keyword_en"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/main_layout_padding"
+                    android:text="Yuna Kim"
+                    android:textColor="#000000"/>
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tap_engine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/search_keyword"
+                android:layout_marginTop="@dimen/main_layout_padding"
+                android:text="@string/search_step_three"
+                android:textColor="@color/body_text_1"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"/>
+
+            <RelativeLayout
+                android:id="@+id/engines"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/main_layout_inner_padding">
+
+                <View
+                    android:id="@+id/div_1"
+                    android:layout_width="1dp"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@null"/>
+
+                <ImageButton
+                    android:id="@+id/search_youtube"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="@dimen/main_layout_padding"
+                    android:layout_toLeftOf="@id/div_1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/search_youtube"/>
+
+                <ImageButton
+                    android:id="@+id/search_google"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="@dimen/main_layout_padding"
+                    android:layout_toRightOf="@id/div_1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/search_google"/>
+
+                <ImageButton
+                    android:id="@+id/search_daum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/search_youtube"
+                    android:layout_marginLeft="@dimen/main_layout_padding"
+                    android:layout_marginTop="@dimen/main_layout_padding"
+                    android:layout_toLeftOf="@id/div_1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/search_daum"/>
+
+                <ImageButton
+                    android:id="@+id/search_naver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/search_google"
+                    android:layout_marginRight="@dimen/main_layout_padding"
+                    android:layout_marginTop="@dimen/main_layout_padding"
+                    android:layout_toRightOf="@id/div_1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/search_naver"/>
+
+                <ImageButton
+                    android:id="@+id/search_bing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/search_daum"
+                    android:layout_marginLeft="@dimen/main_layout_padding"
+                    android:layout_marginTop="@dimen/main_layout_padding"
+                    android:layout_toLeftOf="@id/div_1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/search_bing"/>
+
+                <ImageButton
+                    android:id="@+id/search_nate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_alignTop="@id/search_bing"
+                    android:layout_marginRight="@dimen/main_layout_padding"
+                    android:layout_toRightOf="@id/div_1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/search_nate"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

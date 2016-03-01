@@ -1,0 +1,373 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="ca.paulshin.yunatube.ui.VideoFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/section_1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/main_layout_half_inner_padding"
+            android:layout_weight="1"
+            android:foreground="?selectableItemBackground"
+            android:tag="1">
+
+            <ca.paulshin.yunatube.widgets.SquareRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ca.paulshin.yunatube.widgets.SquareBezelImageView
+                    android:id="@+id/thumbnail_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/video_section_1"
+                    android:transitionName="section"
+                    app:maskDrawable="@drawable/bezel_background_mask"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/thumbnail_1"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/round_bottom_corner_gradient_bg"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:shadowColor="@color/dark_gray"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"
+                    android:text="@string/video_section_1"
+                    android:textColor="@color/body_text_1_inverse"
+                    android:textSize="@dimen/videos_text_size"
+                    android:textStyle="bold"/>
+
+            </ca.paulshin.yunatube.widgets.SquareRelativeLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/section_2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/main_layout_half_inner_padding"
+            android:layout_weight="1"
+            android:foreground="?selectableItemBackground"
+            android:tag="2">
+
+            <ca.paulshin.yunatube.widgets.SquareRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ca.paulshin.yunatube.widgets.SquareBezelImageView
+                    android:id="@+id/thumbnail_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/video_section_2"
+                    android:transitionName="section"
+                    app:maskDrawable="@drawable/bezel_background_mask"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/thumbnail_2"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/round_bottom_corner_gradient_bg"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:shadowColor="@color/dark_gray"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"
+                    android:text="@string/video_section_2"
+                    android:textColor="@color/body_text_1_inverse"
+                    android:textSize="@dimen/videos_text_size"
+                    android:textStyle="bold"/>
+
+            </ca.paulshin.yunatube.widgets.SquareRelativeLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/section_3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/main_layout_half_inner_padding"
+            android:layout_weight="1"
+            android:foreground="?selectableItemBackground"
+            android:tag="3">
+
+            <ca.paulshin.yunatube.widgets.SquareRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ca.paulshin.yunatube.widgets.SquareBezelImageView
+                    android:id="@+id/thumbnail_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/video_section_3"
+                    android:transitionName="section"
+                    app:maskDrawable="@drawable/bezel_background_mask"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/thumbnail_3"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/round_bottom_corner_gradient_bg"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:shadowColor="@color/dark_gray"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"
+                    android:text="@string/video_section_3"
+                    android:textColor="@color/body_text_1_inverse"
+                    android:textSize="@dimen/videos_text_size"
+                    android:textStyle="bold"/>
+
+            </ca.paulshin.yunatube.widgets.SquareRelativeLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/section_4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/main_layout_half_inner_padding"
+            android:layout_weight="1"
+            android:foreground="?selectableItemBackground"
+            android:tag="4">
+
+            <ca.paulshin.yunatube.widgets.SquareRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ca.paulshin.yunatube.widgets.SquareBezelImageView
+                    android:id="@+id/thumbnail_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/video_section_4"
+                    android:transitionName="section"
+                    app:maskDrawable="@drawable/bezel_background_mask"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/thumbnail_4"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/round_bottom_corner_gradient_bg"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:shadowColor="@color/dark_gray"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"
+                    android:text="@string/video_section_4"
+                    android:textColor="@color/body_text_1_inverse"
+                    android:textSize="@dimen/videos_text_size"
+                    android:textStyle="bold"/>
+
+            </ca.paulshin.yunatube.widgets.SquareRelativeLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/section_5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/main_layout_half_inner_padding"
+            android:layout_weight="1"
+            android:foreground="?selectableItemBackground"
+            android:tag="5">
+
+            <ca.paulshin.yunatube.widgets.SquareRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ca.paulshin.yunatube.widgets.SquareBezelImageView
+                    android:id="@+id/thumbnail_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/video_section_5"
+                    android:transitionName="section"
+                    app:maskDrawable="@drawable/bezel_background_mask"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/thumbnail_5"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/round_bottom_corner_gradient_bg"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:shadowColor="@color/dark_gray"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"
+                    android:text="@string/video_section_5"
+                    android:textColor="@color/body_text_1_inverse"
+                    android:textSize="@dimen/videos_text_size"
+                    android:textStyle="bold"/>
+
+            </ca.paulshin.yunatube.widgets.SquareRelativeLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/section_6"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/main_layout_half_inner_padding"
+            android:layout_weight="1"
+            android:foreground="?selectableItemBackground"
+            android:tag="6">
+
+            <ca.paulshin.yunatube.widgets.SquareRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ca.paulshin.yunatube.widgets.SquareBezelImageView
+                    android:id="@+id/thumbnail_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/video_section_6"
+                    android:transitionName="section"
+                    app:maskDrawable="@drawable/bezel_background_mask"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/thumbnail_6"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/round_bottom_corner_gradient_bg"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:shadowColor="@color/dark_gray"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"
+                    android:text="@string/video_section_6"
+                    android:textColor="@color/body_text_1_inverse"
+                    android:textSize="@dimen/videos_text_size"
+                    android:textStyle="bold"/>
+
+            </ca.paulshin.yunatube.widgets.SquareRelativeLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/section_7"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/main_layout_half_inner_padding"
+            android:layout_weight="1"
+            android:foreground="?selectableItemBackground"
+            android:tag="7">
+
+            <ca.paulshin.yunatube.widgets.SquareRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ca.paulshin.yunatube.widgets.SquareBezelImageView
+                    android:id="@+id/thumbnail_7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/video_section_7"
+                    android:transitionName="section"
+                    app:maskDrawable="@drawable/bezel_background_mask"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/thumbnail_7"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/round_bottom_corner_gradient_bg"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:shadowColor="@color/dark_gray"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"
+                    android:text="@string/video_section_7"
+                    android:textColor="@color/body_text_1_inverse"
+                    android:textSize="@dimen/videos_text_size"
+                    android:textStyle="bold"/>
+
+            </ca.paulshin.yunatube.widgets.SquareRelativeLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/section_8"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/main_layout_half_inner_padding"
+            android:layout_weight="1"
+            android:foreground="?selectableItemBackground"
+            android:tag="8">
+
+            <ca.paulshin.yunatube.widgets.SquareRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ca.paulshin.yunatube.widgets.SquareBezelImageView
+                    android:id="@+id/thumbnail_8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/video_section_8"
+                    android:transitionName="section"
+                    app:maskDrawable="@drawable/bezel_background_mask"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/thumbnail_8"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/round_bottom_corner_gradient_bg"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:shadowColor="@color/dark_gray"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"
+                    android:text="@string/video_section_8"
+                    android:textColor="@color/body_text_1_inverse"
+                    android:textSize="@dimen/videos_text_size"
+                    android:textStyle="bold"/>
+
+            </ca.paulshin.yunatube.widgets.SquareRelativeLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <include layout="@layout/my_faves_fab"/>
+    </LinearLayout>
+</LinearLayout>

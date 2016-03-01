@@ -17,7 +17,7 @@ import java.util.List;
 import ca.paulshin.yunatube.data.model.Ribot;
 import ca.paulshin.yunatube.test.common.TestDataFactory;
 import ca.paulshin.yunatube.test.common.rules.TestComponentRule;
-import ca.paulshin.yunatube.ui.main.MainActivity;
+import ca.paulshin.yunatube.ui.main.MainActivity_;
 import rx.Observable;
 
 import static android.support.test.espresso.Espresso.onView;
@@ -32,14 +32,14 @@ public class MainActivityTest {
 
     public final TestComponentRule component =
             new TestComponentRule(InstrumentationRegistry.getTargetContext());
-    public final ActivityTestRule<MainActivity> main =
-            new ActivityTestRule<MainActivity>(MainActivity.class, false, false) {
+    public final ActivityTestRule<MainActivity_> main =
+            new ActivityTestRule<MainActivity_>(MainActivity_.class, false, false) {
                 @Override
                 protected Intent getActivityIntent() {
                     // Override the default intent so we pass a false flag for syncing so it doesn't
                     // start a sync service in the background that would affect  the behaviour of
                     // this test.
-                    return MainActivity.getStartIntent(
+                    return MainActivity_.getStartIntent(
                             InstrumentationRegistry.getTargetContext(), false);
                 }
             };

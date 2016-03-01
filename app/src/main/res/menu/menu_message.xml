@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="ca.paulshin.yunatube.ui.MessageActivity">
+    <item android:id="@+id/action_refresh"
+          android:icon="@drawable/ic_refresh"
+          android:title="@string/action_refresh"
+          android:orderInCategory="100"
+          app:showAsAction="always"/>
+    <item android:id="@+id/action_write"
+          android:icon="@drawable/ic_write"
+          android:title="@string/action_write_message"
+          android:orderInCategory="101"
+          app:showAsAction="always"/>
+</menu>
