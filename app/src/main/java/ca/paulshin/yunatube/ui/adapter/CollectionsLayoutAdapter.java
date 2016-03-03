@@ -53,6 +53,7 @@ public class CollectionsLayoutAdapter extends RecyclerView.Adapter<CollectionsLa
 		holder.title.setText(collection.title);
 		if (position == 0) {
 			holder.title.setTypeface(null, Typeface.BOLD);
+			holder.title.setBackgroundColor(ResourceUtil.getColor(R.color.transparent));
 			((View) holder.title.getParent()).setOnClickListener((v) -> {
 				Activity activity = (Activity) v.getContext();
 

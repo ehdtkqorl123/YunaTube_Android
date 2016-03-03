@@ -9,6 +9,7 @@ import ca.paulshin.yunatube.ui.main.MessageActivity;
 import ca.paulshin.yunatube.ui.main.PhotoListActivity;
 import ca.paulshin.yunatube.ui.main.PhotoMenuFragment;
 import ca.paulshin.yunatube.ui.main.SearchActivity;
+import ca.paulshin.yunatube.ui.main.VideoActivity;
 import ca.paulshin.yunatube.ui.main.VideoListActivity;
 import ca.paulshin.yunatube.ui.main.VideoMenuFragment;
 import ca.paulshin.yunatube.ui.main.VideoSectionActivity;
@@ -29,6 +30,7 @@ public interface ActivityComponent {
     void inject(PhotoListActivity photoListActivity);
     void inject(VideoSectionActivity videoSectionActivity);
     void inject(VideoListActivity videoListActivity);
+    void inject(VideoActivity videoActivity);
     void inject(SearchActivity searchActivity);
     void inject(MessageActivity messageActivity);
 }

@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import ca.paulshin.yunatube.Config;
 import ca.paulshin.yunatube.data.model.main.Notice;
 import ca.paulshin.yunatube.data.model.message.Message;
+import ca.paulshin.yunatube.data.model.video.Comment;
 import ca.paulshin.yunatube.data.model.video.Section;
 import ca.paulshin.yunatube.data.model.video.SimpleResult;
 import ca.paulshin.yunatube.data.model.video.Video;
@@ -63,22 +64,22 @@ public interface YunaTubeService {
      *****/
 
     @GET("/yunatube/mobile/php/get_detail.php")
-    void getVideo(
+    Observable<List<Video>> getVideo(
             @QueryMap Map<String, String> options
     );
 
     @GET("/yunatube/mobile/php/get_comments.php")
-    void getComments(
+    Observable<List<Comment>> getComments(
             @QueryMap Map<String, String> options
     );
 
     @GET("/yunatube/mobile/php/submit_comment.php")
-    void submitComment(
+    Observable<SimpleResult> submitComment(
             @QueryMap Map<String, String> options
     );
 
     @GET("/yunatube/mobile/php/report_video_blocked.php")
-    void report(
+    Observable<SimpleResult> report(
             @Query("ytid") String ytid
     );
 

@@ -205,10 +205,10 @@ public class VideoMenuFragment extends BaseFragment implements
 				.setConfirmClickListener((sDialog, __) -> {
 					sDialog.dismissWithAnimation();
 
-//					Intent intent = new Intent(getActivity(), VideoActivity.class);
-//					intent.putExtra(VideoActivity.EXTRA_YTID, video.ytid);
-//					startActivity(intent);
-//					getActivity().overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
+					Intent intent = new Intent(getActivity(), VideoActivity.class);
+					intent.putExtra(VideoActivity.EXTRA_YTID, video.ytid);
+					startActivity(intent);
+					getActivity().overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
 				})
 				.setCancelText(getString(R.string.random_something_else))
 				.setCancelClickListener((sDialog, __) -> {

@@ -19,6 +19,7 @@ import ca.paulshin.yunatube.data.model.flickr.Stream;
 import ca.paulshin.yunatube.data.model.instagram.Feed;
 import ca.paulshin.yunatube.data.model.main.Notice;
 import ca.paulshin.yunatube.data.model.message.Message;
+import ca.paulshin.yunatube.data.model.video.Comment;
 import ca.paulshin.yunatube.data.model.video.Section;
 import ca.paulshin.yunatube.data.model.video.SimpleResult;
 import ca.paulshin.yunatube.data.model.video.Video;
@@ -198,6 +199,31 @@ public class DataManager {
 		return mYunaTubeService.getVideos(options);
 	}
 
+	public Observable<Video> getVideo(String ytid) {
+		Map<String, String> options = new HashMap<>();
+		options.put("lo", LanguageUtil.getLangCode());
+		options.put("ytid", ytid);
+
+		return mYunaTubeService.getVideo(options).map(videos -> videos.get(0));
+	}
+
+	public Observable<SimpleResult> report(String ytid) {
+		return mYunaTubeService.report(ytid);
+	}
+
+	public Observable<List<Comment>> getComments(String ytid, String lastIndex) {
+		int messageLoadCount = ResourceUtil.getInteger(R.integer.message_load_count);
+
+		Map<String, String> options = new HashMap<>();
+		options.put("numOfMessages", String.valueOf(messageLoadCount));
+		options.put("ytid", ytid);
+		if (!TextUtils.isEmpty(lastIndex)) {
+			options.put("lastIndex", lastIndex);
+		}
+
+		return mYunaTubeService.getComments(options);
+	}
+
     /// Helper method to post events from doOnCompleted.
     private Action0 postEventAction(final Object event) {
         return new Action0() {
@@ -207,4 +233,16 @@ public class DataManager {
             }
         };
     }
+
+	public Observable<SimpleResult> submitComment(String ytid, String username, String comment, String time, String deviceId) {
+		Map<String, String> options = new HashMap<String, String>();
+		options.put("ytid", ytid);
+		options.put("username", username);
+		options.put("message", comment);
+		options.put("time", time);
+		options.put("device", deviceId);
+		options.put("report", "0");
+
+		return mYunaTubeService.submitComment(options);
+	}
 }

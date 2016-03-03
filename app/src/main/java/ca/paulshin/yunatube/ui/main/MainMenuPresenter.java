@@ -116,7 +116,7 @@ public class MainMenuPresenter extends BasePresenter<MainMenuMvpView> {
                     @Override
                     public void onNext(List<Video> videos) {
                         if (!CollectionUtil.isEmpty(videos)) {
-                            getMvpView().showVideos(videos);
+                            getMvpView().updateVideos(videos);
                         }
                     }
                 });

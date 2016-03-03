@@ -87,7 +87,7 @@ public class MessagePresenter extends BasePresenter<MessageMvpView> {
 
 					@Override
 					public void onNext(SimpleResult result) {
-						if (TextUtils.equals(result.result, SUCCESS_CODE)) {
+						if (result != null && TextUtils.equals(result.result, SUCCESS_CODE)) {
 							String id = "0";
 							String time = String.valueOf(System.currentTimeMillis() / 1000);
 							String report = "0";

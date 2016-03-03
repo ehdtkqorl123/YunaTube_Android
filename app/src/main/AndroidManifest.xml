@@ -109,6 +109,12 @@
             android:name=".ui.main.VideoListActivity"
             android:label="@string/videos"/>
 
+        <activity
+            android:name=".ui.main.VideoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.YunaTube.Fullscreen"/>
+
         <!-- Broadcast receivers -->
         <receiver
             android:name=".receiver.ConnectivityChangeReceiver">

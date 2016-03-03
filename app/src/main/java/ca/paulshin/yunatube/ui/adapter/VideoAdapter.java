@@ -45,11 +45,11 @@ public class VideoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 		ItemViewHolder holder = (ItemViewHolder) viewHolder;
 		Video video = mVideos.get(position);
 		String thumbnailUrl = String.format(Config.VIDEO_HQ_THUMBNAIL_URL, video.ytid);
-		holder.mTitle.setText(video.ytitle);
-		holder.mSection.setText(video.stitle);
-		PicassoUtil.loadImage(thumbnailUrl, holder.mThumbnail, 240, 180, R.drawable.placeholder_gray);
-		holder.mThumbnail.setTag(video.ytid);
-		holder.mOverflow.setTag(video);
+		holder.title.setText(video.ytitle);
+		holder.section.setText(video.stitle);
+		PicassoUtil.loadImage(thumbnailUrl, holder.thumbnail, 240, 180, R.drawable.placeholder_gray);
+		holder.thumbnail.setTag(video.ytid);
+		holder.overflow.setTag(video);
 	}
 
 	// Return the size of your dataset (invoked by the layout manager)

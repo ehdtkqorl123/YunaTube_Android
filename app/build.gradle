@@ -158,6 +158,9 @@ dependencies {
     compile  "com.google.dagger:dagger:$DAGGER_VERSION"
     provided 'org.glassfish:javax.annotation:10.0-b28' //Required by Dagger2
 
+    // YouTube library
+    compile files('libs/YouTubeAndroidPlayerApi.jar')
+
     // Instrumentation test dependencies
     androidTestCompile jUnit
     androidTestCompile mockito

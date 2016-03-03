@@ -327,7 +327,7 @@ public class MainMenuFragment extends BaseFragment implements
 	}
 
 	@Override
-	public void showVideos(List<Video> videos) {
+	public void updateVideos(List<Video> videos) {
 		if (!videos.isEmpty()) {
 			mLastNewOrder = videos.get(videos.size() - 1).newOrder;
 

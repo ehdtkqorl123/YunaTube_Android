@@ -13,7 +13,7 @@ public interface MainMenuMvpView extends BaseMvpView {
 
     void showNewInstaFeed(Feed feed);
 
-    void showVideos(List<Video> videos);
+    void updateVideos(List<Video> videos);
 
     void showError();
 }

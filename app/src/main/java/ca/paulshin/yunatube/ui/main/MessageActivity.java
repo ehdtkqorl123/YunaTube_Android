@@ -44,7 +44,7 @@ public class MessageActivity extends BaseActivity implements MessageMvpView, Vie
 	Bus mBus;
 
 	private boolean mIsRefreshing;
-	private String nextMaxId;
+	private String mNextMaxId;
 	private String mUsername;
 	private MessageAdapter mAdapter;
 
@@ -65,7 +65,6 @@ public class MessageActivity extends BaseActivity implements MessageMvpView, Vie
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.a_message);
 		ButterKnife.bind(this);
-
 		getActivityComponent().inject(this);
 		mMessagePresenter.attachView(this);
 
@@ -76,13 +75,13 @@ public class MessageActivity extends BaseActivity implements MessageMvpView, Vie
 
 		mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 		mAdapter = new MessageAdapter(mRecyclerView);
-		mAdapter.setOnLoadMoreListener(() -> mMessagePresenter.getMessages(nextMaxId));
+		mAdapter.setOnLoadMoreListener(() -> mMessagePresenter.getMessages(mNextMaxId));
 		mRecyclerView.setAdapter(mAdapter);
 
 		ButterKnife.findById(this, R.id.close).setOnClickListener(this);
 		ButterKnife.findById(this, R.id.submit).setOnClickListener(this);
 
-		loadMessages();
+		loadData();
 	}
 
 	@Override
@@ -162,15 +161,15 @@ public class MessageActivity extends BaseActivity implements MessageMvpView, Vie
 		MessageAdapter adapter = (MessageAdapter) mRecyclerView.getAdapter();
 		if (adapter != null) {
 			mIsRefreshing = true;
-			nextMaxId = null;
-			loadMessages();
+			mNextMaxId = null;
+			loadData();
 		}
 	}
 
 	/**
 	 * Load messages by making api calls if network is connected
 	 */
-	private void loadMessages() {
+	private void loadData() {
 		if (NetworkUtil.isNetworkConnected(this)) {
 			mMessagePresenter.getMessages("");
 		} else {
@@ -201,9 +200,9 @@ public class MessageActivity extends BaseActivity implements MessageMvpView, Vie
 	@Override
 	public void showMessages(List<Message> messages) {
 		if (!messages.isEmpty()) {
-			nextMaxId = messages.get(messages.size() - 1).id;
+			mNextMaxId = messages.get(messages.size() - 1).id;
 
-			if (TextUtils.equals(nextMaxId, "0")) {
+			if (TextUtils.equals(mNextMaxId, "0")) {
 				// After reaching the last one, deactivate loadmore
 				mAdapter.setOnLoadMoreListener(null);
 			}
