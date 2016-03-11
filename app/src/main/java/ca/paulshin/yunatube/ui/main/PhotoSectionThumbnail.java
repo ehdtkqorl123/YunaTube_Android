@@ -22,7 +22,7 @@ public class PhotoSectionThumbnail {
 		setThumbnailMap.put("72157638424044294", "https://farm3.staticflickr.com/2871/11242108093_503fda0b57_m.jpg");
 		setThumbnailMap.put("72157632198962566", "https://farm4.staticflickr.com/3687/8801098561_152afb5aa7_m.jpg");
 		setThumbnailMap.put("72157626581426520", "https://farm4.staticflickr.com/3829/8801237071_149a5e885a_m.jpg");
-		setThumbnailMap.put("72157624888667609", "https://farm5.staticflickr.com/4128/5037839149_db8b3ee9a9_m.jpg");
+		setThumbnailMap.put("72157624888667609", "https://farm5.staticflickr.com/4128/5037839149_840e7d48b2_m.jpg");
 		setThumbnailMap.put("72157625009752576", "https://farm4.staticflickr.com/3735/8804567431_7561228f68_m.jpg");
 		setThumbnailMap.put("72157625009573898", "https://farm6.staticflickr.com/5350/8805016557_3e2f219296_m.jpg");
 		setThumbnailMap.put("72157624888569209", "https://farm8.staticflickr.com/7316/8816019576_05aeca171a_m.jpg");
@@ -121,7 +121,7 @@ public class PhotoSectionThumbnail {
 		setThumbnailMap.put("72157624672876698", "https://farm8.staticflickr.com/7159/6440601629_e36825e53c_m.jpg");
 		setThumbnailMap.put("72157624672895352", "https://farm6.staticflickr.com/5441/8806019128_61c06d8d52_m.jpg");
 		setThumbnailMap.put("72157624788201772", "https://farm9.staticflickr.com/8547/8796545887_142032536e_m.jpg");
-		setThumbnailMap.put("72157624888667609", "https://farm5.staticflickr.com/4128/5037839149_db8b3ee9a9_m.jpg");
+		setThumbnailMap.put("72157624888667609", "https://farm5.staticflickr.com/4128/5037839149_840e7d48b2_m.jpg");
 		setThumbnailMap.put("72157625013245710", "https://farm8.staticflickr.com/7206/6784989012_969704280f_m.jpg");
 		setThumbnailMap.put("72157625022971026", "https://farm7.staticflickr.com/6066/6122610117_29f739fa0a_m.jpg");
 		setThumbnailMap.put("72157625022987086", "https://farm5.staticflickr.com/4009/5121852616_a5f0c886c8_m.jpg");

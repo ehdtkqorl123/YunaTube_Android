@@ -135,8 +135,8 @@ public class VideoMenuFragment extends BaseFragment implements
 	}
 
 	private void showMyFaves() {
-//		startActivity(new Intent(getActivity(), MyFavesActivity.class));
-//		getActivity().overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
+		startActivity(new Intent(getActivity(), MyFavesActivity.class));
+		getActivity().overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
 	}
 
 	/**

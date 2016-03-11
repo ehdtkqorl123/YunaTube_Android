@@ -5,9 +5,12 @@ import android.database.Cursor;
 import com.squareup.sqlbrite.BriteDatabase;
 import com.squareup.sqlbrite.SqlBrite;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import ca.paulshin.dao.DBVideo;
 import rx.Observable;
 import rx.Subscriber;
 
@@ -49,6 +52,12 @@ public class DatabaseHelper {
         });
     }
 
+    public Observable<List<DBVideo>> getMyFaves() {
+        return mDb.createQuery(Db.FaveVideoTable.TABLE_NAME,
+                "SELECT * FROM " + Db.FaveVideoTable.TABLE_NAME)
+                .mapToList((cursor) -> Db.FaveVideoTable.parseCursor(cursor));
+    }
+
 //    public Observable<Ribot> setRibots(final Collection<Ribot> newRibots) {
 //        return Observable.create(new Observable.OnSubscribe<Ribot>() {
 //            @Override
@@ -70,16 +79,5 @@ public class DatabaseHelper {
 //                }
 //            }
 //        });
-//    }
-//
-//    public Observable<List<Ribot>> getRibots() {
-//        return mDb.createQuery(Db.RibotProfileTable.TABLE_NAME,
-//                "SELECT * FROM " + Db.RibotProfileTable.TABLE_NAME)
-//                .mapToList(new Func1<Cursor, Ribot>() {
-//                    @Override
-//                    public Ribot call(Cursor cursor) {
-//                        return new Ribot(Db.RibotProfileTable.parseCursor(cursor));
-//                    }
-//                });
 //    }
 }

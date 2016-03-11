@@ -16,10 +16,10 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
+import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.view.ViewPropertyAnimator;
 
 import java.io.File;
@@ -41,7 +41,6 @@ import uk.co.senab.photoview.PhotoViewAttacher;
 public abstract class BasePhotoActivity extends BaseActivity implements PhotoViewAttacher.OnPhotoTapListener {
 	private static final int TRANSLATE_DURATION_MILLIS = 200;
 	private static final int SYSTEM_UI_SHOW_DURATION = 2000;
-	private final Interpolator mInterpolator = new AccelerateDecelerateInterpolator();
 
 	private NotificationManager mNotificationManager;
 	private View mDecorView;
@@ -57,7 +56,15 @@ public abstract class BasePhotoActivity extends BaseActivity implements PhotoVie
 
 		mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 		mDecorView = getWindow().getDecorView();
-		mDecorView.postDelayed(() -> hideSystemUI(), SYSTEM_UI_SHOW_DURATION);
+
+		// Hide nav bar on fullscreen
+		mDecorView.setSystemUiVisibility(
+				View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+						| View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+						| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+						| View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
+						| View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+						| View.SYSTEM_UI_FLAG_IMMERSIVE);
 	}
 
 	@Override
@@ -102,8 +109,30 @@ public abstract class BasePhotoActivity extends BaseActivity implements PhotoVie
 
 	protected void toggleMenu(boolean visible) {
 		int alpha = visible ? 1 : 0;
-		ViewPropertyAnimator.animate(mMenuView).setInterpolator(mInterpolator)
+
+		if (visible) {
+			mMenuView.setVisibility(View.VISIBLE);
+		}
+		ViewPropertyAnimator.animate(mMenuView)
+				.setInterpolator(new AccelerateDecelerateInterpolator())
 				.setDuration(TRANSLATE_DURATION_MILLIS)
+				.setListener(new Animator.AnimatorListener() {
+					@Override
+					public void onAnimationStart(Animator animation) {}
+
+					@Override
+					public void onAnimationEnd(Animator animation) {
+						if (!visible) {
+							mMenuView.setVisibility(View.GONE);
+						}
+					}
+
+					@Override
+					public void onAnimationCancel(Animator animation) {}
+
+					@Override
+					public void onAnimationRepeat(Animator animation) {}
+				})
 				.alpha(alpha);
 	}
 

@@ -115,6 +115,9 @@
             android:screenOrientation="sensor"
             android:theme="@style/Theme.YunaTube.Fullscreen"/>
 
+        <activity
+            android:name=".ui.main.MyFavesActivity"
+            android:label="@string/my_faves"/>
         <!-- Broadcast receivers -->
         <receiver
             android:name=".receiver.ConnectivityChangeReceiver">

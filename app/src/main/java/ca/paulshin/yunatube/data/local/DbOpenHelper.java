@@ -10,8 +10,8 @@ import ca.paulshin.yunatube.injection.ApplicationContext;
 
 public class DbOpenHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "ribots.db";
-    public static final int DATABASE_VERSION = 2;
+    public static final String DATABASE_NAME = "YunaTube";
+    public static final int DATABASE_VERSION = 5;
 
     @Inject
     public DbOpenHelper(@ApplicationContext Context context) {
@@ -24,7 +24,7 @@ public class DbOpenHelper extends SQLiteOpenHelper {
         try {
             //Uncomment line below if you want to enable foreign keys
             //db.execSQL("PRAGMA foreign_keys=ON;");
-            db.execSQL(Db.RibotProfileTable.CREATE);
+            db.execSQL(Db.FaveVideoTable.createQuery());
             //Add other tables here
             db.setTransactionSuccessful();
         } finally {

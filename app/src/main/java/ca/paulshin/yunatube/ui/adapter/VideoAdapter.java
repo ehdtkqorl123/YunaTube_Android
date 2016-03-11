@@ -21,7 +21,6 @@ import ca.paulshin.yunatube.util.PicassoUtil;
  */
 public class VideoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 	private List<Video> mVideos;
-
 	private VideoDao videoDao;
 
 	public VideoAdapter(List<Video> videos) {

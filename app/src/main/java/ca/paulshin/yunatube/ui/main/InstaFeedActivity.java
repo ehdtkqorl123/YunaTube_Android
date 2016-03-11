@@ -1,6 +1,5 @@
 package ca.paulshin.yunatube.ui.main;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -56,6 +55,7 @@ public class InstaFeedActivity extends BaseActivity implements InstaFeedMvpView 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.a_insta_feed);
 		ButterKnife.bind(this);
+
 		getActivityComponent().inject(this);
 		mInstaFeedPresenter.attachView(this);
 
@@ -149,8 +149,11 @@ public class InstaFeedActivity extends BaseActivity implements InstaFeedMvpView 
 			intent.putExtra(InstaVideoActivity.EXTRA_INSTA_VIDEO_HEIGHT, videoHeight);
 		}
 
-		ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, view, "insta");
-		startActivity(intent, options.toBundle());
+//		ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, view, "insta");
+//		startActivity(intent, options.toBundle());
+
+		startActivity(intent);
+		overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
 	}
 
 	/*****

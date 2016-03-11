@@ -37,14 +37,12 @@ public class SplashActivity extends Activity {
 		animation.setAnimationListener(new AnimationListener() {
 			public void onAnimationEnd(Animation arg0) {
 				Handler handler = new Handler();
-				handler.postDelayed(new Runnable() {
-					public void run() {
+				handler.postDelayed(() -> {
 						Intent main = new Intent(SplashActivity.this, MainActivity.class);
 						startActivity(main);
 						overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
 						finish();
-					}
 				}, FADE_OUT_DURATION);
 			}
 			public void onAnimationRepeat(Animation animation) {}

@@ -10,7 +10,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import ca.paulshin.yunatube.R;
 import ca.paulshin.yunatube.data.model.flickr.CollectionItem;
-import ca.paulshin.yunatube.ui.adapter.SectionLayoutAdapter;
+import ca.paulshin.yunatube.ui.adapter.PhotoSectionLayoutAdapter;
 import ca.paulshin.yunatube.ui.base.BaseActivity;
 import ca.paulshin.yunatube.util.ResourceUtil;
 
@@ -45,7 +45,7 @@ public class PhotoSectionActivity extends BaseActivity {
 		mRecyclerView.setLayoutManager(new GridLayoutManager(this, ResourceUtil.getInteger(R.integer.photo_sections_columns)));
 
 		if (collection.set.size() > 0) {
-			SectionLayoutAdapter adapter = new SectionLayoutAdapter(PhotoSectionActivity.this, collection.set);
+			PhotoSectionLayoutAdapter adapter = new PhotoSectionLayoutAdapter(PhotoSectionActivity.this, collection.set);
 			mLoadingView.setVisibility(View.GONE);
 			mRecyclerView.setAdapter(adapter);
 		}

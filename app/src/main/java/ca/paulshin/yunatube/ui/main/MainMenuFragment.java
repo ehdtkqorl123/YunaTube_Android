@@ -1,7 +1,6 @@
 package ca.paulshin.yunatube.ui.main;
 
 import android.app.Activity;
-import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -51,8 +50,8 @@ import ca.paulshin.yunatube.receiver.ConnectivityChangeReceiver;
 import ca.paulshin.yunatube.ui.adapter.MainVideoAdapter;
 import ca.paulshin.yunatube.ui.base.BaseActivity;
 import ca.paulshin.yunatube.ui.base.BaseFragment;
-import ca.paulshin.yunatube.util.PicassoUtil;
 import ca.paulshin.yunatube.util.NetworkUtil;
+import ca.paulshin.yunatube.util.PicassoUtil;
 import ca.paulshin.yunatube.util.ResourceUtil;
 import ca.paulshin.yunatube.util.ToastUtil;
 import ca.paulshin.yunatube.util.events.ConnectivityChangeEvent;
@@ -379,8 +378,11 @@ public class MainMenuFragment extends BaseFragment implements
 			intent.putExtra(InstaVideoActivity.EXTRA_INSTA_VIDEO_HEIGHT, videoHeight);
 		}
 
-		ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(activity, view, "insta");
-		activity.startActivity(intent, options.toBundle());
+//		ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(activity, view, "insta");
+//		activity.startActivity(intent, options.toBundle());
+
+		startActivity(intent);
+		activity.overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
 	}
 
 	/*****

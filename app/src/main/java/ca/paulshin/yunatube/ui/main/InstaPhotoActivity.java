@@ -45,6 +45,9 @@ public class InstaPhotoActivity extends BasePhotoActivity {
 
 		mMenuView = ButterKnife.findById(this, R.id.menu);
 		mImageUrl = getIntent().getStringExtra(EXTRA_INSTA_PHOTO_URL);
+
+		setMenubarPadding();
+
 		PicassoUtil.loadImage(mImageUrl, mInstaPhotoView, new Callback() {
 			@Override
 			public void onSuccess() {

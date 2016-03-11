@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import ca.paulshin.dao.DBVideo;
 import ca.paulshin.yunatube.Config;
 import ca.paulshin.yunatube.R;
 import ca.paulshin.yunatube.data.local.DatabaseHelper;
@@ -58,21 +59,6 @@ public class DataManager {
     public PreferencesHelper getPreferencesHelper() {
         return mPreferencesHelper;
     }
-
-//    public Observable<Ribot> syncRibots() {
-//        return mRibotsService.getRibots()
-//                .concatMap(new Func1<List<Ribot>, Observable<Ribot>>() {
-//                    @Override
-//                    public Observable<Ribot> call(List<Ribot> ribots) {
-//                        return mDatabaseHelper.setRibots(ribots);
-//                    }
-//                });
-//    }
-//
-//    public Observable<List<Ribot>> getRibots() {
-////        return mDatabaseHelper.getRibots().distinct();
-//        return mRibotsService.getRibots();
-//    }
 
     public Observable<Notice> getNotice(String lang, int random) {
         return mYunaTubeService.getNotice(lang, random);
@@ -223,6 +209,11 @@ public class DataManager {
 
 		return mYunaTubeService.getComments(options);
 	}
+
+
+    public Observable<List<DBVideo>> getMyFaves() {
+        return mDatabaseHelper.getMyFaves();
+    }
 
     /// Helper method to post events from doOnCompleted.
     private Action0 postEventAction(final Object event) {

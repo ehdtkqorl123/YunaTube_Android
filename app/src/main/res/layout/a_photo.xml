@@ -17,7 +17,8 @@
         android:layout_gravity="bottom"
         android:background="@color/photo_menu_background"
         android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <FrameLayout
             android:layout_width="0dp"

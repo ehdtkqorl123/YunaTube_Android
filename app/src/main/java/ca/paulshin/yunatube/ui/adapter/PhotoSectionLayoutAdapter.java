@@ -22,7 +22,7 @@ import ca.paulshin.yunatube.util.PicassoUtil;
 /**
  * Created by paulshin on 16-02-28.
  */
-public class SectionLayoutAdapter extends RecyclerView.Adapter<SectionLayoutAdapter.SimpleViewHolder> {
+public class PhotoSectionLayoutAdapter extends RecyclerView.Adapter<PhotoSectionLayoutAdapter.SimpleViewHolder> {
 	private final Context mContext;
 	private final List<Set> mItems;
 
@@ -37,7 +37,7 @@ public class SectionLayoutAdapter extends RecyclerView.Adapter<SectionLayoutAdap
 		}
 	}
 
-	public SectionLayoutAdapter(Context context, List<Set> items) {
+	public PhotoSectionLayoutAdapter(Context context, List<Set> items) {
 		mContext = context;
 		mItems = items;
 	}
@@ -54,6 +54,7 @@ public class SectionLayoutAdapter extends RecyclerView.Adapter<SectionLayoutAdap
 		holder.title.setText(item.title);
 		final PhotoSectionThumbnail thumbnail = PhotoSectionThumbnail.getInstance();
 		PicassoUtil.loadImage(thumbnail.setThumbnailMap.get(item.id), holder.thumbnail, R.drawable.placeholder_gray);
+
 		((View)holder.thumbnail.getParent().getParent()).setOnClickListener((v) -> {
 			Activity activity = (Activity) v.getContext();
 			String url = (String) v.getTag();
