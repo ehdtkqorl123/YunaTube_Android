@@ -6,11 +6,13 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import ca.paulshin.yunatube.R;
 import ca.paulshin.yunatube.data.DataManager;
 import ca.paulshin.yunatube.data.model.video.Comment;
 import ca.paulshin.yunatube.data.model.video.SimpleResult;
 import ca.paulshin.yunatube.data.model.video.Video;
 import ca.paulshin.yunatube.ui.base.BasePresenter;
+import ca.paulshin.yunatube.util.ToastUtil;
 import rx.Subscriber;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
@@ -148,5 +150,33 @@ public class VideoPresenter extends BasePresenter<VideoMvpView> {
 						}
 					}
 				});
+	}
+
+	public void getFaveStatus(String ytid) {
+		mSubscription = mDataManager.getMyFaveKey(ytid)
+				.observeOn(AndroidSchedulers.mainThread())
+				.subscribeOn(Schedulers.io())
+				.subscribe((id) -> {
+					getMvpView().setFaveStatus(id);
+				});
+
+	}
+
+	public void addFave(Video video) {
+		mSubscription = mDataManager.insertFave(video)
+				.observeOn(AndroidSchedulers.mainThread())
+				.subscribeOn(Schedulers.io())
+				.subscribe((dbVideo) -> {
+					getMvpView().addedFave(dbVideo);
+				});
+	}
+
+	public void deleteFave(int key) {
+		mSubscription = mDataManager.deleteFaveByKey(key)
+			.observeOn(AndroidSchedulers.mainThread())
+			.subscribeOn(Schedulers.io())
+			.subscribe((row) -> {
+				getMvpView().deletedFave(row);
+			});
 	}
 }

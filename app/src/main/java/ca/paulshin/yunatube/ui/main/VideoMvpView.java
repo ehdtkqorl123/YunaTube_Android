@@ -20,5 +20,11 @@ public interface VideoMvpView extends BaseMvpView {
 
 	void report(SimpleResult result);
 
+	void setFaveStatus(int id);
+
 	void showError();
+
+	void addedFave(Video dbVideo);
+
+	void deletedFave(Integer row);
 }

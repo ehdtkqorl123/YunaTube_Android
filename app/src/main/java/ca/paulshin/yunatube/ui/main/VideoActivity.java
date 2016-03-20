@@ -12,20 +12,15 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 import com.nineoldandroids.animation.Animator;
@@ -38,22 +33,14 @@ import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import ca.paulshin.dao.DBVideo;
-import ca.paulshin.dao.DaoMaster;
-import ca.paulshin.dao.DaoSession;
-import ca.paulshin.dao.VideoDao;
 import ca.paulshin.yunatube.BuildConfig;
 import ca.paulshin.yunatube.Config;
 import ca.paulshin.yunatube.R;
-import ca.paulshin.yunatube.YTApplication;
 import ca.paulshin.yunatube.data.model.video.Comment;
 import ca.paulshin.yunatube.data.model.video.SimpleResult;
 import ca.paulshin.yunatube.data.model.video.Video;
-import ca.paulshin.yunatube.db.DBHelper;
-import ca.paulshin.yunatube.injection.component.ActivityComponent;
-import ca.paulshin.yunatube.injection.component.DaggerActivityComponent;
-import ca.paulshin.yunatube.injection.module.ActivityModule;
 import ca.paulshin.yunatube.ui.adapter.CommentAdapter;
+import ca.paulshin.yunatube.ui.base.BaseYouTubeFailureRecoveryActivity;
 import ca.paulshin.yunatube.util.NetworkUtil;
 import ca.paulshin.yunatube.util.ResourceUtil;
 import ca.paulshin.yunatube.util.ToastUtil;
@@ -64,9 +51,8 @@ import ca.paulshin.yunatube.widgets.FloatingActionsMenu;
 import ca.paulshin.yunatube.widgets.RecyclerViewScrollDetector;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
-public class VideoActivity extends YouTubeFailureRecoveryActivity implements
+public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 		YouTubePlayer.OnFullscreenListener,
-		CompoundButton.OnCheckedChangeListener,
 		View.OnTouchListener,
 		FloatingActionsMenu.ToggleListener,
 		View.OnClickListener,
@@ -79,36 +65,7 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity implements
 
 	public static final String EXTRA_YTID = "ytid";
 	public static final String EXTRA_FROM_NOTIF = "from_notif";
-
-	private static final String ROTATION = "rotation";
-	private static final String ROTATION_GUIDE = "rotation_guide";
-	private static final String DOWNLOAD_GUIDE = "download_guide";
 	private static final int TRANSLATE_DURATION_MILLIS = 200;
-
-	// Dagger
-	private ActivityComponent mActivityComponent;
-
-	private boolean isFromNotification;
-	private Tracker mTracker;
-
-	// Youtube
-	private String mYtid;
-	private Video mVideo;
-	private YouTubePlayer mPlayer;
-	private int playerControlFlags;
-	private boolean mIsFullscreen;
-
-	private String mUsername;
-
-	private VideoDao videoDao;
-	private long videoKey;
-	private View mListHeaderView;
-	private CheckBox rotation;
-
-	private boolean mIsRefreshing;
-	private String mLastIndex;
-
-	private CommentAdapter mAdapter;
 
 	@Bind(R.id.player)
 	public YouTubePlayerView mPlayerView;
@@ -131,15 +88,16 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity implements
 	@Bind(R.id.none)
 	View mNoneView;
 
-	public ActivityComponent getActivityComponent() {
-		if (mActivityComponent == null) {
-			mActivityComponent = DaggerActivityComponent.builder()
-					.activityModule(new ActivityModule(this))
-					.applicationComponent(YTApplication.get(this).getComponent())
-					.build();
-		}
-		return mActivityComponent;
-	}
+	private View mListHeaderView;
+	private boolean mFromNotification;
+	private String mYtid;
+	private Video mVideo;
+	private boolean mIsFullscreen;
+	private String mUsername;
+	private int mVideoKey;
+	private boolean mIsRefreshing;
+	private String mLastIndex;
+	private CommentAdapter mAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -149,10 +107,10 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity implements
 		getActivityComponent().inject(this);
 		mVideoPresenter.attachView(this);
 
-		mTracker = ((YTApplication)getApplication()).getDefaultTracker();
+		Intent intent = getIntent();
+		mYtid = intent.getStringExtra(EXTRA_YTID);
+		mFromNotification = intent.getBooleanExtra(EXTRA_FROM_NOTIF, false);
 
-		mYtid = getIntent().getStringExtra(EXTRA_YTID);
-		isFromNotification = getIntent().getBooleanExtra(EXTRA_FROM_NOTIF, false);
 		mListHeaderView = LayoutInflater.from(this).inflate(R.layout.p_comments_header, null);
 		mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 		mAdapter = new CommentAdapter(mRecyclerView, mListHeaderView);
@@ -163,27 +121,7 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity implements
 		mFab.setListener(this);
 		mVeilView.setOnTouchListener(this);
 
-		// Set statusbar
-		Window w = getWindow();
-		w.setStatusBarColor(ResourceUtil.getColor(R.color.video_theme_dark));
-
-		// DB
-		DaoMaster daoMaster = DBHelper.getDaoMaster();
-		DaoSession daoSession = daoMaster.newSession();
-		videoDao = daoSession.getVideoDao();
-
-		// Check if this video is already added
-		List queriedVideos = videoDao.queryBuilder()
-				.where(VideoDao.Properties.Ytid.eq(mYtid))
-				.list();
-		if (queriedVideos.size() > 0) {
-			videoKey = ((DBVideo) queriedVideos.get(0)).getId();
-			mFavoriteView.setText(R.string.youtube_remove_from_my_faves);
-		} else {
-			videoKey = 0;
-			mFavoriteView.setText(R.string.youtube_add_to_my_faves);
-		}
-		mFavorite.setIcon(videoKey == 0 ? R.drawable.ic_favorite : R.drawable.ic_unfavorite);
+		mVideoPresenter.getFaveStatus(mYtid);
 
 		ButterKnife.findById(this, R.id.close).setOnClickListener(this);
 		ButterKnife.findById(this, R.id.submit).setOnClickListener(this);
@@ -228,7 +166,7 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity implements
 		} else if (mFab.isExpanded()) {
 			mFab.collapse();
 		} else {
-			if (isFromNotification) {
+			if (mFromNotification) {
 				finish();
 				startActivity(new Intent(this, MainActivity.class));
 				overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
@@ -237,19 +175,9 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity implements
 		}
 	}
 
-	protected void sendScreen() {
-		String screenName = "video - android: " + mYtid;
-		mTracker.setScreenName(screenName);
-		mTracker.send(new HitBuilders.ScreenViewBuilder()
-				.build());
-	}
-
-	protected void sendEvent(String category, String action, String label) {
-		mTracker.send(new HitBuilders.EventBuilder()
-				.setCategory(category)
-				.setAction(action)
-				.setLabel(label)
-				.build());
+	@Override
+	protected String getScreenName() {
+		return "video - android: " + mYtid;
 	}
 
 	private void loadData() {
@@ -275,7 +203,6 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity implements
 	 */
 	@Override
 	public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer player, boolean wasRestored) {
-		mPlayer = player;
 		player.addFullscreenControlFlag(YouTubePlayer.FULLSCREEN_FLAG_CUSTOM_LAYOUT);
 		player.setOnFullscreenListener(this);
 		if (!wasRestored) {
@@ -286,9 +213,6 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity implements
 //		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
 		controlFlags |= YouTubePlayer.FULLSCREEN_FLAG_ALWAYS_FULLSCREEN_IN_LANDSCAPE;
 		player.setFullscreenControlFlags(controlFlags);
-
-//		rotation.setOnCheckedChangeListener(this);
-//		rotation.setChecked(YTPreference.getBoolean(ROTATION));
 	}
 
 	@Override
@@ -333,19 +257,6 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity implements
 			mFab.setVisibility(View.GONE);
 		else
 			mFab.setVisibility(mIsFullscreen ? View.GONE : View.VISIBLE);
-	}
-
-	@Override
-	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-		if (mPlayer != null) {
-			if (isChecked) {
-				mPlayer.setFullscreenControlFlags(playerControlFlags | YouTubePlayer.FULLSCREEN_FLAG_ALWAYS_FULLSCREEN_IN_LANDSCAPE);
-				YTPreference.put(ROTATION, true);
-			} else {
-				mPlayer.setFullscreenControlFlags(playerControlFlags);
-				YTPreference.put(ROTATION, false);
-			}
-		}
 	}
 
 	/*****
@@ -402,6 +313,36 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity implements
 		mAdapter.notifyDataSetChanged();
 
 		sendEvent("video - android", "send: " + mVideo.ytid, "comment");
+	}
+
+	@Override
+	public void setFaveStatus(int id) {
+		mVideoKey = id;
+		boolean isFaved = id != -1;
+		mFavoriteView.setText(isFaved ? R.string.youtube_remove_from_my_faves : R.string.youtube_add_to_my_faves);
+		mFavorite.setIcon(isFaved ? R.drawable.ic_unfavorite : R.drawable.ic_favorite);
+	}
+
+	@Override
+	public void addedFave(Video dbVideo) {
+		if (dbVideo != null) {
+			ToastUtil.toast(this, R.string.faves_add_success);
+			sendEvent("video - android", "add: " + mYtid, "fave");
+		} else {
+			ToastUtil.toast(this, R.string.faves_add_failure);
+		}
+	}
+
+	@Override
+	public void deletedFave(Integer row) {
+		if (row > 0) {
+			ToastUtil.toast(this, R.string.faves_remove_success);
+			mVideoKey = -1;
+			mBus.post(new VideoDeletedEvent());
+			sendEvent("video - android", "remove: " + mYtid, "fave");
+		} else {
+			ToastUtil.toast(this, R.string.faves_remove_failure);
+		}
 	}
 
 	@Override
@@ -525,28 +466,18 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity implements
 				break;
 
 			case R.id.fab_favorite:
-				if (videoKey == 0) {
+				if (mVideoKey == -1) {
 					// Create Video
-					DBVideo videoDBObj = new DBVideo();
-					videoDBObj.setStitle(mVideo.stitle);
-					videoDBObj.setYtid(mVideo.ytid);
-					videoDBObj.setYtitle(mVideo.ytitle);
-
-					// Set DB
-					videoKey = videoDao.insert(videoDBObj);
-					ToastUtil.toast(this, videoKey > 0 ? R.string.faves_add_success : R.string.faves_add_failure);
-
-					sendEvent("video - android", "add: " + mYtid, "fave");
+					Video video = new Video();
+					video.stitle = mVideo.stitle;
+					video.ytid = mVideo.ytid;
+					video.ytitle = mVideo.ytitle;
+					mVideoPresenter.addFave(video);
 				} else {
-					videoDao.deleteByKey(videoKey);
-					ToastUtil.toast(this, R.string.faves_remove_success);
-					videoKey = 0;
-					mBus.post(new VideoDeletedEvent());
-
-					sendEvent("video - android", "remove: " + mYtid, "fave");
+					mVideoPresenter.deleteFave(mVideoKey);
 				}
-				mFavoriteView.setText(videoKey == 0 ? R.string.youtube_add_to_my_faves : R.string.youtube_remove_from_my_faves);
-				mFavorite.setIcon(videoKey == 0 ? R.drawable.ic_favorite : R.drawable.ic_unfavorite);
+				mFavoriteView.setText(mVideoKey == 0 ? R.string.youtube_add_to_my_faves : R.string.youtube_remove_from_my_faves);
+				mFavorite.setIcon(mVideoKey == 0 ? R.drawable.ic_favorite : R.drawable.ic_unfavorite);
 				break;
 
 			case R.id.fab_youtube:
@@ -591,8 +522,6 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity implements
 
 					ImageView guide = new ImageView(this);
 					guide.setImageResource(R.drawable.video_download_guide);
-
-
 
 					new SweetAlertDialog(this, SweetAlertDialog.CUSTOM_BIG_IMAGE_TYPE)
 							.setCustomBigImage(R.drawable.video_download_guide)
