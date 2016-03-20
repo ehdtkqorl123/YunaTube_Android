@@ -9,13 +9,9 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import ca.paulshin.dao.DaoMaster;
-import ca.paulshin.dao.DaoSession;
-import ca.paulshin.dao.VideoDao;
 import ca.paulshin.yunatube.Config;
 import ca.paulshin.yunatube.R;
 import ca.paulshin.yunatube.data.model.video.Video;
-import ca.paulshin.yunatube.db.DBHelper;
 import ca.paulshin.yunatube.util.PicassoUtil;
 import ca.paulshin.yunatube.util.ResourceUtil;
 
@@ -27,7 +23,6 @@ public class MainVideoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 	private static final int TYPE_ITEM = 1;
 	private List<Video> mVideos;
 	private View mHeader;
-	private VideoDao mVideoDao;
 	private OnLoadMoreListener mOnLoadMoreListener;
 	private boolean mIsLoading;
 	// The minimum amount of items to have below your current scroll position before loading more.
@@ -38,10 +33,6 @@ public class MainVideoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 	public MainVideoAdapter(RecyclerView recyclerView, View header) {
 		mHeader = header;
 		mVideos = new ArrayList<>();
-
-		DaoMaster daoMaster = DBHelper.getDaoMaster();
-		DaoSession daoSession = daoMaster.newSession();
-		mVideoDao = daoSession.getVideoDao();
 
 		// Implement loadmore
 		if (recyclerView.getLayoutManager() instanceof LinearLayoutManager) {
@@ -89,7 +80,7 @@ public class MainVideoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 	public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 		if (viewType == TYPE_ITEM) {
 			View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.r_video, parent, false);
-			ItemViewHolder ivh = new ItemViewHolder(v, mVideoDao);
+			ItemViewHolder ivh = new ItemViewHolder(v);
 			return ivh;
 		} else if (viewType == TYPE_HEADER) {
 			HeaderViewHolder hvh = new HeaderViewHolder(mHeader);

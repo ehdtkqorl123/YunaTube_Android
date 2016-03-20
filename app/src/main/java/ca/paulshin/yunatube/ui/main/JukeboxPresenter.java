@@ -13,18 +13,18 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import timber.log.Timber;
 
-public class MyFavesPresenter extends BasePresenter<MyFavesMvpView> {
+public class JukeboxPresenter extends BasePresenter<JukeboxMvpView> {
 
     private final DataManager mDataManager;
     private Subscription mSubscription;
 
     @Inject
-    public MyFavesPresenter(DataManager dataManager) {
+    public JukeboxPresenter(DataManager dataManager) {
         mDataManager = dataManager;
     }
 
     @Override
-    public void attachView(MyFavesMvpView mvpView) {
+    public void attachView(JukeboxMvpView mvpView) {
         super.attachView(mvpView);
     }
 
@@ -33,10 +33,10 @@ public class MyFavesPresenter extends BasePresenter<MyFavesMvpView> {
         super.detachView();
     }
 
-    public void getMyFaves() {
+    public void getVideos() {
         checkViewAttached();
 
-        mSubscription = mDataManager.getMyFaves()
+        mSubscription = mDataManager.getJukeboxVideos()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Subscriber<List<Video>>() {

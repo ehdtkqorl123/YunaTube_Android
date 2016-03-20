@@ -3,7 +3,6 @@ package ca.paulshin.yunatube.ui.main;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.CheckBox;
@@ -46,11 +45,7 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
 		setContentView(R.layout.a_settings);
 		ButterKnife.bind(this);
 
-		final Toolbar toolbar = getActionBarToolbar();
-		toolbar.setNavigationIcon(R.drawable.ic_up);
-		toolbar.setNavigationOnClickListener((__) -> {
-			finish();
-		});
+		setToolbar();
 
 		// Push Settings
 		if (!LanguageUtil.isKorean() && !BuildConfig.DEBUG) {

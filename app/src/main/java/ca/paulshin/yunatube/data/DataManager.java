@@ -9,7 +9,6 @@ import java.util.Map;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import ca.paulshin.dao.DBVideo;
 import ca.paulshin.yunatube.Config;
 import ca.paulshin.yunatube.R;
 import ca.paulshin.yunatube.data.local.DatabaseHelper;
@@ -31,7 +30,6 @@ import ca.paulshin.yunatube.util.EventPosterHelper;
 import ca.paulshin.yunatube.util.LanguageUtil;
 import ca.paulshin.yunatube.util.ResourceUtil;
 import rx.Observable;
-import rx.functions.Action0;
 
 @Singleton
 public class DataManager {
@@ -210,23 +208,8 @@ public class DataManager {
 		return mYunaTubeService.getComments(options);
 	}
 
-
-    public Observable<List<DBVideo>> getMyFaves() {
-        return mDatabaseHelper.getMyFaves();
-    }
-
-    /// Helper method to post events from doOnCompleted.
-    private Action0 postEventAction(final Object event) {
-        return new Action0() {
-            @Override
-            public void call() {
-                mEventPoster.postEventSafely(event);
-            }
-        };
-    }
-
 	public Observable<SimpleResult> submitComment(String ytid, String username, String comment, String time, String deviceId) {
-		Map<String, String> options = new HashMap<String, String>();
+		Map<String, String> options = new HashMap<>();
 		options.put("ytid", ytid);
 		options.put("username", username);
 		options.put("message", comment);
@@ -236,4 +219,44 @@ public class DataManager {
 
 		return mYunaTubeService.submitComment(options);
 	}
+
+    public Observable<List<Video>> getMyFaves() {
+        return mDatabaseHelper.getMyFaves();
+    }
+
+	public Observable<Integer> getMyFaveKey(String ytid) {
+		return mDatabaseHelper.getMyFaveKey(ytid);
+	}
+
+	public Observable<Integer> deleteFaveByKey(Integer key) {
+		return mDatabaseHelper.delete(key);
+	}
+
+	public Observable<Video> insertFave(Video video) {
+		return mDatabaseHelper.insert(video);
+	}
+
+	public Observable<List<Video>> getJukeboxVideos() {
+		final String cid = "6";
+		final String sid = "1";
+		String order = (TextUtils.equals(cid, "2") || TextUtils.equals(cid, "4") || TextUtils.equals(cid, "6")) ? "desc" : "asc";
+
+		Map<String, String> options = new HashMap<>();
+		options.put("cid", cid);
+		options.put("sid", sid);
+		options.put("order", order);
+		options.put("lo", LanguageUtil.getLangCode());
+
+		return mYunaTubeService.getVideos(options);
+	}
+
+	// Helper method to post events from doOnCompleted.
+//    private Action0 postEventAction(final Object event) {
+//        return new Action0() {
+//            @Override
+//            public void call() {
+//                mEventPoster.postEventSafely(event);
+//            }
+//        };
+//    }
 }

@@ -1,6 +1,7 @@
 package ca.paulshin.yunatube.data.local;
 
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 
 import com.squareup.sqlbrite.BriteDatabase;
 import com.squareup.sqlbrite.SqlBrite;
@@ -10,12 +11,18 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import ca.paulshin.dao.DBVideo;
+import ca.paulshin.yunatube.data.model.video.Video;
 import rx.Observable;
 import rx.Subscriber;
 
 @Singleton
 public class DatabaseHelper {
+    private static final String SELECT_ALL_QUERY = "SELECT * FROM " + Db.FaveVideoTable.TABLE_NAME;
+    private static final String FAVE_ID_QUERY = "SELECT " + Db.FaveVideoTable.COLUMN_ID + " FROM "
+            + Db.FaveVideoTable.TABLE_NAME
+            + " WHERE "
+            + Db.FaveVideoTable.COLUMN_YTID
+            + " = ?";
 
     private final BriteDatabase mDb;
 
@@ -52,32 +59,50 @@ public class DatabaseHelper {
         });
     }
 
-    public Observable<List<DBVideo>> getMyFaves() {
-        return mDb.createQuery(Db.FaveVideoTable.TABLE_NAME,
-                "SELECT * FROM " + Db.FaveVideoTable.TABLE_NAME)
-                .mapToList((cursor) -> Db.FaveVideoTable.parseCursor(cursor));
+    public Observable<List<Video>> getMyFaves() {
+        return mDb.createQuery(Db.FaveVideoTable.TABLE_NAME, SELECT_ALL_QUERY)
+                .mapToList(Db.FaveVideoTable::parseCursor);
     }
 
-//    public Observable<Ribot> setRibots(final Collection<Ribot> newRibots) {
-//        return Observable.create(new Observable.OnSubscribe<Ribot>() {
-//            @Override
-//            public void call(Subscriber<? super Ribot> subscriber) {
-//                if (subscriber.isUnsubscribed()) return;
-//                BriteDatabase.Transaction transaction = mDb.newTransaction();
-//                try {
-//                    mDb.delete(Db.RibotProfileTable.TABLE_NAME, null);
-//                    for (Ribot ribot : newRibots) {
-//                        long result = mDb.insert(Db.RibotProfileTable.TABLE_NAME,
-//                                Db.RibotProfileTable.toContentValues(ribot.profile),
-//                                SQLiteDatabase.CONFLICT_REPLACE);
-//                        if (result >= 0) subscriber.onNext(ribot);
-//                    }
-//                    transaction.markSuccessful();
-//                    subscriber.onCompleted();
-//                } finally {
-//                    transaction.end();
-//                }
-//            }
-//        });
-//    }
+    public Observable<Integer> getMyFaveKey(String ytid) {
+        return mDb.createQuery(Db.FaveVideoTable.TABLE_NAME, FAVE_ID_QUERY, ytid)
+                .first()
+                .map((query) -> {
+                    Cursor cursor = query.run();
+                    try {
+                        if (!cursor.moveToNext()) {
+                            return -1;
+                        }
+                        return cursor.getInt(0);
+                    } finally {
+                        cursor.close();
+                    }
+                });
+    }
+
+    public Observable<Video> insert(Video video) {
+        return Observable.create(subscriber -> {
+            if (subscriber.isUnsubscribed()) return;
+            BriteDatabase.Transaction transaction = mDb.newTransaction();
+            try {
+                long result = mDb.insert(Db.FaveVideoTable.TABLE_NAME,
+                        Db.FaveVideoTable.toContentValues(video),
+                        SQLiteDatabase.CONFLICT_REPLACE);
+                if (result >= 0) subscriber.onNext(video);
+                transaction.markSuccessful();
+                subscriber.onCompleted();
+            } finally {
+                transaction.end();
+            }
+        });
+    }
+
+    public Observable<Integer> delete(Integer key) {
+        return Observable.create(subscriber -> {
+            if (subscriber.isUnsubscribed()) return;
+
+            int result = mDb.delete(Db.FaveVideoTable.TABLE_NAME, Db.FaveVideoTable.COLUMN_ID + "=" + key);
+            subscriber.onNext(result);
+        });
+    }
 }

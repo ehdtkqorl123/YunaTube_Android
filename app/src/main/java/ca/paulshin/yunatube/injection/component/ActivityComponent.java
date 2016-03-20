@@ -4,6 +4,7 @@ import ca.paulshin.yunatube.injection.PerActivity;
 import ca.paulshin.yunatube.injection.module.ActivityModule;
 import ca.paulshin.yunatube.ui.main.AnimatedGifListActivity;
 import ca.paulshin.yunatube.ui.main.InstaFeedActivity;
+import ca.paulshin.yunatube.ui.main.JukeboxActivity;
 import ca.paulshin.yunatube.ui.main.MainMenuFragment;
 import ca.paulshin.yunatube.ui.main.MessageActivity;
 import ca.paulshin.yunatube.ui.main.MyFavesActivity;
@@ -33,6 +34,7 @@ public interface ActivityComponent {
     void inject(VideoListActivity videoListActivity);
     void inject(VideoActivity videoActivity);
     void inject(MyFavesActivity myFavesActivity);
+    void inject(JukeboxActivity jukeboxActivity);
     void inject(SearchActivity searchActivity);
     void inject(MessageActivity messageActivity);
 }

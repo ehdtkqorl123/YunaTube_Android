@@ -4,16 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
 import android.view.View;
 
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -35,7 +31,7 @@ public class VideoListActivity extends BaseActivity implements VideoListMvpView 
 	@Inject
 	Bus mBus;
 
-	@Bind(R.id.collections)
+	@Bind(R.id.list)
 	public RecyclerView mRecyclerView;
 	@Bind(R.id.loading)
 	public View mLoadingView;
@@ -64,9 +60,7 @@ public class VideoListActivity extends BaseActivity implements VideoListMvpView 
 		sid = intent.getStringExtra(EXTRA_SID);
 		stitle = intent.getStringExtra(EXTRA_STITLE);
 
-		final Toolbar toolbar = getActionBarToolbar();
-		toolbar.setNavigationIcon(R.drawable.ic_up);
-		toolbar.setNavigationOnClickListener((__) -> finish());
+		setToolbar();
 		setTitle(stitle);
 
 		mRecyclerView.setLayoutManager(new LinearLayoutManager(this));

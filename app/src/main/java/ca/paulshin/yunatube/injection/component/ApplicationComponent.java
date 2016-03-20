@@ -14,6 +14,7 @@ import ca.paulshin.yunatube.data.local.PreferencesHelper;
 import ca.paulshin.yunatube.injection.ApplicationContext;
 import ca.paulshin.yunatube.injection.module.ApplicationModule;
 import ca.paulshin.yunatube.receiver.ConnectivityChangeReceiver;
+import ca.paulshin.yunatube.ui.adapter.ItemViewHolder;
 import dagger.Component;
 
 @Singleton
@@ -22,6 +23,7 @@ public interface ApplicationComponent {
 
     void inject(SyncService syncService);
     void inject(ConnectivityChangeReceiver connectivityChangeReceiver);
+    void inject(ItemViewHolder itemViewHolder);
 
     @ApplicationContext Context context();
     Application application();

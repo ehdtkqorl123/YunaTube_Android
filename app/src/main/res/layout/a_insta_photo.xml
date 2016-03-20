@@ -18,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_gravity="bottom"
+        android:alpha="0"
         android:background="@color/photo_menu_background"
         android:gravity="center_vertical"
         android:orientation="horizontal"

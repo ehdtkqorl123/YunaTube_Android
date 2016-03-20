@@ -30,6 +30,7 @@ import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.view.ViewPropertyAnimator;
+import com.squareup.otto.Bus;
 
 import java.util.List;
 
@@ -57,6 +58,7 @@ import ca.paulshin.yunatube.util.NetworkUtil;
 import ca.paulshin.yunatube.util.ResourceUtil;
 import ca.paulshin.yunatube.util.ToastUtil;
 import ca.paulshin.yunatube.util.YTPreference;
+import ca.paulshin.yunatube.util.events.VideoDeletedEvent;
 import ca.paulshin.yunatube.widgets.FloatingActionButton;
 import ca.paulshin.yunatube.widgets.FloatingActionsMenu;
 import ca.paulshin.yunatube.widgets.RecyclerViewScrollDetector;
@@ -72,6 +74,8 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity implements
 
 	@Inject
 	VideoPresenter mVideoPresenter;
+	@Inject
+	Bus mBus;
 
 	public static final String EXTRA_YTID = "ytid";
 	public static final String EXTRA_FROM_NOTIF = "from_notif";
@@ -108,7 +112,7 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity implements
 
 	@Bind(R.id.player)
 	public YouTubePlayerView mPlayerView;
-	@Bind(R.id.collections)
+	@Bind(R.id.list)
 	public RecyclerView mRecyclerView;
 	@Bind(R.id.main_fab)
 	public FloatingActionsMenu mFab;
@@ -537,6 +541,7 @@ public class VideoActivity extends YouTubeFailureRecoveryActivity implements
 					videoDao.deleteByKey(videoKey);
 					ToastUtil.toast(this, R.string.faves_remove_success);
 					videoKey = 0;
+					mBus.post(new VideoDeletedEvent());
 
 					sendEvent("video - android", "remove: " + mYtid, "fave");
 				}

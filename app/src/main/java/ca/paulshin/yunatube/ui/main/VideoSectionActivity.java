@@ -67,9 +67,7 @@ public class VideoSectionActivity extends BaseActivity implements View.OnClickLi
 
 		mHeader.setImageResource(thumbnailRes);
 
-		Toolbar mToolbar = getActionBarToolbar();
-		mToolbar.setNavigationIcon(R.drawable.ic_up);
-		mToolbar.setNavigationOnClickListener((__) -> finish());
+		setToolbar();
 
 		CollapsingToolbarLayout collapsingToolbar =
 				(CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);

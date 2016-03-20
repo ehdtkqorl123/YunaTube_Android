@@ -2,9 +2,10 @@ package ca.paulshin.yunatube.ui.main;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
+
+import com.squareup.otto.Bus;
+import com.squareup.otto.Subscribe;
 
 import java.util.List;
 
@@ -12,18 +13,22 @@ import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import ca.paulshin.dao.DBVideo;
 import ca.paulshin.yunatube.R;
+import ca.paulshin.yunatube.data.model.video.Video;
 import ca.paulshin.yunatube.ui.adapter.MyFaveVideoAdapter;
 import ca.paulshin.yunatube.ui.base.BaseActivity;
+import ca.paulshin.yunatube.util.events.VideoDeletedEvent;
+import ca.paulshin.yunatube.widgets.RecyclerViewEmptySupport;
 
 public class MyFavesActivity extends BaseActivity implements MyFavesMvpView {
 
 	@Inject
 	MyFavesPresenter mMyFavesPresenter;
+	@Inject
+	Bus mBus;
 
 	@Bind(R.id.list)
-	public RecyclerView mRecyclerView;
+	public RecyclerViewEmptySupport mRecyclerView;
 	@Bind(R.id.none)
 	public View mNoneView;
 
@@ -40,14 +45,14 @@ public class MyFavesActivity extends BaseActivity implements MyFavesMvpView {
 
 		getActivityComponent().inject(this);
 		mMyFavesPresenter.attachView(this);
+		mBus.register(this);
 
-		final Toolbar toolbar = getActionBarToolbar();
-		toolbar.setNavigationIcon(R.drawable.ic_up);
-		toolbar.setNavigationOnClickListener((__) -> finish());
+		setToolbar();
 
 		int padding = getAdjustedPadding();
 		mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 		mRecyclerView.setPadding(padding, 0, padding, 0);
+		mRecyclerView.setEmptyView(mNoneView);
 
 		loadData();
 	}
@@ -57,6 +62,7 @@ public class MyFavesActivity extends BaseActivity implements MyFavesMvpView {
 		super.onDestroy();
 
 		mMyFavesPresenter.detachView();
+		mBus.unregister(this);
 	}
 
 	private void loadData() {
@@ -68,18 +74,18 @@ public class MyFavesActivity extends BaseActivity implements MyFavesMvpView {
 	 *****/
 
 	@Override
-	public void showVideos(List<DBVideo> videos) {
-		if (!videos.isEmpty()) {
-			mNoneView.setVisibility(View.GONE);
-			MyFaveVideoAdapter adapter = new MyFaveVideoAdapter(videos);
-			mRecyclerView.setAdapter(adapter);
-		} else {
-			mNoneView.setVisibility(View.VISIBLE);
-		}
+	public void showVideos(List<Video> videos) {
+		MyFaveVideoAdapter adapter = new MyFaveVideoAdapter(videos);
+		mRecyclerView.setAdapter(adapter);
 	}
 
 	@Override
 	public void showError() {
 		//TODO
+	}
+
+	@Subscribe
+	public void onVideoDeleted(VideoDeletedEvent event) {
+		loadData();
 	}
 }

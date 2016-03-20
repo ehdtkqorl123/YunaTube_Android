@@ -84,7 +84,7 @@ public class MainMenuFragment extends BaseFragment implements
 	@Bind(R.id.none)
 	View mNoneView;
 	private EditText mSearchView;
-	@Bind(R.id.collections)
+	@Bind(R.id.list)
 	RecyclerView mRecyclerView;
 	@Bind(R.id.main_fab)
 	FloatingActionsMenu mFab;
@@ -473,16 +473,16 @@ public class MainMenuFragment extends BaseFragment implements
 					mFab.collapse();
 
 				FragmentManager fm = getChildFragmentManager();
-//				WebSearchDialogFragment f = WebSearchDialogFragment.getInstance();
-//				f.show(fm, "fragment_web_search");
+				WebSearchDialogFragment f = WebSearchDialogFragment.getInstance();
+				f.show(fm, "fragment_web_search");
 				return;
 			case R.id.fab_jukebox:
-//				startActivity(new Intent(getActivity(), JukeboxActivity.class));
-//				getActivity().overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
+				startActivity(new Intent(getActivity(), JukeboxActivity.class));
+				getActivity().overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
 				break;
 			case R.id.fab_links:
-//				startActivity(new Intent(getActivity(), FamilySitesActivity.class));
-//				getActivity().overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
+				startActivity(new Intent(getActivity(), FamilySitesActivity.class));
+				getActivity().overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
 				break;
 			case R.id.fact_more:
 				Uri uri = Uri.parse(Config.YUNAFACT);

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.squareup.otto.Bus;
@@ -63,9 +62,7 @@ public class PhotoListActivity extends BaseActivity implements PhotoListMvpView 
 		setId = getIntent().getStringExtra(EXTRA_SET_ID);
 		setTitle = getIntent().getStringExtra(EXTRA_SET_TITLE);
 
-		final Toolbar toolbar = getActionBarToolbar();
-		toolbar.setNavigationIcon(R.drawable.ic_up);
-		toolbar.setNavigationOnClickListener((__) -> finish());
+		setToolbar();
 		setTitle(setTitle);
 
 		mRecyclerView.setLayoutManager(new GridLayoutManager(this, ResourceUtil.getInteger(R.integer.photos_columns)));

@@ -3,7 +3,6 @@ package ca.paulshin.yunatube.ui.main;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import butterknife.Bind;
@@ -37,9 +36,7 @@ public class PhotoSectionActivity extends BaseActivity {
 
 		collection = getIntent().getParcelableExtra(EXTRA_COLLECTION);
 
-		final Toolbar toolbar = getActionBarToolbar();
-		toolbar.setNavigationIcon(R.drawable.ic_up);
-		toolbar.setNavigationOnClickListener((__) -> finish());
+		setToolbar();
 		setTitle(collection.title);
 
 		mRecyclerView.setLayoutManager(new GridLayoutManager(this, ResourceUtil.getInteger(R.integer.photo_sections_columns)));

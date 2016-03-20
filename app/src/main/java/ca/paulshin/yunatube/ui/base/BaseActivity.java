@@ -79,6 +79,12 @@ public abstract class BaseActivity extends AppCompatActivity {
 		}
     }
 
+	protected void setToolbar() {
+ 		Toolbar toolbar = getActionBarToolbar();
+		toolbar.setNavigationIcon(R.drawable.ic_up);
+		toolbar.setNavigationOnClickListener((__) -> finish());
+	}
+
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);

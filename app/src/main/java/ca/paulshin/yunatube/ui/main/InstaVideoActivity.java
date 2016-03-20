@@ -117,7 +117,7 @@ public class InstaVideoActivity extends BaseActivity implements SurfaceHolder.Ca
 			mMediaPlayer.prepare();
 			mMediaPlayer.setOnPreparedListener(this);
 
-			mMediaController = new MediaController(this);
+			mMediaController = new MediaController(this, false);
 		}
 		catch(Exception e){
 			e.printStackTrace();

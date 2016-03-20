@@ -192,9 +192,10 @@
 
     <!-- My Faves -->
     <string name="my_faves">즐겨찾기</string>
-    <string name="faves_add_success">즐겨찾기에 추가 되었습니다</string>
-    <string name="faves_add_failure">즐겨찾기 추가 중 문제가 발생하였습니다</string>
-    <string name="faves_remove_success">즐겨찾기에서 제거되었습니다</string>
+    <string name="faves_add_success">즐겨찾기에 추가 되었습니다.</string>
+    <string name="faves_add_failure">즐겨찾기에 추가할 수 없습니다.</string>
+    <string name="faves_remove_success">즐겨찾기에서 제거되었습니다.</string>
+    <string name="faves_remove_failure">즐겨찾기에서 제거할 수 없습니다.</string>
     <string name="no_faved_data">즐겨찾기에 저장된 동영상이 없습니다</string>
 
     <!-- Video Section -->

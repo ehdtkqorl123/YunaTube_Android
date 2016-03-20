@@ -259,12 +259,6 @@ public abstract class BasePhotoActivity extends BaseActivity implements PhotoVie
 					Log.i("ExternalStorage", "Scanned " + extPath + ":");
 					Log.i("ExternalStorage", "-> uri=" + uri);
 				});
-
-		// Open Image Album
-		//				Uri targetUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-		//				targetUri = targetUri.buildUpon().appendQueryParameter("bucketId", String.valueOf((YTUtils.getAlbumDir().toString()).toLowerCase().hashCode())).build();
-		//				Intent intent = new Intent(Intent.ACTION_VIEW, targetUri);
-		//				startActivity(intent);
 	}
 
 	@Override

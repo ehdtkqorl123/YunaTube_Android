@@ -205,9 +205,10 @@
 
     <!-- My Faves -->
     <string name="my_faves">My Favorites</string>
-    <string name="faves_add_success">Successfully added to My Faves</string>
-    <string name="faves_add_failure">Oops, something went wrong</string>
-    <string name="faves_remove_success">Successfully removed from My Faves</string>
+    <string name="faves_add_success">Successfully added to My Faves.</string>
+    <string name="faves_add_failure">Couldn\'t add to My Faves.</string>
+    <string name="faves_remove_success">Successfully removed from My Faves.</string>
+    <string name="faves_remove_failure">Couldn\'t remove from My Faves.</string>
     <string name="no_faved_data">No Videos</string>
 
     <!-- Jukebox -->

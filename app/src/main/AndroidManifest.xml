@@ -98,6 +98,16 @@
             android:theme="@style/Theme.YunaTube.Fullscreen"/>
 
         <activity
+            android:name=".ui.main.FamilySitesActivity"
+            android:label="@string/family_sites"/>
+
+        <activity
+            android:name=".ui.main.JukeboxActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.YunaTube.Fullscreen"/>
+
+        <activity
             android:name=".ui.main.SettingsActivity"
             android:label="@string/settings"/>
 

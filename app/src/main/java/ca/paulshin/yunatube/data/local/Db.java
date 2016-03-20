@@ -1,8 +1,9 @@
 package ca.paulshin.yunatube.data.local;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 
-import ca.paulshin.dao.DBVideo;
+import ca.paulshin.yunatube.data.model.video.Video;
 
 public class Db {
 
@@ -25,25 +26,21 @@ public class Db {
                     " ); ";
         }
 
-//        public static ContentValues toContentValues(Profile profile) {
-//            ContentValues values = new ContentValues();
-//            values.put(COLUMN_EMAIL, profile.email);
-//            values.put(COLUMN_FIRST_NAME, profile.name.first);
-//            values.put(COLUMN_LAST_NAME, profile.name.last);
-//            values.put(COLUMN_HEX_COLOR, profile.hexColor);
-//            values.put(COLUMN_DATE_OF_BIRTH, profile.dateOfBirth.getTime());
-//            values.put(COLUMN_AVATAR, profile.avatar);
-//            if (profile.bio != null) values.put(COLUMN_BIO, profile.bio);
-//            return values;
-//        }
-//
-        public static DBVideo parseCursor(Cursor cursor) {
+        public static ContentValues toContentValues(Video video) {
+            ContentValues values = new ContentValues();
+            values.put(COLUMN_STITLE, video.stitle);
+            values.put(COLUMN_YTITLE, video.ytitle);
+            values.put(COLUMN_YTID, video.ytid);
+            return values;
+        }
+
+        public static Video parseCursor(Cursor cursor) {
             long id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID));
             String sTitle = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_STITLE));
             String yTitle = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_YTITLE));
             String ytid = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_YTID));
 
-            DBVideo video = new DBVideo(id, sTitle, yTitle, ytid);
+            Video video = new Video(id, sTitle, yTitle, ytid);
             return video;
         }
     }

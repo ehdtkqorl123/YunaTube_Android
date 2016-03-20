@@ -53,9 +53,7 @@ public class AnimatedGifListActivity extends BaseActivity implements AnimatedGif
 		getActivityComponent().inject(this);
 		mAnimatedGifListPresenter.attachView(this);
 
-		final Toolbar toolbar = getActionBarToolbar();
-		toolbar.setNavigationIcon(R.drawable.ic_up);
-		toolbar.setNavigationOnClickListener((__) -> finish());
+		setToolbar();
 		setTitle(R.string.animated_gifs_title);
 
 		mRecyclerView.setLayoutManager(new GridLayoutManager(this, ResourceUtil.getInteger(R.integer.photos_columns)));

@@ -3,7 +3,6 @@ package ca.paulshin.yunatube.ui.main;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import java.util.List;
@@ -25,7 +24,7 @@ public class SearchActivity extends BaseActivity implements SearchMvpView {
 	@Inject
 	SearchPresenter mSearchPresenter;
 
-	@Bind(R.id.collections)
+	@Bind(R.id.list)
 	public RecyclerView mRecyclerView;
 	@Bind(R.id.loading)
 	public View mLoadingView;
@@ -48,9 +47,7 @@ public class SearchActivity extends BaseActivity implements SearchMvpView {
 
 		query = getIntent().getStringExtra(EXTRA_QUERY);
 
-		final Toolbar toolbar = getActionBarToolbar();
-		toolbar.setNavigationIcon(R.drawable.ic_up);
-		toolbar.setNavigationOnClickListener((__) -> finish());
+		setToolbar();
 		setTitle(query);
 
 		int padding = getAdjustedPadding();
