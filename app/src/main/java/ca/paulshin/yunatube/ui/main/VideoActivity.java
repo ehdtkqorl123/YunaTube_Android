@@ -45,6 +45,7 @@ import ca.paulshin.yunatube.ui.base.BaseYouTubeFailureRecoveryActivity;
 import ca.paulshin.yunatube.util.NetworkUtil;
 import ca.paulshin.yunatube.util.ResourceUtil;
 import ca.paulshin.yunatube.util.ToastUtil;
+import ca.paulshin.yunatube.util.ViewUtil;
 import ca.paulshin.yunatube.util.YTPreference;
 import ca.paulshin.yunatube.util.events.VideoDeletedEvent;
 import ca.paulshin.yunatube.widgets.FloatingActionsMenu;
@@ -370,7 +371,7 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 				mFab.collapse();
 
 			int fabHeight = mFab.getHeight();
-			int translationY = visible ? 0 : fabHeight + ResourceUtil.getPx(16);
+			int translationY = visible ? 0 : fabHeight + ViewUtil.dpToPx(16);
 			ViewPropertyAnimator.animate(mFab).setInterpolator(new AccelerateDecelerateInterpolator())
 					.setDuration(TRANSLATE_DURATION_MILLIS)
 					.translationY(translationY)

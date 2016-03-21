@@ -50,15 +50,6 @@ public class FileUtil {
 			Response response = client.newCall(request).execute();
 			InputStream is = response.body().byteStream();
 
-
-//			URL url = new URL(src);
-//
-//			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-//			conn.setConnectTimeout(30000);
-//			conn.setReadTimeout(30000);
-//			conn.setInstanceFollowRedirects(true);
-//
-//			InputStream is = conn.getInputStream();
 			OutputStream os = new FileOutputStream(outputFile);
 			copyStream(is, os);
 			os.close();

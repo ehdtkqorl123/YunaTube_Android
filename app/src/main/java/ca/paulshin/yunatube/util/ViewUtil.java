@@ -1,11 +1,24 @@
 package ca.paulshin.yunatube.util;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
-import android.view.inputmethod.InputMethodManager;
+import android.graphics.Point;
+import android.view.Display;
+import android.view.WindowManager;
 
 public final class ViewUtil {
+    public static Context ctx;
+
+    public static void init(Context context) {
+        ctx = context;
+    }
+
+    public static int[] getScreenSize() {
+        Display display = ((WindowManager) ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+        Point point = new Point();
+        display.getSize(point);
+        return new int[]{point.x, point.y};
+    }
 
     public static float pxToDp(float px) {
         float densityDpi = Resources.getSystem().getDisplayMetrics().densityDpi;
@@ -16,11 +29,4 @@ public final class ViewUtil {
         float density = Resources.getSystem().getDisplayMetrics().density;
         return Math.round(dp * density);
     }
-
-    public static void hideKeyboard(Activity activity) {
-        InputMethodManager imm =
-                (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(activity.getWindow().getDecorView().getWindowToken(), 0);
-    }
-
 }

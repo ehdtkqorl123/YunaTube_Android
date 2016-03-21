@@ -45,7 +45,7 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
 		setContentView(R.layout.a_settings);
 		ButterKnife.bind(this);
 
-		setToolbar();
+		setupToolbar();
 
 		// Push Settings
 		if (!LanguageUtil.isKorean() && !BuildConfig.DEBUG) {

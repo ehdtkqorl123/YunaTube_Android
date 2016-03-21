@@ -13,8 +13,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import ca.paulshin.yunatube.R;
 import ca.paulshin.yunatube.util.PicassoUtil;
-import ca.paulshin.yunatube.util.ResourceUtil;
 import ca.paulshin.yunatube.util.UIUtil;
+import ca.paulshin.yunatube.util.ViewUtil;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
 public class InstaPhotoActivity extends BasePhotoActivity {
@@ -64,7 +64,7 @@ public class InstaPhotoActivity extends BasePhotoActivity {
 			RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) mInstaPhotoView.getLayoutParams();
 
 			int statusBarHeight = UIUtil.getStatusBarHeight(this);
-			params.width = ResourceUtil.getScreenSize()[1] - statusBarHeight;
+			params.width = ViewUtil.getScreenSize()[1] - statusBarHeight;
 		}
 	}
 

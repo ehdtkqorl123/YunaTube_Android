@@ -62,7 +62,7 @@ public class PhotoListActivity extends BaseActivity implements PhotoListMvpView 
 		setId = getIntent().getStringExtra(EXTRA_SET_ID);
 		setTitle = getIntent().getStringExtra(EXTRA_SET_TITLE);
 
-		setToolbar();
+		setupToolbar();
 		setTitle(setTitle);
 
 		mRecyclerView.setLayoutManager(new GridLayoutManager(this, ResourceUtil.getInteger(R.integer.photos_columns)));

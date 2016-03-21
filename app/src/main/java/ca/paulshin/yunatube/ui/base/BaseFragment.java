@@ -9,6 +9,7 @@ import com.google.android.gms.analytics.Tracker;
 import ca.paulshin.yunatube.R;
 import ca.paulshin.yunatube.YTApplication;
 import ca.paulshin.yunatube.util.ResourceUtil;
+import ca.paulshin.yunatube.util.ViewUtil;
 
 /**
  * Created by paulshin on 14-11-25.
@@ -44,7 +45,7 @@ public class BaseFragment extends android.support.v4.app.Fragment {
 	protected int getAdjustedPadding() {
 		int padding;
 		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-			int screenSize [] = ResourceUtil.getScreenSize();
+			int screenSize [] = ViewUtil.getScreenSize();
 			int max = Math.max(screenSize[0], screenSize[1]);
 			int medium = (screenSize[0] + screenSize[1]) / 2;
 			padding = (max - medium) / 2;

@@ -29,9 +29,9 @@ import java.io.FileNotFoundException;
 import ca.paulshin.yunatube.R;
 import ca.paulshin.yunatube.ui.base.BaseActivity;
 import ca.paulshin.yunatube.util.FileUtil;
-import ca.paulshin.yunatube.util.ResourceUtil;
 import ca.paulshin.yunatube.util.ToastUtil;
 import ca.paulshin.yunatube.util.UIUtil;
+import ca.paulshin.yunatube.util.ViewUtil;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
@@ -76,7 +76,8 @@ public abstract class BasePhotoActivity extends BaseActivity implements PhotoVie
 		// Get height of nav bar
 		int bottomMargin = 0;
 		if (UIUtil.hasSoftSysBar(this)) {
-			bottomMargin = ResourceUtil.getDp(Math.min(ResourceUtil.getScreenSize()[0], ResourceUtil.getScreenSize()[1])) > 550 ? UIUtil.getNavBarHeight(this) :
+			int screenSize[] = ViewUtil.getScreenSize();
+			bottomMargin = ViewUtil.pxToDp(Math.min(screenSize[0], screenSize[1])) > 550 ? UIUtil.getNavBarHeight(this) :
 					getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE ? 0 : UIUtil.getNavBarHeight(this);
 		}
 

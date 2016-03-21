@@ -10,8 +10,7 @@ import android.widget.ImageView;
  * Created by paulshin on 15-01-26.
  */
 public class PeekImageView extends ImageView implements ViewTreeObserver.OnScrollChangedListener {
-	private static final String LOG_TAG = "PeekImageView";
-	private InViewportListener inViewportListener;
+	private InViewportListener mInViewportListener;
 	private boolean isInViewport = false;
 
 	public PeekImageView(Context context) {
@@ -28,12 +27,11 @@ public class PeekImageView extends ImageView implements ViewTreeObserver.OnScrol
 
 	public interface InViewportListener {
 		void onViewportEnter(PeekImageView view);
-
 		void onViewportExit(PeekImageView view);
 	}
 
 	public void setInViewportListener(InViewportListener listener) {
-		this.inViewportListener = listener;
+		mInViewportListener = listener;
 	}
 
 	@Override
@@ -58,12 +56,11 @@ public class PeekImageView extends ImageView implements ViewTreeObserver.OnScrol
 	public void onScrollChanged() {
 		Rect bounds = new Rect();
 		boolean inViewport = getLocalVisibleRect(bounds);
-//		Log.d(LOG_TAG, "is in view " + bounds + " : " + inViewport + " ; " + bounds);
-		if (inViewportListener != null && isInViewport != inViewport) {
+		if (mInViewportListener != null && isInViewport != inViewport) {
 			if (inViewport) {
-				inViewportListener.onViewportEnter(this);
+				mInViewportListener.onViewportEnter(this);
 			} else {
-				inViewportListener.onViewportExit(this);
+				mInViewportListener.onViewportExit(this);
 			}
 		}
 		isInViewport = inViewport;

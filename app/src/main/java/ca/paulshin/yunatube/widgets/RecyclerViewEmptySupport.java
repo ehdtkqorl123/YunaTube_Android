@@ -16,10 +16,9 @@ public class RecyclerViewEmptySupport extends RecyclerView {
 		public void onChanged() {
 			Adapter<?> adapter = getAdapter();
 			if(adapter != null && emptyView != null) {
-				if(adapter.getItemCount() == 0) {
+				if (adapter.getItemCount() == 0) {
 					emptyView.setVisibility(View.VISIBLE);
-				}
-				else {
+				} else {
 					emptyView.setVisibility(View.GONE);
 				}
 			}
@@ -43,7 +42,7 @@ public class RecyclerViewEmptySupport extends RecyclerView {
 	public void setAdapter(Adapter adapter) {
 		super.setAdapter(adapter);
 
-		if(adapter != null) {
+		if (adapter != null) {
 			adapter.registerAdapterDataObserver(emptyObserver);
 		}
 

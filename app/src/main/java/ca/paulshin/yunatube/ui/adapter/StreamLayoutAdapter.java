@@ -19,7 +19,7 @@ import ca.paulshin.yunatube.R;
 import ca.paulshin.yunatube.data.model.flickr.Item;
 import ca.paulshin.yunatube.ui.main.PhotoActivity;
 import ca.paulshin.yunatube.util.PicassoUtil;
-import ca.paulshin.yunatube.util.ResourceUtil;
+import ca.paulshin.yunatube.util.ViewUtil;
 
 /**
  * Created by paulshin on 16-02-22.
@@ -46,7 +46,7 @@ public class StreamLayoutAdapter extends RecyclerView.Adapter<StreamLayoutAdapte
 	public StreamLayoutAdapter(Context context, List<Item> items) {
 		mContext = context;
 		mItems = items;
-		mImageWidth = ResourceUtil.getScreenSize()[0] / 3;
+		mImageWidth = ViewUtil.getScreenSize()[0] / 3;
 
 		mUrls = new String[mItems.size()];
 		for (int i = 0; i < mItems.size(); i++) {

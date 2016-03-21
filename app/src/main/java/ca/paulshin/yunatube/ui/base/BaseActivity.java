@@ -23,6 +23,7 @@ import ca.paulshin.yunatube.injection.component.ActivityComponent;
 import ca.paulshin.yunatube.injection.component.DaggerActivityComponent;
 import ca.paulshin.yunatube.injection.module.ActivityModule;
 import ca.paulshin.yunatube.util.ResourceUtil;
+import ca.paulshin.yunatube.util.ViewUtil;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
@@ -73,7 +74,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 		w.setStatusBarColor(ContextCompat.getColor(this, getStatusBarColor()));
     }
 
-	protected void setToolbar() {
+	protected void setupToolbar() {
  		Toolbar toolbar = getActionBarToolbar();
 		toolbar.setNavigationIcon(R.drawable.ic_up);
 		toolbar.setNavigationOnClickListener((__) -> finish());
@@ -115,7 +116,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 	protected int getAdjustedPadding() {
 		int padding;
 		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-			int screenSize [] = ResourceUtil.getScreenSize();
+			int screenSize [] = ViewUtil.getScreenSize();
 			int max = Math.max(screenSize[0], screenSize[1]);
 			int medium = (screenSize[0] + screenSize[1]) / 2;
 			padding = (max - medium) / 2;

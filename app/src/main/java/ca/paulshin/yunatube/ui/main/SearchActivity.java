@@ -47,7 +47,7 @@ public class SearchActivity extends BaseActivity implements SearchMvpView {
 
 		query = getIntent().getStringExtra(EXTRA_QUERY);
 
-		setToolbar();
+		setupToolbar();
 		setTitle(query);
 
 		int padding = getAdjustedPadding();

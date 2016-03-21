@@ -17,8 +17,8 @@ import butterknife.ButterKnife;
 import ca.paulshin.yunatube.R;
 import ca.paulshin.yunatube.ui.base.BaseActivity;
 import ca.paulshin.yunatube.util.PicassoUtil;
-import ca.paulshin.yunatube.util.ResourceUtil;
 import ca.paulshin.yunatube.util.UIUtil;
+import ca.paulshin.yunatube.util.ViewUtil;
 
 public class InstaVideoActivity extends BaseActivity implements SurfaceHolder.Callback, MediaPlayer.OnPreparedListener, MediaController.MediaPlayerControl, MediaPlayer.OnCompletionListener {
 	public static final String EXTRA_INSTA_PHOTO_URL = "insta_photo_url";
@@ -56,7 +56,7 @@ public class InstaVideoActivity extends BaseActivity implements SurfaceHolder.Ca
 		int videoHeight = intent.getIntExtra(EXTRA_INSTA_VIDEO_HEIGHT, 1);
 
 		// Change surfaceView size to fit the video
-		int screenSize[] = ResourceUtil.getScreenSize();
+		int screenSize[] = ViewUtil.getScreenSize();
 		RelativeLayout.LayoutParams videoParams = (RelativeLayout.LayoutParams) mInstaVideoView.getLayoutParams();
 		if (screenSize[0] < screenSize[1]) {
 			videoParams.width = screenSize[0];

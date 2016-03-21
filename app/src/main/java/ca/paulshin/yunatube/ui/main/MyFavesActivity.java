@@ -47,7 +47,7 @@ public class MyFavesActivity extends BaseActivity implements MyFavesMvpView {
 		mMyFavesPresenter.attachView(this);
 		mBus.register(this);
 
-		setToolbar();
+		setupToolbar();
 
 		int padding = getAdjustedPadding();
 		mRecyclerView.setLayoutManager(new LinearLayoutManager(this));

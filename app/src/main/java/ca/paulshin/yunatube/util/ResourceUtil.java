@@ -1,10 +1,7 @@
 package ca.paulshin.yunatube.util;
 
 import android.content.Context;
-import android.graphics.Point;
 import android.graphics.drawable.Drawable;
-import android.view.Display;
-import android.view.WindowManager;
 
 /**
  * Created by paulshin on 16-02-13.
@@ -46,22 +43,5 @@ public class ResourceUtil {
 
 	public static int getDimensionInPx(int resId) {
 		return ctx.getResources().getDimensionPixelOffset(resId);
-	}
-
-	public static int[] getScreenSize() {
-		Display display = ((WindowManager) ctx.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
-		Point point = new Point();
-		display.getSize(point);
-		return new int[]{point.x, point.y};
-	}
-
-	public static int getPx(float dp) {
-		final float scale = ctx.getResources().getDisplayMetrics().density;
-		return (int) (dp * scale + 0.5f);
-	}
-
-	public static float getDp(int px) {
-		final float scale = ctx.getResources().getDisplayMetrics().density;
-		return (int) (px / scale + 0.5f);
 	}
 }

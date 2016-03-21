@@ -60,7 +60,7 @@ public class VideoListActivity extends BaseActivity implements VideoListMvpView 
 		sid = intent.getStringExtra(EXTRA_SID);
 		stitle = intent.getStringExtra(EXTRA_STITLE);
 
-		setToolbar();
+		setupToolbar();
 		setTitle(stitle);
 
 		mRecyclerView.setLayoutManager(new LinearLayoutManager(this));

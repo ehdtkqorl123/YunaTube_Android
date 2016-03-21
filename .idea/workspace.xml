@@ -33,52 +33,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7f313f9-104b-4cc4-adbc-ce82bd46f324" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/data/SyncService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/db/DBHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dao/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dao/build.gradle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dao/dao.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dao/proguard-rules.pro" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dao/src/androidTest/java/ca/paulshin/dao/ApplicationTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dao/src/main/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dao/src/main/java/ca/paulshin/dao/DBVideo.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dao/src/main/java/ca/paulshin/dao/DaoMaster.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dao/src/main/java/ca/paulshin/dao/DaoSession.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dao/src/main/java/ca/paulshin/dao/VideoDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dao/src/main/java/ca/paulshin/dao/YTDaoGenerator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dao/src/main/res/values/strings.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/DividerItemDecoration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/MessageCardView.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/SlidingTabLayout.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/SlidingTabStrip.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/YTApplication.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/YTApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/data/DataManager.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/data/DataManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/data/model/flickr/CollectionItem.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/data/model/flickr/CollectionItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/data/model/flickr/CollectionsObject.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/data/model/flickr/CollectionsObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/data/model/video/Video.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/data/model/video/Video.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/injection/component/ApplicationComponent.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/injection/component/ApplicationComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/receiver/ConnectivityChangeReceiver.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/receiver/ConnectivityChangeReceiver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/AnimatedGifListLayoutAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/AnimatedGifListLayoutAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/CollectionsLayoutAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/CollectionsLayoutAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/CommentAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/CommentAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/InstaFeedLayoutAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/InstaFeedLayoutAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/ItemViewHolder.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/ItemViewHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/MainVideoAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/MainVideoAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/MyFaveVideoAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/MyFaveVideoAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/VideoAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/VideoAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/StreamLayoutAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/StreamLayoutAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseMvpView.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseMvpView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseYouTubeFailureRecoveryActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseYouTubeFailureRecoveryActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/GCMActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/GCMActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/Presenter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/Presenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/MainMenuFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/MainMenuFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/AnimatedGifListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/AnimatedGifListActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/BasePhotoActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/BasePhotoActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/FamilySitesActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/FamilySitesActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/InstaFeedActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/InstaFeedActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/InstaPhotoActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/InstaPhotoActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/InstaVideoActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/InstaVideoActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/MyFavesActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/MyFavesActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/PhotoListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/PhotoListActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/PhotoSectionActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/PhotoSectionActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/SearchActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/SearchActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/SettingsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/SettingsActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout-w600dp/p_video_fab.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-w600dp/p_video_fab.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/a_video.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/a_video.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/p_video_fab.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/p_video_fab.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/integers.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/integers.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoListActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoSectionActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoSectionActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/FileUtil.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/FileUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/NetworkUtil.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/NetworkUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/ResourceUtil.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/ResourceUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/ViewUtil.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/ViewUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/events/VideoDeletedEvent.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/events/VideoDeletedEvent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/FloatingActionsMenu.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/FloatingActionsMenu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/PeekImageView.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/PeekImageView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/PortraitImageView.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/PortraitImageView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/RecyclerViewEmptySupport.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/RecyclerViewEmptySupport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/a_familysites.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/a_familysites.xml" />
     </list>
     <ignored path="YunaTube.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -106,101 +93,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BaseMvpView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseMvpView.java">
+      <file leaf-file-name="YunaMenuFragment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/YunaMenuFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SquareRelativeLayout.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/SquareRelativeLayout.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SquarePeekImageView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/SquarePeekImageView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SquareLinearLayout.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/SquareLinearLayout.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SquareImageView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/SquareImageView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SquareByHeightImageView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/SquareByHeightImageView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SlidingTabStrip.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/SlidingTabStrip.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SlidingTabLayout.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/SlidingTabLayout.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="19" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FamilySitesActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/FamilySitesActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2955665">
-              <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SquareBezelImageView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/SquareBezelImageView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+            <state vertical-scroll-proportion="-4.541586">
+              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -3889,23 +3786,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/FamilySitesActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseLinkFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/JukeboxMvpView.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/injection/component/ActivityComponent.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/MyFavesActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/JukeboxActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/JukeboxPresenter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/a_search.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/SearchActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/a_videos.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoListActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/f_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/f_photo.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/a_jukebox.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/r_jukebox.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/BasePhotoActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/a_insta_photo.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/a_photo.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/f_web_search.xml" />
@@ -3915,9 +3797,7 @@
         <option value="$PROJECT_DIR$/settings.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/a_video.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-w600dp/p_video_fab.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/YTApplication.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/p_video_fab.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/data/model/flickr/CollectionItem.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/AnimatedGifListLayoutAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/MainMenuFragment.java" />
@@ -3936,10 +3816,27 @@
         <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/ItemViewHolder.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseMvpView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseYouTubeFailureRecoveryActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/Presenter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/GCMActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/a_familysites.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/FamilySitesActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/RecyclerViewEmptySupport.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/PortraitImageView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/PeekImageView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/FloatingActionsMenu.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/ViewUtil.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/YTApplication.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/StreamLayoutAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/InstaPhotoActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/InstaVideoActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/BasePhotoActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/ResourceUtil.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/NetworkUtil.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/FileUtil.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/events/VideoDeletedEvent.java" />
       </list>
     </option>
   </component>
@@ -5231,9 +5128,9 @@
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26949543" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26949543" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Anko DSL Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.375" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.375" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -5246,7 +5143,7 @@
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914287" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18690096" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25292864" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -5284,347 +5181,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/data/model/main/Notice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/data/model/message/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/data/model/video/Comment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/data/model/video/Section.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/data/model/video/SimpleResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/data/model/video/Video.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/data/local/PreferencesHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/injection/component/ActivityComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="49" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/injection/component/ApplicationComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/injection/module/ActivityModule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/injection/module/ApplicationModule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/injection/ActivityContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/injection/ApplicationContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/injection/PerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27093595">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/data/DataManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8029557">
-          <caret line="250" column="5" selection-start-line="250" selection-start-column="5" selection-end-line="250" selection-end-column="5" />
-          <folding>
-            <element signature="e#2209#2210#0" expanded="false" />
-            <element signature="e#2250#2251#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/receiver/ConnectivityChangeReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/AnimatedGifListLayoutAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/integers.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2820513">
-          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/CollectionsLayoutAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="79" column="17" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/CommentAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="134" column="27" selection-start-line="134" selection-start-column="12" selection-end-line="134" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/InstaFeedLayoutAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="87" column="62" selection-start-line="87" selection-start-column="62" selection-end-line="87" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/ItemViewHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="146" column="0" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-          <folding>
-            <element signature="e#4107#4149#0" expanded="false" />
-            <element signature="e#4476#4502#0" expanded="false" />
-            <element signature="e#4616#4642#0" expanded="false" />
-            <element signature="e#4920#4949#0" expanded="false" />
-            <element signature="e#5146#5175#0" expanded="false" />
-            <element signature="e#5748#5795#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/MainVideoAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="137" column="70" selection-start-line="137" selection-start-column="70" selection-end-line="137" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/MessageAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/MyFaveVideoAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
-          <folding>
-            <element signature="e#1508#1571#0" expanded="true" />
-            <element signature="e#1593#1657#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/OnLoadMoreListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/PhotoListLayoutAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/PhotoSectionLayoutAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/StreamLayoutAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/VideoAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BasePresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56650245">
-          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="301" column="9" selection-start-line="301" selection-start-column="9" selection-end-line="301" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseLinkFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseYouTubeFailureRecoveryActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/Presenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24630542">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/GCMActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="181" column="32" selection-start-line="181" selection-start-column="32" selection-end-line="181" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/AnimatedGifActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/YTApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="50" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/SquareRelativeLayout.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -5681,26 +5237,370 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/SlidingTabStrip.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/toolbar_actionbar.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.26978418">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/SlidingTabLayout.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/a_familysites.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="19" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="29" />
+        <state vertical-scroll-proportion="-1.6981132">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/FamilySitesActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2955665">
-          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
+          <folding>
+            <element signature="e#1712#1713#0" expanded="true" />
+            <element signature="e#1745#1746#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/RecyclerViewScrollDetector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="41" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/RecyclerViewEmptySupport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/PortraitImageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/PeekImageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="e#900#901#0" expanded="true" />
+            <element signature="e#937#938#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/LandscapeImageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/FloatingActionsMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/FloatingActionButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/FABFrameLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/DepthPageTransformer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/AnimatedGifActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="44" selection-start-line="63" selection-start-column="44" selection-end-line="63" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/BezelImageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/AddFloatingActionButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/discrollview/DiscrollView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4679803">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/widgets/discrollview/Discrollvable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12315271">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/YTPreference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="163" column="47" selection-start-line="163" selection-start-column="47" selection-end-line="163" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/MainMenuFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="520" column="89" selection-start-line="520" selection-start-column="89" selection-end-line="520" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/ViewUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.111111">
+          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/YTApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.2222223">
+          <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/InstaVideoActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4318555">
+          <caret line="62" column="50" selection-start-line="62" selection-start-column="50" selection-end-line="62" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4827586">
+          <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/adapter/StreamLayoutAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="48" column="30" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/InstaPhotoActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2594417">
+          <caret line="63" column="54" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="380" column="0" selection-start-line="380" selection-start-column="0" selection-end-line="380" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/BasePhotoActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="80" column="93" selection-start-line="80" selection-start-column="93" selection-end-line="80" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/UIUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/ToastUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/base/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23481117">
+          <caret line="119" column="57" selection-start-line="119" selection-start-column="57" selection-end-line="119" selection-end-column="57" />
+          <folding>
+            <element signature="e#4117#4175#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/ResourceUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="31" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/PicassoUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/NetworkUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/LogUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/LanguageUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/GlideUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/FileUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/EventPosterHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/CollectionUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/AndroidComponentUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/events/VideoDeletedEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/events/ConnectivityChangeEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29013538">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/events/DataLoadedEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14506769">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/YunaMenuFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.541586">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
         </state>
       </provider>

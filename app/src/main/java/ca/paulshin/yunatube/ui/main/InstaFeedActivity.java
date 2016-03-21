@@ -58,7 +58,7 @@ public class InstaFeedActivity extends BaseActivity implements InstaFeedMvpView 
 		getActivityComponent().inject(this);
 		mInstaFeedPresenter.attachView(this);
 
-		setToolbar();
+		setupToolbar();
 
 		mRecyclerView.setLayoutManager(new GridLayoutManager(this, ResourceUtil.getInteger(R.integer.photos_columns)));
 		mAdapter = new InstaFeedLayoutAdapter(mRecyclerView);

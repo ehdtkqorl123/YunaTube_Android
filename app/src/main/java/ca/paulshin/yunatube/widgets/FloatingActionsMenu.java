@@ -45,7 +45,7 @@ public class FloatingActionsMenu extends ViewGroup {
 	private ToggleListener mListener;
 
 	public interface ToggleListener {
-		public void onToggle(boolean isExpand);
+		void onToggle(boolean isExpand);
 	}
 
 	public FloatingActionsMenu(Context context) {

@@ -36,7 +36,7 @@ public class PhotoSectionActivity extends BaseActivity {
 
 		collection = getIntent().getParcelableExtra(EXTRA_COLLECTION);
 
-		setToolbar();
+		setupToolbar();
 		setTitle(collection.title);
 
 		mRecyclerView.setLayoutManager(new GridLayoutManager(this, ResourceUtil.getInteger(R.integer.photo_sections_columns)));

@@ -12,6 +12,7 @@ import ca.paulshin.yunatube.injection.module.ApplicationModule;
 import ca.paulshin.yunatube.util.GlideUtil;
 import ca.paulshin.yunatube.util.PicassoUtil;
 import ca.paulshin.yunatube.util.ResourceUtil;
+import ca.paulshin.yunatube.util.ViewUtil;
 import ca.paulshin.yunatube.util.YTPreference;
 import timber.log.Timber;
 
@@ -29,6 +30,7 @@ public class YTApplication extends Application  {
         ResourceUtil.init(ctx);
         PicassoUtil.init(ctx);
         GlideUtil.init(ctx);
+        ViewUtil.init(ctx);
 
         if (BuildConfig.DEBUG) {
             Timber.plant(new Timber.DebugTree());

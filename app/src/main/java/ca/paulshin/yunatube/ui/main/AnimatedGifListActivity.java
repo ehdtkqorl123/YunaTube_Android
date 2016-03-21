@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.squareup.otto.Bus;
@@ -53,7 +52,7 @@ public class AnimatedGifListActivity extends BaseActivity implements AnimatedGif
 		getActivityComponent().inject(this);
 		mAnimatedGifListPresenter.attachView(this);
 
-		setToolbar();
+		setupToolbar();
 		setTitle(R.string.animated_gifs_title);
 
 		mRecyclerView.setLayoutManager(new GridLayoutManager(this, ResourceUtil.getInteger(R.integer.photos_columns)));

@@ -1,30 +1,27 @@
 package ca.paulshin.yunatube.ui.main;
 
-import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import ca.paulshin.yunatube.R;
 import ca.paulshin.yunatube.ui.base.BaseActivity;
 import ca.paulshin.yunatube.util.ResourceUtil;
-import ca.paulshin.yunatube.widgets.SlidingTabLayout;
 
 /**
  * Created by paulshin on 14-12-13.
  */
 public class FamilySitesActivity extends BaseActivity {
-
 	@Bind(R.id.view_pager)
 	public ViewPager mViewPager;
-	@Bind(R.id.sliding_tabs)
-	public SlidingTabLayout mSlidingTabLayout;
-
-	ViewPagerAdapter mViewPagerAdapter;
 
 	@Override
 	protected String getScreenName() {
@@ -37,52 +34,47 @@ public class FamilySitesActivity extends BaseActivity {
 		setContentView(R.layout.a_familysites);
 		ButterKnife.bind(this);
 
-		setToolbar();
+		setupToolbar();
+		setupViewPager();
 
-		mViewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-		mViewPager.setAdapter(mViewPagerAdapter);
+		TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+		tabLayout.setupWithViewPager(mViewPager);
+	}
 
-		mSlidingTabLayout.setCustomTabView(R.layout.tab_indicator, android.R.id.text1);
-
-		Resources res = getResources();
-		mSlidingTabLayout.setSelectedIndicatorColors(ResourceUtil.getColor(R.color.tab_selected_strip));
-		mSlidingTabLayout.setDistributeEvenly(true);
-		mSlidingTabLayout.setViewPager(mViewPager);
+	private void setupViewPager() {
+		ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+		adapter.addFragment(new OfficialFragment());
+		adapter.addFragment(new FanPagesFragment());
+		adapter.addFragment(new FSPagesFragment());
+		mViewPager.setAdapter(adapter);
 	}
 
 	private class ViewPagerAdapter extends FragmentPagerAdapter {
-		private String[] sites;
+		private final List<Fragment> mFragments = new ArrayList<>();
+		private String[] mFragmentTitles;
 
 		public ViewPagerAdapter(FragmentManager fm) {
 			super(fm);
+			mFragmentTitles = ResourceUtil.getStringArray(R.array.family_sites);
+		}
 
-			Resources res = getResources();
-			sites = res.getStringArray(R.array.family_sites);
+		public void addFragment(Fragment fragment) {
+			mFragments.add(fragment);
 		}
 
 		@Override
 		public Fragment getItem(int position) {
-			switch (position) {
-				case 0:
-					return new OfficialFragment();
-				case 1:
-					return new FanPagesFragment();
-				case 2:
-					return new FSPagesFragment();
-				default:
-					return null;
-			}
+			return mFragments.get(position);
 		}
 
 		@Override
 		public int getCount() {
-			return sites.length;
-
+			return mFragments.size();
 		}
 
 		@Override
 		public CharSequence getPageTitle(int position) {
-			return sites[position];
+			return mFragmentTitles[position];
 		}
 	}
 }

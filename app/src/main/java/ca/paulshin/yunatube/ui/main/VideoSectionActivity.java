@@ -3,7 +3,6 @@ package ca.paulshin.yunatube.ui.main;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -67,7 +66,7 @@ public class VideoSectionActivity extends BaseActivity implements View.OnClickLi
 
 		mHeader.setImageResource(thumbnailRes);
 
-		setToolbar();
+		setupToolbar();
 
 		CollapsingToolbarLayout collapsingToolbar =
 				(CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
