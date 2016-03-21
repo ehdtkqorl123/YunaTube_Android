@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/SweetAlertDialog/SweetAlertDialog.iml" filepath="$PROJECT_DIR$/SweetAlertDialog/SweetAlertDialog.iml" />
       <module fileurl="file://$PROJECT_DIR$/YunaTube.iml" filepath="$PROJECT_DIR$/YunaTube.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dao/dao.iml" filepath="$PROJECT_DIR$/dao/dao.iml" />
     </modules>
   </component>
 </project>

@@ -14,7 +14,7 @@ public class CollectionItem implements Parcelable {
 	public String title;
 	public String iconlarge;
 	public String iconsmall;
-	public List<Set> set = new ArrayList<Set>();
+	public List<Set> set = new ArrayList<>();
 
 	public CollectionItem(String id, String title) {
 		this.id = id;

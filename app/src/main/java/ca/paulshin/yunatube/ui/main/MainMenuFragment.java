@@ -301,11 +301,10 @@ public class MainMenuFragment extends BaseFragment implements
 			int instaPlayId = ResourceUtil.getResourceId("id", "insta_video_play_" + i);
 			ImageView instaPlayView = ButterKnife.findById(mListHeaderView, instaPlayId);
 
-			String standardUrl = item.images.standard_resolution.url;
 			String lowUrl = item.images.low_resolution.url;
-			String url = VIEW_SHARED ? standardUrl : lowUrl;
+			String standardUrl = item.images.standard_resolution.url;
 			String videoUrl = item.videos != null ? item.videos.standard_resolution.url : null;
-			PicassoUtil.loadImage(url, thumbnailView, R.drawable.placeholder_gray);
+			PicassoUtil.loadImage(lowUrl, thumbnailView, R.drawable.placeholder_gray);
 			thumbnailView.setTag(R.id.insta_photo_url, standardUrl);
 
 			if (videoUrl != null) {

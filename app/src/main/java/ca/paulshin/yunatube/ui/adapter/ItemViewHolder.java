@@ -103,95 +103,106 @@ public class ItemViewHolder extends RecyclerView.ViewHolder {
 	}
 
 	private boolean onMenuItemClick(MenuItem item, Video video, Integer key) {
-		Intent intent;
-
 		switch (item.getItemId()) {
 			case R.id.action_share:
-				intent = new Intent(Intent.ACTION_SEND);
-				intent.setType("text/plain");
-				intent.putExtra(Intent.EXTRA_SUBJECT, video.ytitle);
-				intent.putExtra(Intent.EXTRA_TEXT, video.stitle + " - " + video.ytitle + " : http://youtu.be/" + video.ytid);
-				mCtx.startActivity(Intent.createChooser(intent, ResourceUtil.getString(R.string.share_via)));
-
-				sendEvent("video - android", "click: " + video.ytid, "share");
+				share(video);
 				break;
 
 			case R.id.action_add_faves:
-				// Create Video
-				Video videoDBObj = new Video();
-				videoDBObj.stitle = video.stitle;
-				videoDBObj.ytid = video.ytid;
-				videoDBObj.ytitle = video.ytitle;
-
-				// Set DB
-				mSubscription = mDataManager.insertFave(videoDBObj)
-						.observeOn(AndroidSchedulers.mainThread())
-						.subscribeOn(Schedulers.io())
-						.subscribe((dbVideo) -> {
-							if (dbVideo != null) {
-								ToastUtil.toast(mCtx, R.string.faves_add_success);
-
-								sendEvent("video - android", "add: " + dbVideo.ytid, "fave");
-							} else {
-								ToastUtil.toast(mCtx, R.string.faves_add_failure);
-							}
-						});
+				addFave(video);
 				break;
 
 			case R.id.action_remove_faves:
-				mSubscription = mDataManager.deleteFaveByKey(key)
-						.observeOn(AndroidSchedulers.mainThread())
-						.subscribeOn(Schedulers.io())
-						.subscribe((row) -> {
-							if (row > 0) {
-								ToastUtil.toast(mCtx, R.string.faves_remove_success);
-								if (onRemoveListener != null) {
-									onRemoveListener.onRemove();
-								}
-
-								sendEvent("video - android", "remove: " + video.ytid, "fave");
-							} else {
-								ToastUtil.toast(mCtx, R.string.faves_remove_failure);
-							}
-						});
+				removeFave(video, key);
 				break;
 
 			case R.id.action_download:
-				String dlUrl = YOUTUBE_DOWNLOAD_URL + video.ytid;
-				intent = new Intent(Intent.ACTION_VIEW);
-				intent.setData(Uri.parse(dlUrl));
-
-				if (BuildConfig.DEBUG || !YTPreference.getBoolean("download_isfirst")) {
-					YTPreference.put("download_isfirst", true);
-
-					ImageView guide = new ImageView(mCtx);
-					guide.setImageResource(R.drawable.video_download_guide);
-
-					new SweetAlertDialog(mCtx, SweetAlertDialog.CUSTOM_BIG_IMAGE_TYPE)
-							.setCustomBigImage(R.drawable.video_download_guide)
-							.setConfirmText(ResourceUtil.getString(R.string.download_video))
-							.setConfirmClickListener((sDialog, __) -> {
-								sDialog.dismissWithAnimation();
-								mCtx.startActivity(intent);
-							})
-							.show();
-				}
-				else {
-					mCtx.startActivity(intent);
-				}
-
-				sendEvent("video - android", "click: " + video.ytid, "download");
+				download(video);
 				break;
 
 			case R.id.action_youtube:
-				intent = new Intent(Intent.ACTION_VIEW);
-				intent.setData(Uri.parse(String.format(Config.YOUTUBE_SHARE_URL_PREFIX, video.ytid)));
-				mCtx.startActivity(intent);
-
-				sendEvent("video - android", "click: " + video.ytid, "youtubeapp");
+				watchOnYouTube(video);
 				break;
 		}
 		return true;
+	}
+
+	private void share(Video video) {
+		Intent intent = new Intent(Intent.ACTION_SEND);
+		intent.setType("text/plain");
+		intent.putExtra(Intent.EXTRA_SUBJECT, video.ytitle);
+		intent.putExtra(Intent.EXTRA_TEXT, video.stitle + " - " + video.ytitle + " : http://youtu.be/" + video.ytid);
+		mCtx.startActivity(Intent.createChooser(intent, ResourceUtil.getString(R.string.share_via)));
+
+		sendEvent("video - android", "click: " + video.ytid, "share");
+	}
+
+	private void addFave(Video video) {
+		mSubscription = mDataManager.insertFave(video)
+				.observeOn(AndroidSchedulers.mainThread())
+				.subscribeOn(Schedulers.io())
+				.subscribe((dbVideo) -> {
+					if (dbVideo != null) {
+						ToastUtil.toast(mCtx, R.string.faves_add_success);
+
+						sendEvent("video - android", "add: " + dbVideo.ytid, "fave");
+					} else {
+						ToastUtil.toast(mCtx, R.string.faves_add_failure);
+					}
+				});
+	}
+
+	private void removeFave(Video video, int key) {
+		mSubscription = mDataManager.deleteFaveByKey(key)
+				.observeOn(AndroidSchedulers.mainThread())
+				.subscribeOn(Schedulers.io())
+				.subscribe((row) -> {
+					if (row > 0) {
+						ToastUtil.toast(mCtx, R.string.faves_remove_success);
+						if (onRemoveListener != null) {
+							onRemoveListener.onRemove();
+						}
+
+						sendEvent("video - android", "remove: " + video.ytid, "fave");
+					} else {
+						ToastUtil.toast(mCtx, R.string.faves_remove_failure);
+					}
+				});
+	}
+
+	private void download(Video video) {
+		String dlUrl = YOUTUBE_DOWNLOAD_URL + video.ytid;
+		Intent intent = new Intent(Intent.ACTION_VIEW);
+		intent.setData(Uri.parse(dlUrl));
+
+		if (BuildConfig.DEBUG || !YTPreference.getBoolean("download_isfirst")) {
+			YTPreference.put("download_isfirst", true);
+
+			ImageView guide = new ImageView(mCtx);
+			guide.setImageResource(R.drawable.video_download_guide);
+
+			new SweetAlertDialog(mCtx, SweetAlertDialog.CUSTOM_BIG_IMAGE_TYPE)
+					.setCustomBigImage(R.drawable.video_download_guide)
+					.setConfirmText(ResourceUtil.getString(R.string.download_video))
+					.setConfirmClickListener((sDialog, __) -> {
+						sDialog.dismissWithAnimation();
+						mCtx.startActivity(intent);
+					})
+					.show();
+		}
+		else {
+			mCtx.startActivity(intent);
+		}
+
+		sendEvent("video - android", "click: " + video.ytid, "download");
+	}
+
+	private void watchOnYouTube(Video video) {
+		Intent intent = new Intent(Intent.ACTION_VIEW);
+		intent.setData(Uri.parse(String.format(Config.YOUTUBE_SHARE_URL_PREFIX, video.ytid)));
+		mCtx.startActivity(intent);
+
+		sendEvent("video - android", "click: " + video.ytid, "youtubeapp");
 	}
 
 	protected void sendEvent(String category, String action, String label) {

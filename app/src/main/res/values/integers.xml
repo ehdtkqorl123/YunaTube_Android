@@ -26,4 +26,7 @@
 
     <integer name="video_load_count">20</integer>
     <integer name="message_load_count">20</integer>
+
+    <integer name="video_thumbnail_resize_width">240</integer>
+    <integer name="video_thumbnail_resize_height">180</integer>
 </resources>

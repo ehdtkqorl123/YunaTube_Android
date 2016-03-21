@@ -25,14 +25,12 @@ public abstract class BaseYouTubeFailureRecoveryActivity extends YouTubeFailureR
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
 		mTracker = ((YTApplication)getApplication()).getDefaultTracker();
 	}
 
 	@Override
 	protected void onStart() {
 		super.onStart();
-
 		sendScreen();
 	}
 

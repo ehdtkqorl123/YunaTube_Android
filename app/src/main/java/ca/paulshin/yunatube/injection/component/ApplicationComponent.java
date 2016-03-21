@@ -8,7 +8,6 @@ import com.squareup.otto.Bus;
 import javax.inject.Singleton;
 
 import ca.paulshin.yunatube.data.DataManager;
-import ca.paulshin.yunatube.data.SyncService;
 import ca.paulshin.yunatube.data.local.DatabaseHelper;
 import ca.paulshin.yunatube.data.local.PreferencesHelper;
 import ca.paulshin.yunatube.injection.ApplicationContext;
@@ -20,8 +19,6 @@ import dagger.Component;
 @Singleton
 @Component(modules = ApplicationModule.class)
 public interface ApplicationComponent {
-
-    void inject(SyncService syncService);
     void inject(ConnectivityChangeReceiver connectivityChangeReceiver);
     void inject(ItemViewHolder itemViewHolder);
 
@@ -31,5 +28,4 @@ public interface ApplicationComponent {
     DatabaseHelper databaseHelper();
     DataManager dataManager();
     Bus eventBus();
-
 }

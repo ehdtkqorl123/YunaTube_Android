@@ -6,5 +6,4 @@ package ca.paulshin.yunatube.data.model.flickr;
 public class CollectionsObject {
 	public Collections collections;
 	public String stat;
-
 }

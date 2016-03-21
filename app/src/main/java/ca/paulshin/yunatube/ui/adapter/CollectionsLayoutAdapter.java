@@ -52,16 +52,17 @@ public class CollectionsLayoutAdapter extends RecyclerView.Adapter<CollectionsLa
 		final CollectionItem collection = mItems.get(position);
 		holder.title.setText(collection.title);
 		if (position == 0) {
+			// For animated gif row
 			holder.title.setTypeface(null, Typeface.BOLD);
 			holder.title.setBackgroundColor(ResourceUtil.getColor(R.color.transparent));
 			((View) holder.title.getParent()).setOnClickListener((v) -> {
 				Activity activity = (Activity) v.getContext();
-
 				Intent intent = new Intent(activity, AnimatedGifListActivity.class);
 				activity.startActivity(intent);
 				activity.overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
 			});
 		} else {
+			// For other flickr image row
 			holder.title.setTypeface(null, Typeface.NORMAL);
 			holder.title.setBackgroundColor(ResourceUtil.getColor(R.color.section_bg));
 			((View) holder.title.getParent()).setOnClickListener((v) -> {

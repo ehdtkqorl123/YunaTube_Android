@@ -26,7 +26,6 @@ import okhttp3.Request;
 import timber.log.Timber;
 
 public abstract class GCMActivity extends BaseActivity {
-
 	public static final String PROPERTY_REG_ID = "registration_id";
 
 	private static final String PROPERTY_APP_VERSION = "appVersion";
@@ -66,8 +65,7 @@ public abstract class GCMActivity extends BaseActivity {
 		if (resultCode != ConnectionResult.SUCCESS) {
 			if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
 				GooglePlayServicesUtil.getErrorDialog(resultCode, this, PLAY_SERVICES_RESOLUTION_REQUEST).show();
-			}
-			else {
+			} else {
 				Timber.d("This device is not supported.");
 			}
 			return false;
@@ -170,15 +168,14 @@ public abstract class GCMActivity extends BaseActivity {
 	 * using the 'from' address in the message.
 	 */
 	private void sendRegistrationIdToBackend(String regId) {
-		Timber.d("regId: " + regId);
 		String GCM_SERVER_URL = Config.GCM_SENDER_REGID_URL;
-		String setregIdURL = GCM_SERVER_URL + regId;
+		String setRegIdURL = GCM_SERVER_URL + regId;
 		try {
-			Timber.d("Registration url: " + setregIdURL);
+			Timber.d("Registration url: " + setRegIdURL);
 
 			OkHttpClient client = new OkHttpClient();
 			Request request = new Request.Builder()
-					.url(setregIdURL)
+					.url(setRegIdURL)
 					.build();
 			client.newCall(request).execute();
 		} catch (Exception e) {

@@ -5,6 +5,7 @@ import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -46,7 +47,6 @@ import ca.paulshin.yunatube.util.ResourceUtil;
 import ca.paulshin.yunatube.util.ToastUtil;
 import ca.paulshin.yunatube.util.YTPreference;
 import ca.paulshin.yunatube.util.events.VideoDeletedEvent;
-import ca.paulshin.yunatube.widgets.FloatingActionButton;
 import ca.paulshin.yunatube.widgets.FloatingActionsMenu;
 import ca.paulshin.yunatube.widgets.RecyclerViewScrollDetector;
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -123,25 +123,18 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 
 		mVideoPresenter.getFaveStatus(mYtid);
 
-		ButterKnife.findById(this, R.id.close).setOnClickListener(this);
-		ButterKnife.findById(this, R.id.submit).setOnClickListener(this);
-
-		setFABs();
-
 		loadData();
 	}
 
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-
 		mVideoPresenter.detachView();
 	}
 
 	@Override
 	protected void onStart() {
 		super.onStart();
-
 		sendScreen();
 	}
 
@@ -154,7 +147,6 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 	@Override
 	protected void onResume() {
 		super.onResume();
-
 		mUsername = YTPreference.getString(SettingsActivity.PREF_USERNAME);
 		((TextView) ButterKnife.findById(this, R.id.my_username)).setText(mUsername);
 	}
@@ -187,15 +179,6 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 		} else {
 			//TODO
 		}
-	}
-
-	private void setFABs() {
-		ButterKnife.findById(this, R.id.fab_comment).setOnClickListener(this);
-		ButterKnife.findById(this, R.id.fab_favorite).setOnClickListener(this);
-		ButterKnife.findById(this, R.id.fab_youtube).setOnClickListener(this);
-		ButterKnife.findById(this, R.id.fab_report).setOnClickListener(this);
-		ButterKnife.findById(this, R.id.fab_share).setOnClickListener(this);
-		ButterKnife.findById(this, R.id.fab_download).setOnClickListener(this);
 	}
 
 	/**
@@ -253,10 +236,12 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 			mFab.setVisibility(View.VISIBLE);
 		}
 
-		if (ResourceUtil.getInteger(R.integer.hide_video_fab) == 1)
+		if (ResourceUtil.getInteger(R.integer.hide_video_fab) == 1) {
+			// Hide FAB on landscape tablet mode
 			mFab.setVisibility(View.GONE);
-		else
+		} else {
 			mFab.setVisibility(mIsFullscreen ? View.GONE : View.VISIBLE);
+		}
 	}
 
 	/*****
@@ -320,7 +305,7 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 		mVideoKey = id;
 		boolean isFaved = id != -1;
 		mFavoriteView.setText(isFaved ? R.string.youtube_remove_from_my_faves : R.string.youtube_add_to_my_faves);
-		mFavorite.setIcon(isFaved ? R.drawable.ic_unfavorite : R.drawable.ic_favorite);
+		mFavorite.setImageResource(isFaved ? R.drawable.ic_unfavorite : R.drawable.ic_favorite);
 	}
 
 	@Override
@@ -439,123 +424,107 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 
 	@Override
 	public void onClick(View v) {
-		final Intent intent;
 		mFab.collapse();
+	}
 
-		switch (v.getId()) {
-			case R.id.fab_comment:
-				if (!TextUtils.isEmpty(mUsername))
-					toggleCommentWindow(true);
-				else {
-					new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
-							.setTitleText(null)
-							.setContentText(getString(R.string.set_username))
-							.setConfirmText(getString(R.string.yes))
-							.setConfirmClickListener((sDialog, __) -> {
-								sDialog.dismissWithAnimation();
-								startActivity(new Intent(VideoActivity.this, SettingsActivity.class));
-								overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
-							})
-							.setCancelText(getString(R.string.no))
-							.setCancelClickListener((sDialog, __) -> {
-								sDialog.dismissWithAnimation();
-							})
-							.show();
-				}
-
-				break;
-
-			case R.id.fab_favorite:
-				if (mVideoKey == -1) {
-					// Create Video
-					Video video = new Video();
-					video.stitle = mVideo.stitle;
-					video.ytid = mVideo.ytid;
-					video.ytitle = mVideo.ytitle;
-					mVideoPresenter.addFave(video);
-				} else {
-					mVideoPresenter.deleteFave(mVideoKey);
-				}
-				mFavoriteView.setText(mVideoKey == 0 ? R.string.youtube_add_to_my_faves : R.string.youtube_remove_from_my_faves);
-				mFavorite.setIcon(mVideoKey == 0 ? R.drawable.ic_favorite : R.drawable.ic_unfavorite);
-				break;
-
-			case R.id.fab_youtube:
-				intent = new Intent(Intent.ACTION_VIEW);
-				intent.setData(Uri.parse(String.format(Config.YOUTUBE_SHARE_URL_PREFIX, mYtid)));
-				startActivity(intent);
-
-				sendEvent("video - android", "click: " + mYtid, "youtubeapp");
-				break;
-
-			case R.id.fab_report:
-				new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
-						.setTitleText(getString(R.string.report_video))
-						.setContentText(getString(R.string.is_video_blocked))
-						.setConfirmText(getString(R.string.yes))
-						.setConfirmClickListener((sDialog, __) -> {
-							sDialog.dismissWithAnimation();
-							report();
-						})
-						.setCancelText(getString(R.string.no))
-						.setCancelClickListener((sDialog, __) -> sDialog.dismissWithAnimation())
-						.show();
-				break;
-
-			case R.id.fab_share:
-				intent = new Intent(Intent.ACTION_SEND);
-				intent.setType("text/plain");
-				intent.putExtra(Intent.EXTRA_SUBJECT, mVideo.ytitle);
-				intent.putExtra(Intent.EXTRA_TEXT, mVideo.stitle + " - " + mVideo.ytitle + " : http://youtu.be/" + mVideo.ytid);
-				startActivity(Intent.createChooser(intent, getString(R.string.share_via)));
-
-				sendEvent("video - android", "click: " + mVideo.ytid, "share");
-				break;
-
-			case R.id.fab_download:
-				String dlUrl = "http://ssyoutube.com/watch?v=" + mYtid;
-				intent = new Intent(Intent.ACTION_VIEW);
-				intent.setData(Uri.parse(dlUrl));
-
-				if (BuildConfig.DEBUG || !YTPreference.getBoolean("download_isfirst")) {
-					YTPreference.put("download_isfirst", true);
-
-					ImageView guide = new ImageView(this);
-					guide.setImageResource(R.drawable.video_download_guide);
-
-					new SweetAlertDialog(this, SweetAlertDialog.CUSTOM_BIG_IMAGE_TYPE)
-							.setCustomBigImage(R.drawable.video_download_guide)
-							.setConfirmText(getString(R.string.download_video))
-							.setConfirmClickListener((sDialog, __) -> {
-								sDialog.dismissWithAnimation();
-								startActivity(intent);
-							})
-							.show();
-				} else {
-					startActivity(intent);
-				}
-
-				sendEvent("video - android", "click: " + mYtid, "download");
-				break;
-
-			case R.id.close:
-				toggleCommentWindow(false);
-				break;
-
-			case R.id.submit:
-				submitComment();
-				break;
+	public void comment(View view) {
+		if (!TextUtils.isEmpty(mUsername))
+			toggleCommentWindow(true);
+		else {
+			new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+					.setTitleText(null)
+					.setContentText(getString(R.string.set_username))
+					.setConfirmText(getString(R.string.yes))
+					.setConfirmClickListener((sDialog, __) -> {
+						sDialog.dismissWithAnimation();
+						startActivity(new Intent(VideoActivity.this, SettingsActivity.class));
+						overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
+					})
+					.setCancelText(getString(R.string.no))
+					.setCancelClickListener((sDialog, __) -> {
+						sDialog.dismissWithAnimation();
+					})
+					.show();
 		}
 	}
 
-	private void report() {
-		int cid = Integer.parseInt(mVideo.cid);
-		if (cid != 5 && cid != 7 & cid != 8) {
-			mVideoPresenter.report(mYtid);
+	public void favorite(View view) {
+		if (mVideoKey == -1) {
+			// Create Video
+			Video video = new Video();
+			video.stitle = mVideo.stitle;
+			video.ytid = mVideo.ytid;
+			video.ytitle = mVideo.ytitle;
+			mVideoPresenter.addFave(video);
+		} else {
+			mVideoPresenter.deleteFave(mVideoKey);
 		}
+		mFavoriteView.setText(mVideoKey == 0 ? R.string.youtube_add_to_my_faves : R.string.youtube_remove_from_my_faves);
+		mFavorite.setBackgroundResource(mVideoKey == 0 ? R.drawable.ic_favorite : R.drawable.ic_unfavorite);
 	}
 
-	private void submitComment() {
+	public void watchOnYouTube(View view) {
+		Intent intent = new Intent(Intent.ACTION_VIEW);
+		intent.setData(Uri.parse(String.format(Config.YOUTUBE_SHARE_URL_PREFIX, mYtid)));
+		startActivity(intent);
+
+		sendEvent("video - android", "click: " + mYtid, "youtubeapp");
+	}
+
+	public void report(View view) {
+		new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+				.setTitleText(getString(R.string.report_video))
+				.setContentText(getString(R.string.is_video_blocked))
+				.setConfirmText(getString(R.string.yes))
+				.setConfirmClickListener((sDialog, __) -> {
+					sDialog.dismissWithAnimation();
+					int cid = Integer.parseInt(mVideo.cid);
+					if (cid != 5 && cid != 7 & cid != 8) {
+						mVideoPresenter.report(mYtid);
+					}
+				})
+				.setCancelText(getString(R.string.no))
+				.setCancelClickListener((sDialog, __) -> sDialog.dismissWithAnimation())
+				.show();
+	}
+
+	public void share(View view) {
+		Intent intent = new Intent(Intent.ACTION_SEND);
+		intent.setType("text/plain");
+		intent.putExtra(Intent.EXTRA_SUBJECT, mVideo.ytitle);
+		intent.putExtra(Intent.EXTRA_TEXT, mVideo.stitle + " - " + mVideo.ytitle + " : http://youtu.be/" + mVideo.ytid);
+		startActivity(Intent.createChooser(intent, getString(R.string.share_via)));
+
+		sendEvent("video - android", "click: " + mVideo.ytid, "share");
+	}
+
+	public void downloadVideo(View view) {
+		String dlUrl = "http://ssyoutube.com/watch?v=" + mYtid;
+		Intent intent = new Intent(Intent.ACTION_VIEW);
+		intent.setData(Uri.parse(dlUrl));
+
+		if (BuildConfig.DEBUG || !YTPreference.getBoolean("download_isfirst")) {
+			YTPreference.put("download_isfirst", true);
+
+			ImageView guide = new ImageView(this);
+			guide.setImageResource(R.drawable.video_download_guide);
+
+			new SweetAlertDialog(this, SweetAlertDialog.CUSTOM_BIG_IMAGE_TYPE)
+					.setCustomBigImage(R.drawable.video_download_guide)
+					.setConfirmText(getString(R.string.download_video))
+					.setConfirmClickListener((sDialog, __) -> {
+						sDialog.dismissWithAnimation();
+						startActivity(intent);
+					})
+					.show();
+		} else {
+			startActivity(intent);
+		}
+
+		sendEvent("video - android", "click: " + mYtid, "download");
+	}
+
+	public void submitComment(View view) {
 		String comment = mCommentView.getText().toString().trim();
 
 		if (!TextUtils.isEmpty(comment)) {
@@ -569,6 +538,10 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 					.setConfirmClickListener((sDialog, __) -> sDialog.dismissWithAnimation())
 					.show();
 		}
+	}
+
+	public void closeCommentWindow(View view) {
+		toggleCommentWindow(false);
 	}
 
 	private class RecyclerViewScrollDetectorImpl extends RecyclerViewScrollDetector {

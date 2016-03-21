@@ -37,9 +37,9 @@ public class ConnectivityChangeReceiver extends BroadcastReceiver {
 	private boolean getStatus(Context context, Intent intent) {
 		if (intent.getExtras() != null) {
 			final ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-			final NetworkInfo ni = connectivityManager.getActiveNetworkInfo();
+			final NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
 
-			if (ni != null && ni.isConnectedOrConnecting()) {
+			if (networkInfo != null && networkInfo.isConnectedOrConnecting()) {
 				return true;
 			} else if (intent.getBooleanExtra(ConnectivityManager.EXTRA_NO_CONNECTIVITY, Boolean.FALSE)) {
 				return false;

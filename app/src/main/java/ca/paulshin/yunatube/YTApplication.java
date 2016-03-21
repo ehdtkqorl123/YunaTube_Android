@@ -6,7 +6,6 @@ import android.content.Context;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
 
-import ca.paulshin.yunatube.db.DBHelper;
 import ca.paulshin.yunatube.injection.component.ApplicationComponent;
 import ca.paulshin.yunatube.injection.component.DaggerApplicationComponent;
 import ca.paulshin.yunatube.injection.module.ApplicationModule;
@@ -30,7 +29,6 @@ public class YTApplication extends Application  {
         ResourceUtil.init(ctx);
         PicassoUtil.init(ctx);
         GlideUtil.init(ctx);
-        DBHelper.init(ctx);
 
         if (BuildConfig.DEBUG) {
             Timber.plant(new Timber.DebugTree());

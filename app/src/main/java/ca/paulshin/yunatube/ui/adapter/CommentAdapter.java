@@ -23,6 +23,7 @@ import ca.paulshin.yunatube.util.ResourceUtil;
 public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 	private static final int TYPE_HEADER = 0;
 	private static final int TYPE_ITEM = 1;
+
 	private List<Comment> mComments;
 	private View mHeader;
 	private OnLoadMoreListener mOnLoadMoreListener;

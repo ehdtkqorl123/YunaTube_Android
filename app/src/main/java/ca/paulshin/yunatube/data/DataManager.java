@@ -249,14 +249,4 @@ public class DataManager {
 
 		return mYunaTubeService.getVideos(options);
 	}
-
-	// Helper method to post events from doOnCompleted.
-//    private Action0 postEventAction(final Object event) {
-//        return new Action0() {
-//            @Override
-//            public void call() {
-//                mEventPoster.postEventSafely(event);
-//            }
-//        };
-//    }
 }

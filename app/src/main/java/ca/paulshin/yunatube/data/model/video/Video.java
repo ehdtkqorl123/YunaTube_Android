@@ -18,7 +18,6 @@ public class Video {
 	public String ytid;
 
 	public Video() {
-
 	}
 
 	public Video(Long id, String stitle, String ytitle, String ytid) {

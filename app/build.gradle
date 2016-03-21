@@ -147,8 +147,6 @@ dependencies {
     // https://github.com/pedant/sweet-alert-dialog
     compile project(':SweetAlertDialog')
 
-    compile project(':dao')
-
     // https://github.com/castorflex/SmoothProgressBar
     compile 'com.github.castorflex.smoothprogressbar:library:1.1.0'
     compile 'com.github.castorflex.smoothprogressbar:library-circular:1.2.0'

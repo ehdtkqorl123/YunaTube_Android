@@ -1,5 +1,6 @@
 package ca.paulshin.yunatube.ui.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -45,6 +46,7 @@ public class AnimatedGifListLayoutAdapter extends RecyclerView.Adapter<AnimatedG
 	}
 
 	@Override
+	@SuppressLint("DefaultLocale")
 	public void onBindViewHolder(SimpleViewHolder holder, int position) {
 		View view = (View) holder.thumbnail.getParent();
 		view.setTag(position);

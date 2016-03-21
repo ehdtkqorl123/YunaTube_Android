@@ -135,10 +135,6 @@ public class MainVideoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 	}
 
 	private Video getItem(int position) {
-		if (mHeader != null) {
-			return mVideos.get(position - 1);
-		} else {
-			return mVideos.get(position);
-		}
+		return mVideos.get(mHeader != null ? position - 1 : position);
 	}
 }

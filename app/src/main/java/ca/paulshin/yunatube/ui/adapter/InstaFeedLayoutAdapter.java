@@ -87,11 +87,11 @@ public class InstaFeedLayoutAdapter extends RecyclerView.Adapter<InstaFeedLayout
 	@Override
 	public void onBindViewHolder(SimpleViewHolder holder, int position) {
 		FeedItem item = mItems.get(position);
-		String standardURl = item.images.standard_resolution.url;
-		String url = standardURl;
+		String lowUrl = item.images.low_resolution.url;
+		String standardUrl = item.images.standard_resolution.url;
 		String videoUrl = item.videos != null ? item.videos.standard_resolution.url : null;
-		PicassoUtil.loadImage(url, holder.thumbnail, R.drawable.placeholder_gray);
-		((View)holder.thumbnail.getParent()).setTag(R.id.insta_photo_url, standardURl);
+		PicassoUtil.loadImage(lowUrl, holder.thumbnail, R.drawable.placeholder_gray);
+		((View)holder.thumbnail.getParent()).setTag(R.id.insta_photo_url, standardUrl);
 
 		View view = ((View)holder.thumbnail.getParent());
 		if (videoUrl != null) {

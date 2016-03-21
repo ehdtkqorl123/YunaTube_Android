@@ -1,7 +1,6 @@
 package ca.paulshin.yunatube.ui.base;
 
 import android.content.res.Configuration;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -37,7 +36,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     // Durations for certain animations we use:
     private static final int HEADER_HIDE_ANIM_DURATION = 300;
-    private static final int ACCOUNT_BOX_EXPAND_ANIM_DURATION = 200;
 
     // variables that control the Action Bar auto hide behavior (aka "quick recall")
     private boolean mActionBarAutoHideEnabled = false;
@@ -70,13 +68,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         mTracker = ((YTApplication)getApplication()).getDefaultTracker();
-
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-			Window w = getWindow();
-			w.setStatusBarColor(ContextCompat.getColor(this, getStatusBarColor()));
-		}
+		Window w = getWindow();
+		w.setStatusBarColor(ContextCompat.getColor(this, getStatusBarColor()));
     }
 
 	protected void setToolbar() {
@@ -88,7 +82,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
-
 		trySetupSwipeRefresh();
 		updateSwipeRefreshProgressBarTop();
 	}
@@ -96,7 +89,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 	@Override
 	protected void onStart() {
 		super.onStart();
-
 		sendScreen();
 	}
 
@@ -305,9 +297,9 @@ public abstract class BaseActivity extends AppCompatActivity {
 	@Override
 	public void finish() {
 		super.finish();
-
-		if (applyTransitionOnFinish())
+		if (applyTransitionOnFinish()) {
 			overridePendingTransition(R.anim.end_enter, R.anim.end_exit);
+		}
 	}
 
 	protected int getStatusBarColor() {
