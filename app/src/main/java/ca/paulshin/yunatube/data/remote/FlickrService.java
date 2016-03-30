@@ -1,5 +1,7 @@
 package ca.paulshin.yunatube.data.remote;
 
+import com.facebook.stetho.okhttp3.StethoInterceptor;
+
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -49,6 +51,7 @@ public interface FlickrService {
             clientBuilder.readTimeout(3, TimeUnit.SECONDS);
             clientBuilder.writeTimeout(3, TimeUnit.SECONDS);
             clientBuilder.addInterceptor(interceptor);
+            clientBuilder.addNetworkInterceptor(new StethoInterceptor());
 
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(Config.BASE_FLICKR_URL_HTTPS)

@@ -22,8 +22,7 @@ public class Db {
                     COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     COLUMN_STITLE + " TEXT NOT NULL, " +
                     COLUMN_YTITLE + " TEXT NOT NULL, " +
-                    COLUMN_YTID + " TEXT NOT NULL, " +
-                    " ); ";
+                    COLUMN_YTID + " TEXT NOT NULL );";
         }
 
         public static ContentValues toContentValues(Video video) {
