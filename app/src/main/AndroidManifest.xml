@@ -52,6 +52,17 @@
             android:theme="@style/Theme.YunaTube"/>
 
         <activity
+            android:name=".ui.main.MainSearchActivity"
+            android:label="@string/search"
+            android:theme="@style/Theme.YunaTube.Search"
+            android:launchMode="singleTop"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+
+        <activity
             android:name=".ui.main.SearchActivity"
             android:label="@string/search"/>
 

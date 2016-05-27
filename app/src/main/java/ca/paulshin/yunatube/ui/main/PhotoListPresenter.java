@@ -45,7 +45,7 @@ public class PhotoListPresenter extends BasePresenter<PhotoListMvpView> {
 
                     @Override
                     public void onError(Throwable e) {
-                        Timber.e(e, "There was an error loading the notice.");
+                        Timber.e(e, "There was an error loading photo list.");
                         getMvpView().showError();
                     }
 

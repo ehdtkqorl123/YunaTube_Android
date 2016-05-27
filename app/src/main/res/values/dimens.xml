@@ -50,6 +50,7 @@
     <dimen name="staggered_child_xlarge">400dp</dimen>
 
     <!-- FAB -->
+    <dimen name="fab_margin">16dp</dimen>
     <dimen name="fab_size_normal">56dp</dimen>
     <dimen name="fab_size_mini">40dp</dimen>
     <dimen name="fab_icon_size">24dp</dimen>
@@ -79,5 +80,10 @@
 
     <!-- Video -->
     <dimen name="detail_backdrop_height">256dp</dimen>
+
+    <!-- Search -->
+    <dimen name="search_padding">16dp</dimen>
+    <color name="app_body_text_1">#de000000</color>
+    <color name="app_body_text_2">#8a000000</color>
 
 </resources>

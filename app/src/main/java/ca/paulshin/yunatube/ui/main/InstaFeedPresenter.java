@@ -48,7 +48,7 @@ public class InstaFeedPresenter extends BasePresenter<InstaFeedMvpView> {
 
                     @Override
                     public void onError(Throwable e) {
-                        Timber.e(e, "There was an error loading the notice.");
+                        Timber.e(e, "There was an error loading Instagram feed.");
                         getMvpView().showError();
                     }
 

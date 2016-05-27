@@ -1,8 +1,11 @@
 package ca.paulshin.yunatube.ui.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import java.util.List;
@@ -17,9 +20,9 @@ import ca.paulshin.yunatube.ui.adapter.MainVideoAdapter;
 import ca.paulshin.yunatube.ui.base.BaseActivity;
 
 public class SearchActivity extends BaseActivity implements SearchMvpView {
-	public static final String EXTRA_QUERY = "query";
+	public static final String EXTRA_QUERY = "mQuery";
 
-	private String query;
+	private String mQuery;
 
 	@Inject
 	SearchPresenter mSearchPresenter;
@@ -33,7 +36,7 @@ public class SearchActivity extends BaseActivity implements SearchMvpView {
 
 	@Override
 	protected String getScreenName() {
-		return "search - android: " + query;
+		return "search - android: " + mQuery;
 	}
 
 	@Override
@@ -45,16 +48,35 @@ public class SearchActivity extends BaseActivity implements SearchMvpView {
 		getActivityComponent().inject(this);
 		mSearchPresenter.attachView(this);
 
-		query = getIntent().getStringExtra(EXTRA_QUERY);
+		mQuery = getIntent().getStringExtra(EXTRA_QUERY);
 
 		setupToolbar();
-		setTitle(query);
+		setTitle(mQuery);
 
 		int padding = getAdjustedPadding();
 		mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 		mRecyclerView.setPadding(padding, 0, padding, 0);
 
 		searchVideos();
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		super.onCreateOptionsMenu(menu);
+
+		getMenuInflater().inflate(R.menu.menu_search, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case R.id.action_search:
+				Intent intent = new Intent(this, MainSearchActivity.class);
+				startActivity(intent);
+				break;
+		}
+		return super.onOptionsItemSelected(item);
 	}
 
 	@Override
@@ -65,7 +87,7 @@ public class SearchActivity extends BaseActivity implements SearchMvpView {
 	}
 
 	private void searchVideos() {
-		mSearchPresenter.getSearchVideos(query);
+		mSearchPresenter.getSearchVideos(mQuery);
 	}
 
 	/*****

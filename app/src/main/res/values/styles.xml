@@ -60,7 +60,18 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
-    <style name="Widget.YunaTube.SearchView" parent="Widget.AppCompat.SearchView"/>
+    <style name="Widget.YunaTube.SearchView" parent="Widget.AppCompat.SearchView">
+        <item name="searchHintIcon">@null</item>
+        <item name="queryBackground">@null</item>
+        <item name="submitBackground">@null</item>
+    </style>
+
+    <style name="SearchViewTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:textColorPrimary">@color/app_body_text_1</item>
+        <item name="android:textColorHint">@color/dark_gray</item>
+        <item name="colorControlNormal">@color/app_body_text_2</item>
+        <item name="colorControlActivated">@color/body_text_3</item>
+    </style>
 
     <style name="Theme.YunaTube" parent="Theme.YunaTube.Base">
         <item name="popupItemBackground">@drawable/popup_item_background</item>
@@ -71,6 +82,15 @@
         <item name="android:statusBarColor">?colorPrimaryDark</item>
 
         <item name="android:alertDialogTheme">@style/Theme.YunaTube.AlertDialog</item>
+    </style>
+
+    <style name="Theme.YunaTube.Search" parent="Theme.YunaTube">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="autoCompleteTextViewStyle">@style/Widget.YunaTube.Search.AutoCompleteTextView</item>
+        <item name="searchViewStyle">@style/Widget.YunaTube.SearchView</item>
+        <item name="colorControlNormal">@color/app_body_text_2</item>
+        <item name="colorControlActivated">@color/body_text_3</item>
     </style>
 
     <style name="Theme.YunaTube.WithNavDrawer" parent="Theme.YunaTube"/>
@@ -110,6 +130,13 @@
 
     <style name="TextAppearance.LargePopupMenu" parent="TextAppearance.AppCompat.Widget.PopupMenu.Large">
         <item name="android:textColor">@color/body_text_1</item>
+    </style>
+
+    <!-- Search -->
+    <style name="Widget.YunaTube.Search.AutoCompleteTextView" parent="Widget.AppCompat.Light.AutoCompleteTextView">
+        <item name="android:textColorHint">@color/app_body_text_2</item>
+        <!-- If set to @null the cursor will be displayed using android:textColor -->
+        <item name="android:textCursorDrawable">@null</item>
     </style>
 
     <!-- Misc -->

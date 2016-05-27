@@ -33,7 +33,7 @@
     <string name="offline_desc">This page can be loaded once you conneced to a network</string>
 
     <!-- Main -->
-    <string name="search_hint">Search YunaTube</string>
+    <string name="search_hint">Search Video</string>
     <string name="one_comment">1 comment</string>
     <string name="n_comments">%1$d comments</string>
     <string name="yuna_fact">Today\'s Yuna Fact</string>

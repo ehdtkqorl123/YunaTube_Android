@@ -47,7 +47,7 @@ public class AnimatedGifListPresenter extends BasePresenter<AnimatedGifListMvpVi
 
                     @Override
                     public void onError(Throwable e) {
-                        Timber.e(e, "There was an error loading the notice.");
+                        Timber.e(e, "There was an error loading gif list.");
                         getMvpView().showError();
                     }
 

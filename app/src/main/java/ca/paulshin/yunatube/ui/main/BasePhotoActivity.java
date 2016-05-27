@@ -12,7 +12,6 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
-import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -32,6 +31,7 @@ import ca.paulshin.yunatube.util.FileUtil;
 import ca.paulshin.yunatube.util.ToastUtil;
 import ca.paulshin.yunatube.util.UIUtil;
 import ca.paulshin.yunatube.util.ViewUtil;
+import ca.paulshin.yunatube.widgets.ViewPagerFixed;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
@@ -46,7 +46,7 @@ public abstract class BasePhotoActivity extends BaseActivity implements PhotoVie
 	private View mDecorView;
 
 	protected LinearLayout mMenuView;
-	protected ViewPager mPager;
+	protected ViewPagerFixed mPager;
 
 	protected abstract int getNotificationId();
 

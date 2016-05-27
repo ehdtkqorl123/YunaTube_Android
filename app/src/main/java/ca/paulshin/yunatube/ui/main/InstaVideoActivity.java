@@ -139,8 +139,8 @@ public class InstaVideoActivity extends BaseActivity implements SurfaceHolder.Ca
 		mInstaPhotoView.setVisibility(View.GONE);
 		mInstaVideoView.setVisibility(View.VISIBLE);
 
-		mMediaController.setAnchorView(mInstaVideoView);
-		mMediaController.setMediaPlayer(this);
+//		mMediaController.setAnchorView(mInstaVideoView);
+//		mMediaController.setMediaPlayer(this);
 
 		mInstaVideoView.post(() -> {
 			mMediaController.setEnabled(true);

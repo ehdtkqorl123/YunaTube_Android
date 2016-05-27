@@ -32,14 +32,4 @@
         android:scrollbarStyle="outsideOverlay"
         android:scrollbars="vertical"
         android:visibility="invisible"/>
-
-    <View
-        android:id="@+id/veil"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.85"
-        android:background="@color/white"
-        android:visibility="gone"/>
-
-    <include layout="@layout/p_main_fab"/>
 </RelativeLayout>

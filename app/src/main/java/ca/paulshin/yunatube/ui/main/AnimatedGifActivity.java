@@ -86,6 +86,8 @@ public class AnimatedGifActivity extends BasePhotoActivity implements AnimatedGi
 		} else {
 			mGuideView.setVisibility(View.GONE);
 		}
+
+		showSystemUI();
 	}
 
 	@Override

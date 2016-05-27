@@ -66,6 +66,8 @@ public class InstaPhotoActivity extends BasePhotoActivity {
 			int statusBarHeight = UIUtil.getStatusBarHeight(this);
 			params.width = ViewUtil.getScreenSize()[1] - statusBarHeight;
 		}
+
+		showSystemUI();
 	}
 
 	public void onSave(View view) {

@@ -1,7 +1,6 @@
 package ca.paulshin.yunatube.ui.main;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
@@ -12,25 +11,15 @@ import android.os.Message;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Editable;
 import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 
-import com.nineoldandroids.animation.Animator;
-import com.nineoldandroids.view.ViewPropertyAnimator;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
 
@@ -55,14 +44,11 @@ import ca.paulshin.yunatube.util.PicassoUtil;
 import ca.paulshin.yunatube.util.ResourceUtil;
 import ca.paulshin.yunatube.util.ToastUtil;
 import ca.paulshin.yunatube.util.events.ConnectivityChangeEvent;
-import ca.paulshin.yunatube.widgets.FloatingActionsMenu;
 import ca.paulshin.yunatube.widgets.RecyclerViewScrollDetector;
 import ca.paulshin.yunatube.widgets.SquareImageView;
 import timber.log.Timber;
 
 public class MainMenuFragment extends BaseFragment implements
-		View.OnTouchListener,
-		FloatingActionsMenu.ToggleListener,
 		View.OnClickListener,
 		MainMenuMvpView {
 
@@ -70,30 +56,30 @@ public class MainMenuFragment extends BaseFragment implements
 	private static final int FAB_TRANSLATE_DURATION_MILLIS = 200;
 	private final Interpolator mInterpolator = new AccelerateDecelerateInterpolator();
 
+	public interface MainMenuScrollListener {
+		void showFab();
+		void toggleFab(boolean show);
+	}
+
 	@Inject
 	MainMenuPresenter mMainMenuPresenter;
 	@Inject
 	Bus mBus;
 
 	private View mRootView;
-	@Bind(R.id.veil)
-	View mVeilView;
 	private View mListHeaderView;
 	@Bind(R.id.loading)
 	View mLoadingView;
 	@Bind(R.id.none)
 	View mNoneView;
-	private EditText mSearchView;
 	@Bind(R.id.list)
 	RecyclerView mRecyclerView;
-	@Bind(R.id.main_fab)
-	FloatingActionsMenu mFab;
 
 	private String mLastNewOrder;
 	private int mLoadCount;
 	private MainVideoAdapter mAdapter;
-	private Handler mFabHandler = new Handler();
 	private ConnectivityChangeReceiver mConnectivityChangeReceiver;
+	private MainMenuScrollListener mMainMenuScrollListener;
 
 	public static MainMenuFragment newInstance() {
 		MainMenuFragment fragment = new MainMenuFragment();
@@ -108,9 +94,14 @@ public class MainMenuFragment extends BaseFragment implements
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		((BaseActivity)getActivity()).getActivityComponent().inject(this);
+		Activity activity = getActivity();
+		((BaseActivity)activity).getActivityComponent().inject(this);
 		mMainMenuPresenter.attachView(this);
 		Timber.tag("MainMenuFragment");
+
+		if (activity instanceof MainMenuScrollListener) {
+			mMainMenuScrollListener = (MainMenuScrollListener)activity;
+		}
 	}
 
 	@Override
@@ -119,13 +110,10 @@ public class MainMenuFragment extends BaseFragment implements
 		mRootView = inflater.inflate(R.layout.f_main, container, false);
 		ButterKnife.bind(this, mRootView);
 
-		mFab.setListener(this);
-		mFab.setVisibility(View.GONE);
-
 		int padding = getAdjustedPadding();
 
-		mVeilView.setOnTouchListener(this);
 		mListHeaderView = inflater.inflate(R.layout.p_main_header, null);
+
 		mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 		mAdapter = new MainVideoAdapter(mRecyclerView, mListHeaderView);
 		mAdapter.setOnLoadMoreListener(() -> mMainMenuPresenter.getNewVideos(mLastNewOrder));
@@ -133,6 +121,7 @@ public class MainMenuFragment extends BaseFragment implements
 		mRecyclerView.setPadding(padding, 0, padding, 0);
 		mRecyclerView.addOnScrollListener(new RecyclerViewScrollDetectorImpl());
 
+		ButterKnife.findById(mListHeaderView, R.id.notice_image).setOnClickListener(this);
 		ButterKnife.findById(mListHeaderView, R.id.fact_more).setOnClickListener(this);
 		ButterKnife.findById(mListHeaderView, R.id.insta_more).setOnClickListener(this);
 
@@ -142,10 +131,6 @@ public class MainMenuFragment extends BaseFragment implements
 			int id = ResourceUtil.getResourceId("id", "insta_frame_" + i);
 			ButterKnife.findById(mListHeaderView, id).setOnClickListener(this);
 		}
-
-		// Initialize views
-		initSearchView();
-		initFabs();
 
 		loadData();
 
@@ -157,6 +142,7 @@ public class MainMenuFragment extends BaseFragment implements
 		super.onDestroy();
 
 		mMainMenuPresenter.detachView();
+		mMainMenuScrollListener = null;
 	}
 
 	/**
@@ -192,70 +178,6 @@ public class MainMenuFragment extends BaseFragment implements
 
 		getActivity().unregisterReceiver(mConnectivityChangeReceiver);
 		mBus.unregister(this);
-	}
-
-	private void initSearchView() {
-		final Context ctx = getActivity();
-		final View clearSearchView = ButterKnife.findById(mListHeaderView, R.id.search_clear);
-		mSearchView = ButterKnife.findById(mListHeaderView, R.id.search);
-
-		final PopupMenu popupMenu = new PopupMenu(ctx, mSearchView);
-		final int searchId = 101;
-		popupMenu.getMenu().add(0, searchId, 1, R.string.action_search_video);
-		popupMenu.setOnMenuItemClickListener((item) -> {
-			switch (item.getItemId()) {
-				case searchId:
-					ToastUtil.toast(ctx, item.toString());
-					break;
-			}
-
-			return true;
-		});
-
-		mSearchView.setOnKeyListener((v, keyCode, event) -> {
-			if (event.getAction() == KeyEvent.ACTION_DOWN) {
-				EditText searchView = (EditText) v;
-				switch (keyCode) {
-					case KeyEvent.KEYCODE_SEARCH:
-					case KeyEvent.KEYCODE_ENTER:
-						if (!TextUtils.isEmpty(searchView.getText().toString().trim())) {
-							Intent intent = new Intent(getActivity(), SearchActivity.class);
-							intent.putExtra(SearchActivity.EXTRA_QUERY, searchView.getText().toString());
-							startActivity(intent);
-							getActivity().overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
-
-							sendEvent("main - android", "click", "search");
-						}
-						return true;
-					default:
-						break;
-				}
-				mSearchView.setImeOptions(EditorInfo.IME_ACTION_SEARCH);
-			}
-			return false;
-		});
-
-		mSearchView.addTextChangedListener(new TextWatcher() {
-			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-			@Override
-			public void afterTextChanged(Editable s) {}
-
-			@Override
-			public void onTextChanged(CharSequence s, int start, int before, int count) {
-				clearSearchView.setVisibility(s.length() > 0 ? View.VISIBLE : View.GONE);
-			}
-		});
-
-		clearSearchView.setOnClickListener(this);
-	}
-
-	private void initFabs() {
-		ButterKnife.findById(mRootView, R.id.fab_settings).setOnClickListener(this);
-		ButterKnife.findById(mRootView, R.id.fab_web_search).setOnClickListener(this);
-		ButterKnife.findById(mRootView, R.id.fab_links).setOnClickListener(this);
-		ButterKnife.findById(mRootView, R.id.fab_jukebox).setOnClickListener(this);
 	}
 
 	/*****
@@ -355,7 +277,7 @@ public class MainMenuFragment extends BaseFragment implements
 	private void populateListItems() {
 		mLoadingView.postDelayed(() -> mLoadingView.setVisibility(View.GONE), 1000);
 		mRecyclerView.postDelayed(() -> mRecyclerView.setVisibility(View.VISIBLE), 1000);
-		mFab.postDelayed(() -> mFab.setVisibility(View.VISIBLE), 1000);
+		mMainMenuScrollListener.showFab();
 	}
 
 	public void onInstaClicked(View view) {
@@ -384,93 +306,14 @@ public class MainMenuFragment extends BaseFragment implements
 		activity.overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
 	}
 
-	/*****
-	 * FAB
-	 *****/
-
-	private boolean mFabToggled;
-	private boolean mPrevVisibility = true;
-
-	public boolean closeFab() {
-		if (mFab != null) {
-			boolean wasFabOpen = mFab.isExpanded();
-			if (wasFabOpen) {
-				mFab.collapse();
-			}
-			return !wasFabOpen;
-		}
-		return true;
-	}
-
-	@Override
-	public boolean onTouch(View v, MotionEvent event) {
-		mFab.collapse();
-		return true;
-	}
-
-	@Override
-	public void onToggle(boolean isExpand) {
-		MainActivity activity = (MainActivity)getActivity();
-		mVeilView.setVisibility(isExpand ? View.VISIBLE : View.GONE);
-		if (activity != null) {
-			activity.toggleVeil(isExpand);
-		}
-	}
-
-	public void showFab() {
-		toggleFab(true);
-	}
-
-	public void hideFab() {
-		toggleFab(false);
-	}
-
-	private void toggleFab(final boolean visible) {
-		if (!mFabToggled && mPrevVisibility != visible) {
-			mFabToggled = true;
-			mPrevVisibility = visible;
-
-			if (mFab.isExpanded()) {
-				mFab.collapse();
-			}
-
-			int fabHeight = mFab.getHeight();
-			int translationY = visible ? 0 : fabHeight + ResourceUtil.getDimensionInPx(R.dimen.fab_padding_y);
-
-			ViewPropertyAnimator
-					.animate(mFab)
-					.setInterpolator(mInterpolator)
-					.setDuration(FAB_TRANSLATE_DURATION_MILLIS)
-					.translationY(translationY)
-					.setListener(new Animator.AnimatorListener() {
-						@Override
-						public void onAnimationStart(Animator animation) {}
-
-						@Override
-						public void onAnimationEnd(Animator animation) {
-							mFabToggled = false;
-						}
-
-						@Override
-						public void onAnimationCancel(Animator animation) {}
-
-						@Override
-						public void onAnimationRepeat(Animator animation) {}
-					});
-		}
-	}
-
 	@Override
 	public void onClick(View v) {
 		switch(v.getId()) {
-			case R.id.fab_settings:
+			case R.id.notice_image:
 				startActivity(new Intent(getActivity(), SettingsActivity.class));
 				getActivity().overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
 				break;
 			case R.id.fab_web_search:
-				if (mFab.isExpanded())
-					mFab.collapse();
-
 				FragmentManager fm = getChildFragmentManager();
 				WebSearchDialogFragment f = WebSearchDialogFragment.getInstance();
 				f.show(fm, "fragment_web_search");
@@ -493,10 +336,6 @@ public class MainMenuFragment extends BaseFragment implements
 				startActivity(new Intent(getActivity(), InstaFeedActivity.class));
 				getActivity().overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
 				break;
-			case R.id.search_clear:
-				mSearchView.setText("");
-				v.setVisibility(View.GONE);
-				break;
 			case R.id.insta_frame_0:
 			case R.id.insta_frame_1:
 			case R.id.insta_frame_2:
@@ -510,28 +349,21 @@ public class MainMenuFragment extends BaseFragment implements
 				onInstaClicked(((ViewGroup) v).getChildAt(0));
 				break;
 		}
-
-		if (mFab.isExpanded()) {
-			mFabHandler.postDelayed(() -> mFab.collapse(), 1000);
-		}
-	}
-
-	public void hideSoftKey() {
-		if (isAdded()) {
-			InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-			imm.hideSoftInputFromWindow(mSearchView.getWindowToken(), 0);
-		}
 	}
 
 	private class RecyclerViewScrollDetectorImpl extends RecyclerViewScrollDetector {
 		@Override
 		public void onScrollDown() {
-			showFab();
+			if (mMainMenuScrollListener != null) {
+				mMainMenuScrollListener.toggleFab(true);
+			}
 		}
 
 		@Override
 		public void onScrollUp() {
-			hideFab();
+			if (mMainMenuScrollListener != null) {
+				mMainMenuScrollListener.toggleFab(false);
+			}
 		}
 	}
 

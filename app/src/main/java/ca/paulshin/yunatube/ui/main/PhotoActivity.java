@@ -73,6 +73,8 @@ public class PhotoActivity extends BasePhotoActivity implements ViewPager.OnPage
 		setMenubarPadding();
 
 		showSwipeGuide();
+
+		showSystemUI();
 	}
 
 	@Override

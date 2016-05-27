@@ -10,21 +10,19 @@
         android:id="@+id/notice_section"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/main_layout_inner_padding"
         android:orientation="horizontal">
 
         <ca.paulshin.yunatube.widgets.SquareImageView
+            android:id="@+id/notice_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
             android:src="@drawable/main_notice_image"/>
 
         <TextView
             android:id="@+id/notice_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="2dp"
             android:layout_marginStart="4dp"
             android:background="@drawable/main_item_box_bg"
             android:gravity="center_vertical"
@@ -32,41 +30,6 @@
             android:textColor="@color/body_text_1"
             android:textSize="@dimen/text_size_small"/>
     </LinearLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="@dimen/main_layout_inner_padding">
-
-        <EditText
-            android:id="@+id/search"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/input_box_bg"
-            android:hint="@string/search_hint"
-            android:imeOptions="actionSearch"
-            android:inputType="text"
-            android:maxLength="12"
-            android:paddingLeft="36dp"
-            android:paddingRight="@dimen/main_layout_padding"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:paddingLeft="12dp"
-            android:src="@drawable/ic_search"/>
-
-        <ImageButton
-            android:id="@+id/search_clear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|center_vertical"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/ic_search_clear"
-            android:visibility="gone"/>
-
-    </FrameLayout>
 
     <RelativeLayout
         android:id="@+id/fact_section"

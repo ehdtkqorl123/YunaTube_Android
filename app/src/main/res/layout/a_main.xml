@@ -1,9 +1,11 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/theme_primary_light"
-                tools:context=".ui.main.MainActivity">
+<android.support.design.widget.CoordinatorLayout android:id="@+id/main_content"
+                                                 xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 xmlns:tools="http://schemas.android.com/tools"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 android:background="@color/theme_primary_light"
+                                                 tools:context=".ui.main.MainActivity">
 
     <LinearLayout
         android:id="@+id/main_menu"
@@ -39,7 +41,7 @@
             android:layout_weight="1"
             android:foreground="?selectableItemBackgroundBorderless"
             android:onClick="onClick"
-            android:tag="1">
+            android:tag="1">s
 
             <ImageView
                 android:layout_width="match_parent"
@@ -101,18 +103,21 @@
         </FrameLayout>
     </LinearLayout>
 
-    <View
-        android:id="@+id/veil"
-        android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:alpha="0.85"
-        android:background="@color/white"
-        android:visibility="gone"/>
-
     <android.support.v4.view.ViewPager
         android:id="@+id/main_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/main_menu"/>
+        android:layout_below="@id/main_menu"
+        android:layout_marginTop="?actionBarSize"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-</RelativeLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_search"
+        app:backgroundTint="@color/deeporange"/>
+
+</android.support.design.widget.CoordinatorLayout>
