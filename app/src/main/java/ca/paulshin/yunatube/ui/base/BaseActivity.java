@@ -2,12 +2,11 @@ package ca.paulshin.yunatube.ui.base;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.AbsListView;
 import android.widget.ListView;
@@ -70,8 +69,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mTracker = ((YTApplication)getApplication()).getDefaultTracker();
-		Window w = getWindow();
-		w.setStatusBarColor(ContextCompat.getColor(this, getStatusBarColor()));
     }
 
 	protected void setupToolbar() {
@@ -125,6 +122,16 @@ public abstract class BaseActivity extends AppCompatActivity {
 		}
 
 		return padding;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case android.R.id.home:
+				finish();
+				return true;
+		}
+		return super.onOptionsItemSelected(item);
 	}
 
 	/************************

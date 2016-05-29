@@ -48,7 +48,6 @@ public class MainSearchActivity extends BaseActivity {
 		Drawable up = DrawableCompat.wrap(ContextCompat.getDrawable(this, R.drawable.ic_up));
 		DrawableCompat.setTint(up, getResources().getColor(R.color.app_body_text_2));
 		toolbar.setNavigationIcon(up);
-		toolbar.setNavigationOnClickListener((v) -> finish());
 
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 			doEnterAnim();

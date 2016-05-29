@@ -1,27 +1,20 @@
 package ca.paulshin.yunatube.ui.main;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-
-import com.nineoldandroids.animation.AnimatorSet;
-import com.nineoldandroids.animation.ObjectAnimator;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import ca.paulshin.yunatube.Config;
 import ca.paulshin.yunatube.R;
 import ca.paulshin.yunatube.ui.base.BaseFragment;
-import ca.paulshin.yunatube.util.UIUtil;
 import ca.paulshin.yunatube.util.YTPreference;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
@@ -42,10 +35,10 @@ public class YunaMenuFragment extends BaseFragment implements View.OnClickListen
 	View mAwardsView;
 	@Bind(R.id.praises)
 	View mPraisesView;
-	@Bind(R.id.yuna_kiss)
-	View mYunaKissView;
-	@Bind(R.id.heart)
-	ImageView mHeartView;
+	@Bind(R.id.family_sites)
+	View mFamilySitesView;
+	@Bind(R.id.search)
+	View mSearchView;
 
 	private static final int MAX_KISS_COUNT = 20;
 
@@ -75,37 +68,10 @@ public class YunaMenuFragment extends BaseFragment implements View.OnClickListen
 		mAwardsView.setOnClickListener(this);
 		mCompetitionsView.setOnClickListener(this);
 		mPraisesView.setOnClickListener(this);
-		mYunaKissView.setOnClickListener(this);
-
-		setKissView();
+		mFamilySitesView.setOnClickListener(this);
+		mSearchView.setOnClickListener(this);
 
 		return root;
-	}
-
-	/**
-	 * Set kiss view programmatically
-	 */
-	private void setKissView() {
-		ViewTreeObserver kissViewVTO = mYunaKissView.getViewTreeObserver();
-		kissViewVTO.addOnGlobalLayoutListener(() -> {
-			int[] locations = new int[2];
-			Context ctx = getActivity();
-			mYunaKissView.getLocationOnScreen(locations);
-
-			int kissViewWidth = mYunaKissView.getMeasuredWidth();
-			int kissViewHeight = mYunaKissView.getMeasuredHeight();
-
-			int marginLeft = locations[0] - 15 + kissViewWidth / 2;
-			int marginTop = locations[1] - 15 - UIUtil.getStatusBarHeight(ctx) - UIUtil.getActionbarHeight(ctx) + kissViewHeight / 2;
-
-			// Programmatically position mHeartView
-			RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
-					RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-			layoutParams.setMargins(marginLeft, marginTop, 0, 0);
-			layoutParams.width = 30;
-			layoutParams.height = 30;
-			mHeartView.setLayoutParams(layoutParams);
-		});
 	}
 
 	@Override
@@ -176,8 +142,16 @@ public class YunaMenuFragment extends BaseFragment implements View.OnClickListen
 				toolbarBg = R.color.praises_bg;
 				break;
 
-			case R.id.yuna_kiss:
-				handleKissTouch(v);
+			case R.id.search:
+				FragmentManager fm = getChildFragmentManager();
+				WebSearchDialogFragment f = WebSearchDialogFragment.getInstance();
+				f.show(fm, "fragment_web_search");
+				return;
+
+			case R.id.family_sites:
+				startActivity(new Intent(getActivity(), FamilySitesActivity.class));
+				getActivity().overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
+				return;
 		}
 
 		// Open webview with given values
@@ -188,46 +162,5 @@ public class YunaMenuFragment extends BaseFragment implements View.OnClickListen
 			startActivity(intent);
 			getActivity().overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
 		}
-	}
-
-	/**
-	 * Handle kiss touch count show dialog once it hits the limit
-	 * @param v Kiss View
-	 */
-	private void handleKissTouch(View v) {
-		mHeartView.setImageResource(R.drawable.heart);
-
-		// Animate heart image
-		v.post(() -> {
-			AnimatorSet set = new AnimatorSet();
-			set.playTogether(
-					ObjectAnimator.ofFloat(mHeartView, "translationY", 0, -600),
-					ObjectAnimator.ofFloat(mHeartView, "scaleX", 1, 100f),
-					ObjectAnimator.ofFloat(mHeartView, "scaleY", 1, 100f),
-					ObjectAnimator.ofFloat(mHeartView, "alpha", 1, 0f)
-			);
-			set.setDuration(2 * 1000).start();
-		});
-
-		sendEvent("yuna - android", "click", "kiss");
-
-		String kissCountKey = "kiss_count";
-		int kissCount = YTPreference.get(kissCountKey, 0);
-		if (kissCount == MAX_KISS_COUNT) {
-			new SweetAlertDialog(getActivity(), SweetAlertDialog.CUSTOM_REMOTE_IMAGE_TYPE)
-					.setCustomRemoteImage(Config.TOSEUNG_URL)
-					.setTitleText(getString(R.string.secret))
-					.setContentText(getString(R.string.merong))
-					.setConfirmText(getString(R.string.close))
-					.setConfirmClickListener((sDialog, __) -> {
-						YTPreference.put(kissCountKey, 0);
-						sDialog.dismissWithAnimation();
-					})
-					.show();
-		} else {
-			YTPreference.put(kissCountKey, kissCount + 1);
-		}
-
-		return;
 	}
 }

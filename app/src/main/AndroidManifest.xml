@@ -48,8 +48,7 @@
         <activity
             android:name=".ui.main.MainActivity"
             android:label="@string/app_name"
-            android:launchMode="singleTop"
-            android:theme="@style/Theme.YunaTube"/>
+            android:launchMode="singleTop"/>
 
         <activity
             android:name=".ui.main.MainSearchActivity"
@@ -124,6 +123,7 @@
 
         <activity
             android:name=".ui.main.VideoSectionActivity"
+            android:theme="@style/Theme.YunaTube.VideoSection"
             android:label="@string/video_section"/>
 
         <activity

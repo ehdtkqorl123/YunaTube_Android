@@ -2,13 +2,13 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context="ca.paulshin.yunatube.ui.WebViewActivity">
+                tools:context="ca.paulshin.yunatube.ui.main.WebViewActivity">
 
     <LinearLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/theme_primary">
+        android:background="@color/theme_primary_light">
 
         <include layout="@layout/toolbar_actionbar_with_headerbar"/>
     </LinearLayout>

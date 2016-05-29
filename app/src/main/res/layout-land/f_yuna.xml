@@ -3,7 +3,7 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context="ca.paulshin.yunatube.ui.YunaFragment">
+                tools:context="ca.paulshin.yunatube.ui.main.MainActivity">
 
     <LinearLayout
         android:id="@+id/yuna_content"
@@ -33,7 +33,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
                         android:layout_alignParentTop="true"
                         android:src="@drawable/yuna_story"
                         app:maskDrawable="@drawable/bezel_right_round_background_mask"/>
@@ -43,10 +42,8 @@
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/story_image"
                         android:layout_alignParentStart="true"
-                        android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="true"
                         android:layout_toStartOf="@id/story_image"
-                        android:layout_toLeftOf="@id/story_image"
                         android:src="@drawable/horizontal_yellow_to_white_gradient_bg"
                         app:maskDrawable="@drawable/bezel_left_round_background_mask"/>
 
@@ -55,10 +52,8 @@
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/story_image"
                         android:layout_alignParentStart="true"
-                        android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="true"
                         android:layout_toStartOf="@id/story_image"
-                        android:layout_toLeftOf="@id/story_image"
                         android:gravity="center_vertical"
                         android:orientation="vertical"
                         android:padding="@dimen/main_layout_padding">
@@ -97,7 +92,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
                         android:layout_alignParentTop="true"
                         android:src="@drawable/yuna_message"
                         app:maskDrawable="@drawable/bezel_right_round_background_mask"/>
@@ -107,10 +101,8 @@
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@id/message_image"
                         android:layout_alignParentStart="true"
-                        android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="true"
                         android:layout_toStartOf="@id/message_image"
-                        android:layout_toLeftOf="@id/message_image"
                         android:src="@drawable/horizontal_blue_to_white_gradient_bg"
                         app:maskDrawable="@drawable/bezel_left_round_background_mask"/>
 
@@ -119,10 +111,8 @@
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@id/message_image"
                         android:layout_alignParentStart="true"
-                        android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="true"
                         android:layout_toStartOf="@id/message_image"
-                        android:layout_toLeftOf="@id/message_image"
                         android:gravity="center_vertical"
                         android:orientation="vertical"
                         android:padding="@dimen/main_layout_padding">
@@ -147,7 +137,6 @@
             android:id="@+id/yuna_center_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/yuna_top_menu"
             android:orientation="vertical">
 
             <LinearLayout
@@ -161,7 +150,7 @@
                     android:id="@+id/wiki"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/main_layout_inner_padding"
+                    android:layout_marginEnd="@dimen/main_layout_inner_padding"
                     android:layout_weight="1"
                     android:foreground="?selectableItemBackground">
 
@@ -169,7 +158,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/yuna_wikipedia_box_bg"
-                        android:drawableLeft="@drawable/ic_yuna_wikipedia"
+                        android:drawableStart="@drawable/ic_yuna_wikipedia"
                         android:drawablePadding="@dimen/main_layout_padding"
                         android:gravity="center_vertical"
                         android:padding="@dimen/main_layout_padding"
@@ -192,7 +181,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/yuna_20q20a_box_bg"
-                        android:drawableLeft="@drawable/ic_yuna_20q20a"
+                        android:drawableStart="@drawable/ic_yuna_20q20a"
                         android:drawablePadding="@dimen/main_layout_padding"
                         android:gravity="center_vertical"
                         android:padding="@dimen/main_layout_padding"
@@ -206,7 +195,7 @@
                     android:id="@+id/programs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/main_layout_inner_padding"
+                    android:layout_marginStart="@dimen/main_layout_inner_padding"
                     android:layout_weight="1"
                     android:foreground="?selectableItemBackground">
 
@@ -214,7 +203,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/yuna_programs_box_bg"
-                        android:drawableLeft="@drawable/ic_yuna_programs"
+                        android:drawableStart="@drawable/ic_yuna_programs"
                         android:drawablePadding="@dimen/main_layout_padding"
                         android:gravity="center_vertical"
                         android:padding="@dimen/main_layout_padding"
@@ -236,7 +225,7 @@
                     android:id="@+id/competitions"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/main_layout_inner_padding"
+                    android:layout_marginEnd="@dimen/main_layout_inner_padding"
                     android:layout_weight="1"
                     android:foreground="?selectableItemBackground">
 
@@ -244,7 +233,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/yuna_competitions_box_bg"
-                        android:drawableLeft="@drawable/ic_yuna_competitions"
+                        android:drawableStart="@drawable/ic_yuna_competitions"
                         android:drawablePadding="@dimen/main_layout_padding"
                         android:gravity="center_vertical"
                         android:padding="@dimen/main_layout_padding"
@@ -267,7 +256,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/yuna_awards_box_bg"
-                        android:drawableLeft="@drawable/ic_yuna_awards"
+                        android:drawableStart="@drawable/ic_yuna_awards"
                         android:drawablePadding="@dimen/main_layout_padding"
                         android:gravity="center_vertical"
                         android:padding="@dimen/main_layout_padding"
@@ -281,7 +270,7 @@
                     android:id="@+id/praises"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/main_layout_inner_padding"
+                    android:layout_marginStart="@dimen/main_layout_inner_padding"
                     android:layout_weight="1"
                     android:foreground="?selectableItemBackground">
 
@@ -289,7 +278,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/yuna_praises_box_bg"
-                        android:drawableLeft="@drawable/ic_yuna_praises"
+                        android:drawableStart="@drawable/ic_yuna_praises"
                         android:drawablePadding="@dimen/main_layout_padding"
                         android:gravity="center_vertical"
                         android:padding="@dimen/main_layout_padding"

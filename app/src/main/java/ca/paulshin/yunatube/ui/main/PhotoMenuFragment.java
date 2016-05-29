@@ -67,6 +67,7 @@ public class PhotoMenuFragment extends BaseFragment implements PhotoMenuMvpView 
 	public View mNoneView;
 
 	private int mLoadCount;
+	private boolean mPhotoListsLoaded;
 
 	private Handler mLoadHandler = new Handler() {
 		@Override
@@ -105,9 +106,16 @@ public class PhotoMenuFragment extends BaseFragment implements PhotoMenuMvpView 
 		mStreamRecyclerView.setLayoutManager(new LinearLayoutManager(ctx));
 		mCollectionsRecyclerView.setLayoutManager(new LinearLayoutManager(ctx));
 
-		loadData();
-
 		return rootView;
+	}
+
+	@Override
+	public void setUserVisibleHint(boolean isVisibleToUser) {
+		super.setUserVisibleHint(isVisibleToUser);
+		if (isVisibleToUser && !mPhotoListsLoaded ) {
+			loadData();
+			mPhotoListsLoaded = true;
+		}
 	}
 
 	@Override

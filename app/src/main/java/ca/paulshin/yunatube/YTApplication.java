@@ -6,7 +6,6 @@ import android.content.Context;
 import com.facebook.stetho.Stetho;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
-import com.squareup.leakcanary.LeakCanary;
 
 import ca.paulshin.yunatube.injection.component.ApplicationComponent;
 import ca.paulshin.yunatube.injection.component.DaggerApplicationComponent;
@@ -34,7 +33,7 @@ public class YTApplication extends Application  {
         GlideUtil.init(ctx);
         ViewUtil.init(ctx);
 
-        LeakCanary.install(this);
+//        LeakCanary.install(this);
         Stetho.initializeWithDefaults(this);
 
         if (BuildConfig.DEBUG) {

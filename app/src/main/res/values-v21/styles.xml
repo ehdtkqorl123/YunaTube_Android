@@ -22,7 +22,8 @@
         <item name="photoItemForegroundBorderless">@drawable/photo_item_foreground_borderless</item>
 
         <item name="android:navigationBarColor">#000</item>
-        <item name="android:statusBarColor">?colorPrimaryDark</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/theme_primary_dark</item>
 
         <item name="android:alertDialogTheme">@style/Theme.YunaTube.AlertDialog</item>
     </style>
@@ -31,5 +32,10 @@
         <item name="android:colorPrimary">@color/theme_primary</item>
         <item name="android:colorPrimaryDark">@color/theme_primary_dark</item>
         <item name="android:colorAccent">@color/theme_accent_2</item>
+    </style>
+
+    <style name="Theme.YunaTube.VideoSection" parent="Theme.YunaTube.Base">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 </resources>

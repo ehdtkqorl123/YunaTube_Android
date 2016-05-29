@@ -8,7 +8,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
@@ -22,7 +21,6 @@ import ca.paulshin.yunatube.Config;
 import ca.paulshin.yunatube.R;
 import ca.paulshin.yunatube.ui.base.GCMActivity;
 import ca.paulshin.yunatube.util.ResourceUtil;
-import ca.paulshin.yunatube.util.UIUtil;
 import ca.paulshin.yunatube.util.YTPreference;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
@@ -57,14 +55,6 @@ public class MainActivity extends GCMActivity implements ViewPager.OnPageChangeL
 		setContentView(R.layout.a_main);
 		ButterKnife.bind(this);
 
-		// For smooth transition from Splash screen
-		WindowManager.LayoutParams attrs = getWindow().getAttributes();
-		attrs.flags |= WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN | WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS;
-		getWindow().setAttributes(attrs);
-
-		final View wholeView = ((View) mMenu.getParent());
-		wholeView.setPadding(0, UIUtil.getStatusBarHeight(this), 0, 0);
-
 		int fabHeight = ResourceUtil.getDimensionInPx(R.dimen.fab_size_normal);
 		mFabTranslationY = fabHeight + ResourceUtil.getDimensionInPx(R.dimen.fab_margin);
 		mSearchView.post(() -> mSearchView.setTranslationY(mFabTranslationY));
@@ -85,12 +75,6 @@ public class MainActivity extends GCMActivity implements ViewPager.OnPageChangeL
 		if (!YTPreference.contains(SettingsActivity.PREF_NOTIFICATION)) {
 			YTPreference.put(SettingsActivity.PREF_NOTIFICATION, true);
 		}
-
-		// Clear the no_limit flag for PopupMenu
-		mMenu.postDelayed(() -> {
-			getWindow().clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-			wholeView.setPadding(0, 0, 0, 0);
-		}, 1000);
 
 		// Show "Rate YunaTube" dialog
 		// Track visit number

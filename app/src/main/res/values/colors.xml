@@ -1,6 +1,7 @@
 <resources>
     <!-- http://www.google.com/design/spec/style/color.html#color-color-palette -->
     <color name="transparent">#00000000</color>
+    <color name="window_background">#FFF5F5F5</color>
 
     <color name="body_text_1">#de000000</color>
     <color name="body_text_2">#8a000000</color>
@@ -18,8 +19,8 @@
     <!--<color name="theme_primary">#3949AB</color>-->
     <!--<color name="theme_primary_dark">#1A237E</color>-->
     <!--<color name="theme_primary_light">#7986CB</color>-->
-    <color name="theme_primary">@color/lightblue</color>
-    <color name="theme_primary_dark">@color/blue</color>
+    <color name="theme_primary">@color/lightskyblue</color>
+    <color name="theme_primary_dark">@color/skyblue</color>
     <color name="theme_primary_light">@color/lightskyblue</color>
 
     <color name="theme_accent_1">#00b0ff</color>
@@ -36,8 +37,8 @@
     <color name="more_bg">@color/blue</color>
     <color name="more_bg_pressed">#427fed</color>
 
-    <color name="translucent_actionbar_background">#cc3f51b5</color>
-    <color name="translucent_statusbar_background">#cc3f51b5</color>
+    <color name="translucent_actionbar_background">@color/theme_primary_light</color>
+    <color name="translucent_statusbar_background">@color/theme_primary_light</color>
 
     <color name="refresh_progress_1">#3e802f</color>
     <color name="refresh_progress_2">#f4b400</color>
@@ -65,6 +66,7 @@
     <color name="indigo">#3F51B5</color>
     <color name="blue">#2196F3</color>
     <color name="lightskyblue">#90CAF9</color>
+    <color name="skyblue">#66B7F8</color>
     <color name="lightblue">#03A9F4</color>
     <color name="cyan">#00BCD4</color>
     <color name="teal">#009688</color>
@@ -126,7 +128,9 @@
     <color name="programs_bg">#29B6F6</color>
     <color name="competitions_bg">#8D6E63</color>
     <color name="awards_bg">#EF5350</color>
-    <color name="praises_bg">#9CCC65</color>
+    <color name="praises_bg">#7A7A7A</color>
+    <color name="search_bg">#009688</color>
+    <color name="family_sites_bg">#482A43</color>
 
     <!-- Main Search -->
     <color name="dialog_background">#7f000000</color>

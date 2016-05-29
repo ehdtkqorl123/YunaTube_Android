@@ -15,7 +15,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import ca.paulshin.yunatube.R;
 import ca.paulshin.yunatube.ui.base.BaseActivity;
-import ca.paulshin.yunatube.util.ResourceUtil;
 
 /**
  * Created by paulshin on 15-01-03.
@@ -51,11 +50,7 @@ public class WebViewActivity extends BaseActivity {
 		isFromNotification = getIntent().getBooleanExtra(EXTRA_FROM_NOTIFICATION, false);
 
 		Toolbar toolbar = getActionBarToolbar();
-		if (toolbarBg != 0) {
-			toolbar.setBackgroundColor(ResourceUtil.getColor(toolbarBg));
-		}
 		toolbar.setNavigationIcon(R.drawable.ic_up);
-		toolbar.setNavigationOnClickListener((__) -> finish());
 		setTitle(title);
 
 		initWebView();

@@ -30,6 +30,8 @@ public class InstaVideoActivity extends BaseActivity implements SurfaceHolder.Ca
 	public ImageView mInstaPhotoView;
 	@Bind(R.id.insta_video)
 	public SurfaceView mInstaVideoView;
+	@Bind(R.id.loading)
+	public View mLoadingView;
 
 	private MediaPlayer mMediaPlayer;
 	private MediaController mMediaController;
@@ -146,6 +148,8 @@ public class InstaVideoActivity extends BaseActivity implements SurfaceHolder.Ca
 			mMediaController.setEnabled(true);
 			mMediaController.show();
 		});
+
+		mLoadingView.setVisibility(View.GONE);
 		mediaPlayer.start();
 	}
 

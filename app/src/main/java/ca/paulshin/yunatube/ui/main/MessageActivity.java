@@ -31,7 +31,6 @@ import ca.paulshin.yunatube.data.model.message.Message;
 import ca.paulshin.yunatube.ui.adapter.MessageAdapter;
 import ca.paulshin.yunatube.ui.base.BaseActivity;
 import ca.paulshin.yunatube.util.NetworkUtil;
-import ca.paulshin.yunatube.util.ResourceUtil;
 import ca.paulshin.yunatube.util.YTPreference;
 import ca.paulshin.yunatube.util.events.DataLoadedEvent;
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -70,8 +69,6 @@ public class MessageActivity extends BaseActivity implements MessageMvpView, Vie
 
 		final Toolbar toolbar = getActionBarToolbar();
 		toolbar.setNavigationIcon(R.drawable.ic_up);
-		toolbar.setBackgroundColor(ResourceUtil.getColor(R.color.pink));
-		toolbar.setNavigationOnClickListener((__) -> finish());
 
 		mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 		mAdapter = new MessageAdapter(mRecyclerView);
