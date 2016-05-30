@@ -2,7 +2,7 @@
 <resources>
 
     <dimen name="main_layout_padding">8dp</dimen>
-    <dimen name="main_layout_inner_padding">4dp</dimen>
+    <dimen name="main_layout_inner_padding">2dp</dimen>
     <dimen name="main_layout_half_inner_padding">2dp</dimen>
 
     <dimen name="menu_image_padding">10dp</dimen>

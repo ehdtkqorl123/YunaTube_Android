@@ -2,9 +2,9 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/blue"
+              android:background="@color/theme_primary"
               android:orientation="vertical"
-              tools:context="ca.paulshin.yunatube.ui.InstaActivity">
+              tools:context="ca.paulshin.yunatube.ui.main.InstaFeedActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

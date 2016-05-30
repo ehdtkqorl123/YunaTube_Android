@@ -25,6 +25,8 @@
     <string name="report_video">차단 영상 신고</string>
     <string name="is_video_blocked">이 영상이 정말로 차단되었나요?</string>
     <string name="enter_content">내용을 입력해 주세요</string>
+    <string name="enter_longer_content">내용을 더 길게 입력해 주세요</string>
+    <string name="message_hint">이곳은 채팅창이 아닙니다. 연아선수에게 보내고 싶은 따뜻한 마음을 남겨주세요.</string>
     <string name="set_username">닉네임을 설정하셔야 글을 남기실 수 있습니다. 환경설정에서 닉네임을 정하시겠습니까?</string>
     <string name="offline_title">오프라인 상태입니다</string>
     <string name="offline_desc">네트워크에 연결하면 페이지를 불러올 수 있습니다</string>

@@ -28,6 +28,8 @@
     <string name="report_video">Report Blocked Video</string>
     <string name="is_video_blocked">Is this video really blocked?</string>
     <string name="enter_content">Please leave a message</string>
+    <string name="enter_longer_content">Message is too short!</string>
+    <string name="message_hint">Please be considerate when leaving a message to Yuna</string>
     <string name="set_username">You have to set your username to leave a comment. Will you go to Settings page?</string>
     <string name="offline_title">You Are Offline</string>
     <string name="offline_desc">This page can be loaded once you conneced to a network</string>

@@ -218,7 +218,9 @@ public class MainActivity extends GCMActivity implements ViewPager.OnPageChangeL
 
 	@Override
 	public void showFab() {
-		mSearchView.postDelayed(() -> toggleFab(true), 1000);
+		if (mPager.getCurrentItem() == 0) {
+			mSearchView.postDelayed(() -> toggleFab(true), 1000);
+		}
 	}
 
 	@Override

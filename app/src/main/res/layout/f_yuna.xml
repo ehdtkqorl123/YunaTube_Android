@@ -145,8 +145,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/yuna_wikipedia_box_bg"
-                        android:drawableStart="@drawable/ic_yuna_wikipedia"
                         android:drawablePadding="@dimen/main_layout_padding"
+                        android:drawableStart="@drawable/ic_yuna_wikipedia"
                         android:gravity="center_vertical"
                         android:padding="@dimen/main_layout_padding"
                         android:text="@string/wiki"
@@ -167,8 +167,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/yuna_20q20a_box_bg"
-                        android:drawableStart="@drawable/ic_yuna_20q20a"
                         android:drawablePadding="@dimen/main_layout_padding"
+                        android:drawableStart="@drawable/ic_yuna_20q20a"
                         android:gravity="center_vertical"
                         android:padding="@dimen/main_layout_padding"
                         android:text="@string/q20a20"
@@ -197,8 +197,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/yuna_programs_box_bg"
-                        android:drawableStart="@drawable/ic_yuna_programs"
                         android:drawablePadding="@dimen/main_layout_padding"
+                        android:drawableStart="@drawable/ic_yuna_programs"
                         android:gravity="center_vertical"
                         android:padding="@dimen/main_layout_padding"
                         android:text="@string/programs"
@@ -219,8 +219,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/yuna_competitions_box_bg"
-                        android:drawableStart="@drawable/ic_yuna_competitions"
                         android:drawablePadding="@dimen/main_layout_padding"
+                        android:drawableStart="@drawable/ic_yuna_competitions"
                         android:gravity="center_vertical"
                         android:padding="@dimen/main_layout_padding"
                         android:text="@string/competitions"
@@ -249,8 +249,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/yuna_awards_box_bg"
-                        android:drawableStart="@drawable/ic_yuna_awards"
                         android:drawablePadding="@dimen/main_layout_padding"
+                        android:drawableStart="@drawable/ic_yuna_awards"
                         android:gravity="center_vertical"
                         android:padding="@dimen/main_layout_padding"
                         android:text="@string/awards"
@@ -271,8 +271,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/yuna_praises_box_bg"
-                        android:drawableStart="@drawable/ic_yuna_praises"
                         android:drawablePadding="@dimen/main_layout_padding"
+                        android:drawableStart="@drawable/ic_yuna_praises"
                         android:gravity="center_vertical"
                         android:padding="@dimen/main_layout_padding"
                         android:text="@string/praises"
@@ -301,8 +301,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/yuna_search_box_bg"
-                        android:drawableStart="@drawable/ic_web_search"
                         android:drawablePadding="@dimen/main_layout_padding"
+                        android:drawableStart="@drawable/ic_web_search"
                         android:gravity="center_vertical"
                         android:padding="@dimen/main_layout_padding"
                         android:text="@string/search"
@@ -323,8 +323,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/yuna_family_sites_box_bg"
-                        android:drawableStart="@drawable/ic_family_sites"
                         android:drawablePadding="@dimen/main_layout_padding"
+                        android:drawableStart="@drawable/ic_family_sites"
                         android:gravity="center_vertical"
                         android:padding="@dimen/main_layout_padding"
                         android:text="@string/family_sites"
@@ -337,18 +337,11 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@id/yuna_content"
-        android:orientation="vertical">
-
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/heart"
-        android:layout_width="20dp"
-        android:layout_height="20dp"/>
-
+    <!--<ca.paulshin.yunatube.game.DroidRunJumpView-->
+        <!--android:id="@+id/droidrunjump"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_below="@id/yuna_content"-->
+        <!--android:layout_margin="@dimen/main_layout_padding"/>-->
 </RelativeLayout>

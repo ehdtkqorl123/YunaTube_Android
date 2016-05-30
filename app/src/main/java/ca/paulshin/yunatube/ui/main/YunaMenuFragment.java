@@ -14,6 +14,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import ca.paulshin.yunatube.Config;
 import ca.paulshin.yunatube.R;
+import ca.paulshin.yunatube.game.DroidRunJumpView;
 import ca.paulshin.yunatube.ui.base.BaseFragment;
 import ca.paulshin.yunatube.util.YTPreference;
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -39,8 +40,12 @@ public class YunaMenuFragment extends BaseFragment implements View.OnClickListen
 	View mFamilySitesView;
 	@Bind(R.id.search)
 	View mSearchView;
+//	@Bind(R.id.droidrunjump)
+//	DroidRunJumpView drjView;
 
-	private static final int MAX_KISS_COUNT = 20;
+	public static final String PREFS_NAME = "DRJPrefsFile";
+
+	private DroidRunJumpView.DroidRunJumpThread drjThread;
 
 	public static YunaMenuFragment newInstance() {
 		YunaMenuFragment fragment = new YunaMenuFragment();
@@ -73,6 +78,38 @@ public class YunaMenuFragment extends BaseFragment implements View.OnClickListen
 
 		return root;
 	}
+
+	/*
+	@Override
+	public void onPause() {
+		super.onPause();
+
+		SharedPreferences settings = getActivity().getSharedPreferences(PREFS_NAME, 0);
+		SharedPreferences.Editor editor = settings.edit();
+
+		drjThread = drjView.getThread();
+
+		// if player wants to quit then reset the game
+		if (getActivity().isFinishing()) {
+			drjThread.resetGame();
+		}
+		else {
+			drjThread.pause();
+		}
+
+		drjThread.saveGame(editor);
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		// restore game
+		drjThread = drjView.getThread();
+		SharedPreferences settings = getActivity().getSharedPreferences(PREFS_NAME, 0);
+		drjThread.restoreGame(settings);
+	}
+
+	*/
 
 	@Override
 	public void onClick(View v) {

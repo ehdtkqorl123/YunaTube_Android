@@ -158,8 +158,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/yuna_wikipedia_box_bg"
-                        android:drawableStart="@drawable/ic_yuna_wikipedia"
                         android:drawablePadding="@dimen/main_layout_padding"
+                        android:drawableStart="@drawable/ic_yuna_wikipedia"
                         android:gravity="center_vertical"
                         android:padding="@dimen/main_layout_padding"
                         android:text="@string/wiki"
@@ -181,8 +181,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/yuna_20q20a_box_bg"
-                        android:drawableStart="@drawable/ic_yuna_20q20a"
                         android:drawablePadding="@dimen/main_layout_padding"
+                        android:drawableStart="@drawable/ic_yuna_20q20a"
                         android:gravity="center_vertical"
                         android:padding="@dimen/main_layout_padding"
                         android:text="@string/q20a20"
@@ -195,6 +195,7 @@
                     android:id="@+id/programs"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/main_layout_inner_padding"
                     android:layout_marginStart="@dimen/main_layout_inner_padding"
                     android:layout_weight="1"
                     android:foreground="?selectableItemBackground">
@@ -203,14 +204,36 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/yuna_programs_box_bg"
-                        android:drawableStart="@drawable/ic_yuna_programs"
                         android:drawablePadding="@dimen/main_layout_padding"
+                        android:drawableStart="@drawable/ic_yuna_programs"
                         android:gravity="center_vertical"
                         android:padding="@dimen/main_layout_padding"
                         android:text="@string/programs"
                         android:textAllCaps="true"
                         android:textColor="@color/body_text_1_inverse"
                         android:textSize="@dimen/text_size_medium"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/competitions"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/main_layout_inner_padding"
+                    android:layout_weight="1"
+                    android:foreground="?selectableItemBackground">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/yuna_competitions_box_bg"
+                        android:drawablePadding="@dimen/main_layout_padding"
+                        android:drawableStart="@drawable/ic_yuna_competitions"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/main_layout_padding"
+                        android:text="@string/competitions"
+                        android:textAllCaps="true"
+                        android:textColor="@color/body_text_1_inverse"
+                        android:textSize="@dimen/text_size_small"/>
                 </FrameLayout>
             </LinearLayout>
 
@@ -222,32 +245,9 @@
                 android:orientation="horizontal">
 
                 <FrameLayout
-                    android:id="@+id/competitions"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/main_layout_inner_padding"
-                    android:layout_weight="1"
-                    android:foreground="?selectableItemBackground">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/yuna_competitions_box_bg"
-                        android:drawableStart="@drawable/ic_yuna_competitions"
-                        android:drawablePadding="@dimen/main_layout_padding"
-                        android:gravity="center_vertical"
-                        android:padding="@dimen/main_layout_padding"
-                        android:text="@string/competitions"
-                        android:textAllCaps="true"
-                        android:textColor="@color/body_text_1_inverse"
-                        android:textSize="@dimen/text_size_medium"/>
-                </FrameLayout>
-
-                <FrameLayout
                     android:id="@+id/awards"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/main_layout_inner_padding"
                     android:layout_marginRight="@dimen/main_layout_inner_padding"
                     android:layout_weight="1"
                     android:foreground="?selectableItemBackground">
@@ -256,8 +256,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/yuna_awards_box_bg"
-                        android:drawableStart="@drawable/ic_yuna_awards"
                         android:drawablePadding="@dimen/main_layout_padding"
+                        android:drawableStart="@drawable/ic_yuna_awards"
                         android:gravity="center_vertical"
                         android:padding="@dimen/main_layout_padding"
                         android:text="@string/awards"
@@ -270,6 +270,7 @@
                     android:id="@+id/praises"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/main_layout_inner_padding"
                     android:layout_marginStart="@dimen/main_layout_inner_padding"
                     android:layout_weight="1"
                     android:foreground="?selectableItemBackground">
@@ -278,11 +279,56 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/yuna_praises_box_bg"
-                        android:drawableStart="@drawable/ic_yuna_praises"
                         android:drawablePadding="@dimen/main_layout_padding"
+                        android:drawableStart="@drawable/ic_yuna_praises"
                         android:gravity="center_vertical"
                         android:padding="@dimen/main_layout_padding"
                         android:text="@string/praises"
+                        android:textAllCaps="true"
+                        android:textColor="@color/body_text_1_inverse"
+                        android:textSize="@dimen/text_size_medium"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/search"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/main_layout_inner_padding"
+                    android:layout_marginStart="@dimen/main_layout_inner_padding"
+                    android:layout_weight="1"
+                    android:foreground="?selectableItemBackground">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/yuna_search_box_bg"
+                        android:drawablePadding="@dimen/main_layout_padding"
+                        android:drawableStart="@drawable/ic_web_search"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/main_layout_padding"
+                        android:text="@string/search"
+                        android:textAllCaps="true"
+                        android:textColor="@color/body_text_1_inverse"
+                        android:textSize="@dimen/text_size_medium"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/family_sites"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/main_layout_inner_padding"
+                    android:layout_weight="1"
+                    android:foreground="?selectableItemBackground">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/yuna_family_sites_box_bg"
+                        android:drawablePadding="@dimen/main_layout_padding"
+                        android:drawableStart="@drawable/ic_family_sites"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/main_layout_padding"
+                        android:text="@string/family_sites"
                         android:textAllCaps="true"
                         android:textColor="@color/body_text_1_inverse"
                         android:textSize="@dimen/text_size_medium"/>

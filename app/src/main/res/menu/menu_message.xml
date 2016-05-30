@@ -7,9 +7,4 @@
           android:title="@string/action_refresh"
           android:orderInCategory="100"
           app:showAsAction="always"/>
-    <item android:id="@+id/action_write"
-          android:icon="@drawable/ic_write"
-          android:title="@string/action_write_message"
-          android:orderInCategory="101"
-          app:showAsAction="always"/>
 </menu>

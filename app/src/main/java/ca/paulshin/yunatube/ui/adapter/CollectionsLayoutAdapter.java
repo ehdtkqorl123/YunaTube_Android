@@ -64,7 +64,7 @@ public class CollectionsLayoutAdapter extends RecyclerView.Adapter<CollectionsLa
 		} else {
 			// For other flickr image row
 			holder.title.setTypeface(null, Typeface.NORMAL);
-			holder.title.setBackgroundColor(ResourceUtil.getColor(R.color.section_bg));
+			holder.title.setBackgroundColor(ResourceUtil.getColor(R.color.window_background));
 			((View) holder.title.getParent()).setOnClickListener((v) -> {
 				Activity activity = (Activity) v.getContext();
 				String id = collection.id;

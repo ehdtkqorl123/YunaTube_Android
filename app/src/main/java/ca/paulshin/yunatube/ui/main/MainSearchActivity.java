@@ -14,6 +14,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
@@ -88,6 +89,16 @@ public class MainSearchActivity extends BaseActivity {
 		// Show keyboard
 		((InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE)).
 				toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case android.R.id.home:
+				dismiss(null);
+				return true;
+		}
+		return super.onOptionsItemSelected(item);
 	}
 
 	@Override

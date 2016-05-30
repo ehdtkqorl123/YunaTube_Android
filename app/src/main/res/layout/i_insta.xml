@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout
+<ca.paulshin.yunatube.widgets.SquareFrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?selectableItemBackground"
@@ -22,4 +22,4 @@
         android:layout_height="@dimen/main_instagram_video_icon_dimen"
         android:layout_gravity="top|right"
         android:src="@drawable/instagram_play"/>
-</FrameLayout>
+</ca.paulshin.yunatube.widgets.SquareFrameLayout>

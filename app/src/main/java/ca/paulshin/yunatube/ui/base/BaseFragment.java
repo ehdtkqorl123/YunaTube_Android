@@ -48,7 +48,7 @@ public class BaseFragment extends android.support.v4.app.Fragment {
 			int screenSize [] = ViewUtil.getScreenSize();
 			int max = Math.max(screenSize[0], screenSize[1]);
 			int medium = (screenSize[0] + screenSize[1]) / 2;
-			padding = (max - medium) / 2;
+			padding = (max - medium) / 3;
 		} else {
 			padding = ResourceUtil.getDimensionInPx(R.dimen.main_layout_padding);
 		}
