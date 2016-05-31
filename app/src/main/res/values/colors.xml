@@ -85,7 +85,7 @@
     <color name="light_grey">#EEEEEE</color>
 
     <!-- Theme Color -->
-    <color name="video_theme">@color/lightgreen</color>
+    <color name="video_theme">@color/orange</color>
     <color name="video_theme_dark">#126ca5</color>
 
     <color name="fab_main_normal_color">#1986cf</color>

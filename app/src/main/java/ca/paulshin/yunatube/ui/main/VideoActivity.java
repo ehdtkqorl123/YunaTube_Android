@@ -143,8 +143,10 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 
 	@Override
 	public void onBackPressed() {
-		if (mCommentBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED) {
-			closeCommentWindow(null);
+		if (mMenuBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED) {
+			closeMenuBox();
+		} else if (mCommentBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED) {
+			closeCommentBox(null);
 		} else {
 			if (mFromNotification) {
 				finish();
@@ -213,13 +215,17 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 			playerParams.width = ViewGroup.LayoutParams.MATCH_PARENT;
 			playerParams.height = ViewGroup.LayoutParams.MATCH_PARENT;
 
+			closeMenuBox();
+			closeCommentBox(null);
 			mRecyclerView.setVisibility(View.GONE);
+			mActionView.setVisibility(View.GONE);
 		} else {
 			ViewGroup.LayoutParams otherViewsParams = mRecyclerView.getLayoutParams();
 			playerParams.width = otherViewsParams.width = ViewGroup.LayoutParams.MATCH_PARENT;
 			playerParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;
 
 			mRecyclerView.setVisibility(View.VISIBLE);
+			mActionView.setVisibility(View.VISIBLE);
 		}
 	}
 
@@ -272,7 +278,7 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 
 	@Override
 	public void updateComment(Comment comment) {
-		closeCommentWindow(null);
+		closeCommentBox(null);
 		mAdapter.insertNewComment(comment);
 		mAdapter.notifyDataSetChanged();
 
@@ -325,7 +331,7 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 	}
 
 	public void comment(View view) {
-		closeActionWindow();
+		closeMenuBox();
 
 		if (!TextUtils.isEmpty(mUsername))
 			mCommentBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -348,7 +354,7 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 	}
 
 	public void favorite(View view) {
-		closeActionWindow();
+		closeMenuBox();
 
 		if (mVideoKey == -1) {
 			// Create Video
@@ -363,7 +369,7 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 	}
 
 	public void watchOnYouTube(View view) {
-		closeActionWindow();
+		closeMenuBox();
 
 		Intent intent = new Intent(Intent.ACTION_VIEW);
 		intent.setData(Uri.parse(String.format(Config.YOUTUBE_SHARE_URL_PREFIX, mYtid)));
@@ -373,7 +379,7 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 	}
 
 	public void report(View view) {
-		closeActionWindow();
+		closeMenuBox();
 
 		new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
 				.setTitleText(getString(R.string.report_video))
@@ -392,7 +398,7 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 	}
 
 	public void share(View view) {
-		closeActionWindow();
+		closeMenuBox();
 
 		Intent intent = new Intent(Intent.ACTION_SEND);
 		intent.setType("text/plain");
@@ -404,7 +410,7 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 	}
 
 	public void downloadVideo(View view) {
-		closeActionWindow();
+		closeMenuBox();
 
 		String dlUrl = "http://ssyoutube.com/watch?v=" + mYtid;
 		Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -447,11 +453,11 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 		}
 	}
 
-	private void closeActionWindow() {
+	private void closeMenuBox() {
 		mMenuBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
 	}
 
-	public void closeCommentWindow(View view) {
+	public void closeCommentBox(View view) {
 		mCommentBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
 	}
 }

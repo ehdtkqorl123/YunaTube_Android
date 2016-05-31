@@ -23,7 +23,7 @@
         android:layout_marginBottom="4dp"
         android:layout_marginEnd="4dp"
         android:gravity="center_vertical"
-        android:onClick="closeCommentWindow"
+        android:onClick="closeCommentBox"
         android:text="@string/close"
         android:textAllCaps="true"
         android:textColor="@color/body_text_1_inverse"

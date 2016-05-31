@@ -245,7 +245,7 @@ public class MessageActivity extends BaseActivity implements MessageMvpView {
 		}
 	}
 
-	public void closeCommentWindow(View view) {
+	public void closeCommentBox(View view) {
 		mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
 	}
 
