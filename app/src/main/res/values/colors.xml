@@ -137,4 +137,7 @@
     <color name="card">#fff</color>
     <color name="divider">#1f000000</color>
 
+    <color name="app_body_text_1">#de000000</color>
+    <color name="app_body_text_2">#8a000000</color>
+
 </resources>

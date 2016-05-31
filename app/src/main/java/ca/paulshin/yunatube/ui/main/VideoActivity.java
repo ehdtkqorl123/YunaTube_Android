@@ -5,27 +5,21 @@ import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
-import com.nineoldandroids.animation.Animator;
-import com.nineoldandroids.view.ViewPropertyAnimator;
 import com.squareup.otto.Bus;
 
 import java.util.List;
@@ -43,20 +37,13 @@ import ca.paulshin.yunatube.data.model.video.Video;
 import ca.paulshin.yunatube.ui.adapter.CommentAdapter;
 import ca.paulshin.yunatube.ui.base.BaseYouTubeFailureRecoveryActivity;
 import ca.paulshin.yunatube.util.NetworkUtil;
-import ca.paulshin.yunatube.util.ResourceUtil;
 import ca.paulshin.yunatube.util.ToastUtil;
-import ca.paulshin.yunatube.util.ViewUtil;
 import ca.paulshin.yunatube.util.YTPreference;
 import ca.paulshin.yunatube.util.events.VideoDeletedEvent;
-import ca.paulshin.yunatube.widgets.FloatingActionsMenu;
-import ca.paulshin.yunatube.widgets.RecyclerViewScrollDetector;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 		YouTubePlayer.OnFullscreenListener,
-		View.OnTouchListener,
-		FloatingActionsMenu.ToggleListener,
-		View.OnClickListener,
 		VideoMvpView {
 
 	@Inject
@@ -72,18 +59,18 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 	public YouTubePlayerView mPlayerView;
 	@Bind(R.id.list)
 	public RecyclerView mRecyclerView;
-	@Bind(R.id.main_fab)
-	public FloatingActionsMenu mFab;
-	@Bind(R.id.veil)
-	public View mVeilView;
-	@Bind(R.id.comment_window)
-	RelativeLayout mCommentWindow;
+	@Bind(R.id.fab_action)
+	View mActionView;
+	@Bind(R.id.comment_box)
+	FrameLayout mCommentBox;
+	@Bind(R.id.menu_box)
+	FrameLayout mMenuBox;
 	@Bind(R.id.content)
 	EditText mCommentView;
-	@Bind(R.id.favorite)
-	TextView mFavoriteView;
-	@Bind(R.id.fab_favorite)
-	FloatingActionButton mFavorite;
+	@Bind(R.id.action_favorite)
+	TextView mFavoriteTextView;
+	@Bind(R.id.icon_favorite)
+	ImageView mFavoriteImageView;
 	@Bind(R.id.loading)
 	View mLoadingView;
 	@Bind(R.id.none)
@@ -99,6 +86,9 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 	private boolean mIsRefreshing;
 	private String mLastIndex;
 	private CommentAdapter mAdapter;
+
+	private BottomSheetBehavior mMenuBottomSheetBehavior;
+	private BottomSheetBehavior mCommentBottomSheetBehavior;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -117,10 +107,9 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 		mAdapter = new CommentAdapter(mRecyclerView, mListHeaderView);
 		mAdapter.setOnLoadMoreListener(() -> mVideoPresenter.getComments(mYtid, mLastIndex));
 		mRecyclerView.setAdapter(mAdapter);
-		mRecyclerView.addOnScrollListener(new RecyclerViewScrollDetectorImpl());
 
-		mFab.setListener(this);
-		mVeilView.setOnTouchListener(this);
+		mMenuBottomSheetBehavior = BottomSheetBehavior.from(mMenuBox);
+		mCommentBottomSheetBehavior = BottomSheetBehavior.from(mCommentBox);
 
 		mVideoPresenter.getFaveStatus(mYtid);
 
@@ -154,10 +143,8 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 
 	@Override
 	public void onBackPressed() {
-		if (mCommentWindow.getVisibility() == View.VISIBLE) {
-			toggleCommentWindow(false);
-		} else if (mFab.isExpanded()) {
-			mFab.collapse();
+		if (mCommentBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED) {
+			closeCommentWindow(null);
 		} else {
 			if (mFromNotification) {
 				finish();
@@ -227,21 +214,12 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 			playerParams.height = ViewGroup.LayoutParams.MATCH_PARENT;
 
 			mRecyclerView.setVisibility(View.GONE);
-			mFab.setVisibility(View.GONE);
 		} else {
 			ViewGroup.LayoutParams otherViewsParams = mRecyclerView.getLayoutParams();
 			playerParams.width = otherViewsParams.width = ViewGroup.LayoutParams.MATCH_PARENT;
 			playerParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;
 
 			mRecyclerView.setVisibility(View.VISIBLE);
-			mFab.setVisibility(View.VISIBLE);
-		}
-
-		if (ResourceUtil.getInteger(R.integer.hide_video_fab) == 1) {
-			// Hide FAB on landscape tablet mode
-			mFab.setVisibility(View.GONE);
-		} else {
-			mFab.setVisibility(mIsFullscreen ? View.GONE : View.VISIBLE);
 		}
 	}
 
@@ -294,7 +272,7 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 
 	@Override
 	public void updateComment(Comment comment) {
-		toggleCommentWindow(false);
+		closeCommentWindow(null);
 		mAdapter.insertNewComment(comment);
 		mAdapter.notifyDataSetChanged();
 
@@ -305,14 +283,15 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 	public void setFaveStatus(int id) {
 		mVideoKey = id;
 		boolean isFaved = id != -1;
-		mFavoriteView.setText(isFaved ? R.string.youtube_remove_from_my_faves : R.string.youtube_add_to_my_faves);
-		mFavorite.setImageResource(isFaved ? R.drawable.ic_unfavorite : R.drawable.ic_favorite);
+		mFavoriteTextView.setText(isFaved ? R.string.youtube_remove_from_my_faves : R.string.youtube_add_to_my_faves);
+		mFavoriteImageView.setImageResource(isFaved ? R.drawable.ic_unfavorite_gray : R.drawable.ic_favorite_gray);
 	}
 
 	@Override
 	public void addedFave(Video dbVideo) {
 		if (dbVideo != null) {
 			ToastUtil.toast(this, R.string.faves_add_success);
+			mVideoPresenter.getFaveStatus(mYtid);
 			sendEvent("video - android", "add: " + mYtid, "fave");
 		} else {
 			ToastUtil.toast(this, R.string.faves_add_failure);
@@ -325,6 +304,10 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 			ToastUtil.toast(this, R.string.faves_remove_success);
 			mVideoKey = -1;
 			mBus.post(new VideoDeletedEvent());
+
+			mFavoriteTextView.setText(R.string.youtube_add_to_my_faves);
+			mFavoriteImageView.setBackgroundResource(R.drawable.ic_favorite_gray);
+
 			sendEvent("video - android", "remove: " + mYtid, "fave");
 		} else {
 			ToastUtil.toast(this, R.string.faves_remove_failure);
@@ -336,101 +319,16 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 		//TODO
 	}
 
-	/*****
-	 * FAB
-	 *****/
-
-	@Override
-	public boolean onTouch(View v, MotionEvent event) {
-		mFab.collapse();
-		return true;
-	}
-
-	@Override
-	public void onToggle(boolean isExpand) {
-		mVeilView.setVisibility(isExpand ? View.VISIBLE : View.GONE);
-	}
-
-	public void showFab() {
-		toggle(true);
-	}
-
-	public void hideFab() {
-		toggle(false);
-	}
-
-	private boolean mFabToggled;
-	private boolean mPrevVisibility = true;
-
-	private void toggle(final boolean visible) {
-
-		if (!mFabToggled && mPrevVisibility != visible) {
-			mFabToggled = true;
-			mPrevVisibility = visible;
-			if (mFab.isExpanded())
-				mFab.collapse();
-
-			int fabHeight = mFab.getHeight();
-			int translationY = visible ? 0 : fabHeight + ViewUtil.dpToPx(16);
-			ViewPropertyAnimator.animate(mFab).setInterpolator(new AccelerateDecelerateInterpolator())
-					.setDuration(TRANSLATE_DURATION_MILLIS)
-					.translationY(translationY)
-					.setListener(new Animator.AnimatorListener() {
-						@Override
-						public void onAnimationStart(Animator animation) {
-
-						}
-
-						@Override
-						public void onAnimationEnd(Animator animation) {
-							mFabToggled = false;
-						}
-
-						@Override
-						public void onAnimationCancel(Animator animation) {
-
-						}
-
-						@Override
-						public void onAnimationRepeat(Animator animation) {
-
-						}
-					});
-		}
-	}
-
-	private void toggleCommentWindow(boolean show) {
-		Animation animShow = AnimationUtils.loadAnimation(this, R.anim.popup_show);
-		Animation animHide = AnimationUtils.loadAnimation(this, R.anim.popup_hide);
-
-		if (show) {
-			mCommentWindow.setVisibility(View.VISIBLE);
-			mCommentView.requestFocus();
-			mFab.setVisibility(View.GONE);
-		} else {
-			hideKeyboard();
-		}
-		mCommentWindow.startAnimation(show ? animShow : animHide);
-		if (!show) {
-			mCommentWindow.setVisibility(View.GONE);
-			mFab.setVisibility(View.VISIBLE);
-		}
-	}
-
-	private void hideKeyboard() {
-		InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-		imm.hideSoftInputFromWindow(mCommentView.getWindowToken(), 0);
-		mCommentView.setText("");
-	}
-
-	@Override
-	public void onClick(View v) {
-		mFab.collapse();
+	public void openActionMenu(View view) {
+		mCommentBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+		mMenuBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
 	}
 
 	public void comment(View view) {
+		closeActionWindow();
+
 		if (!TextUtils.isEmpty(mUsername))
-			toggleCommentWindow(true);
+			mCommentBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
 		else {
 			new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
 					.setTitleText(null)
@@ -450,6 +348,8 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 	}
 
 	public void favorite(View view) {
+		closeActionWindow();
+
 		if (mVideoKey == -1) {
 			// Create Video
 			Video video = new Video();
@@ -460,11 +360,11 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 		} else {
 			mVideoPresenter.deleteFave(mVideoKey);
 		}
-		mFavoriteView.setText(mVideoKey == 0 ? R.string.youtube_add_to_my_faves : R.string.youtube_remove_from_my_faves);
-		mFavorite.setBackgroundResource(mVideoKey == 0 ? R.drawable.ic_favorite : R.drawable.ic_unfavorite);
 	}
 
 	public void watchOnYouTube(View view) {
+		closeActionWindow();
+
 		Intent intent = new Intent(Intent.ACTION_VIEW);
 		intent.setData(Uri.parse(String.format(Config.YOUTUBE_SHARE_URL_PREFIX, mYtid)));
 		startActivity(intent);
@@ -473,6 +373,8 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 	}
 
 	public void report(View view) {
+		closeActionWindow();
+
 		new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
 				.setTitleText(getString(R.string.report_video))
 				.setContentText(getString(R.string.is_video_blocked))
@@ -490,6 +392,8 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 	}
 
 	public void share(View view) {
+		closeActionWindow();
+
 		Intent intent = new Intent(Intent.ACTION_SEND);
 		intent.setType("text/plain");
 		intent.putExtra(Intent.EXTRA_SUBJECT, mVideo.ytitle);
@@ -500,6 +404,8 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 	}
 
 	public void downloadVideo(View view) {
+		closeActionWindow();
+
 		String dlUrl = "http://ssyoutube.com/watch?v=" + mYtid;
 		Intent intent = new Intent(Intent.ACTION_VIEW);
 		intent.setData(Uri.parse(dlUrl));
@@ -525,7 +431,7 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 		sendEvent("video - android", "click: " + mYtid, "download");
 	}
 
-	public void submitComment(View view) {
+	public void submit(View view) {
 		String comment = mCommentView.getText().toString().trim();
 
 		if (!TextUtils.isEmpty(comment)) {
@@ -541,19 +447,11 @@ public class VideoActivity extends BaseYouTubeFailureRecoveryActivity implements
 		}
 	}
 
-	public void closeCommentWindow(View view) {
-		toggleCommentWindow(false);
+	private void closeActionWindow() {
+		mMenuBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
 	}
 
-	private class RecyclerViewScrollDetectorImpl extends RecyclerViewScrollDetector {
-		@Override
-		public void onScrollDown() {
-			showFab();
-		}
-
-		@Override
-		public void onScrollUp() {
-			hideFab();
-		}
+	public void closeCommentWindow(View view) {
+		mCommentBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
 	}
 }

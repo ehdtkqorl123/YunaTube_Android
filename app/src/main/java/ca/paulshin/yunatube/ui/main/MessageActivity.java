@@ -1,10 +1,8 @@
 package ca.paulshin.yunatube.ui.main;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,9 +11,8 @@ import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.squareup.otto.Bus;
@@ -36,7 +33,7 @@ import ca.paulshin.yunatube.util.YTPreference;
 import ca.paulshin.yunatube.util.events.DataLoadedEvent;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
-public class MessageActivity extends BaseActivity implements MessageMvpView, View.OnClickListener {
+public class MessageActivity extends BaseActivity implements MessageMvpView {
 
 	@Inject
 	MessagePresenter mMessagePresenter;
@@ -54,12 +51,10 @@ public class MessageActivity extends BaseActivity implements MessageMvpView, Vie
 
 	@Bind(R.id.grid)
 	public RecyclerView mRecyclerView;
-	@Bind(R.id.comment_window)
-	RelativeLayout mCommentWindow;
+	@Bind(R.id.comment_box)
+	FrameLayout mCommentBox;
 	@Bind(R.id.content)
 	EditText mCommentView;
-	@Bind(R.id.fab_write)
-	View mWriteView;
 
 	@Override
 	protected String getScreenName() {
@@ -82,29 +77,7 @@ public class MessageActivity extends BaseActivity implements MessageMvpView, Vie
 		mAdapter.setOnLoadMoreListener(() -> mMessagePresenter.getMessages(mNextMaxId));
 		mRecyclerView.setAdapter(mAdapter);
 
-		mWriteView.setOnClickListener(this);
-
-		mBottomSheetBehavior = BottomSheetBehavior.from(mCommentWindow);
-		mBottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
-			@Override
-			public void onStateChanged(@NonNull View bottomSheet, int newState) {
-				boolean isCollapsed = newState == BottomSheetBehavior.STATE_COLLAPSED;
-				mWriteView.setVisibility(isCollapsed ? View.VISIBLE : View.GONE);
-
-				if (isCollapsed) {
-					// Hide keyboard
-					InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-					imm.hideSoftInputFromWindow(mCommentView.getWindowToken(), 0);
-				}
-			}
-			@Override
-			public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-				// React to dragging events
-			}
-		});
-
-		ButterKnife.findById(this, R.id.close).setOnClickListener(this);
-		ButterKnife.findById(this, R.id.submit).setOnClickListener(this);
+		mBottomSheetBehavior = BottomSheetBehavior.from(mCommentBox);
 
 		loadData();
 	}
@@ -152,7 +125,7 @@ public class MessageActivity extends BaseActivity implements MessageMvpView, Vie
 
 	@Override
 	public void onBackPressed() {
-		if (mCommentWindow.getVisibility() == View.VISIBLE) {
+		if (mBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED) {
 			mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
 		} else {
 			super.onBackPressed();
@@ -191,6 +164,7 @@ public class MessageActivity extends BaseActivity implements MessageMvpView, Vie
 			String message = mCommentView.getText().toString().trim();
 
 			mMessagePresenter.submitMessage(mUsername, message, deviceId);
+			mCommentView.setText("");
 		} else {
 			//TODO
 			mRecyclerView.setVisibility(View.GONE);
@@ -231,52 +205,46 @@ public class MessageActivity extends BaseActivity implements MessageMvpView, Vie
 		// TODO
 	}
 
-	@Override
-	public void onClick(View v) {
-		String commentText = mCommentView.getText().toString().trim();
+	public void comment(View view) {
+		if (!TextUtils.isEmpty(mUsername)) {
+			mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+		} else {
+			// Ask user to set user name
+			new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+					.setTitleText(null)
+					.setContentText(getString(R.string.set_username))
+					.setConfirmText(getString(R.string.yes))
+					.setConfirmClickListener((sDialog, input) -> {
+						sDialog.dismissWithAnimation();
 
-		switch (v.getId()) {
-			case R.id.close:
-				mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-				break;
-
-			case R.id.submit:
-				if (TextUtils.isEmpty(commentText)) {
-					new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
-							.setTitleText(getString(R.string.enter_content))
-							.setConfirmClickListener((sDialog, __) -> sDialog.dismissWithAnimation())
-							.show();
-				} else if (commentText.length() < MIN_MESSAGE_LENGTH) {
-					new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
-							.setTitleText(getString(R.string.enter_longer_content))
-							.setConfirmClickListener((sDialog, __) -> sDialog.dismissWithAnimation())
-							.show();
-				} else {
-					submitMessage();
-				}
-				break;
-
-			case R.id.fab_write:
-				if (!TextUtils.isEmpty(mUsername)) {
-					mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
-				} else {
-					// Ask user to set user name
-					new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
-							.setTitleText(null)
-							.setContentText(getString(R.string.set_username))
-							.setConfirmText(getString(R.string.yes))
-							.setConfirmClickListener((sDialog, input) -> {
-								sDialog.dismissWithAnimation();
-
-								startActivity(new Intent(MessageActivity.this, SettingsActivity.class));
-								overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
-							})
-							.setCancelText(getString(R.string.no))
-							.setCancelClickListener((sDialog, __) -> sDialog.dismissWithAnimation())
-							.show();
-				}
-				break;
+						startActivity(new Intent(MessageActivity.this, SettingsActivity.class));
+						overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
+					})
+					.setCancelText(getString(R.string.no))
+					.setCancelClickListener((sDialog, __) -> sDialog.dismissWithAnimation())
+					.show();
 		}
+	}
+
+	public void submit(View view) {
+		String commentText = mCommentView.getText().toString().trim();
+		if (TextUtils.isEmpty(commentText)) {
+			new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+					.setTitleText(getString(R.string.enter_content))
+					.setConfirmClickListener((sDialog, __) -> sDialog.dismissWithAnimation())
+					.show();
+		} else if (commentText.length() < MIN_MESSAGE_LENGTH) {
+			new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+					.setTitleText(getString(R.string.enter_longer_content))
+					.setConfirmClickListener((sDialog, __) -> sDialog.dismissWithAnimation())
+					.show();
+		} else {
+			submitMessage();
+		}
+	}
+
+	public void closeCommentWindow(View view) {
+		mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
 	}
 
 	@Subscribe

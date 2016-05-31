@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/my_username"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginStart="4dp"
+        android:text="UserName"
+        android:textColor="@color/body_text_1_inverse"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/close"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="4dp"
+        android:gravity="center_vertical"
+        android:onClick="closeCommentWindow"
+        android:text="@string/close"
+        android:textAllCaps="true"
+        android:textColor="@color/body_text_1_inverse"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="12dp"
+        android:layout_toStartOf="@id/close"
+        android:onClick="submit"
+        android:gravity="center_vertical"
+        android:text="@string/send"
+        android:textAllCaps="true"
+        android:textColor="@color/body_text_1_inverse"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/my_username"
+        android:background="@drawable/input_box_bg"
+        android:gravity="top"
+        android:hint="@string/message_hint"
+        android:maxLength="140"
+        android:maxLines="4"
+        android:padding="4dp"
+        android:textSize="@dimen/text_size_medium"/>
+
+</RelativeLayout>

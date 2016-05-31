@@ -17,6 +17,9 @@
     <dimen name="text_size_xlarge">20sp</dimen>
     <dimen name="text_size_diff_large_small">6sp</dimen>
     <dimen name="avatar_image_size">40dp</dimen>
+    <dimen name="bottomsheet_item_height">48dp</dimen>
+    <dimen name="bottomsheet_item_icon_dimen">24dp</dimen>
+    <dimen name="bottomsheet_elevation">16dp</dimen>
 
     <!-- Widget -->
     <dimen name="widget_margin">0dp</dimen>
@@ -83,7 +86,8 @@
 
     <!-- Search -->
     <dimen name="search_padding">16dp</dimen>
-    <color name="app_body_text_1">#de000000</color>
-    <color name="app_body_text_2">#8a000000</color>
 
+    <!-- Comment -->
+    <dimen name="comment_input_height">120dp</dimen>
+    <dimen name="comment_padding">4dp</dimen>
 </resources>
