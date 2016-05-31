@@ -48,41 +48,49 @@
         <activity
             android:name=".ui.main.MainActivity"
             android:label="@string/app_name"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.main.MainSearchActivity"
+            android:exported="false"
             android:label="@string/search"
-            android:theme="@style/Theme.YunaTube.Search"
             android:launchMode="singleTop"
-            android:exported="false">
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.YunaTube.Search">
             <meta-data
                 android:name="android.app.searchable"
-                android:resource="@xml/searchable" />
+                android:resource="@xml/searchable"/>
         </activity>
 
         <activity
             android:name=".ui.main.SearchActivity"
-            android:label="@string/search"/>
+            android:label="@string/search"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.main.InstaPhotoActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.YunaTube.Fullscreen"/>
 
         <activity
             android:name=".ui.main.InstaVideoActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.YunaTube.Fullscreen"/>
 
         <activity
             android:name=".ui.main.InstaFeedActivity"
-            android:label="@string/insta_feed"/>
+            android:label="@string/insta_feed"
+            android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".ui.main.WebViewActivity"/>
+            android:name=".ui.main.WebViewActivity"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.main.MessageActivity"
-            android:label="@string/message_to_yuna"/>
+            android:label="@string/message_to_yuna"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.main.StoryActivity"
@@ -92,24 +100,30 @@
 
         <activity
             android:name=".ui.main.PhotoActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.YunaTube.Fullscreen"/>
 
         <activity
-            android:name=".ui.main.PhotoSectionActivity"/>
+            android:name=".ui.main.PhotoSectionActivity"
+            android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".ui.main.PhotoListActivity"/>
+            android:name=".ui.main.PhotoListActivity"
+            android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".ui.main.AnimatedGifListActivity"/>
+            android:name=".ui.main.AnimatedGifListActivity"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.main.AnimatedGifActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.YunaTube.Fullscreen"/>
 
         <activity
             android:name=".ui.main.FamilySitesActivity"
-            android:label="@string/family_sites"/>
+            android:label="@string/family_sites"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.main.JukeboxActivity"
@@ -119,16 +133,19 @@
 
         <activity
             android:name=".ui.main.SettingsActivity"
-            android:label="@string/settings"/>
+            android:label="@string/settings"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.main.VideoSectionActivity"
-            android:theme="@style/Theme.YunaTube.VideoSection"
-            android:label="@string/video_section"/>
+            android:label="@string/video_section"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.YunaTube.VideoSection"/>
 
         <activity
             android:name=".ui.main.VideoListActivity"
-            android:label="@string/videos"/>
+            android:label="@string/videos"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.main.VideoActivity"
@@ -138,7 +155,9 @@
 
         <activity
             android:name=".ui.main.MyFavesActivity"
-            android:label="@string/my_faves"/>
+            android:label="@string/my_faves"
+            android:screenOrientation="portrait"/>
+        
         <!-- Broadcast receivers -->
         <receiver
             android:name=".receiver.ConnectivityChangeReceiver">
