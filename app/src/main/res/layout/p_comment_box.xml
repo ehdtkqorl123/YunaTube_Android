@@ -52,7 +52,6 @@
         android:layout_below="@id/my_username"
         android:background="@drawable/input_box_bg"
         android:gravity="top"
-        android:hint="@string/message_hint"
         android:maxLength="140"
         android:maxLines="4"
         android:padding="4dp"

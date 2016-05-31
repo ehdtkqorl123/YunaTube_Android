@@ -29,6 +29,7 @@ import ca.paulshin.yunatube.data.model.message.Message;
 import ca.paulshin.yunatube.ui.adapter.MessageAdapter;
 import ca.paulshin.yunatube.ui.base.BaseActivity;
 import ca.paulshin.yunatube.util.NetworkUtil;
+import ca.paulshin.yunatube.util.ResourceUtil;
 import ca.paulshin.yunatube.util.YTPreference;
 import ca.paulshin.yunatube.util.events.DataLoadedEvent;
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -77,6 +78,7 @@ public class MessageActivity extends BaseActivity implements MessageMvpView {
 		mAdapter.setOnLoadMoreListener(() -> mMessagePresenter.getMessages(mNextMaxId));
 		mRecyclerView.setAdapter(mAdapter);
 
+		mCommentView.setHint(ResourceUtil.getString(R.string.message_hint));
 		mBottomSheetBehavior = BottomSheetBehavior.from(mCommentBox);
 
 		loadData();
