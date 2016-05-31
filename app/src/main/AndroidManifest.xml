@@ -70,12 +70,10 @@
 
         <activity
             android:name=".ui.main.InstaPhotoActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.YunaTube.Fullscreen"/>
 
         <activity
             android:name=".ui.main.InstaVideoActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.YunaTube.Fullscreen"/>
 
         <activity
@@ -100,7 +98,6 @@
 
         <activity
             android:name=".ui.main.PhotoActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.YunaTube.Fullscreen"/>
 
         <activity
@@ -117,7 +114,6 @@
 
         <activity
             android:name=".ui.main.AnimatedGifActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.YunaTube.Fullscreen"/>
 
         <activity
@@ -157,7 +153,7 @@
             android:name=".ui.main.MyFavesActivity"
             android:label="@string/my_faves"
             android:screenOrientation="portrait"/>
-        
+
         <!-- Broadcast receivers -->
         <receiver
             android:name=".receiver.ConnectivityChangeReceiver">
