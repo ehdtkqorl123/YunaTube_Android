@@ -14,7 +14,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import ca.paulshin.yunatube.Config;
 import ca.paulshin.yunatube.R;
-import ca.paulshin.yunatube.game.DroidRunJumpView;
 import ca.paulshin.yunatube.ui.base.BaseFragment;
 import ca.paulshin.yunatube.util.YTPreference;
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -40,12 +39,23 @@ public class YunaMenuFragment extends BaseFragment implements View.OnClickListen
 	View mFamilySitesView;
 	@Bind(R.id.search)
 	View mSearchView;
+	@Bind(R.id.bottom_image_1)
+	View mBottomImageView1;
+	@Bind(R.id.bottom_image_2)
+	View mBottomImageView2;
+	@Bind(R.id.bottom_image_3)
+	View mBottomImageView3;
+	@Bind(R.id.bottom_image_4)
+	View mBottomImageView4;
+
 //	@Bind(R.id.droidrunjump)
 //	DroidRunJumpView drjView;
 
 	public static final String PREFS_NAME = "DRJPrefsFile";
+	private static final int SHORT_ANIMATION_DURATION = 300;
 
-	private DroidRunJumpView.DroidRunJumpThread drjThread;
+	//	private DroidRunJumpView.DroidRunJumpThread drjThread;
+	private boolean mBottomImagesAnimated;
 
 	public static YunaMenuFragment newInstance() {
 		YunaMenuFragment fragment = new YunaMenuFragment();
@@ -110,6 +120,48 @@ public class YunaMenuFragment extends BaseFragment implements View.OnClickListen
 	}
 
 	*/
+
+	@Override
+	public void setUserVisibleHint(boolean isVisibleToUser) {
+		super.setUserVisibleHint(isVisibleToUser);
+		if (isVisibleToUser && !mBottomImagesAnimated) {
+			startAlphaAnimation();
+			mBottomImagesAnimated = true;
+		}
+	}
+
+	private void startAlphaAnimation() {
+		mBottomImageView1.setAlpha(0f);
+		mBottomImageView1.setVisibility(View.VISIBLE);
+		mBottomImageView1.animate()
+				.alpha(1f)
+				.setDuration(SHORT_ANIMATION_DURATION)
+				.setListener(null);
+
+		mBottomImageView2.setAlpha(0f);
+		mBottomImageView2.setVisibility(View.VISIBLE);
+		mBottomImageView2.animate()
+				.alpha(1f)
+				.setStartDelay(SHORT_ANIMATION_DURATION)
+				.setDuration(SHORT_ANIMATION_DURATION)
+				.setListener(null);
+
+		mBottomImageView3.setAlpha(0f);
+		mBottomImageView3.setVisibility(View.VISIBLE);
+		mBottomImageView3.animate()
+				.alpha(1f)
+				.setStartDelay(SHORT_ANIMATION_DURATION * 2)
+				.setDuration(SHORT_ANIMATION_DURATION)
+				.setListener(null);
+
+		mBottomImageView4.setAlpha(0f);
+		mBottomImageView4.setVisibility(View.VISIBLE);
+		mBottomImageView4.animate()
+				.alpha(1f)
+				.setStartDelay(SHORT_ANIMATION_DURATION * 3)
+				.setDuration(SHORT_ANIMATION_DURATION)
+				.setListener(null);
+	}
 
 	@Override
 	public void onClick(View v) {
