@@ -142,7 +142,7 @@ public class YunaMenuFragment extends BaseFragment implements View.OnClickListen
 		mBottomImageView2.setVisibility(View.VISIBLE);
 		mBottomImageView2.animate()
 				.alpha(1f)
-				.setStartDelay(SHORT_ANIMATION_DURATION)
+				.setStartDelay(SHORT_ANIMATION_DURATION * 3)
 				.setDuration(SHORT_ANIMATION_DURATION)
 				.setListener(null);
 
@@ -150,7 +150,7 @@ public class YunaMenuFragment extends BaseFragment implements View.OnClickListen
 		mBottomImageView3.setVisibility(View.VISIBLE);
 		mBottomImageView3.animate()
 				.alpha(1f)
-				.setStartDelay(SHORT_ANIMATION_DURATION * 2)
+				.setStartDelay(SHORT_ANIMATION_DURATION * 6)
 				.setDuration(SHORT_ANIMATION_DURATION)
 				.setListener(null);
 
@@ -158,7 +158,7 @@ public class YunaMenuFragment extends BaseFragment implements View.OnClickListen
 		mBottomImageView4.setVisibility(View.VISIBLE);
 		mBottomImageView4.animate()
 				.alpha(1f)
-				.setStartDelay(SHORT_ANIMATION_DURATION * 3)
+				.setStartDelay(SHORT_ANIMATION_DURATION * 12)
 				.setDuration(SHORT_ANIMATION_DURATION)
 				.setListener(null);
 	}
