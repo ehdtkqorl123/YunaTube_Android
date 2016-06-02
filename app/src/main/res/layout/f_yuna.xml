@@ -341,14 +341,15 @@
                   android:layout_height="match_parent"
                   android:layout_alignParentBottom="true"
                   android:layout_below="@id/yuna_content"
-                  android:orientation="horizontal">
+                  android:orientation="horizontal"
+                  android:padding="@dimen/content_padding_normal">
 
         <ImageView
             android:id="@+id/bottom_image_1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/yuna_menu_bottom_1"
+            android:src="@drawable/superman_1"
             android:visibility="gone"/>
 
         <ImageView
@@ -357,7 +358,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:alpha="0"
-            android:src="@drawable/yuna_menu_bottom_2"
+            android:src="@drawable/superman_2"
             android:visibility="gone"/>
 
         <ImageView
@@ -366,7 +367,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:alpha="0"
-            android:src="@drawable/yuna_menu_bottom_3"
+            android:src="@drawable/superman_3"
             android:visibility="gone"/>
 
         <ImageView
@@ -375,7 +376,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:alpha="0"
-            android:src="@drawable/yuna_menu_bottom_4"
+            android:src="@drawable/superman_4"
             android:visibility="gone"/>
 
     </LinearLayout>

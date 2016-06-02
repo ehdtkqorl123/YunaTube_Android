@@ -52,7 +52,7 @@ public class YunaMenuFragment extends BaseFragment implements View.OnClickListen
 //	DroidRunJumpView drjView;
 
 	public static final String PREFS_NAME = "DRJPrefsFile";
-	private static final int SHORT_ANIMATION_DURATION = 300;
+	private static final int SHORT_ANIMATION_DURATION = 500;
 
 	//	private DroidRunJumpView.DroidRunJumpThread drjThread;
 	private boolean mBottomImagesAnimated;
