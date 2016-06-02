@@ -54,6 +54,7 @@ public class MainMenuFragment extends BaseFragment implements
 
 	private static final boolean VIEW_SHARED = true;
 	private static final int FAB_TRANSLATE_DURATION_MILLIS = 200;
+	private static final int API_CALL_COUNT = 2;
 	private final Interpolator mInterpolator = new AccelerateDecelerateInterpolator();
 
 	public interface MainMenuScrollListener {
@@ -125,12 +126,14 @@ public class MainMenuFragment extends BaseFragment implements
 		ButterKnife.findById(mListHeaderView, R.id.fact_more).setOnClickListener(this);
 		ButterKnife.findById(mListHeaderView, R.id.insta_more).setOnClickListener(this);
 
+/* Disabled until instagram API is back
 		// Instagram items
 		int instaLoadCount = ResourceUtil.getInteger(R.integer.insta_load_count);
 		for (int i = 0; i < instaLoadCount; i++) {
 			int id = ResourceUtil.getResourceId("id", "insta_frame_" + i);
 			ButterKnife.findById(mListHeaderView, id).setOnClickListener(this);
 		}
+*/
 
 		loadData();
 
@@ -154,7 +157,7 @@ public class MainMenuFragment extends BaseFragment implements
 			mLoadingView.setVisibility(View.VISIBLE);
 
 			mMainMenuPresenter.getNotice();
-			mMainMenuPresenter.getNewInstaFeed();
+//			mMainMenuPresenter.getNewInstaFeed();
 			mMainMenuPresenter.getNewVideos(mLastNewOrder);
 		} else {
 			mRecyclerView.setVisibility(View.GONE);
@@ -268,7 +271,7 @@ public class MainMenuFragment extends BaseFragment implements
 		@Override
 		public void handleMessage(Message msg) {
 			mLoadCount += msg.what;
-			if (mLoadCount >= 3) {
+			if (mLoadCount >= API_CALL_COUNT) {
 				populateListItems();
 			}
 		}

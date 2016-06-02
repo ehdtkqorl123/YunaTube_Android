@@ -84,7 +84,8 @@
         android:layout_width="match_parent"
         android:layout_height="26dp"
         android:layout_marginBottom="@dimen/main_layout_inner_padding"
-        android:layout_marginTop="@dimen/main_layout_inner_padding">
+        android:layout_marginTop="@dimen/main_layout_inner_padding"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -102,8 +103,8 @@
             android:text="@string/more"/>
     </RelativeLayout>
 
-    <include
-        layout="@layout/p_main_instagram"/>
+    <!--<include-->
+        <!--layout="@layout/p_main_instagram"/>-->
 
     <TextView
         android:layout_width="match_parent"

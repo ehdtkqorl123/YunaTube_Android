@@ -337,11 +337,18 @@
         </LinearLayout>
     </LinearLayout>
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/yuna_content"
+        android:src="@drawable/yuna_menu_bottom"/>
+
     <!--<ca.paulshin.yunatube.game.DroidRunJumpView-->
-        <!--android:id="@+id/droidrunjump"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_below="@id/yuna_content"-->
-        <!--android:layout_margin="@dimen/main_layout_padding"/>-->
+    <!--android:id="@+id/droidrunjump"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_below="@id/yuna_content"-->
+    <!--android:layout_margin="@dimen/main_layout_padding"/>-->
 </RelativeLayout>
