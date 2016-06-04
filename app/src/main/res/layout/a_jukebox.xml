@@ -15,27 +15,26 @@
         android:layout_weight="1"
         android:scrollbars="vertical"/>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#eee"
-        android:elevation="16dp"
-        android:gravity="center"
-        android:padding="0dp">
-
+    <FrameLayout android:layout_width="match_parent"
+                 android:layout_height="@dimen/jukebox_bottom_height"
+                 android:background="@color/window_background"
+                 android:elevation="@dimen/bottomsheet_elevation"
+                 android:gravity="center"
+                 android:padding="0dp">
         <ProgressBar
             android:id="@+id/loading"
-            android:layout_width="40dp"
-            android:layout_height="40dp"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:textColor="@color/body_text_1"
             android:textSize="@dimen/text_size_large"
             android:textStyle="bold"
             android:visibility="gone"/>
-    </RelativeLayout>
+    </FrameLayout>
 </LinearLayout>

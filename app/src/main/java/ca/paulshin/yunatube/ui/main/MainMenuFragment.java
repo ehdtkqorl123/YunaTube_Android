@@ -8,7 +8,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -125,6 +124,10 @@ public class MainMenuFragment extends BaseFragment implements
 		ButterKnife.findById(mListHeaderView, R.id.notice_image).setOnClickListener(this);
 		ButterKnife.findById(mListHeaderView, R.id.fact_more).setOnClickListener(this);
 		ButterKnife.findById(mListHeaderView, R.id.insta_more).setOnClickListener(this);
+		ButterKnife.findById(mListHeaderView, R.id.instagram).setOnClickListener(this);
+		ButterKnife.findById(mListHeaderView, R.id.facebook).setOnClickListener(this);
+		ButterKnife.findById(mListHeaderView, R.id.twitter).setOnClickListener(this);
+		ButterKnife.findById(mListHeaderView, R.id.youtube).setOnClickListener(this);
 
 /* Disabled until instagram API is back
 		// Instagram items
@@ -311,23 +314,33 @@ public class MainMenuFragment extends BaseFragment implements
 
 	@Override
 	public void onClick(View v) {
+		String url;
+		Intent browserIntent;
+
 		switch(v.getId()) {
 			case R.id.notice_image:
 				startActivity(new Intent(getActivity(), SettingsActivity.class));
 				getActivity().overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
 				break;
-			case R.id.fab_web_search:
-				FragmentManager fm = getChildFragmentManager();
-				WebSearchDialogFragment f = WebSearchDialogFragment.getInstance();
-				f.show(fm, "fragment_web_search");
-				return;
-			case R.id.fab_jukebox:
-				startActivity(new Intent(getActivity(), JukeboxActivity.class));
-				getActivity().overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
+			case R.id.instagram:
+				url = "http://" + getString(R.string.links_official_instagram_url);
+				browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+				startActivity(browserIntent);
 				break;
-			case R.id.fab_links:
-				startActivity(new Intent(getActivity(), FamilySitesActivity.class));
-				getActivity().overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
+			case R.id.facebook:
+				url = "http://" + getString(R.string.links_official_facebook_url);
+				browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+				startActivity(browserIntent);
+				break;
+			case R.id.twitter:
+				url = "http://" + getString(R.string.links_official_yunaaaa_url);
+				browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+				startActivity(browserIntent);
+				break;
+			case R.id.youtube:
+				url = "http://" + getString(R.string.links_official_youtube_url);
+				browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+				startActivity(browserIntent);
 				break;
 			case R.id.fact_more:
 				Uri uri = Uri.parse(Config.YUNAFACT);

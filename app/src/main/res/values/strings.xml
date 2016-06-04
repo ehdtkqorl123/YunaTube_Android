@@ -163,6 +163,7 @@
     <string name="links_official_allthatsports">All That Sports</string>
     <string name="links_official_allthatsports_url">www.atsports.co.kr</string>
     <string name="links_official_allthatsports_desc">Yuna\'s agency, All That Sports website.</string>
+    <string name="links_official_instagram_url">www.instagram.com/yunakim</string>
 
     <string name="links_fan_fevers">Fever Skating</string>
     <string name="links_fan_fevers_url">www.feverskating.com</string>
@@ -246,6 +247,9 @@
     <string name="download_complete">Download Complete</string>
     <string name="data_warning_title">Data Warning</string>
     <string name="data_warning_content">It is STRONGLY recommended to turn on WIFI to save mobile data usage and quickly view GIF images</string>
+    <string name="write_access_request_message">Write access is required to store or share images to your phone</string>
+    <string name="write_access_request_gif_message">Write access is required to store or view gif images</string>
+    <string name="write_access_request_denied">Write access is denied. Cannot save images.</string>
 
     <!-- Survey -->
     <string name="surveys">Surveys</string>

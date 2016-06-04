@@ -9,9 +9,11 @@
 
         <!-- specify shared element transitions -->
         <item name="android:windowSharedElementEnterTransition">
-            @transition/change_image_transform</item>
+            @transition/change_image_transform
+        </item>
         <item name="android:windowSharedElementExitTransition">
-            @transition/change_image_transform</item>
+            @transition/change_image_transform
+        </item>
     </style>
 
     <!-- Root styles that vary by API level -->
@@ -21,7 +23,8 @@
 
     <style name="FrameworkRoot.Widget" parent="Theme.AppCompat"/>
 
-    <style name="Theme" parent="FrameworkRoot.Theme" /> <!-- doesn't contain the pre-L code from the values/styles.xml -->
+    <style name="Theme"
+           parent="FrameworkRoot.Theme"/> <!-- doesn't contain the pre-L code from the values/styles.xml -->
 
     <style name="Theme.YunaTube.Base" parent="Theme">
         <item name="actionBarIconColor">#fff</item>
@@ -90,7 +93,8 @@
     <style name="Theme.YunaTube.Search" parent="Theme.YunaTube">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowIsTranslucent">true</item>
-        <item name="autoCompleteTextViewStyle">@style/Widget.YunaTube.Search.AutoCompleteTextView</item>
+        <item name="autoCompleteTextViewStyle">@style/Widget.YunaTube.Search.AutoCompleteTextView
+        </item>
         <item name="searchViewStyle">@style/Widget.YunaTube.SearchView</item>
         <item name="colorControlNormal">@color/app_body_text_2</item>
         <item name="colorControlActivated">@color/body_text_3</item>
@@ -125,18 +129,21 @@
         <item name="android:dropDownSelector">?popupItemBackground</item>
     </style>
 
-    <style name="Widget.YunaTube.ListView.DropDown" parent="Widget.AppCompat.Light.ListView.DropDown">
+    <style name="Widget.YunaTube.ListView.DropDown"
+           parent="Widget.AppCompat.Light.ListView.DropDown">
         <item name="android:listSelector">?popupItemBackground</item>
         <item name="android:divider">@null</item>
         <item name="android:dividerHeight">0dp</item>
     </style>
 
-    <style name="TextAppearance.LargePopupMenu" parent="TextAppearance.AppCompat.Widget.PopupMenu.Large">
+    <style name="TextAppearance.LargePopupMenu"
+           parent="TextAppearance.AppCompat.Widget.PopupMenu.Large">
         <item name="android:textColor">@color/body_text_1</item>
     </style>
 
     <!-- Search -->
-    <style name="Widget.YunaTube.Search.AutoCompleteTextView" parent="Widget.AppCompat.Light.AutoCompleteTextView">
+    <style name="Widget.YunaTube.Search.AutoCompleteTextView"
+           parent="Widget.AppCompat.Light.AutoCompleteTextView">
         <item name="android:textColorHint">@color/app_body_text_2</item>
         <!-- If set to @null the cursor will be displayed using android:textColor -->
         <item name="android:textCursorDrawable">@null</item>
@@ -207,17 +214,14 @@
     <!-- Main -->
     <style name="MoreButton">
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">26dp</item>
+        <item name="android:layout_height">30dp</item>
         <item name="android:layout_alignParentRight">true</item>
-        <item name="android:background">@drawable/main_more_button_bg</item>
+        <item name="android:layout_marginEnd">@dimen/content_padding_normal</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:minHeight">0dp</item>
-        <item name="android:minWidth">0dp</item>
-        <item name="android:paddingLeft">5dp</item>
-        <item name="android:paddingRight">5dp</item>
         <item name="android:text">@string/more</item>
+        <item name="android:textColor">@color/body_text_3</item>
         <item name="android:textAllCaps">true</item>
-        <item name="android:textColor">@color/body_text_1_inverse</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/text_size_medium</item>
     </style>
 

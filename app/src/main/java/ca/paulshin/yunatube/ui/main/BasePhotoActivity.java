@@ -1,17 +1,24 @@
 package ca.paulshin.yunatube.ui.main;
 
+import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -41,12 +48,15 @@ import uk.co.senab.photoview.PhotoViewAttacher;
 public abstract class BasePhotoActivity extends BaseActivity implements PhotoViewAttacher.OnPhotoTapListener {
 	private static final int TRANSLATE_DURATION_MILLIS = 200;
 	private static final int SYSTEM_UI_SHOW_DURATION = 2000;
+	private static final int WRITE_ACCESS_REQUEST_CODE_SAVE = 100;
+	private static final int WRITE_ACCESS_REQUEST_CODE_SHARING = 200;
 
 	private NotificationManager mNotificationManager;
 	private View mDecorView;
 
 	protected LinearLayout mMenuView;
 	protected ViewPagerFixed mPager;
+	private String mUrl;
 
 	protected abstract int getNotificationId();
 
@@ -137,7 +147,40 @@ public abstract class BasePhotoActivity extends BaseActivity implements PhotoVie
 				.alpha(alpha);
 	}
 
+	@TargetApi(Build.VERSION_CODES.M)
+	private void checkWriteExternalPermission(String url, int requestCode) {
+		String permission = Manifest.permission.WRITE_EXTERNAL_STORAGE;
+		if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
+			if (shouldShowRequestPermissionRationale(permission)) {
+				ToastUtil.toast(this, R.string.write_access_request_message);
+			} else {
+				mUrl = url;
+				ActivityCompat.requestPermissions(this,
+						new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+						requestCode);
+			}
+		} else {
+			switch (requestCode) {
+				case WRITE_ACCESS_REQUEST_CODE_SAVE:Log.d("log", "!!!!!!!!" + url);
+						performWrite(url);
+					return;
+
+				case WRITE_ACCESS_REQUEST_CODE_SHARING:
+						performShareLocalFile(url);
+					return;
+			}
+		}
+	}
+
 	protected void performSave(String url) {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+			checkWriteExternalPermission(url, WRITE_ACCESS_REQUEST_CODE_SAVE);
+		} else {
+			performWrite(url);
+		}
+	}
+
+	private void performWrite(String url) {
 		String fileName = new File(url).getName();
 
 		File file = new File(FileUtil.getAlbumDir(BasePhotoActivity.this), fileName);
@@ -158,6 +201,14 @@ public abstract class BasePhotoActivity extends BaseActivity implements PhotoVie
 	}
 
 	protected void performShare(String url) {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+			checkWriteExternalPermission(url, WRITE_ACCESS_REQUEST_CODE_SHARING);
+		} else {
+			performShareLocalFile(url);
+		}
+	}
+
+	private void performShareLocalFile(String url) {
 		File file = new File(FileUtil.getAlbumDir(this), new File(url).getName());
 		if (file.exists()) {
 			Intent intent = new Intent(Intent.ACTION_SEND);
@@ -260,6 +311,30 @@ public abstract class BasePhotoActivity extends BaseActivity implements PhotoVie
 					Log.i("ExternalStorage", "Scanned " + extPath + ":");
 					Log.i("ExternalStorage", "-> uri=" + uri);
 				});
+	}
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+		switch (requestCode) {
+			case WRITE_ACCESS_REQUEST_CODE_SAVE:
+				if (grantResults.length == 1 &&
+						grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+					performWrite(mUrl);
+				} else {
+					ToastUtil.toast(this, R.string.write_access_request_denied);
+				}
+				return;
+
+			case WRITE_ACCESS_REQUEST_CODE_SHARING: {
+				if (grantResults.length == 1 &&
+						grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+					performShareLocalFile(mUrl);
+				} else {
+					ToastUtil.toast(this, R.string.write_access_request_denied);
+				}
+				return;
+			}
+		}
 	}
 
 	@Override

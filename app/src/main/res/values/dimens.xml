@@ -9,6 +9,7 @@
 
     <!-- body content -->
     <dimen name="element_spacing_normal">8dp</dimen>
+    <dimen name="content_padding_small">12dp</dimen>
     <dimen name="content_padding_normal">16dp</dimen>
     <dimen name="text_size_xsmall">10sp</dimen>
     <dimen name="text_size_small">12sp</dimen>
@@ -73,6 +74,7 @@
     <dimen name="fab_padding_y">16px</dimen>
 
     <dimen name="main_instagram_video_icon_dimen">30dp</dimen>
+    <dimen name="main_social_icon_dimen">24dp</dimen>
 
     <!-- Story -->
     <dimen name="story_margin">24dp</dimen>
@@ -90,4 +92,7 @@
     <!-- Comment -->
     <dimen name="comment_input_height">120dp</dimen>
     <dimen name="comment_padding">4dp</dimen>
+
+    <!-- Jukebox -->
+    <dimen name="jukebox_bottom_height">50dp</dimen>
 </resources>

@@ -1,10 +1,19 @@
 package ca.paulshin.yunatube.ui.main;
 
 
+import android.Manifest;
+import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -48,7 +57,7 @@ import ca.paulshin.yunatube.util.events.ConnectivityChangeEvent;
  * b	large, 1024 on longest side*
  * o	original image, either a jpg, gif or png, depending on source format
  */
-public class PhotoMenuFragment extends BaseFragment implements PhotoMenuMvpView {
+public class PhotoMenuFragment extends BaseFragment implements PhotoMenuMvpView, CollectionsLayoutAdapter.OnGifClickedListener {
 
 	@Inject
 	PhotoMenuPresenter mPhotoMenuPresenter;
@@ -68,6 +77,7 @@ public class PhotoMenuFragment extends BaseFragment implements PhotoMenuMvpView 
 
 	private int mLoadCount;
 	private boolean mPhotoListsLoaded;
+	private static final int WRITE_ACCESS_REQUEST_CODE_GIF = 100;
 
 	private Handler mLoadHandler = new Handler() {
 		@Override
@@ -174,7 +184,7 @@ public class PhotoMenuFragment extends BaseFragment implements PhotoMenuMvpView 
 			CollectionItem animatedGif = new CollectionItem("", getString(R.string.animated_gifs_title));
 			collectionItems.add(0, animatedGif);
 
-			CollectionsLayoutAdapter adapter = new CollectionsLayoutAdapter(getActivity(), collectionItems);
+			CollectionsLayoutAdapter adapter = new CollectionsLayoutAdapter(getActivity(), this, collectionItems);
 			mCollectionsRecyclerView.setAdapter(adapter);
 		}
 
@@ -193,6 +203,51 @@ public class PhotoMenuFragment extends BaseFragment implements PhotoMenuMvpView 
 		} else {
 			//TODO
 			ToastUtil.toast(getActivity(), "No internet");
+		}
+	}
+
+	@Override
+	public void onGifClicked() {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+			checkWriteExternalPermission();
+		} else {
+			startGifActivity();
+		}
+	}
+
+	private void startGifActivity() {
+		Activity activity = getActivity();
+		Intent intent = new Intent(activity, AnimatedGifListActivity.class);
+		activity.startActivity(intent);
+		activity.overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
+	}
+
+	@TargetApi(Build.VERSION_CODES.M)
+	private void checkWriteExternalPermission() {
+		Activity activity = getActivity();
+		String permission = Manifest.permission.WRITE_EXTERNAL_STORAGE;
+		if (ContextCompat.checkSelfPermission(activity, permission) != PackageManager.PERMISSION_GRANTED) {
+			if (shouldShowRequestPermissionRationale(permission)) {
+				ToastUtil.toast(activity, R.string.write_access_request_gif_message);
+			} else {
+				ActivityCompat.requestPermissions(activity,
+						new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+						WRITE_ACCESS_REQUEST_CODE_GIF);
+			}
+		} else {
+			startGifActivity();
+		}
+	}
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+		switch (requestCode) {
+			case WRITE_ACCESS_REQUEST_CODE_GIF:
+				if (grantResults.length == 1 &&
+						grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+					startGifActivity();
+				}
+				return;
 		}
 	}
 }

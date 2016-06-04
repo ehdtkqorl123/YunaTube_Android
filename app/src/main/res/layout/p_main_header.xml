@@ -24,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="4dp"
+            android:layout_marginBottom="@dimen/main_layout_inner_padding"
             android:background="@drawable/main_item_box_bg"
             android:gravity="center_vertical"
             android:padding="4dp"
@@ -31,23 +32,63 @@
             android:textSize="@dimen/text_size_small"/>
     </LinearLayout>
 
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center_horizontal"
+                  android:orientation="horizontal"
+                  android:padding="@dimen/content_padding_small">
+        <ImageView
+            android:id="@+id/instagram"
+            android:layout_width="@dimen/main_social_icon_dimen"
+            android:layout_height="@dimen/main_social_icon_dimen"
+            android:layout_marginEnd="@dimen/content_padding_normal"
+            android:scaleType="fitCenter"
+            android:src="@drawable/instagram_logo"/>
+
+        <ImageView
+            android:id="@+id/facebook"
+            android:layout_width="@dimen/main_social_icon_dimen"
+            android:layout_height="@dimen/main_social_icon_dimen"
+            android:layout_marginEnd="@dimen/content_padding_normal"
+            android:layout_marginStart="@dimen/content_padding_normal"
+            android:scaleType="fitCenter"
+            android:src="@drawable/facebook_logo"/>
+
+        <ImageView
+            android:id="@+id/twitter"
+            android:layout_width="@dimen/main_social_icon_dimen"
+            android:layout_height="@dimen/main_social_icon_dimen"
+            android:layout_marginEnd="@dimen/content_padding_normal"
+            android:layout_marginStart="@dimen/content_padding_normal"
+            android:scaleType="fitCenter"
+            android:src="@drawable/twitter_logo"/>
+
+        <ImageView
+            android:id="@+id/youtube"
+            android:layout_width="@dimen/main_social_icon_dimen"
+            android:layout_height="@dimen/main_social_icon_dimen"
+            android:layout_marginStart="@dimen/content_padding_normal"
+            android:scaleType="fitCenter"
+            android:src="@drawable/youtube_logo"/>
+    </LinearLayout>
+
     <RelativeLayout
         android:id="@+id/fact_section"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/main_layout_inner_padding"
-        android:layout_marginTop="@dimen/main_layout_padding">
+        android:layout_marginBottom="@dimen/main_layout_inner_padding">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="26dp"
+            android:layout_height="30dp"
             android:gravity="center_vertical"
             android:text="@string/yuna_fact"
             android:textAllCaps="true"
-            android:textSize="@dimen/text_size_medium"
+            android:textColor="@color/body_text_1"
+            android:textSize="@dimen/text_size_large"
             android:textStyle="bold"/>
 
-        <Button
+        <TextView
             android:id="@+id/fact_more"
             style="@style/MoreButton"
             android:text="@string/more"/>
@@ -104,15 +145,16 @@
     </RelativeLayout>
 
     <!--<include-->
-        <!--layout="@layout/p_main_instagram"/>-->
+    <!--layout="@layout/p_main_instagram"/>-->
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="26dp"
+        android:layout_height="30dp"
         android:layout_marginTop="@dimen/main_layout_padding"
         android:gravity="center_vertical"
         android:text="@string/new_videos"
         android:textAllCaps="true"
-        android:textSize="@dimen/text_size_medium"
+        android:textColor="@color/body_text_1"
+        android:textSize="@dimen/text_size_large"
         android:textStyle="bold"/>
 </LinearLayout>

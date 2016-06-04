@@ -16,7 +16,6 @@ import java.util.List;
 import butterknife.ButterKnife;
 import ca.paulshin.yunatube.R;
 import ca.paulshin.yunatube.data.model.flickr.CollectionItem;
-import ca.paulshin.yunatube.ui.main.AnimatedGifListActivity;
 import ca.paulshin.yunatube.ui.main.PhotoSectionActivity;
 import ca.paulshin.yunatube.util.ResourceUtil;
 
@@ -24,8 +23,13 @@ import ca.paulshin.yunatube.util.ResourceUtil;
  * Created by paulshin on 16-02-22.
  */
 public class CollectionsLayoutAdapter extends RecyclerView.Adapter<CollectionsLayoutAdapter.SimpleViewHolder> {
+	public interface OnGifClickedListener {
+		void onGifClicked();
+	}
+
 	private final Context mContext;
 	private final List<CollectionItem> mItems;
+	private OnGifClickedListener mListener;
 
 	public static class SimpleViewHolder extends RecyclerView.ViewHolder {
 		public TextView title;
@@ -36,8 +40,9 @@ public class CollectionsLayoutAdapter extends RecyclerView.Adapter<CollectionsLa
 		}
 	}
 
-	public CollectionsLayoutAdapter(Context context, List<CollectionItem> items) {
+	public CollectionsLayoutAdapter(Context context, OnGifClickedListener listener, List<CollectionItem> items) {
 		mContext = context;
+		mListener = listener;
 		mItems = items;
 	}
 
@@ -56,10 +61,9 @@ public class CollectionsLayoutAdapter extends RecyclerView.Adapter<CollectionsLa
 			holder.title.setTypeface(null, Typeface.BOLD);
 			holder.title.setBackgroundColor(ResourceUtil.getColor(R.color.transparent));
 			((View) holder.title.getParent()).setOnClickListener((v) -> {
-				Activity activity = (Activity) v.getContext();
-				Intent intent = new Intent(activity, AnimatedGifListActivity.class);
-				activity.startActivity(intent);
-				activity.overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
+				if (mListener != null) {
+					mListener.onGifClicked();
+				}
 			});
 		} else {
 			// For other flickr image row

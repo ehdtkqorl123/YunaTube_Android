@@ -9,11 +9,6 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.BounceInterpolator;
-
-import com.nineoldandroids.animation.AnimatorSet;
-import com.nineoldandroids.animation.ObjectAnimator;
-import com.nineoldandroids.view.ViewHelper;
 
 import javax.inject.Inject;
 
@@ -31,16 +26,15 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class VideoMenuFragment extends BaseFragment implements
 		View.OnClickListener,
-		MainActivity.OnPageSelectedListener,
 		VideoMenuMvpView {
 
 	@Bind(R.id.favorite)
 	public View mFaveView;
+	@Bind(R.id.jukebox)
+	public View mJukeboxView;
 
 	@Inject
 	VideoMenuPresenter mVideoMenuPresenter;
-
-	private boolean mIsFaveViewShown;
 
 	public static VideoMenuFragment newInstance() {
 		VideoMenuFragment fragment = new VideoMenuFragment();
@@ -74,6 +68,7 @@ public class VideoMenuFragment extends BaseFragment implements
 		}
 
 		mFaveView.setOnClickListener(this);
+		mJukeboxView.setOnClickListener(this);
 
 		rootView.setPadding(getAdjustedPadding(), 0, getAdjustedPadding(), 0);
 
@@ -88,18 +83,14 @@ public class VideoMenuFragment extends BaseFragment implements
 	}
 
 	@Override
-	public void onPageSelected() {
-		if (!mIsFaveViewShown) {
-			mIsFaveViewShown = true;
-			showFaveFabView();
-		}
-	}
-
-	@Override
 	public void onClick(final View v) {
 		switch (v.getId()) {
 			case R.id.favorite:
 				showMyFaves();
+				break;
+			case R.id.jukebox:
+				Intent intent = new Intent(v.getContext(), JukeboxActivity.class);
+				startActivity(intent);
 				break;
 
 			case R.id.section_5:
@@ -115,22 +106,6 @@ public class VideoMenuFragment extends BaseFragment implements
 			default:
 				showVideoList(v);
 				break;
-		}
-	}
-
-	public void showFaveFabView() {
-		if (mFaveView != null) {
-			mFaveView.post(() -> {
-				float originalY = ViewHelper.getY(mFaveView);
-				ViewHelper.setY(mFaveView, ViewHelper.getY(mFaveView) + mFaveView.getHeight() * 3);
-				ObjectAnimator posAnimator = ObjectAnimator.ofFloat(mFaveView, "y", originalY);
-				ObjectAnimator alphaAnimator = ObjectAnimator.ofFloat(mFaveView, "alpha", 0f, 1f);
-				posAnimator.setInterpolator(new BounceInterpolator());
-				AnimatorSet animatorSet = new AnimatorSet();
-				animatorSet.playTogether(posAnimator, alphaAnimator);
-				animatorSet.setDuration(1500);
-				animatorSet.start();
-			});
 		}
 	}
 

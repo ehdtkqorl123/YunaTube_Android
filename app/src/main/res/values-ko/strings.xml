@@ -150,6 +150,7 @@
     <string name="links_official_allthatsports">All That Sports</string>
     <string name="links_official_allthatsports_url">www.atsports.co.kr</string>
     <string name="links_official_allthatsports_desc">연아의 소속사 All That Sports의 공식 홈페이지입니다.</string>
+    <string name="links_official_instagram_url">www.instagram.com/yunakim</string>
 
     <string name="links_fan_fevers">피버 스케이팅</string>
     <string name="links_fan_fevers_url">www.feverskating.com</string>
@@ -230,6 +231,9 @@
     <string name="download_complete">다운로드가 완료되었습니다</string>
     <string name="data_warning_title">데이터 사용 경고</string>
     <string name="data_warning_content">움짤 파일들의 용량이 크기 때문에 모바일 데이터의 과다 사용 방지를 예방하고 움짤들을 빠르게 보시려면 와이파이 환경에서 사용하세요</string>
+    <string name="write_access_request_message">이미지를 저장하기 위해 미디어/파일 액세스를 승인해 주세요</string>
+    <string name="write_access_request_gif_message">움짤을 저장하거나 보기 위해 미디어/파일 액세스를 승인해 주세요</string>
+    <string name="write_access_request_denied">미디어/파일 액세스 권한이 거부되어서 파일을 저장할 수 없습니다</string>
 
     <!-- Survey -->
     <string name="surveys">승냥승냥 설문코너</string>

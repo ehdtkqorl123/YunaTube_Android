@@ -45,10 +45,6 @@ public class MainActivity extends GCMActivity implements ViewPager.OnPageChangeL
 	private boolean mPrevFabIsShown;
 	private int mFabTranslationY;
 
-	public interface OnPageSelectedListener {
-		void onPageSelected();
-	}
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -129,11 +125,6 @@ public class MainActivity extends GCMActivity implements ViewPager.OnPageChangeL
 	@Override
 	public void onPageSelected(int position) {
 		((FrameLayout) mMenu.getChildAt(position)).getChildAt(1).setAlpha(1);
-
-		Fragment fragment = mPagerAdapter.getItem(position);
-		if (fragment instanceof OnPageSelectedListener) {
-			((OnPageSelectedListener) fragment).onPageSelected();
-		}
 
 		if (position != 0) {
 			toggleFab(false);

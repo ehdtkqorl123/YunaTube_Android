@@ -25,27 +25,14 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="!!!" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7f313f9-104b-4cc4-adbc-ce82bd46f324" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_comment_gray.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_download_gray.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_favorite_gray.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_report_gray.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_share_gray.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_unfavorite_gray.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_youtube_gray.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/p_comment_box.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/MessageActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/MessageActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/a_message.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/a_message.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/a_video.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/a_video.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
     </list>
     <ignored path="YunaTube.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,188 +60,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MessageActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/MessageActivity.java">
+      <file leaf-file-name="YunaMenuFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/YunaMenuFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="58" column="13" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
-              <folding>
-                <element signature="e#1678#1679#0" expanded="true" />
-                <element signature="e#1711#1712#0" expanded="true" />
-                <element signature="e#5444#5476#0" expanded="true" />
-                <element signature="e#5499#5522#0" expanded="true" />
-                <element signature="e#5794#5816#0" expanded="true" />
-                <element signature="e#6136#6169#0" expanded="true" />
-                <element signature="e#6402#6442#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="a_message.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/a_message.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="39" column="34" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="34" />
-              <folding>
-                <element signature="e#2051#2070#0" expanded="true" />
-                <element signature="e#2325#2354#0" expanded="true" />
-                <element signature="e#2436#2466#0" expanded="true" />
-                <element signature="e#2491#2515#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="p_comment_box.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/p_comment_box.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
-              <folding>
-                <element signature="e#529#553#0" expanded="true" />
-                <element signature="e#951#966#0" expanded="true" />
-                <element signature="e#1082#1107#0" expanded="true" />
-                <element signature="e#1495#1509#0" expanded="true" />
-                <element signature="e#1625#1650#0" expanded="true" />
-                <element signature="e#1974#1996#0" expanded="true" />
-                <element signature="e#2113#2138#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VideoActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2970">
-              <caret line="202" column="0" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#8324#8361#0" expanded="true" />
-                <element signature="e#8364#8396#0" expanded="true" />
-                <element signature="e#8908#8937#0" expanded="true" />
-                <element signature="e#9028#9060#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VideoPresenter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoPresenter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="157" column="38" selection-start-line="157" selection-start-column="38" selection-end-line="157" selection-end-column="38" />
+            <state relative-caret-position="719">
+              <caret line="108" column="32" selection-start-line="108" selection-start-column="32" selection-end-line="108" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/data/DataManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="235" column="35" selection-start-line="235" selection-start-column="35" selection-end-line="235" selection-end-column="35" />
-              <folding>
-                <element signature="e#8185#8186#0" expanded="true" />
-                <element signature="e#8228#8229#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="a_video.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/a_video.xml">
+      <file leaf-file-name="f_yuna.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/f_yuna.xml">
           <provider editor-type-id="android-designer2">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="72" column="33" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="33" />
-              <folding>
-                <element signature="e#2406#2425#0" expanded="true" />
-                <element signature="e#2687#2716#0" expanded="true" />
-                <element signature="e#2798#2828#0" expanded="true" />
-                <element signature="e#2853#2877#0" expanded="true" />
-                <element signature="e#3251#3281#0" expanded="true" />
-                <element signature="e#3644#3676#0" expanded="true" />
-                <element signature="e#3854#3885#0" expanded="true" />
-                <element signature="e#3923#3954#0" expanded="true" />
-                <element signature="e#4025#4061#0" expanded="true" />
-                <element signature="e#4104#4140#0" expanded="true" />
-                <element signature="e#4442#4473#0" expanded="true" />
-                <element signature="e#4545#4571#0" expanded="true" />
-                <element signature="e#4719#4751#0" expanded="true" />
-                <element signature="e#4930#4961#0" expanded="true" />
-                <element signature="e#4999#5030#0" expanded="true" />
-                <element signature="e#5153#5189#0" expanded="true" />
-                <element signature="e#5232#5268#0" expanded="true" />
-                <element signature="e#5572#5603#0" expanded="true" />
-                <element signature="e#5675#5698#0" expanded="true" />
-                <element signature="e#5846#5878#0" expanded="true" />
-                <element signature="e#6054#6085#0" expanded="true" />
-                <element signature="e#6123#6154#0" expanded="true" />
-                <element signature="e#6225#6261#0" expanded="true" />
-                <element signature="e#6304#6340#0" expanded="true" />
-                <element signature="e#6638#6669#0" expanded="true" />
-                <element signature="e#6741#6765#0" expanded="true" />
-                <element signature="e#6913#6945#0" expanded="true" />
-                <element signature="e#7123#7154#0" expanded="true" />
-                <element signature="e#7192#7223#0" expanded="true" />
-                <element signature="e#7294#7330#0" expanded="true" />
-                <element signature="e#7373#7409#0" expanded="true" />
-                <element signature="e#7711#7742#0" expanded="true" />
-                <element signature="e#7814#7840#0" expanded="true" />
-                <element signature="e#7988#8020#0" expanded="true" />
-                <element signature="e#8204#8235#0" expanded="true" />
-                <element signature="e#8273#8304#0" expanded="true" />
-                <element signature="e#8375#8411#0" expanded="true" />
-                <element signature="e#8454#8490#0" expanded="true" />
-                <element signature="e#8794#8825#0" expanded="true" />
-                <element signature="e#8897#8924#0" expanded="true" />
-                <element signature="e#9072#9104#0" expanded="true" />
-                <element signature="e#9281#9312#0" expanded="true" />
-                <element signature="e#9350#9381#0" expanded="true" />
-                <element signature="e#9452#9488#0" expanded="true" />
-                <element signature="e#9531#9567#0" expanded="true" />
-                <element signature="e#9867#9898#0" expanded="true" />
-                <element signature="e#9970#9995#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="colors.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="670">
-              <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+            <state relative-caret-position="387">
+              <caret line="347" column="0" selection-start-line="347" selection-start-column="0" selection-end-line="347" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dimens.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
+      <file leaf-file-name="DroidRunJumpView.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/game/DroidRunJumpView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="469">
-              <caret line="91" column="32" selection-start-line="91" selection-start-column="32" selection-end-line="91" selection-end-column="32" />
+              <caret line="129" column="30" selection-start-line="129" selection-start-column="30" selection-end-line="129" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -3456,7 +3289,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoListActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoSectionActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/a_video_section.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/PhotoMenuFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/a_insta_video.xml" />
@@ -3485,8 +3317,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/a_my_faves.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/game/DroidRunJumpView.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/a_videos.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/f_yuna.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/YunaMenuFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/MainSearchActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_message.xml" />
@@ -3498,16 +3328,20 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/p_message_input.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/data/local/DatabaseHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/p_comment_box.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/a_message.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/p_comment_box.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/MessageActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/a_video.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/MessageActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/YunaMenuFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/f_yuna.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="-5" />
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="988" />
@@ -4062,6 +3896,44 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="events" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YunaTube" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YunaTube" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yunatube" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="ui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -4158,7 +4030,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.XML" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="device.picker.selection" value="03157df3996f3c2d" />
+    <property name="device.picker.selection" value="Nexus_5_API_23" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/DroidRunJump-master" />
     <property name="ExportApk.ApkPath" value="$USER_HOME$/Desktop" />
     <property name="ExportApk.Flavors" value="" />
@@ -4523,7 +4395,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="988" extended-state="6" />
+    <frame x="-5" y="23" width="1920" height="988" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -4541,13 +4413,13 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32798165" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32798165" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32873562" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29885057" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1826411" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3142202" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3142202" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -4586,59 +4458,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_message.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/MainSearchActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="90" column="103" selection-start-line="89" selection-start-column="8" selection-end-line="90" selection-end-column="103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-ko/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoMenuPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoMenuFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="213" column="58" selection-start-line="213" selection-start-column="58" selection-end-line="213" selection-end-column="58" />
-          <folding>
-            <element signature="e#6456#6479#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/r_title.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -4686,17 +4505,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/p_comments_header.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -4828,11 +4636,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_unfavorite_gray.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_comment.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -4858,14 +4661,6 @@
           <folding>
             <element signature="e#6931#6956#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="211" column="38" selection-start-line="211" selection-start-column="18" selection-end-line="211" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4914,7 +4709,7 @@
         <state relative-caret-position="335">
           <caret line="101" column="52" selection-start-line="101" selection-start-column="52" selection-end-line="101" selection-end-column="52" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -4924,8 +4719,8 @@
         <state relative-caret-position="191">
           <caret line="235" column="35" selection-start-line="235" selection-start-column="35" selection-end-line="235" selection-end-column="35" />
           <folding>
-            <element signature="e#8185#8186#0" expanded="true" />
-            <element signature="e#8228#8229#0" expanded="true" />
+            <element signature="e#8185#8186#0" expanded="false" />
+            <element signature="e#8228#8229#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -4933,14 +4728,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_favorite_gray.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="157" column="38" selection-start-line="157" selection-start-column="38" selection-end-line="157" selection-end-column="38" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/../android-sdk/extras/android/m2repository/com/android/support/design/23.4.0/design-23.4.0-sources.jar!/android/support/design/widget/BottomSheetBehavior.java">
@@ -4954,56 +4741,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="91" column="32" selection-start-line="91" selection-start-column="32" selection-end-line="91" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/p_comment_box.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
-          <folding>
-            <element signature="e#529#553#0" expanded="true" />
-            <element signature="e#951#966#0" expanded="true" />
-            <element signature="e#1082#1107#0" expanded="true" />
-            <element signature="e#1495#1509#0" expanded="true" />
-            <element signature="e#1625#1650#0" expanded="true" />
-            <element signature="e#1974#1996#0" expanded="true" />
-            <element signature="e#2113#2138#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/a_message.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="34" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="34" />
+        <state relative-caret-position="165">
+          <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
           <folding>
             <element signature="e#2051#2070#0" expanded="true" />
             <element signature="e#2325#2354#0" expanded="true" />
@@ -5013,13 +4757,123 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="157" column="38" selection-start-line="157" selection-start-column="38" selection-end-line="157" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/MessageActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1925">
+          <caret line="236" column="28" selection-start-line="236" selection-start-column="28" selection-end-line="236" selection-end-column="28" />
+          <folding>
+            <element signature="e#1725#1726#0" expanded="true" />
+            <element signature="e#1758#1759#0" expanded="true" />
+            <element signature="e#2361#2406#0" expanded="true" />
+            <element signature="e#5562#5594#0" expanded="true" />
+            <element signature="e#5617#5640#0" expanded="true" />
+            <element signature="e#5912#5934#0" expanded="true" />
+            <element signature="e#6254#6287#0" expanded="true" />
+            <element signature="e#6520#6560#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="110" column="20" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/util/events/VideoDeletedEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_unfavorite_gray.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../android-sdk/platforms/android-23/android.jar!/android/view/View.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="1556" column="44" selection-start-line="1556" selection-start-column="44" selection-end-line="1556" selection-end-column="44" />
+          <folding>
+            <element signature="e#45519#45520#0" expanded="true" />
+            <element signature="e#45570#45571#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/p_comments_header.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/p_comment_box.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+          <folding>
+            <element signature="e#529#553#0" expanded="true" />
+            <element signature="e#948#963#0" expanded="true" />
+            <element signature="e#1079#1104#0" expanded="true" />
+            <element signature="e#1492#1506#0" expanded="true" />
+            <element signature="e#1622#1647#0" expanded="true" />
+            <element signature="e#2066#2091#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/a_video.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="72" column="33" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="33" />
+        <state relative-caret-position="159">
+          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
           <folding>
             <element signature="e#2406#2425#0" expanded="true" />
             <element signature="e#2687#2716#0" expanded="true" />
@@ -5074,31 +4928,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/VideoActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2970">
-          <caret line="202" column="0" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
+        <state relative-caret-position="184">
+          <caret line="291" column="118" selection-start-line="291" selection-start-column="118" selection-end-line="291" selection-end-column="118" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8324#8361#0" expanded="true" />
-            <element signature="e#8364#8396#0" expanded="true" />
-            <element signature="e#8908#8937#0" expanded="true" />
-            <element signature="e#9028#9060#0" expanded="true" />
+            <element signature="e#8557#8594#0" expanded="true" />
+            <element signature="e#8597#8629#0" expanded="true" />
+            <element signature="e#9141#9170#0" expanded="true" />
+            <element signature="e#9261#9293#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/MessageActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="58" column="13" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
-          <folding>
-            <element signature="e#1678#1679#0" expanded="true" />
-            <element signature="e#1711#1712#0" expanded="true" />
-            <element signature="e#5444#5476#0" expanded="true" />
-            <element signature="e#5499#5522#0" expanded="true" />
-            <element signature="e#5794#5816#0" expanded="true" />
-            <element signature="e#6136#6169#0" expanded="true" />
-            <element signature="e#6402#6442#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="42">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/f_yuna.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="347" column="0" selection-start-line="347" selection-start-column="0" selection-end-line="347" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/ui/main/YunaMenuFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="719">
+          <caret line="108" column="32" selection-start-line="108" selection-start-column="32" selection-end-line="108" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/paulshin/yunatube/game/DroidRunJumpView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="129" column="30" selection-start-line="129" selection-start-column="30" selection-end-line="129" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
