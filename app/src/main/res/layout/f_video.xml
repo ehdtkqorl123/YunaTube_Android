@@ -417,22 +417,15 @@
         </FrameLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <ImageButton android:id="@+id/favorite"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:src="@drawable/yuna_menu_bottom_1"/>
-
-        <ImageButton android:id="@+id/jukebox"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:src="@drawable/yuna_menu_bottom_2"/>
-    </LinearLayout>
+    <Button android:id="@+id/favorite"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/main_layout_half_inner_padding"
+            android:background="@drawable/save_background"
+            android:text="@string/my_faves"
+            android:textColor="@color/favorite_text_color"
+            android:textStyle="bold"/>
 
 </LinearLayout>

@@ -140,4 +140,8 @@
     <color name="app_body_text_1">#de000000</color>
     <color name="app_body_text_2">#8a000000</color>
 
+    <!-- Video Fragment -->
+    <color name="favorite_bg_color">@color/blue</color>
+    <color name="favorite_text_color">@color/body_text_1_inverse</color>
+
 </resources>

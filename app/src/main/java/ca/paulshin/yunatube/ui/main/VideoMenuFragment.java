@@ -30,8 +30,6 @@ public class VideoMenuFragment extends BaseFragment implements
 
 	@Bind(R.id.favorite)
 	public View mFaveView;
-	@Bind(R.id.jukebox)
-	public View mJukeboxView;
 
 	@Inject
 	VideoMenuPresenter mVideoMenuPresenter;
@@ -68,7 +66,6 @@ public class VideoMenuFragment extends BaseFragment implements
 		}
 
 		mFaveView.setOnClickListener(this);
-		mJukeboxView.setOnClickListener(this);
 
 		rootView.setPadding(getAdjustedPadding(), 0, getAdjustedPadding(), 0);
 
@@ -88,10 +85,6 @@ public class VideoMenuFragment extends BaseFragment implements
 			case R.id.favorite:
 				showMyFaves();
 				break;
-			case R.id.jukebox:
-				Intent intent = new Intent(v.getContext(), JukeboxActivity.class);
-				startActivity(intent);
-				break;
 
 			case R.id.section_5:
 			case R.id.section_7:
@@ -110,8 +103,9 @@ public class VideoMenuFragment extends BaseFragment implements
 	}
 
 	private void showMyFaves() {
-		startActivity(new Intent(getActivity(), MyFavesActivity.class));
-		getActivity().overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
+		Activity activity = getActivity();
+		startActivity(new Intent(activity, MyFavesActivity.class));
+		activity.overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
 	}
 
 	/**
