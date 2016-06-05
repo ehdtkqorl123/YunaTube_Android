@@ -37,7 +37,7 @@ public class MainActivity extends GCMActivity implements ViewPager.OnPageChangeL
 
 	private static final String HAS_RATED = "has_rated";
 	private static final String VISIT_COUNT = "visit_count";
-	private static final int NUM_PAGES = 4;
+	private static final int NUM_PAGES = 5;
 	private static final int TRANSLATE_DURATION_MILLIS = 200;
 
 	private ScreenSlidePagerAdapter mPagerAdapter;
@@ -131,7 +131,7 @@ public class MainActivity extends GCMActivity implements ViewPager.OnPageChangeL
 		}
 
 		// Send an event to analytics
-		String[] eventNames = {"home", "yuna", "video", "photo"};
+		String[] eventNames = {"home", "yuna", "video", "photo", "game"};
 		sendEvent("main - android", "swipe", eventNames[position]);
 	}
 
@@ -149,7 +149,8 @@ public class MainActivity extends GCMActivity implements ViewPager.OnPageChangeL
 					MainMenuFragment.newInstance(),
 					YunaMenuFragment.newInstance(),
 					VideoMenuFragment.newInstance(),
-					PhotoMenuFragment.newInstance()
+					PhotoMenuFragment.newInstance(),
+					GameMenuFragment.newInstance()
 			};
 		}
 

@@ -101,6 +101,29 @@
                 android:padding="@dimen/menu_image_padding"
                 android:src="@drawable/menu_photo_on"/>
         </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:onClick="onClick"
+            android:tag="4">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/menu_image_padding"
+                android:src="@drawable/menu_game"/>
+
+            <ImageView
+                android:id="@+id/main_game"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0"
+                android:padding="@dimen/menu_image_padding"
+                android:src="@drawable/menu_game_on"/>
+        </FrameLayout>
     </LinearLayout>
 
     <android.support.v4.view.ViewPager
