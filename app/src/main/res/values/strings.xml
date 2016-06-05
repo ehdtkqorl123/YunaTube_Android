@@ -18,8 +18,9 @@
 
     <!-- Default Messages -->
     <string name="server_unavailable">Oops, something went wrong. Please try again later!</string>
+    <string name="loading">Loading...</string>
     <string name="yes">Yes</string>
-    <string name="no">No</string>ㅡ
+    <string name="no">No</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="close">Close</string>
