@@ -6,8 +6,6 @@ import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -16,9 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
-import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
 
@@ -28,23 +27,19 @@ import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import ca.paulshin.yunatube.BuildConfig;
 import ca.paulshin.yunatube.Config;
 import ca.paulshin.yunatube.R;
-import ca.paulshin.yunatube.data.model.instagram.Feed;
-import ca.paulshin.yunatube.data.model.instagram.FeedItem;
-import ca.paulshin.yunatube.data.model.main.Notice;
 import ca.paulshin.yunatube.data.model.video.Video;
 import ca.paulshin.yunatube.receiver.ConnectivityChangeReceiver;
 import ca.paulshin.yunatube.ui.adapter.MainVideoAdapter;
 import ca.paulshin.yunatube.ui.base.BaseActivity;
 import ca.paulshin.yunatube.ui.base.BaseFragment;
+import ca.paulshin.yunatube.util.LanguageUtil;
 import ca.paulshin.yunatube.util.NetworkUtil;
-import ca.paulshin.yunatube.util.PicassoUtil;
-import ca.paulshin.yunatube.util.ResourceUtil;
 import ca.paulshin.yunatube.util.ToastUtil;
 import ca.paulshin.yunatube.util.events.ConnectivityChangeEvent;
 import ca.paulshin.yunatube.widgets.RecyclerViewScrollDetector;
-import ca.paulshin.yunatube.widgets.SquareImageView;
 import timber.log.Timber;
 
 public class MainMenuFragment extends BaseFragment implements
@@ -53,8 +48,15 @@ public class MainMenuFragment extends BaseFragment implements
 
 	private static final boolean VIEW_SHARED = true;
 	private static final int FAB_TRANSLATE_DURATION_MILLIS = 200;
-	private static final int API_CALL_COUNT = 2;
+
 	private final Interpolator mInterpolator = new AccelerateDecelerateInterpolator();
+	private FirebaseRemoteConfig mFirebaseRemoteConfig;
+
+	// Remote Config keys
+	private static final String NOTICE_EN_CONFIG_KEY = "notice_text_en";
+	private static final String NOTICE_KO_CONFIG_KEY = "notice_text_ko";
+	private static final String FACT_EN_CONFIG_KEY = "fact_text_en";
+	private static final String FACT_KO_CONFIG_KEY = "fact_text_ko";
 
 	public interface MainMenuScrollListener {
 		void showFab();
@@ -76,7 +78,6 @@ public class MainMenuFragment extends BaseFragment implements
 	RecyclerView mRecyclerView;
 
 	private String mLastNewOrder;
-	private int mLoadCount;
 	private MainVideoAdapter mAdapter;
 	private ConnectivityChangeReceiver mConnectivityChangeReceiver;
 	private MainMenuScrollListener mMainMenuScrollListener;
@@ -102,6 +103,14 @@ public class MainMenuFragment extends BaseFragment implements
 		if (activity instanceof MainMenuScrollListener) {
 			mMainMenuScrollListener = (MainMenuScrollListener)activity;
 		}
+
+		// Firebase
+		mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
+		FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+				.setDeveloperModeEnabled(BuildConfig.DEBUG)
+				.build();
+		mFirebaseRemoteConfig.setConfigSettings(configSettings);
+		mFirebaseRemoteConfig.setDefaults(R.xml.remote_config_defaults);
 	}
 
 	@Override
@@ -129,15 +138,6 @@ public class MainMenuFragment extends BaseFragment implements
 		ButterKnife.findById(mListHeaderView, R.id.twitter).setOnClickListener(this);
 		ButterKnife.findById(mListHeaderView, R.id.youtube).setOnClickListener(this);
 
-/* Disabled until instagram API is back
-		// Instagram items
-		int instaLoadCount = ResourceUtil.getInteger(R.integer.insta_load_count);
-		for (int i = 0; i < instaLoadCount; i++) {
-			int id = ResourceUtil.getResourceId("id", "insta_frame_" + i);
-			ButterKnife.findById(mListHeaderView, id).setOnClickListener(this);
-		}
-*/
-
 		loadData();
 
 		return mRootView;
@@ -152,21 +152,67 @@ public class MainMenuFragment extends BaseFragment implements
 	}
 
 	/**
-	 * Load notice, instagram feed and videos by making api calls if network is connected
+	 * Load instagram feed and videos by making api calls if network is connected
 	 */
 	private void loadData() {
+		fetchNotice();
+
 		if (NetworkUtil.isNetworkConnected(getActivity())) {
 			mNoneView.setVisibility(View.GONE);
 			mLoadingView.setVisibility(View.VISIBLE);
 
-			mMainMenuPresenter.getNotice();
-//			mMainMenuPresenter.getNewInstaFeed();
 			mMainMenuPresenter.getNewVideos(mLastNewOrder);
 		} else {
 			mRecyclerView.setVisibility(View.GONE);
 			mLoadingView.setVisibility(View.GONE);
 			mNoneView.setVisibility(View.VISIBLE);
 		}
+	}
+
+	private void fetchNotice() {
+		displayNotice(true);
+
+		long cacheExpiration = 3600; // 1 hour in seconds.
+		// If in developer mode cacheExpiration is set to 0 so each fetch will retrieve values from
+		// the server.
+		if (mFirebaseRemoteConfig.getInfo().getConfigSettings().isDeveloperModeEnabled()) {
+			cacheExpiration = 0;
+		}
+
+		// cacheExpirationSeconds is set to cacheExpiration here, indicating that any previously
+		// fetched and cached config would be considered expired because it would have been fetched
+		// more than cacheExpiration seconds ago. Thus the next fetch would go to the server unless
+		// throttling is in progress. The default expiration duration is 43200 (12 hours).
+		mFirebaseRemoteConfig.fetch(cacheExpiration)
+				.addOnCompleteListener((task) -> {
+					if (task.isSuccessful()) {
+						Timber.d("Fetch Succeeded");
+						// Once the config is successfully fetched it must be activated before newly fetched
+						// values are returned.
+						mFirebaseRemoteConfig.activateFetched();
+					} else {
+						Timber.d("Fetch failed");
+					}
+					displayNotice(false);
+				});
+	}
+
+	private void displayNotice(boolean isLoading) {
+		TextView noticeView = ButterKnife.findById(mListHeaderView, R.id.notice_text);
+		TextView factView = ButterKnife.findById(mListHeaderView, R.id.fact_text);
+
+		String noticeText;
+		String factText;
+		if (isLoading) {
+			noticeText = getString(R.string.loading);
+			factText = getString(R.string.loading);
+		} else {
+			noticeText = mFirebaseRemoteConfig.getString(LanguageUtil.isKorean() ? NOTICE_KO_CONFIG_KEY : NOTICE_EN_CONFIG_KEY);
+			factText = mFirebaseRemoteConfig.getString(LanguageUtil.isKorean() ? FACT_KO_CONFIG_KEY : FACT_EN_CONFIG_KEY);
+		}
+
+		noticeView.setText(noticeText);
+		factView.setText(factText);
 	}
 
 	@Override
@@ -191,65 +237,10 @@ public class MainMenuFragment extends BaseFragment implements
 	 *****/
 
 	@Override
-	public void showNotice(Notice notice) {
-		if (TextUtils.isEmpty(notice.notice)) {
-			ButterKnife.findById(mListHeaderView, R.id.notice_section).setVisibility(View.GONE);
-		} else {
-			TextView noticeText = ButterKnife.findById(mListHeaderView, R.id.notice_text);
-			noticeText.setText(notice.notice);
-		}
-
-		if (TextUtils.isEmpty(notice.fact)) {
-			ButterKnife.findById(mListHeaderView, R.id.fact_section).setVisibility(View.GONE);
-		} else {
-			TextView noticeText = ButterKnife.findById(mListHeaderView, R.id.fact_text);
-			noticeText.setText(notice.fact);
-		}
-
-		Timber.i("showNotice: " + (notice != null));
-		mLoadHandler.sendEmptyMessage(1);
-	}
-
-	@Override
 	public void showError() {
 		//TODO
 		ButterKnife.findById(mListHeaderView, R.id.notice_section).setVisibility(View.GONE);
 		ButterKnife.findById(mListHeaderView, R.id.fact_section).setVisibility(View.GONE);
-	}
-
-	@Override
-	public void showNewInstaFeed(Feed feed) {
-		List<FeedItem> feedItems = feed.data;
-
-		for (int i = 0; i < feedItems.size(); i++) {
-			FeedItem item = feedItems.get(i);
-			int thumbnailId = ResourceUtil.getResourceId("id", "insta_thumb_" + i);
-			SquareImageView thumbnailView = ButterKnife.findById(mListHeaderView, thumbnailId);
-
-			int instaPlayId = ResourceUtil.getResourceId("id", "insta_video_play_" + i);
-			ImageView instaPlayView = ButterKnife.findById(mListHeaderView, instaPlayId);
-
-			String lowUrl = item.images.low_resolution.url;
-			String standardUrl = item.images.standard_resolution.url;
-			String videoUrl = item.videos != null ? item.videos.standard_resolution.url : null;
-			PicassoUtil.loadImage(lowUrl, thumbnailView, R.drawable.placeholder_gray);
-			thumbnailView.setTag(R.id.insta_photo_url, standardUrl);
-
-			if (videoUrl != null) {
-				thumbnailView.setTag(R.id.insta_video_url, videoUrl);
-				thumbnailView.setTag(R.id.insta_video_width, item.videos.standard_resolution.width);
-				thumbnailView.setTag(R.id.insta_video_height, item.videos.standard_resolution.height);
-				instaPlayView.setVisibility(View.VISIBLE);
-			} else {
-				thumbnailView.setTag(R.id.insta_video_url, null);
-				thumbnailView.setTag(R.id.insta_video_width, null);
-				thumbnailView.setTag(R.id.insta_video_height, null);
-				instaPlayView.setVisibility(View.GONE);
-			}
-		}
-
-		Timber.i("showNewInstaFeed: " + feedItems.size());
-		mLoadHandler.sendEmptyMessage(1);
 	}
 
 	@Override
@@ -266,19 +257,8 @@ public class MainMenuFragment extends BaseFragment implements
 			mAdapter.notifyDataSetChanged();
 		}
 
-		Timber.i("showVideos: " + videos.size());
-		mLoadHandler.sendEmptyMessage(1);
+		populateListItems();
 	}
-
-	private Handler mLoadHandler = new Handler() {
-		@Override
-		public void handleMessage(Message msg) {
-			mLoadCount += msg.what;
-			if (mLoadCount >= API_CALL_COUNT) {
-				populateListItems();
-			}
-		}
-	};
 
 	private void populateListItems() {
 		mLoadingView.postDelayed(() -> mLoadingView.setVisibility(View.GONE), 1000);

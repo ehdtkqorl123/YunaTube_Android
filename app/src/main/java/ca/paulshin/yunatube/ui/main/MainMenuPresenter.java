@@ -4,15 +4,10 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import ca.paulshin.yunatube.R;
 import ca.paulshin.yunatube.data.DataManager;
-import ca.paulshin.yunatube.data.model.instagram.Feed;
-import ca.paulshin.yunatube.data.model.main.Notice;
 import ca.paulshin.yunatube.data.model.video.Video;
 import ca.paulshin.yunatube.ui.base.BasePresenter;
 import ca.paulshin.yunatube.util.CollectionUtil;
-import ca.paulshin.yunatube.util.MiscUtil;
-import ca.paulshin.yunatube.util.ResourceUtil;
 import rx.Subscriber;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
@@ -38,62 +33,6 @@ public class MainMenuPresenter extends BasePresenter<MainMenuMvpView> {
     public void detachView() {
         super.detachView();
         if (mSubscription != null) mSubscription.unsubscribe();
-    }
-
-    public void getNotice() {
-        checkViewAttached();
-
-		String lang = MiscUtil.getLang();
-		int random = MiscUtil.getRandomInt();
-
-        mSubscription = mDataManager.getNotice(lang, random)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
-                .subscribe(new Subscriber<Notice>() {
-                    @Override
-                    public void onCompleted() {
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        Timber.e(e, "There was an error loading the notice.");
-                        getMvpView().showError();
-                    }
-
-                    @Override
-                    public void onNext(Notice notice) {
-                        if (notice != null) {
-                            getMvpView().showNotice(notice);
-                        }
-                    }
-                });
-    }
-
-    public void getNewInstaFeed() {
-        checkViewAttached();
-
-		int instaLoadCount = ResourceUtil.getInteger(R.integer.insta_load_count);
-        mSubscription = mDataManager.getInstaFeed("", String.valueOf(instaLoadCount))
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
-                .subscribe(new Subscriber<Feed>() {
-                    @Override
-                    public void onCompleted() {
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        Timber.e(e, "There was an error loading new Instagram feed.");
-                        getMvpView().showError();
-                    }
-
-                    @Override
-                    public void onNext(Feed feed) {
-                        if (feed != null) {
-                            getMvpView().showNewInstaFeed(feed);
-                        }
-                    }
-                });
     }
 
     public void getNewVideos(String lastNewOrder) {
