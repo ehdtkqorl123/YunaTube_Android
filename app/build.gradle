@@ -99,7 +99,7 @@ play {
 }
 
 dependencies {
-    final PLAY_SERVICES_VERSION = '8.3.0'
+    final PLAY_SERVICES_VERSION = '9.0.0'
     final SUPPORT_LIBRARY_VERSION = '23.4.0'
     final RETROFIT_VERSION = '2.0.0-beta4'
     final DAGGER_VERSION = '2.0.2'
@@ -123,6 +123,10 @@ dependencies {
     compile "com.android.support:cardview-v7:$SUPPORT_LIBRARY_VERSION"
     compile "com.android.support:support-annotations:$SUPPORT_LIBRARY_VERSION"
     compile "com.android.support:design:$SUPPORT_LIBRARY_VERSION"
+
+    // Firebase
+    compile "com.google.firebase:firebase-database:$PLAY_SERVICES_VERSION"
+    compile "com.google.firebase:firebase-config:$PLAY_SERVICES_VERSION"
 
     // Glide
     compile 'com.github.bumptech.glide:glide:3.7.0'
@@ -214,10 +218,4 @@ dependencies {
     testApt daggerCompiler
     androidTestApt daggerCompiler
 }
-
-// Log out test results to console
-tasks.matching {it instanceof Test}.all {
-    testLogging.events = ["failed", "passed", "skipped"]
-}
-
 
