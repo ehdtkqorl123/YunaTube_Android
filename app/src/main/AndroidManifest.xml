@@ -153,6 +153,11 @@
             android:label="@string/my_faves"
             android:screenOrientation="portrait"/>
 
+        <activity
+            android:name=".ui.main.AcrosticPoemActivity"
+            android:label="@string/acrostic_poem"
+            android:screenOrientation="portrait"/>
+
         <!-- Broadcast receivers -->
         <receiver
             android:name=".receiver.ConnectivityChangeReceiver">

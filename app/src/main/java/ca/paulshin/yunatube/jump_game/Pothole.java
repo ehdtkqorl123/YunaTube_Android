@@ -1,4 +1,4 @@
-package ca.paulshin.yunatube.game;
+package ca.paulshin.yunatube.jump_game;
 
 import android.content.SharedPreferences;
 import android.graphics.Canvas;

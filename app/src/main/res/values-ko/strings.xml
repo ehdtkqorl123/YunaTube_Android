@@ -347,4 +347,7 @@
     <string name="rate_title">연아튜브 평점 남기기</string>
     <string name="rate_content">연아튜브가 맘에 드셨다면 잠시만 플레이 스토어에서 평점을 남기시겠어요?</string>
     <string name="rate_later">다음에 하기</string>
+
+    <!-- Game -->
+    <string name="acrostic_poem">x행시</string>
 </resources>

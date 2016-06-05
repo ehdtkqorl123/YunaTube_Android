@@ -7,4 +7,9 @@
               android:paddingLeft="6dp"
               android:paddingRight="6dp"
               tools:context="ca.paulshin.yunatube.ui.main.MainActivity">
+
+    <Button android:id="@+id/acrostic_poem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/acrostic_poem"/>
 </LinearLayout>

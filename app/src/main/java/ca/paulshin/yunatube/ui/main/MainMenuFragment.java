@@ -122,6 +122,7 @@ public class MainMenuFragment extends BaseFragment implements
 		int padding = getAdjustedPadding();
 
 		mListHeaderView = inflater.inflate(R.layout.p_main_header, null);
+		mLastNewOrder = "";
 
 		mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 		mAdapter = new MainVideoAdapter(mRecyclerView, mListHeaderView);

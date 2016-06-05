@@ -364,4 +364,7 @@
     <string name="rate_title">Rate YunaTube!</string>
     <string name="rate_content">If you like YunaTube, can you quickly rate this app on Play Store?</string>
     <string name="rate_later">I will rate later</string>
+
+    <!-- Game -->
+    <string name="acrostic_poem">Korean Acrostic Poem</string>
 </resources>
