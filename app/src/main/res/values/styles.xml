@@ -292,4 +292,12 @@
         <item name="android:textSize">@dimen/yuna_bigmenu_desc_text_size</item>
         <item name="android:textColor">@color/black</item>
     </style>
+
+    <style name="Widget.CardContent" parent="android:Widget">
+        <item name="android:paddingLeft">@dimen/content_padding_normal</item>
+        <item name="android:paddingRight">@dimen/content_padding_normal</item>
+        <item name="android:paddingTop">@dimen/content_padding_normal</item>
+        <item name="android:paddingBottom">@dimen/content_padding_normal</item>
+        <item name="android:orientation">vertical</item>
+    </style>
 </resources>

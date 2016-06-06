@@ -3,6 +3,9 @@ package ca.paulshin.yunatube.ui.main;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
+import android.text.Spanned;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -44,6 +47,7 @@ public class AcrosticPoemActivity extends BaseActivity {
 
 
 	public static class PoemViewHolder extends RecyclerView.ViewHolder {
+		public TextView cardView;
 		public TextView nameView;
 		public TextView firstView;
 		public TextView secondView;
@@ -93,13 +97,56 @@ public class AcrosticPoemActivity extends BaseActivity {
 			protected void populateViewHolder(PoemViewHolder viewHolder,
 											  AcrosticPoem acrosticPoem, int position) {
 				mLoadingView.setVisibility(ProgressBar.INVISIBLE);
+
+				String name = acrosticPoem.getName();
+				String text = acrosticPoem.getText();
+				String first = acrosticPoem.getFirst();
+				String second = acrosticPoem.getSecond();
+				String third = acrosticPoem.getThird();
+				String fourth = acrosticPoem.getFourth();
+				String fifth = acrosticPoem.getFifth();
+				String sixth = acrosticPoem.getSixth();
+				String photoUrl = acrosticPoem.getPhotoUrl();
+
+				viewHolder.nameView.setVisibility(TextUtils.isEmpty(name) ? View.GONE : View.VISIBLE);
 				viewHolder.nameView.setText(acrosticPoem.getName());
-				viewHolder.firstView.setText(acrosticPoem.getFirst());
-				viewHolder.secondView.setText(acrosticPoem.getSecond());
-				viewHolder.thirdView.setText(acrosticPoem.getThird());
-				viewHolder.fourthView.setText(acrosticPoem.getFourth());
-				viewHolder.fifthView.setText(acrosticPoem.getFifth());
-				viewHolder.sixthView.setText(acrosticPoem.getSixth());
+				if (TextUtils.isEmpty(first)) {
+					viewHolder.firstView.setVisibility(View.GONE);
+				} else {
+					viewHolder.firstView.setVisibility(View.VISIBLE);
+					viewHolder.firstView.setText(getFirstLetterBoldText(acrosticPoem.getFirst()));
+				}
+				if (TextUtils.isEmpty(second)) {
+					viewHolder.secondView.setVisibility(View.GONE);
+				} else {
+					viewHolder.secondView.setVisibility(View.VISIBLE);
+					viewHolder.secondView.setText(getFirstLetterBoldText(acrosticPoem.getSecond()));
+				}
+				if (TextUtils.isEmpty(third)) {
+					viewHolder.thirdView.setVisibility(View.GONE);
+				} else {
+					viewHolder.thirdView.setVisibility(View.VISIBLE);
+					viewHolder.thirdView.setText(getFirstLetterBoldText(acrosticPoem.getThird()));
+				}
+				if (TextUtils.isEmpty(fourth)) {
+					viewHolder.fourthView.setVisibility(View.GONE);
+				} else {
+					viewHolder.fourthView.setVisibility(View.VISIBLE);
+					viewHolder.fourthView.setText(getFirstLetterBoldText(acrosticPoem.getFourth()));
+				}
+				if (TextUtils.isEmpty(fifth)) {
+					viewHolder.fifthView.setVisibility(View.GONE);
+				} else {
+					viewHolder.fifthView.setVisibility(View.VISIBLE);
+					viewHolder.fifthView.setText(getFirstLetterBoldText(acrosticPoem.getFifth()));
+				}
+				if (TextUtils.isEmpty(sixth)) {
+					viewHolder.sixthView.setVisibility(View.GONE);
+				} else {
+					viewHolder.sixthView.setVisibility(View.VISIBLE);
+					viewHolder.sixthView.setText(getFirstLetterBoldText(acrosticPoem.getSixth()));
+				}
+
 //				if (acrosticPoem.getPhotoUrl() == null) {
 //					viewHolder.messengerImageView
 //							.setImageDrawable(ContextCompat
@@ -159,5 +206,15 @@ public class AcrosticPoemActivity extends BaseActivity {
 //				mMessageEditText.setText("");
 //			}
 //		});
+	}
+
+	private Spanned getFirstLetterBoldText(String text) {
+		StringBuilder sb = new StringBuilder();
+		sb.append("<b>");
+		sb.append(text.charAt(0));
+		sb.append("</b>");
+		sb.append(text.substring(1));
+
+		return Html.fromHtml(sb.toString());
 	}
 }
