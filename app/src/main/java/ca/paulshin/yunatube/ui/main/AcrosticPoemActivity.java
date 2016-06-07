@@ -23,6 +23,7 @@ import butterknife.ButterKnife;
 import ca.paulshin.yunatube.R;
 import ca.paulshin.yunatube.data.firebase.AcrosticPoem;
 import ca.paulshin.yunatube.ui.base.BaseActivity;
+import ca.paulshin.yunatube.util.LanguageUtil;
 import ca.paulshin.yunatube.util.ToastUtil;
 import ca.paulshin.yunatube.util.YTPreference;
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -40,7 +41,7 @@ public class AcrosticPoemActivity extends BaseActivity {
 	@Bind(R.id.loading)
 	public View mLoadingView;
 
-	private static final String POEMS_CHILD = "acrostic_poem";
+	private static final String POEMS_CHILD = "acrostic_poems";
 	private static final int ROW_COUNT = 6;
 	private static final int MIN_LENGTH = 4;
 
@@ -265,7 +266,8 @@ public class AcrosticPoemActivity extends BaseActivity {
 		String sixth = getAcrosticText(5, sixthView);
 
 		if (first != null && second != null && third != null && fourth != null && fifth != null && sixth != null) {
-			AcrosticPoem poem = new AcrosticPoem(mUsername, mAcrosticText, first, second, third, fourth, fifth, sixth, "");
+			String languageCode = String.valueOf(LanguageUtil.getLangCode());
+			AcrosticPoem poem = new AcrosticPoem(mUsername, mAcrosticText, first, second, third, fourth, fifth, sixth, "", languageCode);
 			mFirebaseDatabaseReference.child(POEMS_CHILD).push().setValue(poem);
 
 			clearView(firstView);

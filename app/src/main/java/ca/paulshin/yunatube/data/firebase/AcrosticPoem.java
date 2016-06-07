@@ -15,11 +15,12 @@ public class AcrosticPoem {
 	private String fifth;
 	private String sixth;
 	private String photoUrl;
+	private String languageCode;
 
 	public AcrosticPoem() {
 	}
 
-	public AcrosticPoem(String name, String text, String first, String second, String third, String fourth, String fifth, String sixth, String photoUrl) {
+	public AcrosticPoem(String name, String text, String first, String second, String third, String fourth, String fifth, String sixth, String photoUrl, String languageCode) {
 		this.name = name;
 		this.text = text;
 		this.first = first;
@@ -29,6 +30,7 @@ public class AcrosticPoem {
 		this.fifth = fifth;
 		this.sixth = sixth;
 		this.photoUrl = photoUrl;
+		this.languageCode = languageCode;
 	}
 
 	public String getName() {
@@ -101,5 +103,13 @@ public class AcrosticPoem {
 
 	public void setPhotoUrl(String photoUrl) {
 		this.photoUrl = photoUrl;
+	}
+
+	public String getlanguageCode() {
+		return languageCode;
+	}
+
+	public void setlanguageCode(String languageCode) {
+		this.languageCode = languageCode;
 	}
 }
