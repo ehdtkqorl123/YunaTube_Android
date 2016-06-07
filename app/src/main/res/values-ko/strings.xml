@@ -10,6 +10,7 @@
     <string name="action_add_faves">즐겨찾기에 추가</string>
     <string name="action_remove_faves">즐겨찾기에서 제거</string>
     <string name="action_youtube">유튜브 앱으로 보기</string>
+    <string name="action_search_video">영상 검색</string>
     <string name="action_download">비디오 다운받기</string>
     <string name="action_write_message">메시지 남기기</string>
 
@@ -110,6 +111,7 @@
     <string name="youtube_share_subject">이 영상을 보신적이 있나요?</string>
     <string name="youtube_share_text">김연아 선수의 영상을 감상해 보세요! %1$s: http://youtu.be/%2$s #연아튜브 에서</string>
     <string name="youtube_share_via">#YunaTube #연아튜브 에서</string>
+    <string name="youtube_cannot_be_added">즐겨찾기에 추가할 수 없습니다</string>
     <string name="youtube_comment">댓글 남기기</string>
     <string name="youtube_no_comments">댓글을 남겨주세요.</string>
     <string name="youtube_wait">댓글들이 로딩된 후 다시 시도해 주세요.</string>
@@ -126,6 +128,14 @@
         <item>팬 페이지</item>
         <item>피겨 사이트</item>
     </string-array>
+
+    <!-- Family Sites -->
+    <string name="submenu_links_official">공식 홈페이지</string>
+    <string name="submenu_links_official_desc">올댓 스포츠가 운영하는 공식 페이지들</string>
+    <string name="submenu_links_fan">팬페이지</string>
+    <string name="submenu_links_fan_desc">승냥이들의 팬페이지</string>
+    <string name="submenu_links_figureskating">피겨 스케이팅 사이트</string>
+    <string name="submenu_links_figureskating_desc">피겨 스케이팅 관련 사이트, 포럼</string>
 
     <string name="links_official_yunakim">공식 웹사이트</string>
     <string name="links_official_yunakim_url">www.yunakim.com</string>
@@ -201,6 +211,9 @@
     <string name="faves_remove_success">즐겨찾기에서 제거되었습니다.</string>
     <string name="faves_remove_failure">즐겨찾기에서 제거할 수 없습니다.</string>
     <string name="no_faved_data">즐겨찾기에 저장된 동영상이 없습니다</string>
+
+    <!-- Jukebox -->
+    <string name="song_title">[ %1$d / %2$d ] %3$s</string>
 
     <!-- Video Section -->
     <string name="video_section_1">연아의 인사</string>

@@ -337,34 +337,6 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@id/yuna_content"
-        android:orientation="vertical">
-
-        <ca.paulshin.yunatube.widgets.SquareByHeightImageView
-            android:id="@+id/yuna_kiss"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:src="@drawable/yuna_kiss"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="@dimen/main_layout_padding"
-            android:layout_marginTop="@dimen/main_layout_inner_padding"
-            android:text="@string/coming_soon"
-            android:textAllCaps="true"
-            android:textColor="@color/body_text_1_inverse"
-            android:textSize="@dimen/text_size_medium"
-            android:textStyle="bold"/>
-    </LinearLayout>
-
     <ImageView
         android:id="@+id/heart"
         android:layout_width="20dp"
