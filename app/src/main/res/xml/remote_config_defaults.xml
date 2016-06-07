@@ -16,4 +16,12 @@
         <key>fact_text_ko</key>
         <value>김연아 선수가 제일 좋아하는 음식은 빵이다.</value>
     </entry>
+    <entry>
+        <key>acrostic_text_en</key>
+        <value>YUNA</value>
+    </entry>
+    <entry>
+        <key>acrostic_text_ko</key>
+        <value>김연아</value>
+    </entry>
 </defaultsMap>

@@ -349,5 +349,11 @@
     <string name="rate_later">다음에 하기</string>
 
     <!-- Game -->
+    <string name="yuna_sticker">연아스티커</string>
+
     <string name="acrostic_poem">x행시</string>
+    <string name="acrostic_fail">페이지를 불러올 수 없습니다. 나중에 다시 시도해 주세요.</string>
+    <string name="acrostic_empty">모든 행을 입력해 주세요</string>
+    <string name="acrostic_too_short">길이가 너무 짧습니다</string>
+    <string name="acrostic_text">제시어:</string>
 </resources>

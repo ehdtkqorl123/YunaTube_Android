@@ -156,7 +156,8 @@
         <activity
             android:name=".ui.main.AcrosticPoemActivity"
             android:label="@string/acrostic_poem"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.YunaTube.FullCoverBottomSheet"/>
 
         <!-- Broadcast receivers -->
         <receiver

@@ -366,5 +366,11 @@
     <string name="rate_later">I will rate later</string>
 
     <!-- Game -->
-    <string name="acrostic_poem">Korean Acrostic Poem</string>
+    <string name="yuna_sticker">Yuna Sticker</string>
+
+    <string name="acrostic_poem">Acrostic Poem</string>
+    <string name="acrostic_fail">Could not load Acrostic page. Please try again later.</string>
+    <string name="acrostic_empty">Please fill every row</string>
+    <string name="acrostic_too_short">Sentence too short!</string>
+    <string name="acrostic_text">Title:</string>
 </resources>

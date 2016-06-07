@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/write_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/content_padding_small">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/acrostic_poem_top"/>
+
+        <TextView
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="12dp"
+            android:gravity="center_vertical"
+            android:onClick="submit"
+            android:text="@string/send"
+            android:textAllCaps="true"
+            android:textColor="@color/body_text_1"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/first_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/first_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="@color/body_text_1"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/first_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxLength="@integer/acrostic_max_length"
+            android:maxLines="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/second_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/second_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="@color/body_text_1"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/second_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxLength="@integer/acrostic_max_length"
+            android:maxLines="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/third_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/third_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="@color/body_text_1"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/third_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxLength="@integer/acrostic_max_length"
+            android:maxLines="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fourth_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/fourth_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="@color/body_text_1"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/fourth_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxLength="@integer/acrostic_max_length"
+            android:maxLines="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fifth_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/fifth_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="@color/body_text_1"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/fifth_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxLength="@integer/acrostic_max_length"
+            android:maxLines="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sixth_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/sixth_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="@color/body_text_1"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/sixth_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxLength="@integer/acrostic_max_length"
+            android:maxLines="1"/>
+    </LinearLayout>
+
+</LinearLayout>

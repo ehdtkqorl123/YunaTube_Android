@@ -65,6 +65,22 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
+    <style name="Theme.YunaTube.FullCoverBottomSheet" parent="Theme.YunaTube.Base">
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme"
+           parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle"
+           parent="Widget.Design.BottomSheet.Modal">
+        <item name="behavior_peekHeight">@dimen/custom_peek_height</item>
+    </style>
+
     <style name="Theme.YunaTube.VideoSection" parent="Theme.YunaTube.Base"/>
 
     <style name="Widget.YunaTube.SearchView" parent="Widget.AppCompat.SearchView">

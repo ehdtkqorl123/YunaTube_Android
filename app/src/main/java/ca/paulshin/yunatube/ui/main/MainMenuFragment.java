@@ -38,6 +38,7 @@ import ca.paulshin.yunatube.ui.base.BaseFragment;
 import ca.paulshin.yunatube.util.LanguageUtil;
 import ca.paulshin.yunatube.util.NetworkUtil;
 import ca.paulshin.yunatube.util.ToastUtil;
+import ca.paulshin.yunatube.util.YTPreference;
 import ca.paulshin.yunatube.util.events.ConnectivityChangeEvent;
 import ca.paulshin.yunatube.widgets.RecyclerViewScrollDetector;
 import timber.log.Timber;
@@ -57,6 +58,10 @@ public class MainMenuFragment extends BaseFragment implements
 	private static final String NOTICE_KO_CONFIG_KEY = "notice_text_ko";
 	private static final String FACT_EN_CONFIG_KEY = "fact_text_en";
 	private static final String FACT_KO_CONFIG_KEY = "fact_text_ko";
+	private static final String ACROSTIC_EN_CONFIG_KEY = "acrostic_text_en";
+	private static final String ACROSTIC_KO_CONFIG_KEY = "acrostic_text_ko";
+
+	public static final String KEY_ACROSTIC_TEXT = "key_acrostic_text";
 
 	public interface MainMenuScrollListener {
 		void showFab();
@@ -210,6 +215,7 @@ public class MainMenuFragment extends BaseFragment implements
 		} else {
 			noticeText = mFirebaseRemoteConfig.getString(LanguageUtil.isKorean() ? NOTICE_KO_CONFIG_KEY : NOTICE_EN_CONFIG_KEY);
 			factText = mFirebaseRemoteConfig.getString(LanguageUtil.isKorean() ? FACT_KO_CONFIG_KEY : FACT_EN_CONFIG_KEY);
+			YTPreference.put(KEY_ACROSTIC_TEXT, mFirebaseRemoteConfig.getString(LanguageUtil.isKorean() ? ACROSTIC_KO_CONFIG_KEY : ACROSTIC_EN_CONFIG_KEY));
 		}
 
 		noticeView.setText(noticeText);

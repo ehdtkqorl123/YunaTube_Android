@@ -1,12 +1,13 @@
 package ca.paulshin.yunatube.ui.main;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -19,7 +20,11 @@ import ca.paulshin.yunatube.ui.base.BaseFragment;
 
 public class GameMenuFragment extends BaseFragment implements View.OnClickListener {
 	@Bind(R.id.acrostic_poem)
-	public Button mAcrosticPoemView;
+	public View mAcrosticPoemView;
+	@Bind(R.id.yuna_sticker)
+	public View mStickerView;
+
+	private static final String YUNA_STICKER_PACKAGE_NAME = "ca.paulshin.yunasticker";
 
 	public static GameMenuFragment newInstance() {
 		GameMenuFragment fragment = new GameMenuFragment();
@@ -37,6 +42,7 @@ public class GameMenuFragment extends BaseFragment implements View.OnClickListen
 		ButterKnife.bind(this, rootView);
 
 		mAcrosticPoemView.setOnClickListener(this);
+		mStickerView.setOnClickListener(this);
 		return rootView;
 	}
 
@@ -47,6 +53,24 @@ public class GameMenuFragment extends BaseFragment implements View.OnClickListen
 			Activity activity = getActivity();
 			startActivity(new Intent(activity, AcrosticPoemActivity.class));
 			activity.overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
+		} else if (id == R.id.yuna_sticker) {
+			startNewActivity();
+		}
+	}
+
+	public void startNewActivity() {
+		Context context = getActivity();
+		Intent intent = context.getPackageManager().getLaunchIntentForPackage(YUNA_STICKER_PACKAGE_NAME);
+		if (intent != null) {
+			// We found the activity now start the activity
+			intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			context.startActivity(intent);
+		} else {
+			// Bring user to the market or let them choose an app?
+			intent = new Intent(Intent.ACTION_VIEW);
+			intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			intent.setData(Uri.parse("market://details?id=" + YUNA_STICKER_PACKAGE_NAME));
+			context.startActivity(intent);
 		}
 	}
 }
