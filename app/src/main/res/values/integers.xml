@@ -30,5 +30,5 @@
     <integer name="video_thumbnail_resize_width">240</integer>
     <integer name="video_thumbnail_resize_height">180</integer>
 
-    <integer name="acrostic_max_length">18</integer>
+    <integer name="acrostic_max_length">32</integer>
 </resources>
