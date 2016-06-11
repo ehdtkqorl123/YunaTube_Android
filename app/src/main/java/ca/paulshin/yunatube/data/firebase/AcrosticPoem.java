@@ -105,11 +105,11 @@ public class AcrosticPoem {
 		this.photoUrl = photoUrl;
 	}
 
-	public String getlanguageCode() {
+	public String getLanguageCode() {
 		return languageCode;
 	}
 
-	public void setlanguageCode(String languageCode) {
+	public void setLanguageCode(String languageCode) {
 		this.languageCode = languageCode;
 	}
 }

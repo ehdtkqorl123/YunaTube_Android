@@ -26,9 +26,8 @@ import ca.paulshin.yunatube.ui.base.BaseActivity;
 import ca.paulshin.yunatube.util.LanguageUtil;
 import ca.paulshin.yunatube.util.ToastUtil;
 import ca.paulshin.yunatube.util.YTPreference;
+import ca.paulshin.yunatube.viewholders.PoemViewHolder;
 import cn.pedant.SweetAlert.SweetAlertDialog;
-
-import static ca.paulshin.yunatube.R.id.first;
 
 /**
  * Created by paulshin on 2016-06-05.
@@ -55,31 +54,6 @@ public class AcrosticPoemActivity extends BaseActivity {
 
 	private LinearLayoutManager mLinearLayoutManager;
 	private BottomSheetDialog mBottomSheetDialog;
-
-	public static class PoemViewHolder extends RecyclerView.ViewHolder {
-		public TextView headerView;
-		public TextView nameView;
-		public TextView firstView;
-		public TextView secondView;
-		public TextView thirdView;
-		public TextView fourthView;
-		public TextView fifthView;
-		public TextView sixthView;
-//		public CircleImageView poemImageView;
-
-		public PoemViewHolder(View v) {
-			super(v);
-			headerView = (TextView) itemView.findViewById(R.id.acrostic_header);
-			nameView = (TextView) itemView.findViewById(R.id.name);
-			firstView = (TextView) itemView.findViewById(first);
-			secondView = (TextView) itemView.findViewById(R.id.second);
-			thirdView = (TextView) itemView.findViewById(R.id.third);
-			fourthView = (TextView) itemView.findViewById(R.id.fourth);
-			fifthView = (TextView) itemView.findViewById(R.id.fifth);
-			sixthView = (TextView) itemView.findViewById(R.id.sixth);
-//			poemImageView = (CircleImageView) itemView.findViewById(R.id.messengerImageView);
-		}
-	}
 
 	@Override
 	protected String getScreenName() {

@@ -19,7 +19,13 @@
 # ButterKnife rules
 -keep class butterknife.** { *; }
 -dontwarn butterknife.internal.**
+-dontwarn java.lang.invoke.*
+-dontwarn com.google.android.gms.**
 -keep class **$$ViewBinder { *; }
+
+-keep class cn.pedant.SweetAlert.Rotate3dAnimation {
+    public <init>(...);
+ }
 
 -keepclasseswithmembernames class * {
     @butterknife.* <fields>;
@@ -44,6 +50,22 @@
     @com.squareup.otto.Subscribe public *;
     @com.squareup.otto.Produce public *;
 }
+
+# Firebase rules
+-keep class com.firebase.** { *; }
+-keep class org.apache.** { *; }
+-keepnames class com.fasterxml.jackson.** { *; }
+-keepnames class javax.servlet.** { *; }
+-keepnames class org.ietf.jgss.** { *; }
+-dontwarn org.w3c.dom.**
+-dontwarn org.joda.time.**
+-dontwarn org.shaded.apache.**
+-dontwarn org.ietf.jgss.**
+
+# Firebase UI rules
+-dontwarn com.firebase.ui.auth.**
+-keep class ca.paulshin.yunatube.viewholders.** { *; }
+-keep class ca.paulshin.yunatube.data.firebase.** { *; }
 
 # RxJava rules
 # RxAndroid will soon ship with rules so this may not be needed in the future
