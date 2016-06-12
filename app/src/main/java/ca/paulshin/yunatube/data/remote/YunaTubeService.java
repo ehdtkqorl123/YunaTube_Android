@@ -31,7 +31,7 @@ public interface YunaTubeService {
 	/*****
      * Main
      *****/
-    @GET("/yunatube/mobile/json/main_{lang}.json")
+    @GET("/yunatube/mobile/php/main_{lang}.php")
     Observable<Notice> getNotice(
             @Path("lang") String lang,
             @Query("random") int random

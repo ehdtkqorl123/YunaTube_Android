@@ -30,6 +30,7 @@ import butterknife.ButterKnife;
 import ca.paulshin.yunatube.BuildConfig;
 import ca.paulshin.yunatube.Config;
 import ca.paulshin.yunatube.R;
+import ca.paulshin.yunatube.data.model.main.Notice;
 import ca.paulshin.yunatube.data.model.video.Video;
 import ca.paulshin.yunatube.receiver.ConnectivityChangeReceiver;
 import ca.paulshin.yunatube.ui.adapter.MainVideoAdapter;
@@ -108,14 +109,6 @@ public class MainMenuFragment extends BaseFragment implements
 		if (activity instanceof MainMenuScrollListener) {
 			mMainMenuScrollListener = (MainMenuScrollListener)activity;
 		}
-
-		// Firebase
-		mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
-		FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
-				.setDeveloperModeEnabled(BuildConfig.DEBUG)
-				.build();
-		mFirebaseRemoteConfig.setConfigSettings(configSettings);
-		mFirebaseRemoteConfig.setDefaults(R.xml.remote_config_defaults);
 	}
 
 	@Override
@@ -144,9 +137,20 @@ public class MainMenuFragment extends BaseFragment implements
 		ButterKnife.findById(mListHeaderView, R.id.twitter).setOnClickListener(this);
 		ButterKnife.findById(mListHeaderView, R.id.youtube).setOnClickListener(this);
 
+		setFirebaseConfig();
 		loadData();
 
 		return mRootView;
+	}
+
+	private void setFirebaseConfig() {
+		// Firebase
+		mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
+		FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+				.setDeveloperModeEnabled(BuildConfig.DEBUG)
+				.build();
+		mFirebaseRemoteConfig.setConfigSettings(configSettings);
+		mFirebaseRemoteConfig.setDefaults(R.xml.remote_config_defaults);
 	}
 
 	@Override
@@ -161,7 +165,12 @@ public class MainMenuFragment extends BaseFragment implements
 	 * Load instagram feed and videos by making api calls if network is connected
 	 */
 	private void loadData() {
-		fetchNotice();
+		mMainMenuPresenter.getNotice();
+
+		/*
+		// Workarond to deal with remoteConfig delay
+		new Handler().postDelayed(() -> fetchNotice(), 100);
+		 */
 
 		if (NetworkUtil.isNetworkConnected(getActivity())) {
 			mNoneView.setVisibility(View.GONE);
@@ -216,6 +225,9 @@ public class MainMenuFragment extends BaseFragment implements
 			noticeText = mFirebaseRemoteConfig.getString(LanguageUtil.isKorean() ? NOTICE_KO_CONFIG_KEY : NOTICE_EN_CONFIG_KEY);
 			factText = mFirebaseRemoteConfig.getString(LanguageUtil.isKorean() ? FACT_KO_CONFIG_KEY : FACT_EN_CONFIG_KEY);
 			YTPreference.put(KEY_ACROSTIC_TEXT, mFirebaseRemoteConfig.getString(LanguageUtil.isKorean() ? ACROSTIC_KO_CONFIG_KEY : ACROSTIC_EN_CONFIG_KEY));
+			if (BuildConfig.DEBUG) {
+				ToastUtil.toast(getActivity(), "Acrostic text: " + YTPreference.getString(KEY_ACROSTIC_TEXT));
+			}
 		}
 
 		noticeView.setText(noticeText);
@@ -242,6 +254,27 @@ public class MainMenuFragment extends BaseFragment implements
 	/*****
 	 * MVP View methods implementation
 	 *****/
+
+	@Override
+	public void showNotice(Notice notice) {
+		if (TextUtils.isEmpty(notice.notice)) {
+			ButterKnife.findById(mListHeaderView, R.id.notice_section).setVisibility(View.GONE);
+		} else {
+			TextView noticeText = ButterKnife.findById(mListHeaderView, R.id.notice_text);
+			noticeText.setText(notice.notice);
+		}
+
+		if (TextUtils.isEmpty(notice.fact)) {
+			ButterKnife.findById(mListHeaderView, R.id.fact_section).setVisibility(View.GONE);
+		} else {
+			TextView noticeText = ButterKnife.findById(mListHeaderView, R.id.fact_text);
+			noticeText.setText(notice.fact);
+		}
+
+		Timber.i("showNotice: " + (notice != null));
+
+		YTPreference.put(KEY_ACROSTIC_TEXT, notice.acrosticText);
+	}
 
 	@Override
 	public void showError() {

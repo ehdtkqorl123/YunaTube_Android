@@ -23,11 +23,12 @@
             android:id="@+id/notice_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="4dp"
             android:layout_marginBottom="@dimen/main_layout_inner_padding"
+            android:layout_marginStart="4dp"
             android:background="@drawable/main_item_box_bg"
             android:gravity="center_vertical"
             android:padding="4dp"
+            android:text="@string/loading"
             android:textColor="@color/body_text_1"
             android:textSize="@dimen/text_size_small"/>
     </LinearLayout>
@@ -116,7 +117,7 @@
             android:shadowDx="1"
             android:shadowDy="1"
             android:shadowRadius="2"
-            android:text="Having been together as your choreographer is one of the best experience in my life\n- David Wilson"
+            android:text="@string/loading"
             android:textColor="@color/body_text_1"
             android:textSize="@dimen/text_size_medium"/>
     </RelativeLayout>

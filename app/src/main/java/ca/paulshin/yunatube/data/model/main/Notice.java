@@ -6,7 +6,9 @@ import com.google.gson.annotations.SerializedName;
  * Created by paulshin on 14-11-26.
  */
 public class Notice {
-	@SerializedName("notice-android")
+	@SerializedName("notice_android")
 	public String notice;
 	public String fact;
+	@SerializedName("acrostic_text")
+	public String acrosticText;
 }
